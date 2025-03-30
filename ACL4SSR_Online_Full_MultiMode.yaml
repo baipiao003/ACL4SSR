@@ -401,6 +401,46 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
+  - name: 🇷🇺 俄罗斯节点
+    type: load-balance
+    include-all: true
+    filter: (?i)RU|俄罗斯|莫斯科|MOS|SVO
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 🇺🇦 乌克兰节点
+    type: load-balance
+    include-all: true
+    filter: (?i)UA|乌克兰
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 🇦🇺 澳大利亚节点
+    type: load-balance
+    include-all: true
+    filter: (?i)AU|澳大利亚|澳洲|SYD
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 🇫🇮 芬兰节点
+    type: load-balance
+    include-all: true
+    filter: (?i)FI|芬兰
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 🇮🇳 印度节点
+    type: load-balance
+    include-all: true
+    filter: (?i)IN|印度
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
 
 rule-providers:
   LocalAreaNetwork:
@@ -511,6 +551,27 @@ rule-providers:
   Copilot:
     url: https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/Copilot.list
     path: ./ruleset/Copilot.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GithubCopilot:
+    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/GithubCopilot.list
+    path: ./ruleset/GithubCopilot.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Claude:
+    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/Claude.list
+    path: ./ruleset/Claude.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Gemini:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.list
+    path: ./ruleset/Gemini.list
     behavior: classical
     interval: 86400
     format: text
@@ -713,6 +774,9 @@ rules:
   - "RULE-SET,OpenAi,🤖 OpenAi"
   - "RULE-SET,ai,🤖 OpenAi"
   - "RULE-SET,Copilot,🤖 OpenAi"
+  - "RULE-SET,GithubCopilot,🤖 OpenAi"
+  - "RULE-SET,Claude,🤖 OpenAi"
+  - "RULE-SET,Gemini,🤖 OpenAi"
   - "RULE-SET,NetEaseMusic,🎶 网易音乐"
   - "RULE-SET,Game,🎮 游戏平台"
   - "RULE-SET,Epic,🎮 游戏平台"
