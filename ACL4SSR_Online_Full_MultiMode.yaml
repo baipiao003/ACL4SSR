@@ -46,7 +46,7 @@ proxy-groups:
   - name: 📶 官方优选
     include-all: true
     type: load-balance
-    filter: (?i)官方|防|电信|联通|移动|CT|CU|CM|CMCC|CF|t.me|WARP|Warp|warp
+    filter: (?i)官方|防|电信|联通|移动|CT|CU|CM|CMCC|CF|t.me|WARP|Warp|warp|其他
     strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
