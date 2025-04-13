@@ -816,6 +816,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  GitHub:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list
+    path: ./ruleset/GitHub.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
 
 rules:
   - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
@@ -861,6 +868,7 @@ rules:
   - "RULE-SET,linuxdo,🌊 LINUXDO"
   - "RULE-SET,ProxyGFWlist,🚀 节点选择"
   - "RULE-SET,ProxyLite,🚀 节点选择"
+  - "RULE-SET,GitHub,🚀 节点选择"
   - "RULE-SET,CMBlog,🚀 节点选择"
   - "RULE-SET,other,🚀 节点选择"
   - "MATCH,🐟 漏网之鱼"
