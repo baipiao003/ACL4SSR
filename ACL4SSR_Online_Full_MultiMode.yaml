@@ -26,7 +26,7 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
     proxies:
       - 🇭🇰 香港节点
       - 🇺🇲 美国节点
@@ -401,7 +401,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇯🇵 日本节点
     type: load-balance
     include-all: true
@@ -409,7 +409,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇺🇲 美国节点
     type: load-balance
     include-all: true
@@ -417,7 +417,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇹🇼 台湾节点
     type: load-balance
     include-all: true
@@ -425,7 +425,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇸🇬 狮城节点
     type: load-balance
     include-all: true
@@ -433,7 +433,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇰🇷 韩国节点
     type: load-balance
     include-all: true
@@ -441,7 +441,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇬🇧 英国节点
     type: load-balance
     include-all: true
@@ -449,7 +449,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇫🇷 法国节点
     type: load-balance
     include-all: true
@@ -457,7 +457,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇩🇪 德国节点
     type: load-balance
     include-all: true
@@ -465,7 +465,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇷🇺 俄罗斯节点
     type: load-balance
     include-all: true
@@ -473,7 +473,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇺🇦 乌克兰节点
     type: load-balance
     include-all: true
@@ -481,7 +481,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇦🇺 澳大利亚节点
     type: load-balance
     include-all: true
@@ -489,7 +489,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇫🇮 芬兰节点
     type: load-balance
     include-all: true
@@ -497,7 +497,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
   - name: 🇮🇳 印度节点
     type: load-balance
     include-all: true
@@ -505,7 +505,7 @@ proxy-groups:
     strategy: round-robin
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 100
 
 rule-providers:
   LocalAreaNetwork:
