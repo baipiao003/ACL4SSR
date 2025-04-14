@@ -404,7 +404,7 @@ proxy-groups:
     tolerance: 100
   - name: 🇯🇵 日本节点
     type: load-balance
-    filter: (?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan|Tokyo|Osaka|NRT|KIX
+    filter: (?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|Tokyo|Osaka|NRT|KIX
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
