@@ -25,7 +25,6 @@ proxy-groups:
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
     proxies:
       - 🇭🇰 香港节点
@@ -400,7 +399,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇯🇵 日本节点
     type: load-balance
@@ -408,7 +406,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇺🇲 美国节点
     type: load-balance
@@ -416,7 +413,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇹🇼 台湾节点
     type: load-balance
@@ -424,15 +420,13 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇸🇬 狮城节点
     type: load-balance
-    filter: (?i)新加坡|坡|狮城|SG|sg|Singapore|SIN
+    filter: (?i)新加坡|狮城|SG|sg|Singapore|SIN
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇰🇷 韩国节点
     type: load-balance
@@ -440,7 +434,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇬🇧 英国节点
     type: load-balance
@@ -448,7 +441,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇫🇷 法国节点
     type: load-balance
@@ -456,7 +448,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇩🇪 德国节点
     type: load-balance
@@ -464,7 +455,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇷🇺 俄罗斯节点
     type: load-balance
@@ -472,7 +462,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇺🇦 乌克兰节点
     type: load-balance
@@ -480,7 +469,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇦🇺 澳大利亚节点
     type: load-balance
@@ -488,7 +476,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇫🇮 芬兰节点
     type: load-balance
@@ -496,7 +483,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
   - name: 🇮🇳 印度节点
     type: load-balance
@@ -504,7 +490,6 @@ proxy-groups:
     strategy: round-robin
     url: https://www.gstatic.com/generate_204
     interval: 300
-    timeout: 5000
     tolerance: 100
 
 rule-providers:
