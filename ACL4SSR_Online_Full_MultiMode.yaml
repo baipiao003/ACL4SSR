@@ -1,7 +1,6 @@
 proxy-groups:
   - name: 🚀 节点选择
     type: select
-    include-all: true
     proxies:
       - ♻️ 自动选择
       - 🇭🇰 香港节点
@@ -22,6 +21,7 @@ proxy-groups:
       - DIRECT
   - name: ☑️ 手动切换
     type: select
+    include-all: true
   - name: ♻️ 自动选择
     type: url-test
     include-all: true
