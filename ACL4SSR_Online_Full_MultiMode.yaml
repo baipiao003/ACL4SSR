@@ -544,7 +544,7 @@ rule-providers:
     format: text
     type: http
   SteamCN:
-    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/SteamCN.list
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/SteamCN/SteamCN.list
     path: ./ruleset/SteamCN.list
     behavior: classical
     interval: 86400
@@ -599,9 +599,9 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-  OpenAi:
-    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/OpenAi.list
-    path: ./ruleset/OpenAi.list
+  OpenAI:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/OpenAI/OpenAI.list
+    path: ./ruleset/OpenAI.list
     behavior: classical
     interval: 86400
     format: text
@@ -843,7 +843,7 @@ rules:
   - "RULE-SET,Telegram,📲 电报消息"
   - "RULE-SET,Twitter,🐦 Twitter"
   - "RULE-SET,Instagram,🎀 Instagram"
-  - "RULE-SET,OpenAi,🤖 OpenAi"
+  - "RULE-SET,OpenAI,🤖 OpenAi"
   - "RULE-SET,ai,🤖 OpenAi"
   - "RULE-SET,Copilot,🤖 OpenAi"
   - "RULE-SET,GithubCopilot,🤖 OpenAi"
