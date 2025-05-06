@@ -1,0 +1,25 @@
+name: Merge Rules Every 3 Days
+
+on:
+  schedule:
+    - cron: '0 0 */3 * *'  # 每3天的UTC 00:00运行一次
+  workflow_dispatch:       # 手动触发也支持
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'  # 你可以改为所需版本
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run merge script
+        run: python zhenghe.py
