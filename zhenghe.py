@@ -1,43 +1,58 @@
 import os
+import subprocess
 import requests
 
-# 定义文件夹路径
 rules_dir = "rules"
 output_dir = "Clash"
 
-# 确保输出目录存在
+# 创建输出目录
 os.makedirs(output_dir, exist_ok=True)
 
-# 遍历 rules 文件夹下所有 .txt 文件
+# 用于跟踪是否生成了新文件
+has_changes = False
+
+# 遍历 rules 目录下所有 .txt 文件
 for filename in os.listdir(rules_dir):
     if filename.endswith(".txt"):
-        txt_path = os.path.join(rules_dir, filename)
-        list_filename = os.path.splitext(filename)[0] + ".list"
-        output_path = os.path.join(output_dir, list_filename)
+        input_path = os.path.join(rules_dir, filename)
+        output_filename = os.path.splitext(filename)[0] + ".list"
+        output_path = os.path.join(output_dir, output_filename)
 
-        print(f"正在处理：{txt_path}")
+        merged_content = []
 
-        # 读取每个 txt 文件中的链接
-        with open(txt_path, "r", encoding="utf-8") as f:
+        with open(input_path, "r", encoding="utf-8") as f:
             urls = [line.strip() for line in f if line.strip()]
 
-        merged_blocks = []
         for url in urls:
             try:
-                response = requests.get(url)
+                response = requests.get(url, timeout=10)
                 response.raise_for_status()
-                block = f"# 来源: {url}\n" + response.text.strip()
-                merged_blocks.append(block)
+                merged_content.append(response.text)
             except Exception as e:
-                print(f"  无法获取 {url}：{e}")
+                print(f"⚠️ 无法读取 {url}：{e}")
+                merged_content.append(f"# Error fetching {url}\n")
 
-        # 拼接所有内容，以两个换行分隔块
-        merged_content = "\n\n".join(merged_blocks)
+        new_content = "\n\n".join(merged_content)
 
-        # 写入合并内容
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(merged_content)
+        # 写入并检查是否有变更
+        if not os.path.exists(output_path) or open(output_path, "r", encoding="utf-8").read() != new_content:
+            with open(output_path, "w", encoding="utf-8") as out_f:
+                out_f.write(new_content)
+            print(f"✅ 已更新文件：{output_path}")
+            has_changes = True
+        else:
+            print(f"🔄 无变更：{output_path}")
 
-        print(f"  已生成：{output_path}")
-
-print("所有任务已完成。")
+# 如果有变更，执行 Git 提交和推送
+if has_changes:
+    try:
+        subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
+        subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
+        subprocess.run(["git", "add", "Clash/*.list"], check=True)
+        subprocess.run(["git", "commit", "-m", "🤖 自动更新合并规则文件 [skip ci]"], check=True)
+        subprocess.run(["git", "push"], check=True)
+        print("🚀 更改已提交并推送到远程仓库。")
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Git 操作失败：{e}")
+else:
+    print("✅ 无需提交：没有任何更改。")
