@@ -1,27 +1,28 @@
-# .github/workflows/merge_rules.yml
-name: Merge Rules Only
+name: Merge Rules and Push
 
 on:
   schedule:
-    - cron: '0 0 */3 * *'
+    - cron: '0 0 */3 * *'  # 每3天运行
   workflow_dispatch:
 
 jobs:
-  run:
+  merge:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout clash
+      - name: Checkout clash branch
         uses: actions/checkout@v3
         with:
           ref: clash
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Install requests
+      - name: Install dependencies
         run: pip install requests
 
-      - name: Run merge script (with commit inside)
+      - name: Run merge script
         run: python zhenghe.py
