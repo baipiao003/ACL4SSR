@@ -2999,6 +2999,71 @@ DOMAIN-SUFFIX,rails.cn
 DOMAIN-SUFFIX,tdpress.com
 
 
+# NAME: 17173
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:37
+# DOMAIN-SUFFIX: 57
+# TOTAL: 57
+DOMAIN-SUFFIX,168kaifu.com
+DOMAIN-SUFFIX,17173-inc.com
+DOMAIN-SUFFIX,17173.com
+DOMAIN-SUFFIX,17173.com.cn
+DOMAIN-SUFFIX,17173.net
+DOMAIN-SUFFIX,17173.net.cn
+DOMAIN-SUFFIX,17173gc.com
+DOMAIN-SUFFIX,17173ie.cn
+DOMAIN-SUFFIX,17173ie.com
+DOMAIN-SUFFIX,17173v.com
+DOMAIN-SUFFIX,17173vr.com
+DOMAIN-SUFFIX,17173vr.net
+DOMAIN-SUFFIX,173.tv
+DOMAIN-SUFFIX,173fahao.com
+DOMAIN-SUFFIX,173fh.com
+DOMAIN-SUFFIX,173ie.cn
+DOMAIN-SUFFIX,173ie.com
+DOMAIN-SUFFIX,173ie.net
+DOMAIN-SUFFIX,173shouyou.cn
+DOMAIN-SUFFIX,173shouyou.com
+DOMAIN-SUFFIX,173shouyou.com.cn
+DOMAIN-SUFFIX,173shouyou.net
+DOMAIN-SUFFIX,173tuku.com
+DOMAIN-SUFFIX,173yeyou.cn
+DOMAIN-SUFFIX,173yeyou.com
+DOMAIN-SUFFIX,173yeyou.com.cn
+DOMAIN-SUFFIX,173yeyou.net
+DOMAIN-SUFFIX,17chacha.com
+DOMAIN-SUFFIX,1y.com
+DOMAIN-SUFFIX,1ycdn.com
+DOMAIN-SUFFIX,2kfb.com
+DOMAIN-SUFFIX,2p.com
+DOMAIN-SUFFIX,2pcdn.com
+DOMAIN-SUFFIX,37wanwan.cn
+DOMAIN-SUFFIX,37wanwan.com
+DOMAIN-SUFFIX,37wanwancdn.com
+DOMAIN-SUFFIX,52cps.cn
+DOMAIN-SUFFIX,9ria.com
+DOMAIN-SUFFIX,actionscript3.cn
+DOMAIN-SUFFIX,alllget.com
+DOMAIN-SUFFIX,chinafilm-media.com.cn
+DOMAIN-SUFFIX,cy.com
+DOMAIN-SUFFIX,cyie.cn
+DOMAIN-SUFFIX,cyie.com
+DOMAIN-SUFFIX,jgchat.net
+DOMAIN-SUFFIX,kaifu1.com
+DOMAIN-SUFFIX,kaifubiao123.com
+DOMAIN-SUFFIX,kfb126.com
+DOMAIN-SUFFIX,kfb163.com
+DOMAIN-SUFFIX,rtbbox.com
+DOMAIN-SUFFIX,shouyou.com
+DOMAIN-SUFFIX,yeyou.com
+DOMAIN-SUFFIX,yeyoucdn.com
+DOMAIN-SUFFIX,ywshouyou.cn
+DOMAIN-SUFFIX,ywshouyou.com
+DOMAIN-SUFFIX,ywshouyou.net
+DOMAIN-SUFFIX,yyx.com
+
+
 # NAME: 115
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -3287,25 +3352,7 @@ DOMAIN-SUFFIX,stmjsociety.com
 DOMAIN-SUFFIX,stpaper.cn
 
 
-# NAME: CKJR
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:39
-# DOMAIN-SUFFIX: 13
-# TOTAL: 13
-DOMAIN-SUFFIX,51ckjr.com
-DOMAIN-SUFFIX,ckjr001.cn
-DOMAIN-SUFFIX,ckjr001.com
-DOMAIN-SUFFIX,ckjryy.com
-DOMAIN-SUFFIX,meituo.shop
-DOMAIN-SUFFIX,myckjr.cn
-DOMAIN-SUFFIX,myckjr.com
-DOMAIN-SUFFIX,qxckjr.com
-DOMAIN-SUFFIX,sxyckjr.com
-DOMAIN-SUFFIX,tengkackjr.com
-DOMAIN-SUFFIX,tengkaxx.com
-DOMAIN-SUFFIX,tjckjr.com
-DOMAIN-SUFFIX,tkckjr.com
+# Error fetching https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/CKJR/CKJR.list
 
 
 # NAME: CNKI
@@ -5093,3 +5140,775 @@ DOMAIN-SUFFIX,zhishifanli.com
 DOMAIN-SUFFIX,zhishifanli.com.cn
 DOMAIN-SUFFIX,zj8t5.com
 DOMAIN-SUFFIX,znstartups.com
+
+
+# NAME: ChengTongWangPan
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:17:01
+# DOMAIN-SUFFIX: 4
+# TOTAL: 4
+DOMAIN-SUFFIX,ctfile.com
+DOMAIN-SUFFIX,ctfile.net
+DOMAIN-SUFFIX,n802.com
+DOMAIN-SUFFIX,tv002.com
+
+
+# NAME: 36kr
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:38
+# DOMAIN-SUFFIX: 4
+# TOTAL: 4
+DOMAIN-SUFFIX,36dianping.com
+DOMAIN-SUFFIX,36kr.com
+DOMAIN-SUFFIX,36krcdn.com
+DOMAIN-SUFFIX,36krcnd.com
+
+
+# NAME: DaMai
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:40
+# DOMAIN-SUFFIX: 11
+# TOTAL: 11
+DOMAIN-SUFFIX,baotoo.com
+DOMAIN-SUFFIX,damai.cn
+DOMAIN-SUFFIX,damaicdn.cn
+DOMAIN-SUFFIX,dmcdn.cn
+DOMAIN-SUFFIX,jtwsm.cn
+DOMAIN-SUFFIX,maikr.com
+DOMAIN-SUFFIX,maitix.com
+DOMAIN-SUFFIX,maitix.net
+DOMAIN-SUFFIX,piao.com.cn
+DOMAIN-SUFFIX,piaogroup.com
+DOMAIN-SUFFIX,yanchupiaojia.com
+
+
+# NAME: BianFeng
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:38
+# DOMAIN-SUFFIX: 100
+# TOTAL: 100
+DOMAIN-SUFFIX,17et.com
+DOMAIN-SUFFIX,2133.com
+DOMAIN-SUFFIX,2133bbs.com
+DOMAIN-SUFFIX,5158wan.com
+DOMAIN-SUFFIX,51nearby.com
+DOMAIN-SUFFIX,befun.cn
+DOMAIN-SUFFIX,bfchayuan.com
+DOMAIN-SUFFIX,bffengshi.com
+DOMAIN-SUFFIX,bfhmj.com
+DOMAIN-SUFFIX,bfhmq.com
+DOMAIN-SUFFIX,bfhzmj.com
+DOMAIN-SUFFIX,bfjxmajiang.com
+DOMAIN-SUFFIX,bfjxmj.com
+DOMAIN-SUFFIX,bfklyhuan.com
+DOMAIN-SUFFIX,bflschayuan.com
+DOMAIN-SUFFIX,bfnbgame.com
+DOMAIN-SUFFIX,bfningbo.com
+DOMAIN-SUFFIX,bfqqsg.com
+DOMAIN-SUFFIX,bfqtchayuan.com
+DOMAIN-SUFFIX,bfqzmyq.com
+DOMAIN-SUFFIX,bfsxmj.com
+DOMAIN-SUFFIX,bfun.cn
+DOMAIN-SUFFIX,bfypq.com
+DOMAIN-SUFFIX,bfyx.net
+DOMAIN-SUFFIX,bfzzmj.com
+DOMAIN-SUFFIX,bianfeng.com
+DOMAIN-SUFFIX,bianfengkuailai.com
+DOMAIN-SUFFIX,bzsanguo.com
+DOMAIN-SUFFIX,chaguan.center
+DOMAIN-SUFFIX,fenggouhui.com
+DOMAIN-SUFFIX,gameabc.com
+DOMAIN-SUFFIX,gameabc2.com
+DOMAIN-SUFFIX,gameabc2.net
+DOMAIN-SUFFIX,gametea.com
+DOMAIN-SUFFIX,gametea.net
+DOMAIN-SUFFIX,gametea2.cn
+DOMAIN-SUFFIX,guandan.com
+DOMAIN-SUFFIX,guandan.mobi
+DOMAIN-SUFFIX,hangmaquan.com
+DOMAIN-SUFFIX,hiloletswin.com
+DOMAIN-SUFFIX,huzhoumj.com
+DOMAIN-SUFFIX,imeete.com
+DOMAIN-SUFFIX,imeete.net
+DOMAIN-SUFFIX,imeete1.com
+DOMAIN-SUFFIX,imeete2.com
+DOMAIN-SUFFIX,imeete3.com
+DOMAIN-SUFFIX,imeete4.com
+DOMAIN-SUFFIX,kkwan.cc
+DOMAIN-SUFFIX,kkwan.cn
+DOMAIN-SUFFIX,kuailails.com
+DOMAIN-SUFFIX,kuailaiwz.com
+DOMAIN-SUFFIX,lishuichayuan.com
+DOMAIN-SUFFIX,mangjianghuole.com
+DOMAIN-SUFFIX,mjhlyuliu1.cn
+DOMAIN-SUFFIX,mjhlyuliu2.cn
+DOMAIN-SUFFIX,mjhlyuliu3.cn
+DOMAIN-SUFFIX,mjhlyuliu4.cn
+DOMAIN-SUFFIX,mjhlyuliu5.cn
+DOMAIN-SUFFIX,mlmtz.com
+DOMAIN-SUFFIX,qiantianchayuan.com
+DOMAIN-SUFFIX,qqsgmob.com
+DOMAIN-SUFFIX,qqsgplay.com
+DOMAIN-SUFFIX,qzmayouquan.com
+DOMAIN-SUFFIX,racymj.com
+DOMAIN-SUFFIX,ruianchayuan.com
+DOMAIN-SUFFIX,shandacasual.com
+DOMAIN-SUFFIX,shandacasual.net
+DOMAIN-SUFFIX,shiyou.me
+DOMAIN-SUFFIX,shuangkou.net
+DOMAIN-SUFFIX,shukebox.com
+DOMAIN-SUFFIX,shukemobile.com
+DOMAIN-SUFFIX,starsshine1.com
+DOMAIN-SUFFIX,starsshine2.com
+DOMAIN-SUFFIX,sweetystory.com
+DOMAIN-SUFFIX,tuolajieightscore.com
+DOMAIN-SUFFIX,wenzhouchayuan.com
+DOMAIN-SUFFIX,wenzhoumajiang.com
+DOMAIN-SUFFIX,wolfguandan-01.com
+DOMAIN-SUFFIX,wolfguandan-02.com
+DOMAIN-SUFFIX,wolfguandan-03.com
+DOMAIN-SUFFIX,wolfguandan-04.com
+DOMAIN-SUFFIX,wolfguandan-05.com
+DOMAIN-SUFFIX,wzchayuan.com
+DOMAIN-SUFFIX,xiakefyz.com
+DOMAIN-SUFFIX,xingyaocq.com
+DOMAIN-SUFFIX,xingyaoss.com
+DOMAIN-SUFFIX,xingyaoyd.com
+DOMAIN-SUFFIX,xingye.work
+DOMAIN-SUFFIX,xingyeace.com
+DOMAIN-SUFFIX,xingyeddz.com
+DOMAIN-SUFFIX,xkfyzmob.com
+DOMAIN-SUFFIX,yaoji.center
+DOMAIN-SUFFIX,ymnsdk.com
+DOMAIN-SUFFIX,yqcymj.com
+DOMAIN-SUFFIX,yueqingchayuan.com
+DOMAIN-SUFFIX,yuyaoclub.com
+DOMAIN-SUFFIX,yuyaotop.com
+DOMAIN-SUFFIX,zgsjl8.com
+DOMAIN-SUFFIX,zhanqi.tv
+DOMAIN-SUFFIX,zhanqu.tv
+
+
+# NAME: ChuangKeTie
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:40
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
+DOMAIN-SUFFIX,byfan.cn
+DOMAIN-SUFFIX,chuangkit.com
+DOMAIN-SUFFIX,ckt.cn
+DOMAIN-SUFFIX,huoziyin.cn
+DOMAIN-SUFFIX,huoziyin.com
+
+
+# NAME: DangDang
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:40
+# DOMAIN-SUFFIX: 2
+# TOTAL: 2
+DOMAIN-SUFFIX,dangdang.com
+DOMAIN-SUFFIX,ddimg.cn
+
+
+# NAME: Funshion
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:41
+# DOMAIN-SUFFIX: 10
+# TOTAL: 10
+DOMAIN-SUFFIX,9iwanwan.com
+DOMAIN-SUFFIX,9ixiuxiu.com
+DOMAIN-SUFFIX,fspcdn.com
+DOMAIN-SUFFIX,fun.tv
+DOMAIN-SUFFIX,funshion.com
+DOMAIN-SUFFIX,funshion.net
+DOMAIN-SUFFIX,funshion.tv
+DOMAIN-SUFFIX,ibidian.com
+DOMAIN-SUFFIX,jvcsmart.cn
+DOMAIN-SUFFIX,jvcsmart.com.cn
+
+
+# NAME: GuiGuDongLi
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:42
+# DOMAIN-SUFFIX: 11
+# TOTAL: 11
+DOMAIN-SUFFIX,ciweekforum.com
+DOMAIN-SUFFIX,enet.com.cn
+DOMAIN-SUFFIX,enet16.cn
+DOMAIN-SUFFIX,enet16.com
+DOMAIN-SUFFIX,enet16.com.cn
+DOMAIN-SUFFIX,enet16.net
+DOMAIN-SUFFIX,enet369.com
+DOMAIN-SUFFIX,ezhu.cn
+DOMAIN-SUFFIX,ezhu.com
+DOMAIN-SUFFIX,mydor.com
+DOMAIN-SUFFIX,xingzhiheyi.com
+
+
+# NAME: JianGuoYun
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:42
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
+DOMAIN-SUFFIX,gdfgq.club
+DOMAIN-SUFFIX,jianguopuzi.com
+DOMAIN-SUFFIX,jianguoyun.com
+DOMAIN-SUFFIX,nutstore.net
+DOMAIN-SUFFIX,nutstorehq.com
+
+
+# NAME: Lenovo
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:44
+# DOMAIN-SUFFIX: 32
+# TOTAL: 32
+DOMAIN-SUFFIX,blurdev.com
+DOMAIN-SUFFIX,cftsupport.com
+DOMAIN-SUFFIX,fm365.com
+DOMAIN-SUFFIX,idea123.cn
+DOMAIN-SUFFIX,ileapcloud.com
+DOMAIN-SUFFIX,jhwan.com.cn
+DOMAIN-SUFFIX,juhuiwan.com
+DOMAIN-SUFFIX,juhuiwan.com.cn
+DOMAIN-SUFFIX,juhuiwan.net
+DOMAIN-SUFFIX,lenauth.com
+DOMAIN-SUFFIX,lenovo.cn
+DOMAIN-SUFFIX,lenovo.com
+DOMAIN-SUFFIX,lenovo.com.cn
+DOMAIN-SUFFIX,lenovocloudos.com
+DOMAIN-SUFFIX,lenovoeservice.com
+DOMAIN-SUFFIX,lenovogame.com
+DOMAIN-SUFFIX,lenovomm.cn
+DOMAIN-SUFFIX,lenovomm.com
+DOMAIN-SUFFIX,lenovovip.com.cn
+DOMAIN-SUFFIX,lx.pub
+DOMAIN-SUFFIX,lx.run
+DOMAIN-SUFFIX,lxzjjt.cn
+DOMAIN-SUFFIX,lxzjjt.com
+DOMAIN-SUFFIX,surepush.cn
+DOMAIN-SUFFIX,thinkcloudlab.com
+DOMAIN-SUFFIX,thinkpad.com
+DOMAIN-SUFFIX,zhiliaowenda.com.cn
+DOMAIN-SUFFIX,zui.cn
+DOMAIN-SUFFIX,zui.com
+DOMAIN-SUFFIX,zuk.cn
+DOMAIN-SUFFIX,zuk.com
+DOMAIN-SUFFIX,zuk.com.cn
+
+
+# NAME: LuDaShi
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:44
+# DOMAIN-SUFFIX: 17
+# TOTAL: 17
+DOMAIN-SUFFIX,birdpaper.cn
+DOMAIN-SUFFIX,dualspace.com
+DOMAIN-SUFFIX,dualspacetech.com
+DOMAIN-SUFFIX,easyclean.fun
+DOMAIN-SUFFIX,kejids.cn
+DOMAIN-SUFFIX,kejids.com
+DOMAIN-SUFFIX,ludan.cn
+DOMAIN-SUFFIX,ludashi.cn
+DOMAIN-SUFFIX,ludashi.com
+DOMAIN-SUFFIX,monidashi.cn
+DOMAIN-SUFFIX,monidashi.com.cn
+DOMAIN-SUFFIX,superlitetech.com
+DOMAIN-SUFFIX,taojike.cn
+DOMAIN-SUFFIX,xiaoluerhuo.com
+DOMAIN-SUFFIX,xiaoluhaohuo.com
+DOMAIN-SUFFIX,xiaoluyouxuan.com
+DOMAIN-SUFFIX,youhua.com
+
+
+# NAME: TianYaForum
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:46
+# DOMAIN-SUFFIX: 13
+# TOTAL: 13
+DOMAIN-SUFFIX,gz12301.com
+DOMAIN-SUFFIX,hainan.com
+DOMAIN-SUFFIX,hainan.net
+DOMAIN-SUFFIX,hi114.cn
+DOMAIN-SUFFIX,hibusiness.com
+DOMAIN-SUFFIX,hifortune.net
+DOMAIN-SUFFIX,laibafile.cn
+DOMAIN-SUFFIX,tianya.cn
+DOMAIN-SUFFIX,tianya.com.cn
+DOMAIN-SUFFIX,tianyablog.com
+DOMAIN-SUFFIX,tianyaclub.com
+DOMAIN-SUFFIX,tianyaui.com
+DOMAIN-SUFFIX,tysurl.com
+
+
+# NAME: ZhiYinManKe
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:17:22
+# DOMAIN-SUFFIX: 17
+# TOTAL: 17
+DOMAIN-SUFFIX,51kanmanhua.com
+DOMAIN-SUFFIX,mkdata.top
+DOMAIN-SUFFIX,mkpush.com
+DOMAIN-SUFFIX,mkzcdn.com
+DOMAIN-SUFFIX,mkzhan.cn
+DOMAIN-SUFFIX,mkzhan.com
+DOMAIN-SUFFIX,mkzhan.com.cn
+DOMAIN-SUFFIX,mkzhan.net
+DOMAIN-SUFFIX,xiaomingtaiji.cc
+DOMAIN-SUFFIX,xiaomingtaiji.cn
+DOMAIN-SUFFIX,xiaomingtaiji.com
+DOMAIN-SUFFIX,xiaomingtaiji.com.cn
+DOMAIN-SUFFIX,xiaomingtaiji.net
+DOMAIN-SUFFIX,xiaoshuohui.com.cn
+DOMAIN-SUFFIX,xiaoshuohui.net
+DOMAIN-SUFFIX,zymk.cn
+DOMAIN-SUFFIX,zymkcdn.com
+
+
+# NAME: DuoWan
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:17:22
+# DOMAIN-SUFFIX: 27
+# TOTAL: 27
+DOMAIN-SUFFIX,5253.com
+DOMAIN-SUFFIX,bcshipgo.com
+DOMAIN-SUFFIX,bigda.com
+DOMAIN-SUFFIX,blogchina.org
+DOMAIN-SUFFIX,c19ce66ff87253fdda68740edcb7ce3b.v.smtcdns.net
+DOMAIN-SUFFIX,chinaduo.com
+DOMAIN-SUFFIX,duowan.cn
+DOMAIN-SUFFIX,duowan.com
+DOMAIN-SUFFIX,duowan.com.cn
+DOMAIN-SUFFIX,dwstatic.com
+DOMAIN-SUFFIX,hiido.cn
+DOMAIN-SUFFIX,hiido.com
+DOMAIN-SUFFIX,hiido.net
+DOMAIN-SUFFIX,huanju.cn
+DOMAIN-SUFFIX,huanju.net
+DOMAIN-SUFFIX,huanjuyun.com
+DOMAIN-SUFFIX,joyy.com
+DOMAIN-SUFFIX,joyyinc.com
+DOMAIN-SUFFIX,joyyued.com
+DOMAIN-SUFFIX,pikoplay.com
+DOMAIN-SUFFIX,vooedit.com
+DOMAIN-SUFFIX,yy.com
+DOMAIN-SUFFIX,yy.com.cn
+DOMAIN-SUFFIX,yyclouds.com
+DOMAIN-SUFFIX,yygamedev.com
+DOMAIN-SUFFIX,yystatic.com
+DOMAIN-SUFFIX,zhiniu8.com
+
+
+# NAME: WanKaHuanJu
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:17:22
+# DOMAIN-SUFFIX: 29
+# TOTAL: 29
+DOMAIN-SUFFIX,daxianglingke.cn
+DOMAIN-SUFFIX,daxianglingke.com
+DOMAIN-SUFFIX,daxianglingke.com.cn
+DOMAIN-SUFFIX,daxianglink.cn
+DOMAIN-SUFFIX,daxianglink.com
+DOMAIN-SUFFIX,daxianglink.com.cn
+DOMAIN-SUFFIX,gdsa.com
+DOMAIN-SUFFIX,gm825.cn
+DOMAIN-SUFFIX,gm825.com
+DOMAIN-SUFFIX,gm825.com.cn
+DOMAIN-SUFFIX,gm825.net
+DOMAIN-SUFFIX,hapjs.org
+DOMAIN-SUFFIX,ita-alliance.com
+DOMAIN-SUFFIX,itgsa.com
+DOMAIN-SUFFIX,mhacn.cn
+DOMAIN-SUFFIX,mhacn.com
+DOMAIN-SUFFIX,mhacn.com.cn
+DOMAIN-SUFFIX,mhacn.net
+DOMAIN-SUFFIX,quickapp.cn
+DOMAIN-SUFFIX,quickingdata.com
+DOMAIN-SUFFIX,quicklyopen.com
+DOMAIN-SUFFIX,shenyinhudong.cn
+DOMAIN-SUFFIX,shenyinhudong.com
+DOMAIN-SUFFIX,so-quick.cn
+DOMAIN-SUFFIX,wankacn.cn
+DOMAIN-SUFFIX,wankacn.com
+DOMAIN-SUFFIX,wankacn.com.cn
+DOMAIN-SUFFIX,wankacn.net
+DOMAIN-SUFFIX,wankamall.com
+
+
+# NAME: LianMeng
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-01-08 16:01:07
+# DOMAIN-SUFFIX: 13
+# TOTAL: 13
+DOMAIN-SUFFIX,2333333333333.com
+DOMAIN-SUFFIX,bqtalk.com
+DOMAIN-SUFFIX,faceu.com
+DOMAIN-SUFFIX,faceu.com.cn
+DOMAIN-SUFFIX,faceu.mobi
+DOMAIN-SUFFIX,faceu.net
+DOMAIN-SUFFIX,heycan.com
+DOMAIN-SUFFIX,qmoji.mobi
+DOMAIN-SUFFIX,qmoji.net
+DOMAIN-SUFFIX,ulikecam.cn
+DOMAIN-SUFFIX,ulikecam.com
+DOMAIN-SUFFIX,ulikecam.mobi
+DOMAIN-SUFFIX,ulikecam.net
+
+
+# NAME: ZhongGuoShiHua
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:48
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
+DOMAIN-SUFFIX,sinopec-usa.com
+DOMAIN-SUFFIX,sinopec.com
+DOMAIN-SUFFIX,sinopecgroup.com
+DOMAIN-SUFFIX,sinopecnews.com.cn
+DOMAIN-SUFFIX,sinopecsales.com
+
+
+# NAME: XueErSi
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:48
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+DOMAIN-SUFFIX,speiyou.com
+DOMAIN-SUFFIX,xesimg.com
+DOMAIN-SUFFIX,xueersi.com
+
+
+# NAME: XieCheng
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:48
+# DOMAIN-SUFFIX: 29
+# TOTAL: 29
+DOMAIN-SUFFIX,c-ctrip.com
+DOMAIN-SUFFIX,colinker.com
+DOMAIN-SUFFIX,ctrip.cn
+DOMAIN-SUFFIX,ctrip.co.id
+DOMAIN-SUFFIX,ctrip.co.kr
+DOMAIN-SUFFIX,ctrip.co.th
+DOMAIN-SUFFIX,ctrip.com
+DOMAIN-SUFFIX,ctrip.com.hk
+DOMAIN-SUFFIX,ctrip.my
+DOMAIN-SUFFIX,ctrip.sg
+DOMAIN-SUFFIX,ctripbiz.com
+DOMAIN-SUFFIX,ctripbuy.hk
+DOMAIN-SUFFIX,ctripteam.com
+DOMAIN-SUFFIX,doticloud.com
+DOMAIN-SUFFIX,easytrip.com
+DOMAIN-SUFFIX,hhtravel.com
+DOMAIN-SUFFIX,hhtravel.com.tw
+DOMAIN-SUFFIX,izuchebao.com
+DOMAIN-SUFFIX,lvtds.com
+DOMAIN-SUFFIX,shuntu.cn
+DOMAIN-SUFFIX,skysea.com
+DOMAIN-SUFFIX,suanya.cn
+DOMAIN-SUFFIX,suanya.com
+DOMAIN-SUFFIX,tieyou.com
+DOMAIN-SUFFIX,toptown.cn
+DOMAIN-SUFFIX,toursbms.com
+DOMAIN-SUFFIX,trip.com
+DOMAIN-SUFFIX,tripcdn.com
+DOMAIN-SUFFIX,vipdlt.com
+
+
+# NAME: TongCheng
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:46
+# DOMAIN-SUFFIX: 8
+# TOTAL: 8
+DOMAIN-SUFFIX,17u.cn
+DOMAIN-SUFFIX,17u.net
+DOMAIN-SUFFIX,17usoft.com
+DOMAIN-SUFFIX,17usoft.net
+DOMAIN-SUFFIX,40017.cn
+DOMAIN-SUFFIX,elong.com
+DOMAIN-SUFFIX,elongstatic.com
+DOMAIN-SUFFIX,ly.com
+
+
+# NAME: YiZhiBo
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:48
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
+DOMAIN-SUFFIX,hifengli.com
+DOMAIN-SUFFIX,liexiulive.com
+DOMAIN-SUFFIX,sndks.com
+DOMAIN-SUFFIX,yizhibo.com
+DOMAIN-SUFFIX,yzbo.tv
+
+
+# NAME: LanZouYun
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-09-18 02:12:58
+# DOMAIN-SUFFIX: 36
+# TOTAL: 36
+DOMAIN-SUFFIX,baidupan.com
+DOMAIN-SUFFIX,bakstotre.com
+DOMAIN-SUFFIX,ilanzou.com
+DOMAIN-SUFFIX,lanosso.com
+DOMAIN-SUFFIX,lanpv.com
+DOMAIN-SUFFIX,lanpw.com
+DOMAIN-SUFFIX,lanrar.com
+DOMAIN-SUFFIX,lanzn.com
+DOMAIN-SUFFIX,lanzou.com
+DOMAIN-SUFFIX,lanzoub.com
+DOMAIN-SUFFIX,lanzouc.com
+DOMAIN-SUFFIX,lanzoue.com
+DOMAIN-SUFFIX,lanzouf.com
+DOMAIN-SUFFIX,lanzoug.com
+DOMAIN-SUFFIX,lanzouh.com
+DOMAIN-SUFFIX,lanzoui.com
+DOMAIN-SUFFIX,lanzouj.com
+DOMAIN-SUFFIX,lanzouk.com
+DOMAIN-SUFFIX,lanzoul.com
+DOMAIN-SUFFIX,lanzoum.com
+DOMAIN-SUFFIX,lanzouo.com
+DOMAIN-SUFFIX,lanzoup.com
+DOMAIN-SUFFIX,lanzouq.com
+DOMAIN-SUFFIX,lanzous.com
+DOMAIN-SUFFIX,lanzout.com
+DOMAIN-SUFFIX,lanzouu.com
+DOMAIN-SUFFIX,lanzouv.com
+DOMAIN-SUFFIX,lanzouw.com
+DOMAIN-SUFFIX,lanzoux.com
+DOMAIN-SUFFIX,lanzouy.com
+DOMAIN-SUFFIX,lanzov.com
+DOMAIN-SUFFIX,lanzv.com
+DOMAIN-SUFFIX,ulanzou.com
+DOMAIN-SUFFIX,webgetstore.com
+DOMAIN-SUFFIX,woozooo.com
+DOMAIN-SUFFIX,wwentua.com
+
+
+# NAME: LeJu
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:44
+# DOMAIN-SUFFIX: 20
+# TOTAL: 20
+DOMAIN-SUFFIX,91leju.cn
+DOMAIN-SUFFIX,91leju.com.cn
+DOMAIN-SUFFIX,91leju.net
+DOMAIN-SUFFIX,dichan.com
+DOMAIN-SUFFIX,dichan.net
+DOMAIN-SUFFIX,esfimg.com
+DOMAIN-SUFFIX,fangdudu.com
+DOMAIN-SUFFIX,houseimg.com
+DOMAIN-SUFFIX,ileju.cn
+DOMAIN-SUFFIX,ileju.com
+DOMAIN-SUFFIX,jiajuimg.com
+DOMAIN-SUFFIX,leju.cn
+DOMAIN-SUFFIX,leju.com
+DOMAIN-SUFFIX,ljimg.com
+DOMAIN-SUFFIX,quanup.com
+DOMAIN-SUFFIX,sousea.com
+DOMAIN-SUFFIX,xhaiwai.com
+DOMAIN-SUFFIX,xhwhouse.cn
+DOMAIN-SUFFIX,xhwhouse.com
+DOMAIN-SUFFIX,yiqisooimg.com
+
+
+# NAME: Maocloud
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:44
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+DOMAIN-SUFFIX,maoyun.com
+DOMAIN-SUFFIX,maoyuncloud.cn
+DOMAIN-SUFFIX,maoyuncloud.com
+
+
+# NAME: LvMiLianChuang
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:44
+# DOMAIN-SUFFIX: 6
+# TOTAL: 6
+DOMAIN-SUFFIX,aqara.cn
+DOMAIN-SUFFIX,aqara.com
+DOMAIN-SUFFIX,aqara.com.cn
+DOMAIN-SUFFIX,lumiunited.cn
+DOMAIN-SUFFIX,lumiunited.com
+DOMAIN-SUFFIX,lumiunited.com.cn
+
+
+# NAME: ZhongYuanYiShang
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:49
+# DOMAIN-SUFFIX: 9
+# TOTAL: 9
+DOMAIN-SUFFIX,bjesound.com
+DOMAIN-SUFFIX,earlymen.com.cn
+DOMAIN-SUFFIX,esound.cn
+DOMAIN-SUFFIX,esound.net.cn
+DOMAIN-SUFFIX,esound.vip
+DOMAIN-SUFFIX,flymodem.cn
+DOMAIN-SUFFIX,flymodem.com.cn
+DOMAIN-SUFFIX,flymodem.net
+DOMAIN-SUFFIX,iotboss.cn
+
+
+# NAME: YouMengChuangXiang
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:48
+# DOMAIN-SUFFIX: 21
+# TOTAL: 21
+DOMAIN-SUFFIX,97973.com
+DOMAIN-SUFFIX,97973.com.cn
+DOMAIN-SUFFIX,carrydj.com
+DOMAIN-SUFFIX,fldvz.cn
+DOMAIN-SUFFIX,hj-dog.com
+DOMAIN-SUFFIX,jyjqdn.cn
+DOMAIN-SUFFIX,lccnxn.cn
+DOMAIN-SUFFIX,ljnvb.cn
+DOMAIN-SUFFIX,lzcmm9x.cn
+DOMAIN-SUFFIX,maozhuar.cn
+DOMAIN-SUFFIX,maozhuar.com
+DOMAIN-SUFFIX,maozhuar.com.cn
+DOMAIN-SUFFIX,shsyfzq.cn
+DOMAIN-SUFFIX,smmdn.cn
+DOMAIN-SUFFIX,sylqmn.cn
+DOMAIN-SUFFIX,xcmy0.cn
+DOMAIN-SUFFIX,xuanyaodang.cn
+DOMAIN-SUFFIX,xuanyaodang.com
+DOMAIN-SUFFIX,xuanyaodang.net
+DOMAIN-SUFFIX,yblxyp.cn
+DOMAIN-SUFFIX,youmengchuangxiang.com
+
+
+# NAME: YiChe
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:48
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
+DOMAIN-SUFFIX,bitauto.com
+DOMAIN-SUFFIX,bitautoimg.com
+DOMAIN-SUFFIX,cheyisou.com
+DOMAIN-SUFFIX,yccdn.com
+DOMAIN-SUFFIX,yiche.com
+
+
+# NAME: Shanling
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:45
+# DOMAIN-SUFFIX: 2
+# TOTAL: 2
+DOMAIN-SUFFIX,onixhiend.com
+DOMAIN-SUFFIX,shanling.com
+
+
+# NAME: 178
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:37
+# DOMAIN-SUFFIX: 22
+# TOTAL: 22
+DOMAIN-SUFFIX,178.com
+DOMAIN-SUFFIX,178.net
+DOMAIN-SUFFIX,766.com
+DOMAIN-SUFFIX,766app.com
+DOMAIN-SUFFIX,766er.com
+DOMAIN-SUFFIX,766test.com
+DOMAIN-SUFFIX,a9vg.com
+DOMAIN-SUFFIX,bigccq.cn
+DOMAIN-SUFFIX,bjyueshenzj.com
+DOMAIN-SUFFIX,carry6.cn
+DOMAIN-SUFFIX,carry6.com
+DOMAIN-SUFFIX,carry6.net
+DOMAIN-SUFFIX,dospy.com
+DOMAIN-SUFFIX,nga.cn
+DOMAIN-SUFFIX,nga.wiki
+DOMAIN-SUFFIX,ngabbs.com
+DOMAIN-SUFFIX,ngacn.cc
+DOMAIN-SUFFIX,psnine.com
+DOMAIN-SUFFIX,stargame.com
+DOMAIN-SUFFIX,tgbus.com
+DOMAIN-SUFFIX,tgbusdata.cn
+DOMAIN-SUFFIX,xyous.com
+
+
+# Google China
+DOMAIN-SUFFIX,265.com
+DOMAIN-SUFFIX,2mdn.net
+DOMAIN-SUFFIX,alt1-mtalk.google.com
+DOMAIN-SUFFIX,alt2-mtalk.google.com
+DOMAIN-SUFFIX,alt3-mtalk.google.com
+DOMAIN-SUFFIX,alt4-mtalk.google.com
+DOMAIN-SUFFIX,alt5-mtalk.google.com
+DOMAIN-SUFFIX,alt6-mtalk.google.com
+DOMAIN-SUFFIX,alt7-mtalk.google.com
+DOMAIN-SUFFIX,alt8-mtalk.google.com
+DOMAIN-SUFFIX,app-measurement.com
+DOMAIN-SUFFIX,cache.pack.google.com
+DOMAIN-SUFFIX,clickserve.dartsearch.net
+DOMAIN-SUFFIX,crl.pki.goog
+DOMAIN-SUFFIX,dl.google.com
+DOMAIN-SUFFIX,dl.l.google.com
+DOMAIN-SUFFIX,googletagmanager.com
+DOMAIN-SUFFIX,googletagservices.com
+DOMAIN-SUFFIX,gtm.oasisfeng.com
+DOMAIN-SUFFIX,mtalk.google.com
+DOMAIN-SUFFIX,ocsp.pki.goog
+DOMAIN-SUFFIX,recaptcha.net
+DOMAIN-SUFFIX,safebrowsing-cache.google.com
+DOMAIN-SUFFIX,settings.crashlytics.com
+DOMAIN-SUFFIX,ssl-google-analytics.l.google.com
+DOMAIN-SUFFIX,toolbarqueries.google.com
+DOMAIN-SUFFIX,tools.google.com
+DOMAIN-SUFFIX,tools.l.google.com
+DOMAIN-SUFFIX,www-googletagmanager.l.google.com
+
+
+# NAME: SteamCN
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:14:50
+# DOMAIN: 12
+# DOMAIN-SUFFIX: 5
+# TOTAL: 17
+DOMAIN,csgo.wmsj.cn
+DOMAIN,dl.steam.clngaa.com
+DOMAIN,dl.steam.ksyna.com
+DOMAIN,dota2.wmsj.cn
+DOMAIN,st.dl.bscstorage.net
+DOMAIN,st.dl.eccdnx.com
+DOMAIN,st.dl.pinyuncloud.com
+DOMAIN,steampipe.steamcontent.tnkjmec.com
+DOMAIN,steampowered.com.8686c.com
+DOMAIN,steamstatic.com.8686c.com
+DOMAIN,wmsjsteam.com
+DOMAIN,xz.pphimalayanrt.com
+DOMAIN-SUFFIX,cm.steampowered.com
+DOMAIN-SUFFIX,steamchina.com
+DOMAIN-SUFFIX,steamcontent.com
+DOMAIN-SUFFIX,steamserver.net
+DOMAIN-SUFFIX,steamusercontent.com
