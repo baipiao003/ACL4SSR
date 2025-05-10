@@ -21,7 +21,30 @@ DOMAIN-SUFFIX,kktv.com.tw
 DOMAIN-SUFFIX,kktv.me
 
 
-# Error fetching https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PrimeVideo/PrimeVideo.list
+# NAME: PrimeVideo
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:59
+# DOMAIN: 9
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 6
+# TOTAL: 16
+DOMAIN,atv-ps.amazon.com
+DOMAIN,avodmp4s3ww-a.akamaihd.net
+DOMAIN,d1v5ir2lpwr8os.cloudfront.net
+DOMAIN,d22qjgkvxw22r6.cloudfront.net
+DOMAIN,d25xi40x97liuc.cloudfront.net
+DOMAIN,d27xxe7juh1us6.cloudfront.net
+DOMAIN,dmqdd6hw24ucf.cloudfront.net
+DOMAIN,fls-na.amazon.com
+DOMAIN,www.amazon.com
+DOMAIN-SUFFIX,aiv-cdn.net
+DOMAIN-SUFFIX,aiv-delivery.net
+DOMAIN-SUFFIX,amazonvideo.com
+DOMAIN-SUFFIX,media-amazon.com
+DOMAIN-SUFFIX,primevideo.com
+DOMAIN-SUFFIX,pv-cdn.net
+DOMAIN-KEYWORD,avoddashs
 
 
 # NAME: USMedia
@@ -210,7 +233,20 @@ DOMAIN-SUFFIX,foxdcg.com
 DOMAIN-SUFFIX,uplynk.com
 
 
-# Error fetching https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/FOXPlus/FOXPlus.list
+# NAME: FOXPlus
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-01-08 16:01:08
+# DOMAIN: 6
+# DOMAIN-SUFFIX: 1
+# TOTAL: 7
+DOMAIN,cdn-fox-networks-group-green.akamaized.net
+DOMAIN,d3cv4a9a9wh0bt.cloudfront.net
+DOMAIN,foxsports01-i.akamaihd.net
+DOMAIN,foxsports02-i.akamaihd.net
+DOMAIN,foxsports03-i.akamaihd.net
+DOMAIN,staticasiafox.akamaized.net
+DOMAIN-SUFFIX,foxplus.com
 
 
 # NAME: Spotify
