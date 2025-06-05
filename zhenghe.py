@@ -21,7 +21,7 @@ for idx, filename in enumerate(txt_files):
     output_filename = os.path.splitext(filename)[0] + ".list"
     output_path = os.path.join(output_dir, output_filename)
 
-    # 添加段落空行（首项不加）
+    # 添加空行（首项不加）
     if idx != 0:
         log("")
 
@@ -56,7 +56,6 @@ for idx, filename in enumerate(txt_files):
     else:
         log(f"✅ 无需更改源文件（无重复或内容一致）：{input_path}")
 
-    # 📄处理 .list 合并
     log(f"📄 正在处理：{filename}")
     log(f"🔍 原始链接数：{len(original_urls)}，去重后：{len(urls)}，重复链接数：{duplicates_count}")
 
@@ -91,10 +90,16 @@ if has_changes:
         subprocess.run(["git", "remote", "set-url", "origin", remote_url], check=True)
 
         subprocess.run(["git", "add", "Clash/*.list"], check=True)
-        subprocess.run(["git", "commit", "-m", "🤖 自动更新合并规则文件并去重源文件 [skip ci]"], check=True)
-        subprocess.run(["git", "push"], check=True)
 
-        log("🚀 更改已提交并推送到远程仓库。")
+        # ✅ 检查是否有实际变更再提交
+        diff_result = subprocess.run(["git", "diff", "--cached", "--quiet"])
+        if diff_result.returncode != 0:
+            subprocess.run(["git", "commit", "-m", "🤖 自动更新合并规则文件并去重源文件 [skip ci]"], check=True)
+            subprocess.run(["git", "push"], check=True)
+            log("🚀 更改已提交并推送到远程仓库。")
+        else:
+            log("✅ 无需提交：git add 后无实际变更。")
+
     except subprocess.CalledProcessError as e:
         log(f"❌ Git 操作失败：{e}")
 else:
