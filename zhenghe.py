@@ -1,6 +1,7 @@
 import os
 import subprocess
 import requests
+from datetime import datetime
 
 rules_dir = "rules"
 output_dir = "Clash"
@@ -39,9 +40,10 @@ for filename in os.listdir(rules_dir):
 
         duplicates_count = len(original_urls) - len(urls)
 
+        # 重新组织 txt 内容（保留注释，追加去重后的链接）
         new_txt_lines = [line for line in raw_lines if line.startswith("#")]
         if urls:
-            new_txt_lines.append("")
+            new_txt_lines.append("")  # 保持空行分隔
             new_txt_lines.extend(urls)
         new_txt_content = "\n".join(new_txt_lines) + "\n"
 
@@ -78,6 +80,7 @@ for filename in os.listdir(rules_dir):
         else:
             log(f"🔄 无变更：{output_path}")
 
+# Git 提交（仅当有变更）
 if has_changes:
     try:
         subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
