@@ -8,13 +8,15 @@ on:
 jobs:
   merge:
     runs-on: ubuntu-latest
+    fail-fast: false
 
     steps:
       - name: Checkout clash branch
         uses: actions/checkout@v3
         with:
           ref: clash
-          persist-credentials: false  # 不让 actions 默认添加 token，我们手动传
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,3 +31,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python zhenghe.py
+        shell: bash
