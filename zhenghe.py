@@ -8,7 +8,6 @@ output_dir = "Clash"
 
 os.makedirs(output_dir, exist_ok=True)
 
-has_changes = False
 log_lines = []
 
 def log(msg):
@@ -54,7 +53,6 @@ for filename in os.listdir(rules_dir):
             with open(input_path, "w", encoding="utf-8") as f_out:
                 f_out.write(new_txt_content)
             log(f"✏️ 已去重并更新源文件：{input_path}")
-            has_changes = True
         else:
             log(f"✅ 无需更改源文件（无重复或内容一致）：{input_path}")
 
@@ -76,27 +74,29 @@ for filename in os.listdir(rules_dir):
             with open(output_path, "w", encoding="utf-8") as out_f:
                 out_f.write(new_content)
             log(f"✅ 已更新文件：{output_path}")
-            has_changes = True
         else:
             log(f"🔄 无变更：{output_path}")
 
-# Git 提交（仅当有变更）
-if has_changes:
-    try:
-        subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
-        subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
+# Git 提交（只在 staged 有变更时执行）
+try:
+    subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
+    subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
 
-        token = os.getenv("GITHUB_TOKEN")
-        repo = os.getenv("GITHUB_REPOSITORY")
-        remote_url = f"https://x-access-token:{token}@github.com/{repo}.git"
-        subprocess.run(["git", "remote", "set-url", "origin", remote_url], check=True)
+    token = os.getenv("GITHUB_TOKEN")
+    repo = os.getenv("GITHUB_REPOSITORY")
+    remote_url = f"https://x-access-token:{token}@github.com/{repo}.git"
+    subprocess.run(["git", "remote", "set-url", "origin", remote_url], check=True)
 
-        subprocess.run(["git", "add", "Clash/*.list", "rules/*.txt"], check=True)
+    subprocess.run(["git", "add", "Clash/*.list", "rules/*.txt"], check=True)
+
+    # 判断是否有实际变更
+    result = subprocess.run(["git", "diff", "--cached", "--quiet"])
+    if result.returncode != 0:
         subprocess.run(["git", "commit", "-m", "🤖 自动更新合并规则文件并去重源文件 [skip ci]"], check=True)
         subprocess.run(["git", "push"], check=True)
-
         log("🚀 更改已提交并推送到远程仓库。")
-    except subprocess.CalledProcessError as e:
-        log(f"❌ Git 操作失败：{e}")
-else:
-    log("✅ 无需提交：没有任何更改。")
+    else:
+        log("✅ 无需提交：没有任何实际更改。")
+
+except subprocess.CalledProcessError as e:
+    log(f"❌ Git 操作失败：{e}")
