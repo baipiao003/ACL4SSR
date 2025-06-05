@@ -1,18 +1,11 @@
 import os
 import subprocess
 import requests
-import re
-from datetime import datetime
 
 rules_dir = "rules"
 output_dir = "Clash"
-logs_dir = "logs"
 
 os.makedirs(output_dir, exist_ok=True)
-os.makedirs(logs_dir, exist_ok=True)
-
-today = datetime.now().strftime("%Y-%m-%d")
-log_file = os.path.join(logs_dir, f"merge-{today}.log")
 
 has_changes = False
 log_lines = []
@@ -36,10 +29,8 @@ for filename in os.listdir(rules_dir):
         with open(input_path, "r", encoding="utf-8") as f:
             raw_lines = [line.strip() for line in f if line.strip()]
 
-        # 原始链接排除注释
         original_urls = [line for line in raw_lines if not line.startswith("#")]
 
-        # 去重链接
         urls = []
         for url in original_urls:
             if url not in seen_urls:
@@ -48,14 +39,12 @@ for filename in os.listdir(rules_dir):
 
         duplicates_count = len(original_urls) - len(urls)
 
-        # 生成新的 .txt 内容
         new_txt_lines = [line for line in raw_lines if line.startswith("#")]
         if urls:
             new_txt_lines.append("")
             new_txt_lines.extend(urls)
         new_txt_content = "\n".join(new_txt_lines) + "\n"
 
-        # 检查是否需要写回 .txt
         with open(input_path, "r", encoding="utf-8") as f_check:
             old_txt_content = f_check.read()
 
@@ -70,7 +59,6 @@ for filename in os.listdir(rules_dir):
         log(f"\n📄 正在处理：{filename}")
         log(f"🔍 原始链接数：{len(original_urls)}，去重后：{len(urls)}，重复链接数：{duplicates_count}")
 
-        # 合并下载内容
         for url in urls:
             try:
                 response = requests.get(url, timeout=10)
@@ -90,7 +78,6 @@ for filename in os.listdir(rules_dir):
         else:
             log(f"🔄 无变更：{output_path}")
 
-# Git 提交
 if has_changes:
     try:
         subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
@@ -110,30 +97,3 @@ if has_changes:
         log(f"❌ Git 操作失败：{e}")
 else:
     log("✅ 无需提交：没有任何更改。")
-
-# 写入日志
-with open(log_file, "w", encoding="utf-8") as f:
-    f.write("\n".join(log_lines))
-
-log(f"\n📝 日志已保存到 {log_file}")
-
-# 日志清理：仅保留最近 10 条（按日志文件名日期排序）
-pattern = re.compile(r"merge-(\d{4}-\d{2}-\d{2})\.log")
-log_files = []
-
-for f in os.listdir(logs_dir):
-    match = pattern.fullmatch(f)
-    if match:
-        try:
-            date_obj = datetime.strptime(match.group(1), "%Y-%m-%d")
-            log_files.append((date_obj, os.path.join(logs_dir, f)))
-        except ValueError:
-            continue
-
-log_files.sort(reverse=True)
-for _, old_log in log_files[10:]:
-    try:
-        os.remove(old_log)
-        log(f"🧹 已删除旧日志：{old_log}")
-    except Exception as e:
-        log(f"⚠️ 删除日志失败：{old_log}，原因：{e}")
