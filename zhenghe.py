@@ -1,13 +1,23 @@
 import os
 import subprocess
 import requests
+from datetime import datetime
 
 rules_dir = "rules"
 output_dir = "Clash"
+log_file = "merge.log"
 
 os.makedirs(output_dir, exist_ok=True)
 
 has_changes = False
+log_lines = []
+
+def log(msg):
+    print(msg)
+    log_lines.append(msg)
+
+log(f"📌 合并任务开始时间：{datetime.now().isoformat()}")
+log("==========================================")
 
 for filename in os.listdir(rules_dir):
     if filename.endswith(".txt"):
@@ -16,9 +26,23 @@ for filename in os.listdir(rules_dir):
         output_path = os.path.join(output_dir, output_filename)
 
         merged_content = []
+        seen_urls = set()
 
         with open(input_path, "r", encoding="utf-8") as f:
-            urls = [line.strip() for line in f if line.strip()]
+            raw_lines = [line.strip() for line in f if line.strip()]
+
+        original_urls = [line for line in raw_lines if not line.startswith("#")]
+
+        urls = []
+        for url in original_urls:
+            if url not in seen_urls:
+                seen_urls.add(url)
+                urls.append(url)
+
+        duplicates_count = len(original_urls) - len(urls)
+
+        log(f"\n📄 正在处理：{filename}")
+        log(f"🔍 原始链接数：{len(original_urls)}，去重后：{len(urls)}，重复链接数：{duplicates_count}")
 
         for url in urls:
             try:
@@ -26,7 +50,8 @@ for filename in os.listdir(rules_dir):
                 response.raise_for_status()
                 merged_content.append(response.text)
             except Exception as e:
-                print(f"⚠️ 无法读取 {url}：{e}")
+                err_msg = f"⚠️ 无法读取 {url}：{e}"
+                log(err_msg)
                 merged_content.append(f"# Error fetching {url}\n")
 
         new_content = "\n\n".join(merged_content)
@@ -34,10 +59,10 @@ for filename in os.listdir(rules_dir):
         if not os.path.exists(output_path) or open(output_path, "r", encoding="utf-8").read() != new_content:
             with open(output_path, "w", encoding="utf-8") as out_f:
                 out_f.write(new_content)
-            print(f"✅ 已更新文件：{output_path}")
+            log(f"✅ 已更新文件：{output_path}")
             has_changes = True
         else:
-            print(f"🔄 无变更：{output_path}")
+            log(f"🔄 无变更：{output_path}")
 
 if has_changes:
     try:
@@ -53,8 +78,14 @@ if has_changes:
         subprocess.run(["git", "commit", "-m", "🤖 自动更新合并规则文件 [skip ci]"], check=True)
         subprocess.run(["git", "push"], check=True)
 
-        print("🚀 更改已提交并推送到远程仓库。")
+        log("🚀 更改已提交并推送到远程仓库。")
     except subprocess.CalledProcessError as e:
-        print(f"❌ Git 操作失败：{e}")
+        log(f"❌ Git 操作失败：{e}")
 else:
-    print("✅ 无需提交：没有任何更改。")
+    log("✅ 无需提交：没有任何更改。")
+
+# 写入日志文件
+with open(log_file, "w", encoding="utf-8") as f:
+    f.write("\n".join(log_lines))
+
+log(f"\n📝 日志已保存到 {log_file}")
