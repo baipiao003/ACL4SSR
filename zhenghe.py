@@ -49,6 +49,13 @@ for idx, filename in enumerate(txt_files):
     new_lines = comment_lines + ([""] if comment_lines and deduped_urls else []) + deduped_urls
     new_txt_content = "\n".join(new_lines) + "\n"
 
+    log(f"📄 正在处理：{filename}")
+    if duplicates_count > 0:
+        log(f"🧹 去除重复链接，数量：{duplicates_count}")
+    else:
+        log(f"✅ 链接无重复。")
+    log(f"🔍 原始链接数：{len(url_lines)}，去重后：{len(deduped_urls)}")
+
     # ✏️ 仅在内容变更时写入 .txt 文件
     with open(input_path, "r", encoding="utf-8") as f_in:
         original_txt_content = f_in.read()
@@ -61,13 +68,6 @@ for idx, filename in enumerate(txt_files):
         has_changes = True
     else:
         log(f"🔄 无需更新源文件：{input_path}")
-
-    log(f"📄 正在处理：{filename}")
-    if duplicates_count > 0:
-        log(f"🧹 去除重复链接，数量：{duplicates_count}")
-    else:
-        log(f"✅ 链接无重复。")
-    log(f"🔍 原始链接数：{len(url_lines)}，去重后：{len(deduped_urls)}")
 
     # 🌐 下载并合并所有 URL 内容
     merged_content = []
