@@ -63,6 +63,7 @@ for idx, filename in enumerate(txt_files):
         log(f"✅ 链接无重复。")
 
     log(f"🔍 原始链接数：{len(url_lines)}，去重后：{len(deduped_urls)}")
+    log(f"✅ 强制覆盖写入已完成：{input_path}")
 
     # 🌐 下载并合并所有 URL 内容
     merged_content = []
@@ -98,7 +99,6 @@ if has_changes:
         remote_url = f"https://x-access-token:{token}@github.com/{repo}.git"
         subprocess.run(["git", "remote", "set-url", "origin", remote_url], check=True)
 
-        # ✅ 所有文件都已 add，无需再次 add
         result = subprocess.run(["git", "diff", "--cached", "--quiet"])
         if result.returncode != 0:
             subprocess.run(["git", "commit", "-m", "🤖 自动更新合并规则文件并去重源文件 [skip ci]"], check=True)
