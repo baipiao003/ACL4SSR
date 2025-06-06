@@ -2,7 +2,6 @@ import os
 import subprocess
 import requests
 from datetime import datetime
-import difflib
 
 rules_dir = "rules"
 output_dir = "Clash"
@@ -25,59 +24,42 @@ for idx, filename in enumerate(txt_files):
     if idx != 0:
         log("")
 
-    merged_content = []
-    seen_urls = set()
-
-    # 读取并清理空行
+    # 读取原文件所有行（保留注释，去除空行）
     with open(input_path, "r", encoding="utf-8") as f:
-        raw_lines = [line.strip() for line in f]
-        raw_lines = [line for line in raw_lines if line]
+        raw_lines = [line.rstrip("\r\n") for line in f]
 
-    original_urls = [line for line in raw_lines if not line.startswith("#")]
+    comment_lines = [line for line in raw_lines if line.startswith("#")]
+    url_lines = [line for line in raw_lines if line and not line.startswith("#")]
 
-    urls = []
-    for url in original_urls:
+    seen_urls = set()
+    unique_urls = []
+    for url in url_lines:
         if url not in seen_urls:
             seen_urls.add(url)
-            urls.append(url)
-    duplicates_count = len(original_urls) - len(urls)
+            unique_urls.append(url)
 
-    # 构造新的 txt 内容，确保没有首行空行
-    comment_lines = [line for line in raw_lines if line.startswith("#")]
-    new_txt_lines = []
+    duplicates_count = len(url_lines) - len(unique_urls)
 
-    if comment_lines:
-        new_txt_lines.extend(comment_lines)
-        if urls:
+    if duplicates_count > 0:
+        # 有重复，重写覆盖原文件
+        new_txt_lines = comment_lines
+        if comment_lines and unique_urls:
             new_txt_lines.append("")
-    if urls:
-        new_txt_lines.extend(urls)
+        new_txt_lines.extend(unique_urls)
 
-    new_txt_content = "\n".join(new_txt_lines).lstrip("\n") + "\n"
-
-    # 读取旧内容，不做 strip（确保真实还原换行差异）
-    with open(input_path, "r", encoding="utf-8") as f_check:
-        old_txt_content = f_check.read()
-
-    if new_txt_content != old_txt_content:
-        # 可选：输出差异内容
-        diff = difflib.unified_diff(
-            old_txt_content.splitlines(), new_txt_content.splitlines(),
-            fromfile="旧文件", tofile="新文件", lineterm=""
-        )
-        log("🛠 检测到去重后内容变更，准备写入：")
-        print("\n".join(diff))
+        new_txt_content = "\n".join(new_txt_lines).lstrip("\n") + "\n"
 
         with open(input_path, "w", encoding="utf-8", newline="\n") as f_out:
             f_out.write(new_txt_content)
-        log(f"✏️ 已去重并更新源文件：{input_path}")
+        log(f"✏️ 去重完成，更新源文件：{input_path}")
     else:
-        log(f"✅ 无需更改源文件（无重复或内容一致）：{input_path}")
+        log(f"✅ 无重复，无需修改：{input_path}")
 
     log(f"📄 正在处理：{filename}")
-    log(f"🔍 原始链接数：{len(original_urls)}，去重后：{len(urls)}，重复链接数：{duplicates_count}")
+    log(f"🔍 原始链接数：{len(url_lines)}，去重后：{len(unique_urls)}，重复链接数：{duplicates_count}")
 
-    for url in urls:
+    merged_content = []
+    for url in unique_urls:
         try:
             response = requests.get(url, timeout=10)
             response.raise_for_status()
@@ -113,10 +95,9 @@ if has_changes:
         if diff_result.returncode != 0:
             subprocess.run(["git", "commit", "-m", "🤖 自动更新合并规则文件并去重源文件 [skip ci]"], check=True)
             subprocess.run(["git", "push"], check=True)
-            log("")  # 添加空行
+            log("")
             log("🚀 更改已提交并推送到远程仓库。")
         else:
-            log("")  # 添加空行
             log("✅ 无需提交：git add 后无实际变更。")
 
     except subprocess.CalledProcessError as e:
