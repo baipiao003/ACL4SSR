@@ -40,10 +40,17 @@ for idx, filename in enumerate(txt_files):
             urls.append(url)
     duplicates_count = len(original_urls) - len(urls)
 
-    new_txt_lines = [line for line in raw_lines if line.startswith("#")]
+    # 修复首行空白问题
+    comment_lines = [line for line in raw_lines if line.startswith("#")]
+    new_txt_lines = []
+
+    if comment_lines:
+        new_txt_lines.extend(comment_lines)
+        if urls:
+            new_txt_lines.append("")  # 注释和 URL 之间插入空行
     if urls:
-        new_txt_lines.append("")
         new_txt_lines.extend(urls)
+
     new_txt_content = "\n".join(new_txt_lines) + "\n"
 
     with open(input_path, "r", encoding="utf-8") as f_check:
@@ -96,6 +103,7 @@ if has_changes:
         if diff_result.returncode != 0:
             subprocess.run(["git", "commit", "-m", "🤖 自动更新合并规则文件并去重源文件 [skip ci]"], check=True)
             subprocess.run(["git", "push"], check=True)
+            log("")  # 插入空行
             log("🚀 更改已提交并推送到远程仓库。")
         else:
             log("✅ 无需提交：git add 后无实际变更。")
