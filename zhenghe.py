@@ -49,21 +49,25 @@ for idx, filename in enumerate(txt_files):
     new_lines = comment_lines + ([""] if comment_lines and deduped_urls else []) + deduped_urls
     new_txt_content = "\n".join(new_lines) + "\n"
 
-    # ✏️ 强制保存 .txt 文件（无论是否变更）
-    with open(input_path, "w", encoding="utf-8", newline="\n") as f_out:
-        f_out.write(new_txt_content)
+    # ✏️ 仅在内容变更时写入 .txt 文件
+    with open(input_path, "r", encoding="utf-8") as f_in:
+        original_txt_content = f_in.read()
 
-    # ➕ 将 .txt 文件添加到 Git 暂存区
-    subprocess.run(["git", "add", input_path], check=True)
+    if original_txt_content != new_txt_content:
+        with open(input_path, "w", encoding="utf-8", newline="\n") as f_out:
+            f_out.write(new_txt_content)
+        subprocess.run(["git", "add", input_path], check=True)
+        log(f"✅ 已更新源文件：{input_path}")
+        has_changes = True
+    else:
+        log(f"🔄 无需更新源文件：{input_path}")
 
     log(f"📄 正在处理：{filename}")
     if duplicates_count > 0:
         log(f"🧹 去除重复链接，数量：{duplicates_count}")
     else:
         log(f"✅ 链接无重复。")
-
     log(f"🔍 原始链接数：{len(url_lines)}，去重后：{len(deduped_urls)}")
-    log(f"✅ 强制覆盖写入已完成：{input_path}")
 
     # 🌐 下载并合并所有 URL 内容
     merged_content = []
@@ -84,9 +88,9 @@ for idx, filename in enumerate(txt_files):
             f_out.write(final_content)
         log(f"✅ 已更新文件：{output_path}")
         has_changes = True
-        subprocess.run(["git", "add", output_path], check=True)  # 添加输出文件到 Git
+        subprocess.run(["git", "add", output_path], check=True)
     else:
-        log(f"🔄 无变更：{output_path}")
+        log(f"🔄 无需更新：{output_path}")
 
 # 🧾 Git 自动提交（如有文件更新）
 if has_changes:
