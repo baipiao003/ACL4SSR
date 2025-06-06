@@ -2,6 +2,7 @@ import os
 import subprocess
 import requests
 from datetime import datetime
+import difflib
 
 rules_dir = "rules"
 output_dir = "Clash"
@@ -54,13 +55,20 @@ for idx, filename in enumerate(txt_files):
 
     new_txt_content = "\n".join(new_txt_lines).lstrip("\n") + "\n"
 
-    # 标准化旧内容（剥除空行和多余换行）
+    # 读取旧内容，不做 strip（确保真实还原换行差异）
     with open(input_path, "r", encoding="utf-8") as f_check:
-        old_txt_lines = [line.strip() for line in f_check if line.strip()]
-    old_txt_content = "\n".join(old_txt_lines).lstrip("\n") + "\n"
+        old_txt_content = f_check.read()
 
     if new_txt_content != old_txt_content:
-        with open(input_path, "w", encoding="utf-8") as f_out:
+        # 可选：输出差异内容
+        diff = difflib.unified_diff(
+            old_txt_content.splitlines(), new_txt_content.splitlines(),
+            fromfile="旧文件", tofile="新文件", lineterm=""
+        )
+        log("🛠 检测到去重后内容变更，准备写入：")
+        print("\n".join(diff))
+
+        with open(input_path, "w", encoding="utf-8", newline="\n") as f_out:
             f_out.write(new_txt_content)
         log(f"✏️ 已去重并更新源文件：{input_path}")
     else:
@@ -108,6 +116,7 @@ if has_changes:
             log("")  # 添加空行
             log("🚀 更改已提交并推送到远程仓库。")
         else:
+            log("")  # 添加空行
             log("✅ 无需提交：git add 后无实际变更。")
 
     except subprocess.CalledProcessError as e:
