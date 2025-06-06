@@ -79,8 +79,9 @@ for idx, filename in enumerate(txt_files):
         except Exception as e:
             log(f"⚠️ 无法读取 {url}：{e}")
             merged_content.append(f"# Error fetching {url}\n")
-
-    final_content = "\n\n".join(merged_content)
+            
+    # 改这里，改为一个换行分隔
+    final_content = "\n".join(merged_content)
 
     # 📤 写入输出 .list 文件（仅在内容变更时写入），规范换行符和空白差异避免误判
     final_normalized = final_content.strip().replace("\r\n", "\n").replace("\r", "\n")
@@ -114,13 +115,13 @@ if has_changes:
         if result.returncode != 0:
             subprocess.run(["git", "commit", "-m", "🤖 自动更新合并规则文件并去重源文件 [skip ci]"], check=True)
             subprocess.run(["git", "push"], check=True)
-            log("")
+            log("")  # 美观换行
             log("🚀 更改已提交并推送到远程仓库。")
         else:
-            log("")
+            log("")  # 美观换行
             log("✅ 无需提交：没有实际更改。")
     except subprocess.CalledProcessError as e:
         log(f"❌ Git 操作失败：{e}")
 else:
-    log("")
+    log("")  # 美观换行
     log("✅ 无需提交：没有任何更改。")
