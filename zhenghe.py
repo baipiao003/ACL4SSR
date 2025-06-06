@@ -27,12 +27,11 @@ for idx, filename in enumerate(txt_files):
     merged_content = []
     seen_urls = set()
 
-    # 清理空行，剥离前后空白字符
+    # 读取并清理空行
     with open(input_path, "r", encoding="utf-8") as f:
         raw_lines = [line.strip() for line in f]
         raw_lines = [line for line in raw_lines if line]
 
-    # 提取 URL（忽略注释）
     original_urls = [line for line in raw_lines if not line.startswith("#")]
 
     urls = []
@@ -42,7 +41,7 @@ for idx, filename in enumerate(txt_files):
             urls.append(url)
     duplicates_count = len(original_urls) - len(urls)
 
-    # 重新构造内容（无空白行起始）
+    # 构造新的 txt 内容，确保没有首行空行
     comment_lines = [line for line in raw_lines if line.startswith("#")]
     new_txt_lines = []
 
@@ -53,11 +52,12 @@ for idx, filename in enumerate(txt_files):
     if urls:
         new_txt_lines.extend(urls)
 
-    # 拼接内容，并确保首行无空行
     new_txt_content = "\n".join(new_txt_lines).lstrip("\n") + "\n"
 
+    # 标准化旧内容（剥除空行和多余换行）
     with open(input_path, "r", encoding="utf-8") as f_check:
-        old_txt_content = f_check.read()
+        old_txt_lines = [line.strip() for line in f_check if line.strip()]
+    old_txt_content = "\n".join(old_txt_lines).lstrip("\n") + "\n"
 
     if new_txt_content != old_txt_content:
         with open(input_path, "w", encoding="utf-8") as f_out:
@@ -105,7 +105,7 @@ if has_changes:
         if diff_result.returncode != 0:
             subprocess.run(["git", "commit", "-m", "🤖 自动更新合并规则文件并去重源文件 [skip ci]"], check=True)
             subprocess.run(["git", "push"], check=True)
-            log("")  # 插入空行
+            log("")  # 添加空行
             log("🚀 更改已提交并推送到远程仓库。")
         else:
             log("✅ 无需提交：git add 后无实际变更。")
