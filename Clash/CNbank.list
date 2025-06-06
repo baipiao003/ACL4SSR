@@ -1,7 +1,7 @@
 # NAME: ABC
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:38
+# UPDATED: 2025-06-06 09:17:31
 # DOMAIN-SUFFIX: 6
 # TOTAL: 6
 DOMAIN-SUFFIX,95599.cn
@@ -15,7 +15,7 @@ DOMAIN-SUFFIX,openaboc.com.cn
 # NAME: AliPay
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:38
+# UPDATED: 2025-06-06 09:17:31
 # DOMAIN-SUFFIX: 21
 # TOTAL: 21
 DOMAIN-SUFFIX,alipay
@@ -44,7 +44,7 @@ DOMAIN-SUFFIX,sinopayment.com.cn
 # NAME: BOC
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:38
+# UPDATED: 2025-06-06 09:17:31
 # DOMAIN-SUFFIX: 22
 # TOTAL: 22
 DOMAIN-SUFFIX,bank-of-china.com
@@ -74,7 +74,7 @@ DOMAIN-SUFFIX,ftcwifi.com
 # NAME: BOCOM
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:38
+# UPDATED: 2025-06-06 09:17:31
 # DOMAIN-SUFFIX: 6
 # TOTAL: 6
 DOMAIN-SUFFIX,95559.com.cn
@@ -88,7 +88,7 @@ DOMAIN-SUFFIX,bankcomm.com.tw
 # NAME: CCB
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:39
+# UPDATED: 2025-06-06 09:17:31
 # DOMAIN-SUFFIX: 18
 # TOTAL: 18
 DOMAIN-SUFFIX,ccb-life.com.cn
@@ -114,7 +114,7 @@ DOMAIN-SUFFIX,ccbxt.com
 # NAME: CEB
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:39
+# UPDATED: 2025-06-06 09:17:31
 # DOMAIN-SUFFIX: 15
 # TOTAL: 15
 DOMAIN-SUFFIX,cebbank.com
@@ -137,7 +137,7 @@ DOMAIN-SUFFIX,sunlife-everbright.com
 # NAME: CGB
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:39
+# UPDATED: 2025-06-06 09:17:31
 # DOMAIN-SUFFIX: 4
 # TOTAL: 4
 DOMAIN-SUFFIX,95508.com
@@ -149,7 +149,7 @@ DOMAIN-SUFFIX,gdb.com.cn
 # NAME: CMB
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:39
+# UPDATED: 2025-06-06 09:17:32
 # DOMAIN-SUFFIX: 38
 # TOTAL: 38
 DOMAIN-SUFFIX,8008205555.cn
@@ -195,7 +195,7 @@ DOMAIN-SUFFIX,wuxizazhi.net.cn
 # NAME: ICBC
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:42
+# UPDATED: 2025-06-06 09:17:35
 # DOMAIN-SUFFIX: 58
 # TOTAL: 58
 DOMAIN-SUFFIX,95588.com
@@ -261,7 +261,7 @@ DOMAIN-SUFFIX,icbkus.com
 # NAME: PSBC
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:45
+# UPDATED: 2025-06-06 09:17:37
 # DOMAIN-SUFFIX: 3
 # TOTAL: 3
 DOMAIN-SUFFIX,95580.net
@@ -272,7 +272,7 @@ DOMAIN-SUFFIX,psbcoa.com.cn
 # NAME: UnionPay
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:47
+# UPDATED: 2025-06-06 09:17:39
 # DOMAIN-SUFFIX: 16
 # TOTAL: 16
 DOMAIN-SUFFIX,95516.com

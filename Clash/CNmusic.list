@@ -1,7 +1,7 @@
 # NAME: NetEaseMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:37
+# UPDATED: 2025-06-06 09:17:29
 # DOMAIN: 1
 # DOMAIN-SUFFIX: 9
 # IP-CIDR: 18
@@ -39,7 +39,7 @@ IP-CIDR,59.111.21.14/31,no-resolve
 # NAME: HibyMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:42
+# UPDATED: 2025-06-06 09:17:34
 # DOMAIN-SUFFIX: 3
 # TOTAL: 3
 DOMAIN-SUFFIX,hiby.cd
@@ -50,7 +50,7 @@ DOMAIN-SUFFIX,hibymusic.com
 # NAME: KuKeMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:43
+# UPDATED: 2025-06-06 09:17:35
 # DOMAIN-SUFFIX: 3
 # TOTAL: 3
 DOMAIN-SUFFIX,kuke.com
@@ -61,7 +61,7 @@ DOMAIN-SUFFIX,naxos.cn
 # NAME: KugouKuwo
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:43
+# UPDATED: 2025-06-06 09:17:36
 # DOMAIN-SUFFIX: 19
 # IP-CIDR: 90
 # TOTAL: 109
@@ -179,7 +179,7 @@ IP-CIDR,61.54.7.0/24,no-resolve
 # NAME: TaiheMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:46
+# UPDATED: 2025-06-06 09:17:38
 # DOMAIN-SUFFIX: 8
 # TOTAL: 8
 DOMAIN-SUFFIX,91q.com
@@ -195,7 +195,7 @@ DOMAIN-SUFFIX,youyou001.com
 # NAME: XiamiMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:47
+# UPDATED: 2025-06-06 09:17:39
 # DOMAIN-SUFFIX: 3
 # TOTAL: 3
 DOMAIN-SUFFIX,xiami.com
@@ -206,7 +206,7 @@ DOMAIN-SUFFIX,xiami.net
 # NAME: MOOMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:17:44
+# UPDATED: 2025-06-06 09:18:53
 # USER-AGENT: 2
 # TOTAL: 2
 USER-AGENT,MOO*
@@ -216,7 +216,7 @@ USER-AGENT,TencentMidasConnect*
 # NAME: Himalaya
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:37
+# UPDATED: 2025-06-06 09:17:30
 # DOMAIN-SUFFIX: 17
 # TOTAL: 17
 DOMAIN-SUFFIX,9nali.com

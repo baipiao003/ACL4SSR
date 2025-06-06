@@ -1,7 +1,7 @@
 # NAME: PandoraTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:15
+# UPDATED: 2025-06-06 09:16:59
 # DOMAIN-SUFFIX: 2
 # TOTAL: 2
 DOMAIN-SUFFIX,kmplayer.com
@@ -11,7 +11,7 @@ DOMAIN-SUFFIX,pandora.tv
 # NAME: KKTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:59
+# UPDATED: 2025-06-06 09:17:50
 # DOMAIN: 2
 # DOMAIN-SUFFIX: 2
 # TOTAL: 4
@@ -24,7 +24,7 @@ DOMAIN-SUFFIX,kktv.me
 # NAME: PrimeVideo
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:59
+# UPDATED: 2025-06-06 09:17:50
 # DOMAIN: 9
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 6
@@ -50,7 +50,7 @@ DOMAIN-KEYWORD,avoddashs
 # NAME: USMedia
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:18:30
+# UPDATED: 2025-06-06 09:20:02
 # DOMAIN: 4
 # DOMAIN-SUFFIX: 93
 # PROCESS-NAME: 3
@@ -160,7 +160,7 @@ PROCESS-NAME,com.showtime.standalone
 # NAME: UKMedia
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:18:29
+# UPDATED: 2025-06-06 09:20:02
 # DOMAIN: 6
 # DOMAIN-KEYWORD: 2
 # DOMAIN-SUFFIX: 22
@@ -200,7 +200,7 @@ DOMAIN-KEYWORD,uk-live
 # NAME: DiscoveryPlus
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:17:00
+# UPDATED: 2025-06-06 09:17:52
 # DOMAIN: 3
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 11
@@ -225,7 +225,7 @@ DOMAIN-KEYWORD,discovery.uplynk.com
 # NAME: FOXNOW
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:58
+# UPDATED: 2025-06-06 09:17:50
 # DOMAIN-SUFFIX: 3
 # TOTAL: 3
 DOMAIN-SUFFIX,fox.com
@@ -252,7 +252,7 @@ DOMAIN-SUFFIX,foxplus.com
 # NAME: Spotify
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-11-25 02:12:13
+# UPDATED: 2025-06-06 09:16:55
 # DOMAIN: 6
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 20
@@ -294,7 +294,7 @@ PROCESS-NAME,com.spotify.music
 # NAME: BBC
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:11
+# UPDATED: 2025-06-06 09:16:56
 # DOMAIN: 11
 # DOMAIN-KEYWORD: 2
 # DOMAIN-SUFFIX: 15
@@ -332,7 +332,7 @@ DOMAIN-KEYWORD,uk-live
 # NAME: TVB
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:15
+# UPDATED: 2025-06-06 09:17:00
 # DOMAIN: 3
 # DOMAIN-SUFFIX: 18
 # TOTAL: 21
@@ -362,7 +362,7 @@ DOMAIN-SUFFIX,youboranqs01.com
 # NAME: HBOHK
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:49
+# UPDATED: 2025-06-06 09:17:41
 # DOMAIN: 1
 # DOMAIN-SUFFIX: 23
 # TOTAL: 24
@@ -395,7 +395,7 @@ DOMAIN-SUFFIX,nowe.hk
 # NAME: HBOUSA
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-01-15 02:13:41
+# UPDATED: 2025-06-06 09:17:41
 # DOMAIN: 1
 # DOMAIN-SUFFIX: 9
 # PROCESS-NAME: 1
@@ -416,7 +416,7 @@ PROCESS-NAME,com.hbo.hbonow
 # NAME: Disney
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:10
+# UPDATED: 2025-06-06 09:16:55
 # DOMAIN-SUFFIX: 171
 # PROCESS-NAME: 2
 # TOTAL: 173
@@ -598,7 +598,7 @@ PROCESS-NAME,com.disney.disneyplus
 # NAME: Hulu
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:14
+# UPDATED: 2025-06-06 09:16:58
 # DOMAIN: 1
 # DOMAIN-SUFFIX: 57
 # PROCESS-NAME: 1
@@ -667,7 +667,7 @@ PROCESS-NAME,com.hulu.plus
 # NAME: HuluJP
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:49
+# UPDATED: 2025-06-06 09:17:41
 # DOMAIN-SUFFIX: 5
 # TOTAL: 5
 DOMAIN-SUFFIX,happyon.jp
@@ -680,7 +680,7 @@ DOMAIN-SUFFIX,yb.uncn.jp
 # NAME: HuluUSA
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:49
+# UPDATED: 2025-06-06 09:17:41
 # DOMAIN-SUFFIX: 52
 # PROCESS-NAME: 1
 # TOTAL: 53
@@ -742,7 +742,7 @@ PROCESS-NAME,com.hulu.plus
 # NAME: NaverTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:59
+# UPDATED: 2025-06-06 09:17:50
 # DOMAIN-SUFFIX: 2
 # TOTAL: 2
 DOMAIN-SUFFIX,naver.com
@@ -752,7 +752,7 @@ DOMAIN-SUFFIX,smartmediarep.com
 # NAME: NowE
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:59
+# UPDATED: 2025-06-06 09:17:50
 # DOMAIN-SUFFIX: 2
 # TOTAL: 2
 DOMAIN-SUFFIX,nowe.com
@@ -762,7 +762,7 @@ DOMAIN-SUFFIX,nowestatic.com
 # NAME: ParamountPlus
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:59
+# UPDATED: 2025-06-06 09:17:50
 # DOMAIN: 4
 # DOMAIN-SUFFIX: 5
 # TOTAL: 9
@@ -780,7 +780,7 @@ DOMAIN-SUFFIX,pplusstatic.com
 # NAME: TVer
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:59
+# UPDATED: 2025-06-06 09:17:51
 # DOMAIN-SUFFIX: 6
 # TOTAL: 6
 DOMAIN-SUFFIX,dogatch.jp
@@ -794,7 +794,7 @@ DOMAIN-SUFFIX,tver.jp
 # NAME: myTVSUPER
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:59
+# UPDATED: 2025-06-06 09:17:51
 # DOMAIN: 2
 # DOMAIN-KEYWORD: 2
 # DOMAIN-SUFFIX: 2
@@ -810,7 +810,7 @@ DOMAIN-KEYWORD,rthklive
 # NAME: Cake
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:17:40
+# UPDATED: 2025-06-06 09:18:50
 # DOMAIN: 4
 # DOMAIN-SUFFIX: 3
 # TOTAL: 7
@@ -826,7 +826,7 @@ DOMAIN-SUFFIX,mycake.me
 # NAME: BritboxUK
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:17:45
+# UPDATED: 2025-06-06 09:18:54
 # DOMAIN: 2
 # DOMAIN-SUFFIX: 6
 # TOTAL: 8
@@ -892,7 +892,7 @@ DOMAIN-SUFFIX,dandanplay.com
 # NAME: Overcast
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:17:00
+# UPDATED: 2025-06-06 09:17:52
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
 DOMAIN-SUFFIX,overcast.fm
@@ -901,7 +901,7 @@ DOMAIN-SUFFIX,overcast.fm
 # NAME: Peacock
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:17:01
+# UPDATED: 2025-06-06 09:17:53
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
 DOMAIN-SUFFIX,peacocktv.com
@@ -910,7 +910,7 @@ DOMAIN-SUFFIX,peacocktv.com
 # NAME: Niconico
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:11
+# UPDATED: 2025-06-06 09:16:56
 # DOMAIN-SUFFIX: 9
 # TOTAL: 9
 DOMAIN-SUFFIX,dmc.nico
@@ -927,7 +927,7 @@ DOMAIN-SUFFIX,socdm.com
 # NAME: Twitch
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:56
+# UPDATED: 2025-06-06 09:17:48
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 8
 # IP-CIDR: 11
@@ -961,7 +961,7 @@ PROCESS-NAME,tv.twitch.android.app
 # NAME: Tumblr
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:56
+# UPDATED: 2025-06-06 09:17:48
 # DOMAIN-SUFFIX: 3
 # TOTAL: 3
 DOMAIN-SUFFIX,tmblr.co
@@ -972,7 +972,7 @@ DOMAIN-SUFFIX,tumblr.com
 # NAME: Pixiv
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:54
+# UPDATED: 2025-06-06 09:17:46
 # DOMAIN-SUFFIX: 8
 # TOTAL: 8
 DOMAIN-SUFFIX,booth.pm
@@ -988,7 +988,7 @@ DOMAIN-SUFFIX,pximg.net
 # NAME: HBO
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-01-15 02:13:02
+# UPDATED: 2025-06-06 09:16:58
 # DOMAIN-SUFFIX: 47
 # PROCESS-NAME: 1
 # TOTAL: 48
@@ -1045,7 +1045,7 @@ PROCESS-NAME,com.hbo.hbonow
 # NAME: Fox
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:13
+# UPDATED: 2025-06-06 09:16:58
 # DOMAIN-SUFFIX: 256
 # TOTAL: 256
 DOMAIN-SUFFIX,afewmomentswith.com
@@ -1309,7 +1309,7 @@ DOMAIN-SUFFIX,wogx.com
 # NAME: Civitai
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:18:29
+# UPDATED: 2025-06-06 09:20:01
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
 DOMAIN-SUFFIX,civitai.com
@@ -1331,7 +1331,7 @@ DOMAIN-SUFFIX,patreonusercontent.com
 # NAME: AbemaTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:12
+# UPDATED: 2025-06-06 09:16:57
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 22
 # TOTAL: 23
@@ -1363,7 +1363,7 @@ DOMAIN-KEYWORD,abematv.akamaized.net
 # NAME: CableTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:13
+# UPDATED: 2025-06-06 09:16:57
 # DOMAIN-SUFFIX: 2
 # TOTAL: 2
 DOMAIN-SUFFIX,cabletv.com.hk
@@ -1373,7 +1373,7 @@ DOMAIN-SUFFIX,i-cable.com
 # NAME: ATTWatchTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:12
+# UPDATED: 2025-06-06 09:16:57
 # DOMAIN-SUFFIX: 6
 # TOTAL: 6
 DOMAIN-SUFFIX,att.tv
