@@ -82,9 +82,16 @@ for idx, filename in enumerate(txt_files):
 
     final_content = "\n\n".join(merged_content)
 
-    # 📤 写入输出 .list 文件（仅在内容变更时写入）
-    if not os.path.exists(output_path) or open(output_path, "r", encoding="utf-8").read() != final_content:
-        with open(output_path, "w", encoding="utf-8") as f_out:
+    # 📤 写入输出 .list 文件（仅在内容变更时写入），规范换行符和空白差异避免误判
+    final_normalized = final_content.strip().replace("\r\n", "\n").replace("\r", "\n")
+
+    existing_normalized = ""
+    if os.path.exists(output_path):
+        with open(output_path, "r", encoding="utf-8") as f:
+            existing_normalized = f.read().strip().replace("\r\n", "\n").replace("\r", "\n")
+
+    if final_normalized != existing_normalized:
+        with open(output_path, "w", encoding="utf-8", newline="\n") as f_out:
             f_out.write(final_content)
         log(f"✅ 已更新文件：{output_path}")
         has_changes = True
