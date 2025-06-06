@@ -44,7 +44,6 @@ IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
 IP-ASN,20473,no-resolve
 
-
 # NAME: Gemini
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -67,7 +66,6 @@ DOMAIN-KEYWORD,colab
 DOMAIN-KEYWORD,developerprofiles
 DOMAIN-KEYWORD,generativelanguage
 
-
 DOMAIN-KEYWORD,openai
 DOMAIN-SUFFIX,AI.com
 DOMAIN-SUFFIX,cdn.auth0.com
@@ -89,7 +87,6 @@ DOMAIN-SUFFIX,opera-api.com
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,ciciai.com
 DOMAIN-KEYWORD,chatgpt
-
 
 # NAME: Copilot
 # AUTHOR: blackmatrix7
@@ -152,7 +149,6 @@ DOMAIN-KEYWORD,openaicom-api
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
 
-
 # 内容：Github Copilot
 # 数量：5条
 DOMAIN-KEYWORD,cocopilot
@@ -160,7 +156,6 @@ DOMAIN,api.github.com
 DOMAIN,copilot-proxy.githubusercontent.com
 DOMAIN,api.githubcopilot.com
 DOMAIN,api.individual.githubcopilot.com
-
 # 内容：Claude
 # 数量：2条
 DOMAIN-SUFFIX,anthropic.com

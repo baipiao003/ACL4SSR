@@ -35,7 +35,6 @@ IP-CIDR,59.111.128.0/17,no-resolve
 IP-CIDR,59.111.19.33/32,no-resolve
 IP-CIDR,59.111.21.14/31,no-resolve
 
-
 # NAME: HibyMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -46,7 +45,6 @@ DOMAIN-SUFFIX,hiby.cd
 DOMAIN-SUFFIX,hiby.com
 DOMAIN-SUFFIX,hibymusic.com
 
-
 # NAME: KuKeMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -56,7 +54,6 @@ DOMAIN-SUFFIX,hibymusic.com
 DOMAIN-SUFFIX,kuke.com
 DOMAIN-SUFFIX,kukey.com.cn
 DOMAIN-SUFFIX,naxos.cn
-
 
 # NAME: KugouKuwo
 # AUTHOR: blackmatrix7
@@ -175,7 +172,6 @@ IP-CIDR,61.48.115.0/24,no-resolve
 IP-CIDR,61.54.121.0/24,no-resolve
 IP-CIDR,61.54.7.0/24,no-resolve
 
-
 # NAME: TaiheMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -191,7 +187,6 @@ DOMAIN-SUFFIX,ttplayer.com
 DOMAIN-SUFFIX,youyou.com
 DOMAIN-SUFFIX,youyou001.com
 
-
 # NAME: XiamiMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -202,7 +197,6 @@ DOMAIN-SUFFIX,xiami.com
 DOMAIN-SUFFIX,xiami.fm
 DOMAIN-SUFFIX,xiami.net
 
-
 # NAME: MOOMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -211,7 +205,6 @@ DOMAIN-SUFFIX,xiami.net
 # TOTAL: 2
 USER-AGENT,MOO*
 USER-AGENT,TencentMidasConnect*
-
 
 # NAME: Himalaya
 # AUTHOR: blackmatrix7

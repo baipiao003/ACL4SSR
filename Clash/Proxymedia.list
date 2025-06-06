@@ -7,7 +7,6 @@
 DOMAIN-SUFFIX,kmplayer.com
 DOMAIN-SUFFIX,pandora.tv
 
-
 # NAME: KKTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -19,7 +18,6 @@ DOMAIN,kktv-theater.kk.stream
 DOMAIN,theater-kktv.cdn.hinet.net
 DOMAIN-SUFFIX,kktv.com.tw
 DOMAIN-SUFFIX,kktv.me
-
 
 # NAME: PrimeVideo
 # AUTHOR: blackmatrix7
@@ -45,7 +43,6 @@ DOMAIN-SUFFIX,media-amazon.com
 DOMAIN-SUFFIX,primevideo.com
 DOMAIN-SUFFIX,pv-cdn.net
 DOMAIN-KEYWORD,avoddashs
-
 
 # NAME: USMedia
 # AUTHOR: blackmatrix7
@@ -156,7 +153,6 @@ PROCESS-NAME,com.cbs.app
 PROCESS-NAME,com.hulu.plus
 PROCESS-NAME,com.showtime.standalone
 
-
 # NAME: UKMedia
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -196,7 +192,6 @@ DOMAIN-SUFFIX,massive-itv.com
 DOMAIN-KEYWORD,bbcfmt
 DOMAIN-KEYWORD,uk-live
 
-
 # NAME: DiscoveryPlus
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -221,7 +216,6 @@ DOMAIN-SUFFIX,mobile-collector.newrelic.com
 DOMAIN-SUFFIX,uplynk.com
 DOMAIN-KEYWORD,discovery.uplynk.com
 
-
 # NAME: FOXNOW
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -231,7 +225,6 @@ DOMAIN-KEYWORD,discovery.uplynk.com
 DOMAIN-SUFFIX,fox.com
 DOMAIN-SUFFIX,foxdcg.com
 DOMAIN-SUFFIX,uplynk.com
-
 
 # NAME: FOXPlus
 # AUTHOR: blackmatrix7
@@ -247,7 +240,6 @@ DOMAIN,foxsports02-i.akamaihd.net
 DOMAIN,foxsports03-i.akamaihd.net
 DOMAIN,staticasiafox.akamaized.net
 DOMAIN-SUFFIX,foxplus.com
-
 
 # NAME: Spotify
 # AUTHOR: blackmatrix7
@@ -290,7 +282,6 @@ IP-CIDR,104.154.127.126/32,no-resolve
 IP-CIDR,35.186.224.47/32,no-resolve
 PROCESS-NAME,com.spotify.music
 
-
 # NAME: BBC
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -328,7 +319,6 @@ DOMAIN-SUFFIX,bidi.net.uk
 DOMAIN-KEYWORD,bbcfmt
 DOMAIN-KEYWORD,uk-live
 
-
 # NAME: TVB
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -357,7 +347,6 @@ DOMAIN-SUFFIX,tvbweekly.com
 DOMAIN-SUFFIX,tvmedia.net.au
 DOMAIN-SUFFIX,videos-f.jwpsrv.com
 DOMAIN-SUFFIX,youboranqs01.com
-
 
 # NAME: HBOHK
 # AUTHOR: blackmatrix7
@@ -391,7 +380,6 @@ DOMAIN-SUFFIX,now.com.hk
 DOMAIN-SUFFIX,nowe.com
 DOMAIN-SUFFIX,nowe.hk
 
-
 # NAME: HBOUSA
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -411,7 +399,6 @@ DOMAIN-SUFFIX,hbonow.com
 DOMAIN-SUFFIX,max.com
 DOMAIN-SUFFIX,maxgo.com
 PROCESS-NAME,com.hbo.hbonow
-
 
 # NAME: Disney
 # AUTHOR: blackmatrix7
@@ -594,7 +581,6 @@ DOMAIN-SUFFIX,watchespn.com
 PROCESS-NAME,com.disney.datg.videoplatforms.android.abc
 PROCESS-NAME,com.disney.disneyplus
 
-
 # NAME: Hulu
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -663,7 +649,6 @@ DOMAIN-SUFFIX,wwwhuluplus.com
 DOMAIN-SUFFIX,yb.uncn.jp
 PROCESS-NAME,com.hulu.plus
 
-
 # NAME: HuluJP
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -675,7 +660,6 @@ DOMAIN-SUFFIX,hjholdings.jp
 DOMAIN-SUFFIX,hulu.jp
 DOMAIN-SUFFIX,streaks.jp
 DOMAIN-SUFFIX,yb.uncn.jp
-
 
 # NAME: HuluUSA
 # AUTHOR: blackmatrix7
@@ -738,7 +722,6 @@ DOMAIN-SUFFIX,thehulubraintrust.com
 DOMAIN-SUFFIX,wwwhuluplus.com
 PROCESS-NAME,com.hulu.plus
 
-
 # NAME: NaverTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -748,7 +731,6 @@ PROCESS-NAME,com.hulu.plus
 DOMAIN-SUFFIX,naver.com
 DOMAIN-SUFFIX,smartmediarep.com
 
-
 # NAME: NowE
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -757,7 +739,6 @@ DOMAIN-SUFFIX,smartmediarep.com
 # TOTAL: 2
 DOMAIN-SUFFIX,nowe.com
 DOMAIN-SUFFIX,nowestatic.com
-
 
 # NAME: ParamountPlus
 # AUTHOR: blackmatrix7
@@ -776,7 +757,6 @@ DOMAIN-SUFFIX,cbsivideo.com
 DOMAIN-SUFFIX,paramountplus.com
 DOMAIN-SUFFIX,pplusstatic.com
 
-
 # NAME: TVer
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -789,7 +769,6 @@ DOMAIN-SUFFIX,gorin.jp
 DOMAIN-SUFFIX,screens-lab.jp
 DOMAIN-SUFFIX,tver.co.jp
 DOMAIN-SUFFIX,tver.jp
-
 
 # NAME: myTVSUPER
 # AUTHOR: blackmatrix7
@@ -806,7 +785,6 @@ DOMAIN-SUFFIX,tvb.com
 DOMAIN-KEYWORD,nowtv100
 DOMAIN-KEYWORD,rthklive
 
-
 # NAME: Cake
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -821,7 +799,6 @@ DOMAIN,vstatic-mycake.pstatic.net
 DOMAIN-SUFFIX,cake.day
 DOMAIN-SUFFIX,cakeapp.me
 DOMAIN-SUFFIX,mycake.me
-
 
 # NAME: BritboxUK
 # AUTHOR: blackmatrix7
@@ -839,7 +816,6 @@ DOMAIN-SUFFIX,britbox.com
 DOMAIN-SUFFIX,itv.com
 DOMAIN-SUFFIX,massive-itv.com
 
-
 # NAME: HKOpenTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -848,7 +824,6 @@ DOMAIN-SUFFIX,massive-itv.com
 # TOTAL: 2
 DOMAIN-SUFFIX,fantv.hk
 DOMAIN-SUFFIX,hkopentv.com
-
 
 # NAME: Abema
 # AUTHOR: blackmatrix7
@@ -878,7 +853,6 @@ DOMAIN-SUFFIX,hayabusa.io
 DOMAIN-SUFFIX,hayabusa.media
 DOMAIN-SUFFIX,winticket.jp
 
-
 # NAME: Acplay
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -888,7 +862,6 @@ DOMAIN-SUFFIX,winticket.jp
 DOMAIN-SUFFIX,acplay.net
 DOMAIN-SUFFIX,dandanplay.com
 
-
 # NAME: Overcast
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -897,7 +870,6 @@ DOMAIN-SUFFIX,dandanplay.com
 # TOTAL: 1
 DOMAIN-SUFFIX,overcast.fm
 
-
 # NAME: Peacock
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -905,7 +877,6 @@ DOMAIN-SUFFIX,overcast.fm
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
 DOMAIN-SUFFIX,peacocktv.com
-
 
 # NAME: Niconico
 # AUTHOR: blackmatrix7
@@ -922,7 +893,6 @@ DOMAIN-SUFFIX,nicovideo.jp
 DOMAIN-SUFFIX,nimg.jp
 DOMAIN-SUFFIX,simg.jp
 DOMAIN-SUFFIX,socdm.com
-
 
 # NAME: Twitch
 # AUTHOR: blackmatrix7
@@ -957,7 +927,6 @@ IP-CIDR,99.181.64.0/18,no-resolve
 IP-CIDR6,2402:2a80::/32,no-resolve
 PROCESS-NAME,tv.twitch.android.app
 
-
 # NAME: Tumblr
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -967,7 +936,6 @@ PROCESS-NAME,tv.twitch.android.app
 DOMAIN-SUFFIX,tmblr.co
 DOMAIN-SUFFIX,tumblr.co
 DOMAIN-SUFFIX,tumblr.com
-
 
 # NAME: Pixiv
 # AUTHOR: blackmatrix7
@@ -983,7 +951,6 @@ DOMAIN-SUFFIX,pixiv.me
 DOMAIN-SUFFIX,pixiv.net
 DOMAIN-SUFFIX,pixiv.org
 DOMAIN-SUFFIX,pximg.net
-
 
 # NAME: HBO
 # AUTHOR: blackmatrix7
@@ -1040,7 +1007,6 @@ DOMAIN-SUFFIX,players.brightcove.net
 DOMAIN-SUFFIX,warnermediacdn.com
 DOMAIN-SUFFIX,youboranqs01.com
 PROCESS-NAME,com.hbo.hbonow
-
 
 # NAME: Fox
 # AUTHOR: blackmatrix7
@@ -1305,7 +1271,6 @@ DOMAIN-SUFFIX,wofl.tv
 DOMAIN-SUFFIX,woflthenewsstation.com
 DOMAIN-SUFFIX,wogx.com
 
-
 # NAME: Civitai
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -1313,7 +1278,6 @@ DOMAIN-SUFFIX,wogx.com
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
 DOMAIN-SUFFIX,civitai.com
-
 
 # NAME: Patreon
 # AUTHOR: blackmatrix7
@@ -1326,7 +1290,6 @@ DOMAIN,live-patreon-marketing.pantheonsite.io
 DOMAIN-SUFFIX,patreon.com
 DOMAIN-SUFFIX,patreoncommunity.com
 DOMAIN-SUFFIX,patreonusercontent.com
-
 
 # NAME: AbemaTV
 # AUTHOR: blackmatrix7
@@ -1359,7 +1322,6 @@ DOMAIN-SUFFIX,vod-abematv.akamaized.net
 DOMAIN-SUFFIX,winticket.jp
 DOMAIN-KEYWORD,abematv.akamaized.net
 
-
 # NAME: CableTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -1368,7 +1330,6 @@ DOMAIN-KEYWORD,abematv.akamaized.net
 # TOTAL: 2
 DOMAIN-SUFFIX,cabletv.com.hk
 DOMAIN-SUFFIX,i-cable.com
-
 
 # NAME: ATTWatchTV
 # AUTHOR: blackmatrix7
