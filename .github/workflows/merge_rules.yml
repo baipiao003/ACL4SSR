@@ -1,0 +1,41 @@
+name: Merge and Push Rule Lists
+
+on:
+  schedule:
+    - cron: '0 0 */3 * *'  # 每 3 天运行一次
+  workflow_dispatch:       # 允许手动触发
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout clash branch
+        uses: actions/checkout@v3
+        with:
+          ref: clash
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run merging script and push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python zhenghe.py
+        shell: bash
+
+      - name: 🎉 Delete old workflow run
+        uses: yxdz2020/delete-workflow-runs@v20250101
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 50

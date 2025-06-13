@@ -1,0 +1,6 @@
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.list
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.list
+https://raw.githubusercontent.com/juewuy/ShellClash/master/rules/ai.list
+https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/Copilot.list
+https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/GithubCopilot.list
+https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/Claude.list
