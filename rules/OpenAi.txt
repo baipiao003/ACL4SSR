@@ -6,3 +6,4 @@ https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/GithubCopilot.list
 https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/Claude.list
 https://raw.githubusercontent.com/moistrr/Clashruleset/refs/heads/main/config/openai.list
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
+https://raw.githubusercontent.com/moistrr/Clashruleset/refs/heads/main/config/openai.list
