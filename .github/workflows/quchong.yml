@@ -3,14 +3,13 @@ name: Deduplicate Clash Rules
 on:
   push:
     paths:
-      - 'clash/*.list'
+      - 'Clash/**/*.list'
     branches: [ clash ]
   pull_request:
     paths:
-      - 'clash/*.list'
+      - 'Clash/**/*.list'
   schedule:
-    # 每天凌晨3点自动运行
-    - cron: '0 2 * * *'
+    - cron: '0 3 * * *'  # 每天凌晨3点运行
   workflow_dispatch:  # 手动触发
 
 jobs:
@@ -20,6 +19,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
       
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -29,19 +30,29 @@ jobs:
     - name: Run deduplication script
       run: |
         echo "开始处理Clash规则文件..."
-        python quchong.py
+        echo "当前目录结构:"
+        ls -la
+        echo ""
+        echo "Clash文件夹内容:"
+        ls -la Clash/ || echo "Clash文件夹不存在"
+        echo ""
+        
+        # 直接运行根目录下的脚本
+        python dedup_clash_rules.py Clash/
         echo "处理完成！"
         
     - name: Check for changes
       id: changes
       run: |
+        echo "检查文件更改..."
+        git status
         if git diff --quiet; then
           echo "no_changes=true" >> $GITHUB_OUTPUT
           echo "没有检测到更改"
         else
           echo "no_changes=false" >> $GITHUB_OUTPUT
           echo "检测到文件更改"
-          git status
+          git diff --name-only
         fi
         
     - name: Commit and push if changes
@@ -49,8 +60,8 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add clash/
-        git commit -m "chore: auto deduplicate clash rules [skip ci]"
+        git add Clash/
+        git commit -m "chore: auto deduplicate Clash rules [skip ci]"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
