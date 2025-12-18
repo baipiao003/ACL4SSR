@@ -1,4 +1,4 @@
-name: Deduplicate Clash Rules
+name: QuChong Clash Rules
 
 on:
   push:
@@ -13,7 +13,7 @@ on:
   workflow_dispatch:  # 手动触发
 
 jobs:
-  deduplicate:
+  quchong:
     runs-on: ubuntu-latest
     
     steps:
@@ -27,9 +27,9 @@ jobs:
       with:
         python-version: '3.9'
         
-    - name: Run deduplication script
+    - name: Run quchong script
       run: |
-        echo "开始处理Clash规则文件..."
+        echo "开始运行Clash规则去重脚本..."
         echo "当前目录结构:"
         ls -la
         echo ""
@@ -37,21 +37,20 @@ jobs:
         ls -la Clash/ || echo "Clash文件夹不存在"
         echo ""
         
-        # 直接运行根目录下的脚本
-        python dedup_clash_rules.py Clash/
+        # 运行根目录下的quchong.py脚本
+        python quchong.py Clash/
         echo "处理完成！"
         
     - name: Check for changes
       id: changes
       run: |
         echo "检查文件更改..."
-        git status
         if git diff --quiet; then
           echo "no_changes=true" >> $GITHUB_OUTPUT
-          echo "没有检测到更改"
+          echo "✅ 没有检测到更改"
         else
           echo "no_changes=false" >> $GITHUB_OUTPUT
-          echo "检测到文件更改"
+          echo "📝 检测到文件更改:"
           git diff --name-only
         fi
         
@@ -61,7 +60,7 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add Clash/
-        git commit -m "chore: auto deduplicate Clash rules [skip ci]"
+        git commit -m "chore: auto quchong Clash rules [skip ci]"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
