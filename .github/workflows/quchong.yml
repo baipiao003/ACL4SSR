@@ -9,7 +9,7 @@ on:
     paths:
       - 'Clash/**/*.list'
   schedule:
-    - cron: '0 3 * * *'  # 每天凌晨3点运行
+    - cron: '1 0 */3 * *'  # 每天凌晨3点运行
   workflow_dispatch:  # 手动触发
 
 jobs:
