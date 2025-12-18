@@ -3,11 +3,11 @@ name: Deduplicate Clash Rules
 on:
   push:
     paths:
-      - 'clash/**/*.list'
+      - 'clash/*.list'
     branches: [ clash ]
   pull_request:
     paths:
-      - 'clash/**/*.list'
+      - 'clash/*.list'
   schedule:
     # 每天凌晨3点自动运行
     - cron: '0 2 * * *'
