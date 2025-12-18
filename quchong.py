@@ -172,7 +172,7 @@ def main():
     主函数：处理Clash文件夹中的规则文件
     """
     print("="*60)
-    print("🛠️  Clash规则去重脚本")
+    print("🛠️  Clash规则去重脚本 - quchong.py")
     print("="*60)
     
     # 获取当前目录（脚本所在目录）
@@ -222,8 +222,8 @@ def main():
         
         print("\n请执行以下操作之一:")
         print("1. 确保Clash文件夹存在于当前目录")
-        print("2. 指定Clash文件夹路径: python dedup_clash_rules.py Clash")
-        print("3. 指定Clash文件夹路径: python dedup_clash_rules.py ./Clash")
+        print("2. 指定Clash文件夹路径: python quchong.py Clash")
+        print("3. 指定Clash文件夹路径: python quchong.py ./Clash")
         sys.exit(1)
     
     print(f"🎯 目标文件夹: {clash_folder}")
