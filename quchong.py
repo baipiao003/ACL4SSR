@@ -90,7 +90,7 @@ def remove_duplicate_clash_rules(file_path):
 
 def process_clash_folder(folder_path):
     """
-    处理clash文件夹中的所有.list文件
+    处理Clash文件夹中的所有.list文件
     """
     folder_path = Path(folder_path)
     
@@ -169,49 +169,84 @@ def generate_report(process_result):
 
 def main():
     """
-    主函数：处理clash文件夹中的规则文件
+    主函数：处理Clash文件夹中的规则文件
     """
-    # 确定clash文件夹路径
-    script_dir = Path(__file__).parent
-    clash_folder = script_dir / "clash"
+    print("="*60)
+    print("🛠️  Clash规则去重脚本")
+    print("="*60)
     
-    # 如果没有找到clash文件夹，尝试在项目根目录查找
-    if not clash_folder.exists():
-        clash_folder = script_dir.parent / "clash"
+    # 获取当前目录（脚本所在目录）
+    current_dir = Path.cwd()
+    print(f"📂 当前工作目录: {current_dir}")
+    
+    # 首先检查当前目录是否有Clash文件夹
+    possible_names = ['Clash', 'clash', 'CLASH']
+    clash_folder = None
+    
+    for folder_name in possible_names:
+        test_path = current_dir / folder_name
+        if test_path.exists() and test_path.is_dir():
+            clash_folder = test_path
+            print(f"✅ 找到文件夹: {clash_folder}")
+            break
     
     # 如果通过命令行参数指定了路径
     if len(sys.argv) > 1:
         custom_path = Path(sys.argv[1])
-        if custom_path.exists():
+        if not custom_path.is_absolute():
+            custom_path = current_dir / custom_path
+            
+        custom_path = custom_path.resolve()
+        
+        if custom_path.exists() and custom_path.is_dir():
             clash_folder = custom_path
+            print(f"✅ 使用指定的文件夹: {clash_folder}")
         else:
-            print(f"❌ 错误: 指定的路径不存在: {custom_path}")
+            print(f"❌ 错误: 指定的路径不存在或不是文件夹: {custom_path}")
+            print("\n当前目录结构:")
+            for item in sorted(current_dir.iterdir()):
+                if item.is_dir():
+                    print(f"  📁 {item.name}/")
+                else:
+                    print(f"  📄 {item.name}")
             sys.exit(1)
     
-    if clash_folder.exists():
-        print(f"🎯 开始处理Clash规则文件夹: {clash_folder}")
-        print("⚠️  注意: 将直接在原文件上修改，不创建备份")
-        print("-" * 60)
+    if not clash_folder:
+        print("❌ 错误: 未找到Clash文件夹")
+        print("\n当前目录结构:")
+        for item in sorted(current_dir.iterdir()):
+            if item.is_dir():
+                print(f"  📁 {item.name}/")
+            else:
+                print(f"  📄 {item.name}")
         
-        # 询问用户确认
-        if len(sys.argv) <= 1:  # 如果不是通过命令行指定路径
-            response = input("❓ 确定要继续吗？(y/N): ").strip().lower()
-            if response not in ['y', 'yes']:
-                print("操作已取消")
-                return
-        
-        # 处理文件夹
-        process_result = process_clash_folder(clash_folder)
-        
-        # 生成报告
-        if process_result:
-            generate_report(process_result)
-    else:
-        print("❌ 错误: 未找到clash文件夹")
-        print("\n请选择以下方式之一运行：")
-        print("1. 将脚本放在包含clash文件夹的项目目录中")
-        print("2. 指定clash文件夹路径：python dedup_clash_rules.py /path/to/clash")
+        print("\n请执行以下操作之一:")
+        print("1. 确保Clash文件夹存在于当前目录")
+        print("2. 指定Clash文件夹路径: python dedup_clash_rules.py Clash")
+        print("3. 指定Clash文件夹路径: python dedup_clash_rules.py ./Clash")
         sys.exit(1)
+    
+    print(f"🎯 目标文件夹: {clash_folder}")
+    print("⚠️  注意: 将直接在原文件上修改，不创建备份")
+    print("-" * 60)
+    
+    # 交互模式下的确认
+    if len(sys.argv) <= 1:  # 如果不是通过命令行指定路径
+        response = input("❓ 确定要继续吗？(y/N): ").strip().lower()
+        if response not in ['y', 'yes']:
+            print("操作已取消")
+            return
+    
+    # 处理文件夹
+    process_result = process_clash_folder(clash_folder)
+    
+    # 生成报告
+    if process_result:
+        generate_report(process_result)
+        print(f"\n✅ 所有文件处理完成！")
+        print(f"📁 文件位置: {clash_folder}")
+    else:
+        print(f"⚠️  没有处理任何文件")
 
 if __name__ == "__main__":
     main()
