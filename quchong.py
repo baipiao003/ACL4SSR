@@ -1,0 +1,217 @@
+import os
+import sys
+from pathlib import Path
+
+def remove_duplicate_clash_rules(file_path):
+    """
+    去除Clash规则文件中的重复规则，直接在原文件上修改
+    """
+    # 读取文件内容
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # 分割成行
+    lines = content.split('\n')
+    
+    # 分别存储不同类型的规则
+    rules_by_type = {
+        'DOMAIN': set(),
+        'DOMAIN-SUFFIX': set(),
+        'DOMAIN-KEYWORD': set(),
+        'IP-CIDR': set(),
+        'IP-ASN': set(),
+        'OTHER': []  # 存储注释和其他内容
+    }
+    
+    # 处理每一行
+    output_lines = []
+    
+    for line in lines:
+        line = line.rstrip()  # 只去除右边的空格，保持左边缩进
+        
+        # 空行直接保留
+        if not line:
+            output_lines.append(line)
+            continue
+        
+        # 注释行（以#开头）直接保留
+        if line.startswith('#'):
+            rules_by_type['OTHER'].append(line)
+            output_lines.append(line)
+            continue
+        
+        # 尝试匹配规则类型
+        rule_matched = False
+        for rule_type in ['DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'IP-CIDR', 'IP-ASN']:
+            if line.startswith(rule_type):
+                # 提取规则值（去掉类型和逗号后的参数）
+                parts = line.split(',')
+                if len(parts) >= 2:
+                    rule_value = parts[1].strip()
+                    # 如果还有更多参数，保留原始格式
+                    rule_full = line
+                else:
+                    # 如果没有逗号，可能是格式错误，按原样处理
+                    rule_value = line[len(rule_type):].strip()
+                    rule_full = line
+                
+                # 检查是否重复（基于规则值）
+                if rule_value not in rules_by_type[rule_type]:
+                    rules_by_type[rule_type].add(rule_value)
+                    output_lines.append(rule_full)
+                else:
+                    # 重复规则，跳过
+                    print(f"  ⚠️ 跳过重复规则: {line[:80]}{'...' if len(line) > 80 else ''}")
+                rule_matched = True
+                break
+        
+        if not rule_matched:
+            # 未知类型的行，直接保留
+            rules_by_type['OTHER'].append(line)
+            output_lines.append(line)
+    
+    # 计算统计信息
+    total_input_rules = sum(1 for line in lines if line and not line.startswith('#') and 
+                           any(line.startswith(rt) for rt in ['DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'IP-CIDR', 'IP-ASN']))
+    total_output_rules = sum(len(v) for k, v in rules_by_type.items() if k != 'OTHER')
+    removed_count = total_input_rules - total_output_rules
+    
+    # 写入去重后的内容到原文件
+    with open(file_path, 'w', encoding='utf-8', newline='\n') as f:
+        f.write('\n'.join(output_lines))
+    
+    return {
+        'file_name': os.path.basename(file_path),
+        'input_rules': total_input_rules,
+        'output_rules': total_output_rules,
+        'removed': removed_count,
+        'rules_by_type': rules_by_type
+    }
+
+def process_clash_folder(folder_path):
+    """
+    处理clash文件夹中的所有.list文件
+    """
+    folder_path = Path(folder_path)
+    
+    if not folder_path.exists():
+        print(f"❌ 错误: 文件夹 '{folder_path}' 不存在")
+        return None
+    
+    # 查找所有.list文件
+    list_files = list(folder_path.glob("*.list"))
+    
+    if not list_files:
+        print(f"ℹ️ 在 '{folder_path}' 中没有找到.list文件")
+        return None
+    
+    print(f"📁 找到 {len(list_files)} 个规则文件:")
+    for file in list_files:
+        print(f"  • {file.name}")
+    print()
+    
+    results = []
+    total_removed = 0
+    
+    # 处理每个文件
+    for list_file in list_files:
+        print(f"\n🔧 处理文件: {list_file.name}")
+        
+        # 处理文件（直接在原文件上修改）
+        result = remove_duplicate_clash_rules(list_file)
+        results.append(result)
+        
+        if result['removed'] > 0:
+            print(f"  ✅ 完成! 移除了 {result['removed']} 条重复规则")
+            print(f"    原始: {result['input_rules']} 条 → 现在: {result['output_rules']} 条")
+            total_removed += result['removed']
+        else:
+            print(f"  ℹ️  没有发现重复规则")
+    
+    return {
+        'results': results,
+        'total_removed': total_removed,
+        'processed_files': len(list_files)
+    }
+
+def generate_report(process_result):
+    """
+    生成处理报告
+    """
+    if not process_result:
+        return
+    
+    results = process_result['results']
+    total_removed = process_result['total_removed']
+    
+    print("\n" + "="*60)
+    print("📊 处理完成! 汇总报告:")
+    print("="*60)
+    
+    for result in results:
+        status = "✅ 已清理" if result['removed'] > 0 else "ℹ️  无重复"
+        print(f"{result['file_name']:30} {status:15} 规则: {result['output_rules']:4} 条 (移除 {result['removed']:3} 条)")
+    
+    print("="*60)
+    print(f"📈 总计: 处理了 {len(results)} 个文件，移除了 {total_removed} 条重复规则")
+    
+    # 按规则类型统计
+    print("\n📋 规则类型统计:")
+    type_totals = {}
+    for result in results:
+        for rule_type, rule_set in result['rules_by_type'].items():
+            if rule_type != 'OTHER':
+                count = len(rule_set)
+                type_totals[rule_type] = type_totals.get(rule_type, 0) + count
+    
+    for rule_type, count in sorted(type_totals.items()):
+        print(f"  {rule_type:15} {count:5} 条")
+
+def main():
+    """
+    主函数：处理clash文件夹中的规则文件
+    """
+    # 确定clash文件夹路径
+    script_dir = Path(__file__).parent
+    clash_folder = script_dir / "clash"
+    
+    # 如果没有找到clash文件夹，尝试在项目根目录查找
+    if not clash_folder.exists():
+        clash_folder = script_dir.parent / "clash"
+    
+    # 如果通过命令行参数指定了路径
+    if len(sys.argv) > 1:
+        custom_path = Path(sys.argv[1])
+        if custom_path.exists():
+            clash_folder = custom_path
+        else:
+            print(f"❌ 错误: 指定的路径不存在: {custom_path}")
+            sys.exit(1)
+    
+    if clash_folder.exists():
+        print(f"🎯 开始处理Clash规则文件夹: {clash_folder}")
+        print("⚠️  注意: 将直接在原文件上修改，不创建备份")
+        print("-" * 60)
+        
+        # 询问用户确认
+        if len(sys.argv) <= 1:  # 如果不是通过命令行指定路径
+            response = input("❓ 确定要继续吗？(y/N): ").strip().lower()
+            if response not in ['y', 'yes']:
+                print("操作已取消")
+                return
+        
+        # 处理文件夹
+        process_result = process_clash_folder(clash_folder)
+        
+        # 生成报告
+        if process_result:
+            generate_report(process_result)
+    else:
+        print("❌ 错误: 未找到clash文件夹")
+        print("\n请选择以下方式之一运行：")
+        print("1. 将脚本放在包含clash文件夹的项目目录中")
+        print("2. 指定clash文件夹路径：python dedup_clash_rules.py /path/to/clash")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
