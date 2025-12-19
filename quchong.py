@@ -371,17 +371,6 @@ class ReportGenerator:
             if count > 0:
                 report_lines.append(f"  {rule_type:15} {count:6,} 条")
         
-        # 性能分析
-        if len(result.details) > 1:
-            report_lines.append("\n⚡ 性能分析:")
-            report_lines.append("-" * 80)
-            avg_time = sum(r.processing_time for r in result.details) / len(result.details)
-            avg_rules = sum(r.output_rules for r in result.details) / len(result.details)
-            report_lines.append(f"  • 平均处理时间: {avg_time:.3f}秒/文件")
-            report_lines.append(f"  • 平均规则数: {avg_rules:.0f}条/文件")
-            report_lines.append(f"  • 最快文件: {min(r.processing_time for r in result.details):.3f}秒")
-            report_lines.append(f"  • 最慢文件: {max(r.processing_time for r in result.details):.3f}秒")
-        
         report_lines.append("=" * 80)
         
         return '\n'.join(report_lines)
