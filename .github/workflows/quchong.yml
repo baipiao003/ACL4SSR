@@ -42,7 +42,6 @@ jobs:
         echo "事件: ${{ github.event_name }}"
         echo "分支: ${{ github.ref }}"
         echo "当前分支: $(git branch --show-current)"
-        echo ""
         
     - name: Check Clash directory
       id: check_dir
