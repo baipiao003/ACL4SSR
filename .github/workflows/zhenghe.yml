@@ -1,0 +1,103 @@
+name: 🔄 Merge and Push Rule Lists
+
+on:
+  schedule:
+    - cron: '0 0 */3 * *'  # 每 3 天 UTC 时间 00:00 运行
+  workflow_dispatch:        # 允许手动触发
+    inputs:
+      force_refresh:
+        description: '强制刷新所有规则'
+        required: false
+        default: 'false'
+        type: boolean
+
+env:
+  PYTHON_VERSION: '3.10'
+  WORKFLOW_RETENTION_DAYS: 7
+
+jobs:
+  merge-rules:
+    name: 🚀 合并规则文件
+    runs-on: ubuntu-latest
+    timeout-minutes: 30  # 超时设置
+    
+    steps:
+      - name: 📥 检出代码
+        uses: actions/checkout@v4
+        with:
+          ref: clash
+          fetch-depth: 0
+          persist-credentials: false
+          fetch-tags: false
+          
+      - name: 🐍 设置 Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+          
+      - name: 📦 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install aiohttp==3.9.1
+          echo "依赖安装完成"
+          
+      - name: 🔍 验证目录结构
+        run: |
+          echo "当前目录结构:"
+          ls -la
+          echo "规则目录内容:"
+          ls -la rules/ || echo "rules 目录不存在"
+          echo "输出目录内容:"
+          ls -la Clash/ || echo "Clash 目录不存在"
+          
+      - name: 🛠️ 运行合并脚本
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          FORCE_REFRESH: ${{ inputs.force_refresh || 'false' }}
+        run: |
+          echo "开始执行规则合并..."
+          python zhenghe.py
+          
+      - name: 📊 生成执行报告
+        if: always()
+        run: |
+          echo "任务执行时间: $(date)"
+          echo "仓库: ${{ github.repository }}"
+          echo "触发方式: ${{ github.event_name }}"
+          echo "分支: ${{ github.ref }}"
+          
+      - name: 🗑️ 清理工作流记录（可选）
+        if: success()
+        uses: yxdz2020/delete-workflow-runs@v20250101
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 5  # 减少保留数量
+          delete_by: 'workflow_id_and_branch'
+          
+      - name: 📧 发送通知（可选）
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const message = `❌ 规则合并失败
+            仓库: ${{ github.repository }}
+            工作流: ${{ github.workflow }}
+            提交: ${{ github.sha }}
+            原因: 请检查执行日志`;
+            
+            // 这里可以添加通知逻辑，如发送到 Slack、Discord 等
+            console.log(message);
+            
+      - name: 🎯 完成状态
+        if: always()
+        run: |
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "✅ 任务执行成功"
+          else
+            echo "❌ 任务执行失败"
+            exit 1
+          fi
