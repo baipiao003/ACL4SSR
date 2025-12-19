@@ -10,7 +10,7 @@ on:
     paths:
       - 'Clash/**/*.list'
   schedule:
-    - cron: '0 3 * * *'  # 每天凌晨3点运行
+    - cron: '1 0 */3 * *'  # 每天凌晨3点运行
   workflow_dispatch:
     inputs:
       skip_commit:
@@ -291,9 +291,4 @@ jobs:
         echo "1. 检查quchong.py脚本是否存在"
         echo "2. 检查Clash文件夹是否有.list文件"
         echo "3. 检查Git权限和配置"
-        echo "4. 查看详细日志寻找具体错误"
-        
-        # 显示最近的git操作
-        echo ""
-        echo "📝 最近的git操作:"
-        git log --oneline -5 2>/dev/null || echo "无法获取git日志"
+        echo "4. 查看详细日志寻找具体错误"        
