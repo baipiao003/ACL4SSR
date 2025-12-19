@@ -69,14 +69,12 @@ jobs:
           echo "分支: ${{ github.ref }}"
           
       - name: 🗑️ 清理工作流记录（可选）
-        if: success()
-        uses: yxdz2020/delete-workflow-runs@v20250101
+        uses: yxdz2020/delete-workflow-runs@v20251112
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
           retain_days: 0
           keep_minimum_runs: 5  # 减少保留数量
-          delete_by: 'workflow_id_and_branch'
           
       - name: 📧 发送通知（可选）
         if: failure()
