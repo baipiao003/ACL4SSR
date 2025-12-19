@@ -2,6 +2,7 @@
 """
 Clash 规则合并与更新脚本
 功能：合并多个规则源，去重，自动提交更新
+支持强制刷新模式
 """
 
 import os
@@ -37,6 +38,8 @@ class RuleProcessor:
     def __init__(self):
         self.has_changes = False
         self.session: Optional[aiohttp.ClientSession] = None
+        # 获取强制刷新标志
+        self.force_refresh = os.getenv("FORCE_REFRESH", "false").lower() == "true"
         
     async def __aenter__(self):
         """异步上下文管理器入口"""
@@ -182,10 +185,21 @@ class RuleProcessor:
         new_content = "\n".join(new_lines) + "\n"
         
         # 检查是否需要更新源文件
-        if content != new_content:
+        should_update = False
+        update_reason = ""
+        
+        if self.force_refresh:
+            should_update = True
+            update_reason = "强制刷新模式"
+            logger.info(f"🔧 强制刷新：源文件 {input_file.name}")
+        elif content != new_content:
+            should_update = True
+            update_reason = f"内容变化（移除 {duplicates} 个重复项）"
+        
+        if should_update:
             input_file.write_text(new_content, encoding='utf-8', newline='\n')
             self.git_add(input_file)
-            logger.info(f"✅ 已更新源文件，移除 {duplicates} 个重复项")
+            logger.info(f"✅ 已更新源文件，原因: {update_reason}")
             self.has_changes = True
         else:
             logger.info(f"🔄 源文件无需更新")
@@ -207,15 +221,30 @@ class RuleProcessor:
         
         # 检查现有文件
         existing_normalized = ""
-        if output_file.exists():
+        file_exists = output_file.exists()
+        if file_exists:
             existing_content = output_file.read_text(encoding='utf-8')
             existing_normalized = self.normalize_content(existing_content)
         
         # 判断是否需要更新
-        if final_normalized != existing_normalized:
+        should_update = False
+        update_reason = ""
+        
+        if self.force_refresh:
+            should_update = True
+            update_reason = "强制刷新模式"
+            logger.info(f"🔧 强制刷新：输出文件 {output_file.name}")
+        elif not file_exists:
+            should_update = True
+            update_reason = "文件不存在"
+        elif final_normalized != existing_normalized:
+            should_update = True
+            update_reason = "内容变化"
+        
+        if should_update:
             output_file.write_text(final_content, encoding='utf-8', newline='\n')
             self.git_add(output_file)
-            logger.info(f"✅ 已更新输出文件: {output_file.name}")
+            logger.info(f"✅ 已更新输出文件: {output_file.name}，原因: {update_reason}")
             self.has_changes = True
         else:
             logger.info(f"🔄 输出文件无需更新: {output_file.name}")
@@ -277,7 +306,11 @@ class RuleProcessor:
             
             if result.returncode != 0:
                 # 提交更改
-                commit_msg = f"🤖 自动更新合并规则文件 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} [skip ci]"
+                commit_msg = f"🤖 自动更新合并规则文件 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                if self.force_refresh:
+                    commit_msg += " [强制刷新]"
+                commit_msg += " [skip ci]"
+                
                 subprocess.run(
                     ["git", "commit", "-m", commit_msg],
                     check=True,
@@ -308,7 +341,11 @@ class RuleProcessor:
 async def main():
     """主函数"""
     start_time = datetime.now()
+    
+    # 检查强制刷新模式
+    force_refresh = os.getenv("FORCE_REFRESH", "false").lower() == "true"
     logger.info(f"🚀 合并任务开始时间: {start_time.isoformat()}")
+    logger.info(f"🔧 强制刷新模式: {force_refresh}")
     
     # 获取所有规则文件
     txt_files = sorted(RULES_DIR.glob("*.txt"))
