@@ -68,28 +68,14 @@ jobs:
           echo "触发方式: ${{ github.event_name }}"
           echo "分支: ${{ github.ref }}"
           
-      - name: 🗑️ 清理工作流记录（可选）
+      - name: 🗑️ 清理工作流记录
         uses: yxdz2020/delete-workflow-runs@v20251112
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
           retain_days: 0
-          keep_minimum_runs: 5  # 减少保留数量
+          keep_minimum_runs: 10  # 减少保留数量
           
-      - name: 📧 发送通知（可选）
-        if: failure()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const message = `❌ 规则合并失败
-            仓库: ${{ github.repository }}
-            工作流: ${{ github.workflow }}
-            提交: ${{ github.sha }}
-            原因: 请检查执行日志`;
-            
-            // 这里可以添加通知逻辑，如发送到 Slack、Discord 等
-            console.log(message);
-            
       - name: 🎯 完成状态
         if: always()
         run: |
