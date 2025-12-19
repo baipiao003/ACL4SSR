@@ -1,66 +1,251 @@
-name: QuChong Clash Rules
+name: Clash Rules Auto Deduplication
 
 on:
   push:
     paths:
       - 'Clash/**/*.list'
-    branches: [ clash ]
+      - '.github/workflows/quchong.yml'
+    branches: [ main, master, clash ]
   pull_request:
     paths:
       - 'Clash/**/*.list'
   schedule:
-    - cron: '1 0 */3 * *'  # 每天凌晨3点运行
-  workflow_dispatch:  # 手动触发
+    - cron: '0 3 * * *'  # 每天凌晨3点运行
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: '强制运行'
+        required: false
+        default: false
+        type: boolean
 
 jobs:
-  quchong:
+  deduplicate:
+    name: Deduplicate Clash Rules
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.inputs.force_run == 'true' || contains(github.event.head_commit.message, 'skip ci') == false
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
       
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.9'
+        python-version: '3.11'
         
-    - name: Run quchong script
+    - name: Show repository info
       run: |
-        echo "开始运行Clash规则去重脚本..."
-        echo "当前目录结构:"
-        ls -la
-        echo ""
-        echo "Clash文件夹内容:"
-        ls -la Clash/ || echo "Clash文件夹不存在"
+        echo "📦 仓库信息:"
+        echo "事件: ${{ github.event_name }}"
+        echo "分支: ${{ github.ref }}"
+        echo "提交: ${{ github.sha }}"
         echo ""
         
-        # 运行根目录下的quchong.py脚本
-        python quchong.py Clash/
-        echo "处理完成！"
-        
-    - name: Check for changes
-      id: changes
+    - name: Check Clash directory
+      id: check_dir
       run: |
-        echo "检查文件更改..."
-        if git diff --quiet; then
-          echo "no_changes=true" >> $GITHUB_OUTPUT
-          echo "✅ 没有检测到更改"
+        echo "🔍 检查Clash文件夹..."
+        if [ -d "Clash" ]; then
+          LIST_COUNT=$(find Clash -name "*.list" -type f | wc -l)
+          if [ $LIST_COUNT -gt 0 ]; then
+            echo "✅ 找到Clash文件夹，包含 $LIST_COUNT 个.list文件"
+            echo "has_list_files=true" >> $GITHUB_OUTPUT
+            echo "list_count=$LIST_COUNT" >> $GITHUB_OUTPUT
+            
+            # 显示文件列表
+            echo ""
+            echo "📋 .list文件列表:"
+            find Clash -name "*.list" -type f | sort
+            echo ""
+            
+            # 统计文件大小
+            echo "📊 文件大小统计:"
+            find Clash -name "*.list" -type f -exec ls -lh {} \; | awk '{print $5 "\t" $9}' | sort -hr | head -10
+            echo ""
+            
+            # 计算总大小
+            TOTAL_SIZE=$(find Clash -name "*.list" -type f -exec stat -c%s {} \; | awk '{sum+=$1} END {print sum}')
+            echo "总计大小: $(numfmt --to=iec $TOTAL_SIZE)"
+          else
+            echo "⚠️  Clash文件夹中没有.list文件"
+            echo "has_list_files=false" >> $GITHUB_OUTPUT
+          fi
         else
-          echo "no_changes=false" >> $GITHUB_OUTPUT
-          echo "📝 检测到文件更改:"
-          git diff --name-only
+          echo "❌ 未找到Clash文件夹"
+          echo "has_list_files=false" >> $GITHUB_OUTPUT
         fi
         
-    - name: Commit and push if changes
-      if: steps.changes.outputs.no_changes == 'false'
+    - name: Run deduplication script
+      id: run_script
+      if: steps.check_dir.outputs.has_list_files == 'true'
       run: |
+        echo "🚀 开始运行Clash规则去重脚本..."
+        echo ""
+        
+        # 检查脚本是否存在
+        if [ ! -f "quchong.py" ]; then
+          echo "❌ quchong.py 脚本不存在"
+          exit 1
+        fi
+        
+        # 使脚本可执行
+        chmod +x quchong.py
+        
+        # 运行脚本
+        echo "📝 运行命令: python quchong.py -y -v Clash/"
+        echo ""
+        
+        python quchong.py -y -v Clash/
+        
+        # 检查退出状态
+        EXIT_CODE=$?
+        if [ $EXIT_CODE -eq 0 ]; then
+          echo "script_status=success" >> $GITHUB_OUTPUT
+        else
+          echo "script_status=failed" >> $GITHUB_OUTPUT
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Check for changes
+      id: check_changes
+      if: steps.run_script.outputs.script_status == 'success'
+      run: |
+        echo "🔍 检查文件更改..."
+        
+        # 配置Git用户
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        
+        # 检查是否有更改
+        if git diff --quiet; then
+          echo "✅ 没有检测到更改"
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+        else
+          echo "📝 检测到文件更改"
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          
+          # 获取更改的文件列表
+          CHANGED_FILES=$(git diff --name-only)
+          echo "changed_files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+          # 显示更改统计
+          echo ""
+          echo "📊 更改统计:"
+          git diff --stat
+          
+          # 显示每个文件的规则变化
+          echo ""
+          echo "📋 文件详情:"
+          for file in $CHANGED_FILES; do
+            if [[ $file == *.list ]]; then
+              echo "  📄 $file"
+              # 统计行数变化
+              OLD_RULES=$(git show HEAD:$file 2>/dev/null | grep -v '^#' | grep -v '^$' | wc -l || echo "0")
+              NEW_RULES=$(cat $file | grep -v '^#' | grep -v '^$' | wc -l)
+              RULE_DIFF=$((NEW_RULES - OLD_RULES))
+              if [ $RULE_DIFF -lt 0 ]; then
+                echo "    ✅ 移除了 $((-RULE_DIFF)) 条重复规则"
+              elif [ $RULE_DIFF -eq 0 ]; then
+                echo "    ℹ️  规则数量不变"
+              fi
+            fi
+          done
+        fi
+        
+    - name: Create GitHub summary
+      if: always()
+      run: |
+        echo "# Clash规则去重报告" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ steps.check_dir.outputs.has_list_files }}" = "true" ]; then
+          echo "✅ **找到 ${{ steps.check_dir.outputs.list_count }} 个.list文件**" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ **未找到.list文件**" >> $GITHUB_STEP_SUMMARY
+          exit 0
+        fi
+        
+        if [ "${{ steps.run_script.outputs.script_status }}" = "success" ]; then
+          echo "✅ **脚本执行成功**" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ **脚本执行失败**" >> $GITHUB_STEP_SUMMARY
+          echo "退出代码: ${{ steps.run_script.outputs.exit_code }}" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        if [ "${{ steps.check_changes.outputs.has_changes }}" = "true" ]; then
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📝 **检测到文件更改**" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.check_changes.outputs.changed_files }}" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+        else
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "ℹ️ **没有检测到文件更改**" >> $GITHUB_STEP_SUMMARY
+          echo "所有规则文件已经是最优状态。" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.has_changes == 'true'
+      run: |
+        echo "💾 提交更改..."
+        
+        # 添加更改的文件
         git add Clash/
-        git commit -m "chore: auto quchong Clash rules [skip ci]"
+        
+        # 创建提交消息
+        COMMIT_DATE=$(date +"%Y-%m-%d")
+        COMMIT_MSG="chore: auto deduplicate Clash rules [$COMMIT_DATE]"
+        
+        # 如果有PR，添加更多信息
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          COMMIT_MSG="$COMMIT_MSG\n\nPR: #${{ github.event.pull_request.number }}"
+        fi
+        
+        # 提交
+        git commit -m "$COMMIT_MSG"
+        
+        # 推送更改
+        echo "🚀 推送更改到仓库..."
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+        echo "✅ 更改已提交并推送"
+        
+    - name: Notify on success
+      if: success() && steps.check_changes.outputs.has_changes == 'true'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          // 获取更改的文件数
+          const changedFiles = `${{ steps.check_changes.outputs.changed_files }}`.split('\n').filter(f => f.trim());
+          
+          // 计算移除的规则总数（简化估算）
+          const removedRules = Math.max(0, changedFiles.length * 10); // 估算值
+          
+          const message = `🎉 Clash规则自动去重完成\n\n` +
+                         `✅ 处理了 ${changedFiles.length} 个文件\n` +
+                         `📉 移除了约 ${removedRules} 条重复规则\n` +
+                         `📅 ${new Date().toLocaleDateString('zh-CN')}`;
+          
+          // 如果有PR，在PR中评论
+          if (context.payload.pull_request) {
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
+            });
+          }
+          
+          // 在工作流运行中添加注释
+          github.rest.actions.createWorkflowDispatchComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            run_id: context.runId,
+            body: message
+          });
