@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
     inputs:
       skip_commit:
-        description: '跳过提交更改'
+        description: '跳过提交更改（测试）'
         required: false
         default: false
         type: boolean
