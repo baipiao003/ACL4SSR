@@ -12,7 +12,6 @@ import argparse
 from pathlib import Path
 from typing import Dict, List, Set, Tuple, Optional
 from dataclasses import dataclass
-from datetime import datetime
 
 @dataclass
 class RuleFileStats:
@@ -22,7 +21,6 @@ class RuleFileStats:
     output_rules: int
     removed_count: int
     rule_type_counts: Dict[str, int]
-    processing_time: float
     file_size_before: int
     file_size_after: int
     
@@ -89,11 +87,6 @@ class ClashRuleProcessor:
         # 未知规则类型或非规则行
         return None, line, line
     
-    def _is_rule_line(self, line: str) -> bool:
-        """判断是否为规则行（非空行、非注释行）"""
-        stripped = line.strip()
-        return bool(stripped) and not stripped.startswith('#')
-    
     def process_file(self, file_path: Path) -> Optional[RuleFileStats]:
         """
         处理单个.list规则文件
@@ -108,8 +101,6 @@ class ClashRuleProcessor:
         if file_path.suffix != '.list':
             print(f"  ⚠️  跳过非.list文件: {file_path}")
             return None
-        
-        start_time = datetime.now()
         
         try:
             # 记录原始文件大小
@@ -191,9 +182,6 @@ class ClashRuleProcessor:
             # 记录处理后文件大小
             file_size_after = file_path.stat().st_size
             
-            # 计算处理时间
-            processing_time = (datetime.now() - start_time).total_seconds()
-            
             # 更新统计
             self._processed_files += 1
             self._total_removed += removed_count
@@ -204,7 +192,6 @@ class ClashRuleProcessor:
                 output_rules=output_rule_count,
                 removed_count=removed_count,
                 rule_type_counts=rule_type_counts,
-                processing_time=processing_time,
                 file_size_before=file_size_before,
                 file_size_after=file_size_after
             )
@@ -334,7 +321,6 @@ class ReportGenerator:
         report_lines.append(f"  • 文件大小变化: {total_size_change:+,} bytes")
         report_lines.append(f"  • 原始总大小: {total_size_before:,} bytes")
         report_lines.append(f"  • 处理后大小: {total_size_after:,} bytes")
-        report_lines.append(f"  • 处理时间: {sum(r.processing_time for r in result.details):.2f}秒")
         
         report_lines.append("\n📋 文件详情:")
         report_lines.append("-" * 80)
@@ -349,7 +335,6 @@ class ReportGenerator:
                 f"规则: {stats.output_rules:4} 条 "
                 f"(移除 {stats.removed_count:3} 条) "
                 f"{size_change_str:15}"
-                f"[{stats.processing_time:.2f}s]"
             )
             
             if show_all and stats.removed_count > 0:
@@ -546,8 +531,6 @@ def main():
     processor = ClashRuleProcessor(verbose=args.verbose)
     
     # 处理文件或文件夹
-    start_time = datetime.now()
-    
     if target_path.is_file():
         result = processor.process_file(target_path)
         if result:
@@ -569,8 +552,6 @@ def main():
         process_result = processor.process_folder(target_path)
     
     # 生成并显示报告
-    total_time = (datetime.now() - start_time).total_seconds()
-    
     if process_result.success:
         if args.quiet:
             summary = ReportGenerator.generate_summary_report(process_result)
@@ -578,7 +559,6 @@ def main():
         else:
             report = ReportGenerator.generate_detailed_report(process_result, args.verbose)
             print(report)
-            print(f"\n⏱️  总处理时间: {total_time:.2f}秒")
     else:
         print(f"\n❌ {process_result.error_message}")
         sys.exit(1)
