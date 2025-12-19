@@ -5,7 +5,7 @@ on:
     paths:
       - 'Clash/**/*.list'
       - '.github/workflows/quchong.yml'
-    branches: [ main, master, clash ]
+    branches: [ clash ]
   pull_request:
     paths:
       - 'Clash/**/*.list'
@@ -13,8 +13,8 @@ on:
     - cron: '0 3 * * *'  # 每天凌晨3点运行
   workflow_dispatch:
     inputs:
-      force_run:
-        description: '强制运行'
+      skip_commit:
+        description: '跳过提交更改'
         required: false
         default: false
         type: boolean
@@ -23,15 +23,14 @@ jobs:
   deduplicate:
     name: Deduplicate Clash Rules
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.event.inputs.force_run == 'true' || contains(github.event.head_commit.message, 'skip ci') == false
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        token: ${{ secrets.GITHUB_TOKEN }}
-      
+        ref: clash  # 明确指定分支
+        
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -42,7 +41,7 @@ jobs:
         echo "📦 仓库信息:"
         echo "事件: ${{ github.event_name }}"
         echo "分支: ${{ github.ref }}"
-        echo "提交: ${{ github.sha }}"
+        echo "当前分支: $(git branch --show-current)"
         echo ""
         
     - name: Check Clash directory
@@ -60,16 +59,14 @@ jobs:
             echo ""
             echo "📋 .list文件列表:"
             find Clash -name "*.list" -type f | sort
-            echo ""
             
-            # 统计文件大小
-            echo "📊 文件大小统计:"
-            find Clash -name "*.list" -type f -exec ls -lh {} \; | awk '{print $5 "\t" $9}' | sort -hr | head -10
+            # 统计规则数量（估算）
             echo ""
-            
-            # 计算总大小
-            TOTAL_SIZE=$(find Clash -name "*.list" -type f -exec stat -c%s {} \; | awk '{sum+=$1} END {print sum}')
-            echo "总计大小: $(numfmt --to=iec $TOTAL_SIZE)"
+            echo "📊 规则数量估算:"
+            for file in $(find Clash -name "*.list" -type f | head -5); do
+              count=$(grep -v '^#' "$file" | grep -v '^$' | wc -l)
+              echo "  $(basename "$file"): $count 条规则"
+            done
           else
             echo "⚠️  Clash文件夹中没有.list文件"
             echo "has_list_files=false" >> $GITHUB_OUTPUT
@@ -92,20 +89,18 @@ jobs:
           exit 1
         fi
         
-        # 使脚本可执行
-        chmod +x quchong.py
-        
         # 运行脚本
-        echo "📝 运行命令: python quchong.py -y -v Clash/"
+        echo "📝 运行命令: python quchong.py -y Clash/"
         echo ""
         
-        python quchong.py -y -v Clash/
+        python quchong.py -y Clash/
         
-        # 检查退出状态
         EXIT_CODE=$?
         if [ $EXIT_CODE -eq 0 ]; then
+          echo "✅ 脚本执行成功"
           echo "script_status=success" >> $GITHUB_OUTPUT
         else
+          echo "❌ 脚本执行失败，退出码: $EXIT_CODE"
           echo "script_status=failed" >> $GITHUB_OUTPUT
           echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
         fi
@@ -116,54 +111,133 @@ jobs:
       run: |
         echo "🔍 检查文件更改..."
         
-        # 配置Git用户
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
+        # 检查git状态
+        echo "当前git状态:"
+        git status --short
         
-        # 检查是否有更改
-        if git diff --quiet; then
+        # 检查是否有未暂存的更改
+        if git diff --quiet && git diff --cached --quiet; then
           echo "✅ 没有检测到更改"
           echo "has_changes=false" >> $GITHUB_OUTPUT
         else
-          echo "📝 检测到文件更改"
+          echo "📝 检测到更改"
           echo "has_changes=true" >> $GITHUB_OUTPUT
           
-          # 获取更改的文件列表
-          CHANGED_FILES=$(git diff --name-only)
-          echo "changed_files<<EOF" >> $GITHUB_OUTPUT
-          echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-          
-          # 显示更改统计
+          # 显示详细的更改
           echo ""
-          echo "📊 更改统计:"
-          git diff --stat
+          echo "📋 详细更改:"
+          if ! git diff --quiet; then
+            echo "工作区更改:"
+            git diff --name-only
+          fi
+          if ! git diff --cached --quiet; then
+            echo "暂存区更改:"
+            git diff --cached --name-only
+          fi
           
-          # 显示每个文件的规则变化
-          echo ""
-          echo "📋 文件详情:"
-          for file in $CHANGED_FILES; do
-            if [[ $file == *.list ]]; then
-              echo "  📄 $file"
-              # 统计行数变化
-              OLD_RULES=$(git show HEAD:$file 2>/dev/null | grep -v '^#' | grep -v '^$' | wc -l || echo "0")
-              NEW_RULES=$(cat $file | grep -v '^#' | grep -v '^$' | wc -l)
-              RULE_DIFF=$((NEW_RULES - OLD_RULES))
-              if [ $RULE_DIFF -lt 0 ]; then
-                echo "    ✅ 移除了 $((-RULE_DIFF)) 条重复规则"
-              elif [ $RULE_DIFF -eq 0 ]; then
-                echo "    ℹ️  规则数量不变"
-              fi
-            fi
-          done
+          # 统计Clash文件夹的更改
+          CLASH_CHANGES=$(git status --short Clash/ 2>/dev/null || echo "")
+          if [ -n "$CLASH_CHANGES" ]; then
+            echo ""
+            echo "📁 Clash文件夹更改:"
+            echo "$CLASH_CHANGES"
+          fi
         fi
         
-    - name: Create GitHub summary
+    - name: Configure Git
+      if: steps.check_changes.outputs.has_changes == 'true' && github.event.inputs.skip_commit != 'true'
+      run: |
+        echo "⚙️ 配置Git..."
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git config --local pull.rebase false
+        
+    - name: Add and commit changes
+      id: commit_changes
+      if: steps.check_changes.outputs.has_changes == 'true' && github.event.inputs.skip_commit != 'true'
+      run: |
+        echo "💾 添加并提交更改..."
+        
+        # 添加所有更改的文件
+        echo "添加文件到暂存区..."
+        git add -A
+        
+        # 检查是否有文件需要提交
+        if git diff --cached --quiet; then
+          echo "⚠️ 没有需要提交的更改"
+          echo "commit_status=no_changes" >> $GITHUB_OUTPUT
+          exit 0
+        fi
+        
+        # 创建提交
+        COMMIT_DATE=$(date +"%Y-%m-%d %H:%M:%S")
+        COMMIT_MSG="chore: auto deduplicate Clash rules [skip ci]"
+        COMMIT_MSG="$COMMIT_MSG\n\nDate: $COMMIT_DATE"
+        
+        # 添加更改统计
+        echo ""
+        echo "📊 更改统计:"
+        git diff --cached --stat
+        
+        # 提交更改
+        echo -e "\n📝 提交消息:"
+        echo "$COMMIT_MSG"
+        
+        echo -e "$COMMIT_MSG" | git commit -F -
+        
+        if [ $? -eq 0 ]; then
+          echo "✅ 提交成功"
+          echo "commit_status=success" >> $GITHUB_OUTPUT
+        else
+          echo "❌ 提交失败"
+          echo "commit_status=failed" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+        
+    - name: Push changes
+      if: steps.commit_changes.outputs.commit_status == 'success'
+      run: |
+        echo "🚀 推送更改到远程仓库..."
+        
+        # 获取当前分支
+        CURRENT_BRANCH=$(git branch --show-current)
+        echo "当前分支: $CURRENT_BRANCH"
+        
+        # 尝试推送
+        MAX_RETRIES=3
+        RETRY_COUNT=0
+        
+        while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+          echo ""
+          echo "尝试推送 (第 $((RETRY_COUNT+1)) 次)..."
+          
+          # 先拉取最新更改
+          git pull origin $CURRENT_BRANCH --rebase --autostash
+          
+          # 推送更改
+          if git push origin $CURRENT_BRANCH; then
+            echo "✅ 推送成功"
+            break
+          else
+            RETRY_COUNT=$((RETRY_COUNT+1))
+            if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+              echo "⚠️ 推送失败，10秒后重试..."
+              sleep 10
+            else
+              echo "❌ 推送失败，已达最大重试次数"
+              exit 1
+            fi
+          fi
+        done
+        
+    - name: Create summary report
       if: always()
       run: |
-        echo "# Clash规则去重报告" >> $GITHUB_STEP_SUMMARY
+        echo "📋 工作流执行报告" >> $GITHUB_STEP_SUMMARY
+        echo "---" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         
+        # 检查目录
         if [ "${{ steps.check_dir.outputs.has_list_files }}" = "true" ]; then
           echo "✅ **找到 ${{ steps.check_dir.outputs.list_count }} 个.list文件**" >> $GITHUB_STEP_SUMMARY
         else
@@ -171,81 +245,55 @@ jobs:
           exit 0
         fi
         
+        # 脚本执行
         if [ "${{ steps.run_script.outputs.script_status }}" = "success" ]; then
           echo "✅ **脚本执行成功**" >> $GITHUB_STEP_SUMMARY
         else
           echo "❌ **脚本执行失败**" >> $GITHUB_STEP_SUMMARY
-          echo "退出代码: ${{ steps.run_script.outputs.exit_code }}" >> $GITHUB_STEP_SUMMARY
+          if [ -n "${{ steps.run_script.outputs.exit_code }}" ]; then
+            echo "退出代码: ${{ steps.run_script.outputs.exit_code }}" >> $GITHUB_STEP_SUMMARY
+          fi
         fi
         
+        # 更改检测
         if [ "${{ steps.check_changes.outputs.has_changes }}" = "true" ]; then
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "📝 **检测到文件更改**" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          echo "${{ steps.check_changes.outputs.changed_files }}" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ github.event.inputs.skip_commit }}" = "true" ]; then
+            echo "ℹ️ 已跳过提交步骤（手动触发时设置）" >> $GITHUB_STEP_SUMMARY
+          else
+            if [ "${{ steps.commit_changes.outputs.commit_status }}" = "success" ]; then
+              echo "✅ **更改已提交**" >> $GITHUB_STEP_SUMMARY
+            elif [ "${{ steps.commit_changes.outputs.commit_status }}" = "no_changes" ]; then
+              echo "ℹ️ **没有需要提交的更改**" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ **提交失败**" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi
         else
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "ℹ️ **没有检测到文件更改**" >> $GITHUB_STEP_SUMMARY
+          echo "ℹ️ **没有检测到更改**" >> $GITHUB_STEP_SUMMARY
           echo "所有规则文件已经是最优状态。" >> $GITHUB_STEP_SUMMARY
         fi
         
-    - name: Commit and push changes
-      if: steps.check_changes.outputs.has_changes == 'true'
+        # 时间戳
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "---" >> $GITHUB_STEP_SUMMARY
+        echo "*执行时间: $(date -u +"%Y-%m-%d %H:%M:%S UTC")*" >> $GITHUB_STEP_SUMMARY
+        
+    - name: Handle workflow failure
+      if: failure()
       run: |
-        echo "💾 提交更改..."
+        echo "❌ 工作流执行失败"
+        echo ""
+        echo "🔧 故障排除步骤:"
+        echo "1. 检查quchong.py脚本是否存在"
+        echo "2. 检查Clash文件夹是否有.list文件"
+        echo "3. 检查Git权限和配置"
+        echo "4. 查看详细日志寻找具体错误"
         
-        # 添加更改的文件
-        git add Clash/
-        
-        # 创建提交消息
-        COMMIT_DATE=$(date +"%Y-%m-%d")
-        COMMIT_MSG="chore: auto deduplicate Clash rules [$COMMIT_DATE]"
-        
-        # 如果有PR，添加更多信息
-        if [ "${{ github.event_name }}" = "pull_request" ]; then
-          COMMIT_MSG="$COMMIT_MSG\n\nPR: #${{ github.event.pull_request.number }}"
-        fi
-        
-        # 提交
-        git commit -m "$COMMIT_MSG"
-        
-        # 推送更改
-        echo "🚀 推送更改到仓库..."
-        git push
-        
-        echo "✅ 更改已提交并推送"
-        
-    - name: Notify on success
-      if: success() && steps.check_changes.outputs.has_changes == 'true'
-      uses: actions/github-script@v7
-      with:
-        script: |
-          // 获取更改的文件数
-          const changedFiles = `${{ steps.check_changes.outputs.changed_files }}`.split('\n').filter(f => f.trim());
-          
-          // 计算移除的规则总数（简化估算）
-          const removedRules = Math.max(0, changedFiles.length * 10); // 估算值
-          
-          const message = `🎉 Clash规则自动去重完成\n\n` +
-                         `✅ 处理了 ${changedFiles.length} 个文件\n` +
-                         `📉 移除了约 ${removedRules} 条重复规则\n` +
-                         `📅 ${new Date().toLocaleDateString('zh-CN')}`;
-          
-          // 如果有PR，在PR中评论
-          if (context.payload.pull_request) {
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: message
-            });
-          }
-          
-          // 在工作流运行中添加注释
-          github.rest.actions.createWorkflowDispatchComment({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            run_id: context.runId,
-            body: message
-          });
+        # 显示最近的git操作
+        echo ""
+        echo "📝 最近的git操作:"
+        git log --oneline -5 2>/dev/null || echo "无法获取git日志"
