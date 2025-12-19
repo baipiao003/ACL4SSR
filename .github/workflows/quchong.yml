@@ -170,7 +170,7 @@ jobs:
         
         # 创建提交
         COMMIT_DATE=$(date +"%Y-%m-%d %H:%M:%S")
-        COMMIT_MSG="chore: auto deduplicate Clash rules [skip ci]"
+        COMMIT_MSG="chore: auto deduplicate Clash rules [$COMMIT_DATE]"
         COMMIT_MSG="$COMMIT_MSG\n\nDate: $COMMIT_DATE"
         
         # 添加更改统计
