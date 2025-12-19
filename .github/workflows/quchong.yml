@@ -229,59 +229,7 @@ jobs:
             fi
           fi
         done
-        
-    - name: Create summary report
-      if: always()
-      run: |
-        echo "📋 工作流执行报告" >> $GITHUB_STEP_SUMMARY
-        echo "---" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        
-        # 检查目录
-        if [ "${{ steps.check_dir.outputs.has_list_files }}" = "true" ]; then
-          echo "✅ **找到 ${{ steps.check_dir.outputs.list_count }} 个.list文件**" >> $GITHUB_STEP_SUMMARY
-        else
-          echo "❌ **未找到.list文件**" >> $GITHUB_STEP_SUMMARY
-          exit 0
-        fi
-        
-        # 脚本执行
-        if [ "${{ steps.run_script.outputs.script_status }}" = "success" ]; then
-          echo "✅ **脚本执行成功**" >> $GITHUB_STEP_SUMMARY
-        else
-          echo "❌ **脚本执行失败**" >> $GITHUB_STEP_SUMMARY
-          if [ -n "${{ steps.run_script.outputs.exit_code }}" ]; then
-            echo "退出代码: ${{ steps.run_script.outputs.exit_code }}" >> $GITHUB_STEP_SUMMARY
-          fi
-        fi
-        
-        # 更改检测
-        if [ "${{ steps.check_changes.outputs.has_changes }}" = "true" ]; then
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "📝 **检测到文件更改**" >> $GITHUB_STEP_SUMMARY
-          
-          if [ "${{ github.event.inputs.skip_commit }}" = "true" ]; then
-            echo "ℹ️ 已跳过提交步骤（手动触发时设置）" >> $GITHUB_STEP_SUMMARY
-          else
-            if [ "${{ steps.commit_changes.outputs.commit_status }}" = "success" ]; then
-              echo "✅ **更改已提交**" >> $GITHUB_STEP_SUMMARY
-            elif [ "${{ steps.commit_changes.outputs.commit_status }}" = "no_changes" ]; then
-              echo "ℹ️ **没有需要提交的更改**" >> $GITHUB_STEP_SUMMARY
-            else
-              echo "❌ **提交失败**" >> $GITHUB_STEP_SUMMARY
-            fi
-          fi
-        else
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "ℹ️ **没有检测到更改**" >> $GITHUB_STEP_SUMMARY
-          echo "所有规则文件已经是最优状态。" >> $GITHUB_STEP_SUMMARY
-        fi
-        
-        # 时间戳
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "---" >> $GITHUB_STEP_SUMMARY
-        echo "*执行时间: $(date -u +"%Y-%m-%d %H:%M:%S UTC")*" >> $GITHUB_STEP_SUMMARY
-        
+    
     - name: Handle workflow failure
       if: failure()
       run: |
@@ -291,4 +239,4 @@ jobs:
         echo "1. 检查quchong.py脚本是否存在"
         echo "2. 检查Clash文件夹是否有.list文件"
         echo "3. 检查Git权限和配置"
-        echo "4. 查看详细日志寻找具体错误"        
+        echo "4. 查看详细日志寻找具体错误"
