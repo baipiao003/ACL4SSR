@@ -258,7 +258,7 @@ DOMAIN-SUFFIX,yogify.com
 # NAME: Blizzard
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-12-18 02:06:38
+# UPDATED: 2025-12-22 02:06:36
 # DOMAIN-SUFFIX: 39
 # IP-CIDR: 23
 # TOTAL: 62
@@ -301,12 +301,8 @@ DOMAIN-SUFFIX,starcraft2.com
 DOMAIN-SUFFIX,worldofwarcraft.com
 DOMAIN-SUFFIX,wow.nosdn.127.net
 DOMAIN-SUFFIX,wowchina.com
-IP-CIDR,103.4.115.248/32,no-resolve
 IP-CIDR,182.162.135.1/32,no-resolve
-IP-CIDR,185.60.112.157/32,no-resolve
-IP-CIDR,185.60.112.158/32,no-resolve
 IP-CIDR,210.242.235.6/32,no-resolve
-IP-CIDR,24.105.30.129/32,no-resolve
 IP-CIDR,54.94.196.47/32,no-resolve
 IP-CIDR,182.162.132.1/32,no-resolve
 IP-CIDR,182.162.116.1/32,no-resolve
@@ -317,13 +313,17 @@ IP-CIDR,203.66.81.98/32,no-resolve
 IP-CIDR,211.234.110.1/32,no-resolve
 IP-CIDR,54.207.107.12/32,no-resolve
 IP-CIDR,103.4.114.233/32,no-resolve
+IP-CIDR,185.60.112.157/32,no-resolve
+IP-CIDR,185.60.112.158/32,no-resolve
+IP-CIDR,185.60.114.159/32,no-resolve
 IP-CIDR,202.9.67.254/32,no-resolve
 IP-CIDR,222.231.22.1/32,no-resolve
+IP-CIDR,24.105.30.129/32,no-resolve
+IP-CIDR,24.105.62.129/32,no-resolve
+IP-CIDR,103.4.115.248/32,no-resolve
 IP-CIDR,137.221.105.2/32,no-resolve
-IP-CIDR,185.60.114.159/32,no-resolve
 IP-CIDR,210.71.148.11/32,no-resolve
 IP-CIDR,211.115.104.1/32,no-resolve
-IP-CIDR,24.105.62.129/32,no-resolve
 
 # NAME: Origin
 # AUTHOR: blackmatrix7
@@ -332,7 +332,13 @@ IP-CIDR,24.105.62.129/32,no-resolve
 # DOMAIN: 5
 # DOMAIN-SUFFIX: 2
 # TOTAL: 7
+DOMAIN,cloudsync-prod.s3.amazonaws.com
+DOMAIN,eaasserts-a.akamaihd.net
+DOMAIN,origin-a.akamaihd.net
+DOMAIN,originasserts.akamaized.net
 DOMAIN,rtm.tnt-ea.com
+DOMAIN-SUFFIX,ea.com
+DOMAIN-SUFFIX,origin.com
 
 # NAME: Roblox
 # AUTHOR: ooyq
@@ -598,6 +604,9 @@ DOMAIN-SUFFIX,imageworks.com
 DOMAIN-SUFFIX,motionpictureser.com
 DOMAIN-SUFFIX,playshow.io
 DOMAIN-SUFFIX,playshowtv.com
+DOMAIN-SUFFIX,playstation.com
+DOMAIN-SUFFIX,playstation.net
+DOMAIN-SUFFIX,playstationnetwork.com
 DOMAIN-SUFFIX,sony-africa.com
 DOMAIN-SUFFIX,sony-asia.com
 DOMAIN-SUFFIX,sony-europe.com
@@ -682,6 +691,7 @@ DOMAIN-SUFFIX,sonybuilding.jp
 DOMAIN-SUFFIX,sonyclassics.com
 DOMAIN-SUFFIX,sonydesign.com
 DOMAIN-SUFFIX,sonydna.com
+DOMAIN-SUFFIX,sonyentertainmentnetwork.com
 DOMAIN-SUFFIX,sonyged.com.cn
 DOMAIN-SUFFIX,sonyglobalsolutions.jp
 DOMAIN-SUFFIX,sonykigyo.jp
@@ -711,7 +721,14 @@ DOMAIN-SUFFIX,yourfantasybeginsnow.com
 # DOMAIN: 5
 # DOMAIN-SUFFIX: 3
 # TOTAL: 8
+DOMAIN,blizzard.nefficient.co.kr
+DOMAIN,blzddist1-a.akamaihd.net
+DOMAIN,blzddistkr1-a.akamaihd.net
+DOMAIN,bnetproduct-a.akamaihd.net
 DOMAIN,cdn.blz-contentstack.com
+DOMAIN-SUFFIX,battle.net
+DOMAIN-SUFFIX,battlenet.com.cn
+DOMAIN-SUFFIX,blizzard.com
 
 # NAME: Overwatch
 # AUTHOR: blackmatrix7
@@ -719,6 +736,13 @@ DOMAIN,cdn.blz-contentstack.com
 # UPDATED: 2025-06-06 09:17:49
 # IP-CIDR: 7
 # TOTAL: 7
+IP-CIDR,185.60.112.157/32,no-resolve
+IP-CIDR,185.60.114.159/32,no-resolve
+IP-CIDR,203.66.81.98/32,no-resolve
+IP-CIDR,211.234.110.1/32,no-resolve
+IP-CIDR,24.105.30.129/32,no-resolve
+IP-CIDR,24.105.62.129/32,no-resolve
+IP-CIDR,54.207.107.12/32,no-resolve
 
 # NAME: WorldofWarcraft
 # AUTHOR: blackmatrix7
@@ -726,6 +750,14 @@ DOMAIN,cdn.blz-contentstack.com
 # UPDATED: 2025-06-06 09:17:49
 # IP-CIDR: 8
 # TOTAL: 8
+IP-CIDR,103.4.115.248/32,no-resolve
+IP-CIDR,137.221.105.2/32,no-resolve
+IP-CIDR,185.60.112.157/32,no-resolve
+IP-CIDR,185.60.112.158/32,no-resolve
+IP-CIDR,185.60.114.159/32,no-resolve
+IP-CIDR,210.71.148.11/32,no-resolve
+IP-CIDR,211.115.104.1/32,no-resolve
+IP-CIDR,24.105.62.129/32,no-resolve
 
 # NAME: NGA
 # AUTHOR: ameyukisora
@@ -748,6 +780,8 @@ DOMAIN-SUFFIX,ngacn.cc
 DOMAIN,assets1.xboxlive.com
 DOMAIN,assets2.xboxlive.com
 DOMAIN,blizzard.gcdn.cloudn.co.kr
+DOMAIN,blzddist1-a.akamaihd.net
+DOMAIN,blzddistkr1-a.akamaihd.net
 DOMAIN,client.hikarifield.co.jp
 DOMAIN,content.cdp.bethesda.net
 DOMAIN,download.cdp.bethesda.net
@@ -757,14 +791,24 @@ DOMAIN,download.hikarifield.co.jp
 DOMAIN,download2.epicgames.com
 DOMAIN,download3.epicgames.com
 DOMAIN,download4.epicgames.com
+DOMAIN,edge.steam-dns.top.comcast.net
 DOMAIN,epicgames-download1.akamaized.net
 DOMAIN,eu.cdn.blizzard.com
 DOMAIN,fastly-download.epicgames.com
+DOMAIN,gamedownloads-rockstargames-com.akamaized.net
 DOMAIN,gog-cdn-lumen.secure2.footprint.net
 DOMAIN,kr.cdn.blizzard.com
 DOMAIN,level3.blizzard.com
+DOMAIN,origin-a.akamaihd.net
 DOMAIN,packagespc.xboxlive.com
 DOMAIN,ssl-lvlt.cdn.ea.com
+DOMAIN,steam.eca.qtlglb.com
+DOMAIN,steam.naeu.qtlglb.com
+DOMAIN,steam.ru.qtlglb.com
+DOMAIN,steampipe-kr.akamaized.net
+DOMAIN,steampipe-partner.akamaized.net
+DOMAIN,steampipe.akamaized.net
+DOMAIN,steamusercontent-a.akamaihd.net
 DOMAIN,uplaypc-s-ubisoft.cdn.ubionline.com.cn
 DOMAIN,us.cdn.blizzard.com
 DOMAIN,xvcf1.xboxlive.com
@@ -811,6 +855,9 @@ IP-CIDR,54.248.64.192/32,no-resolve
 # UPDATED: 2025-06-06 09:15:09
 # DOMAIN-SUFFIX: 3
 # TOTAL: 3
+DOMAIN-SUFFIX,pvp.net
+DOMAIN-SUFFIX,riotcdn.net
+DOMAIN-SUFFIX,riotgames.com
 
 # NAME: OP
 # AUTHOR: blackmatrix7
@@ -875,6 +922,8 @@ IP-CIDR,67.15.100.252/32,no-resolve
 IP-CIDR,104.92.145.0/24,no-resolve
 IP-CIDR,216.98.48.0/24,no-resolve
 IP-CIDR,216.98.54.0/24,no-resolve
+IP-CIDR,216.98.62.0/24,no-resolve
+IP-CIDR,23.2.16.0/24,no-resolve
 IP-CIDR,23.46.222.0/24,no-resolve
 IP-CIDR,34.224.248.0/24,no-resolve
 IP-CIDR,34.236.89.0/24,no-resolve
@@ -883,6 +932,8 @@ IP-CIDR,52.2.79.0/24,no-resolve
 IP-CIDR,52.216.16.0/24,no-resolve
 IP-CIDR,52.229.171.0/24,no-resolve
 IP-CIDR,52.5.27.0/24,no-resolve
+IP-CIDR,65.200.22.202/32,no-resolve
+IP-CIDR,65.200.22.234/32,no-resolve
 IP-CIDR,67.228.235.91/32,no-resolve
 
 # NAME: Unity
