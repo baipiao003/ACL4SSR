@@ -2,7 +2,7 @@ name: 🔄 Merge and Push Rule Lists
 
 on:
   schedule:
-    - cron: '0 0 */3 * *'  # 每 3 天 UTC 时间 00:00 运行
+    - cron: '0 0 * * 3,6'  # 每 3 天 UTC 时间 00:00 运行
   workflow_dispatch:        # 允许手动触发
     inputs:
       force_refresh:
