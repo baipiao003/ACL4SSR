@@ -10,7 +10,7 @@ on:
     paths:
       - 'Clash/**/*.list'
   schedule:
-    - cron: '4 0 */3 * *'  # 每天凌晨3点运行
+    - cron: '4 0 * * 3,6'  # 每天凌晨3点运行
   workflow_dispatch:
     inputs:
       skip_commit:
