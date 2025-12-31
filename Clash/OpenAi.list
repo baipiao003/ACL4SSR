@@ -66,20 +66,12 @@ DOMAIN-KEYWORD,colab
 DOMAIN-KEYWORD,developerprofiles
 DOMAIN-KEYWORD,generativelanguage
 
-DOMAIN-KEYWORD,openai
 DOMAIN-SUFFIX,AI.com
 DOMAIN-SUFFIX,cdn.auth0.com
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,opendns.com
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,civitai.com
-DOMAIN,bard.google.com
-DOMAIN,ai.google.dev
-DOMAIN,gemini.google.com
 DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,sentry.io
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,statsigapi.net
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,Anthropic.com
@@ -100,54 +92,23 @@ DOMAIN-KEYWORD,chatgpt
 # TOTAL: 51
 
 DOMAIN,api.msn.com
-DOMAIN,api.statsig.com
 DOMAIN,assets.msn.com
-DOMAIN,browser-intake-datadoghq.com
-DOMAIN,chat.openai.com.cdn.cloudflare.net
 DOMAIN,copilot.microsoft.com
 DOMAIN,gateway.bingviz.microsoft.net
 DOMAIN,gateway.bingviz.microsoftapp.net
 DOMAIN,in.appcenter.ms
 DOMAIN,location.microsoft.com
 DOMAIN,odc.officeapps.live.com
-DOMAIN,openai-api.arkoselabs.com
-DOMAIN,openaicomproductionae4b.blob.core.windows.net
-DOMAIN,production-openaicom-storage.azureedge.net
 DOMAIN,r.bing.com
 DOMAIN,self.events.data.microsoft.com
 DOMAIN,services.bingapis.com
-DOMAIN,static.cloudflareinsights.com
 DOMAIN,sydney.bing.com
 DOMAIN,www.bing.com
-DOMAIN-SUFFIX,algolia.net
 DOMAIN-SUFFIX,api.microsoftapp.net
-DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
 DOMAIN-SUFFIX,challenges.cloudflare.com
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,chatgpt.livekit.cloud
-DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,edgeservices.bing.com
-DOMAIN-SUFFIX,events.statsigapi.net
-DOMAIN-SUFFIX,featuregates.org
-DOMAIN-SUFFIX,host.livekit.cloud
-DOMAIN-SUFFIX,identrust.com
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,intercomcdn.com
-DOMAIN-SUFFIX,launchdarkly.com
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,oaiusercontent.com
-DOMAIN-SUFFIX,observeit.net
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,openaicom.imgix.net
-DOMAIN-SUFFIX,segment.io
-DOMAIN-SUFFIX,sentry.io
-DOMAIN-SUFFIX,stripe.com
-DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-KEYWORD,openaicom-api
-IP-CIDR,24.199.123.28/32,no-resolve
-IP-CIDR,64.23.132.171/32,no-resolve
 
 # 内容：Github Copilot
 # 数量：5条
@@ -159,7 +120,6 @@ DOMAIN,api.individual.githubcopilot.com
 # 内容：Claude
 # 数量：2条
 DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
 # === Gemini & Google AI 相关 ===
 - DOMAIN,ai.google.dev
 - DOMAIN,alkalimakersuite-pa.clients6.google.com
@@ -214,20 +174,4 @@ DOMAIN-SUFFIX,claude.ai
 
 # 内容：OpenAi
 # 数量：16条
-DOMAIN-KEYWORD,openai
-DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,challenges.cloudflare.com
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,client-api.arkoselabs.com
-DOMAIN-SUFFIX,events.statsigapi.net
-DOMAIN-SUFFIX,featuregates.org
-DOMAIN-SUFFIX,identrust.com
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,intercomcdn.com
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,oaiusercontent.com
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,sentry.io
-DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,sora.com
