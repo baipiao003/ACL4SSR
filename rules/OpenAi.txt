@@ -1,8 +1,7 @@
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.list
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.list
 https://raw.githubusercontent.com/juewuy/ShellClash/master/rules/ai.list
-https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/Copilot.list
-https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/GithubCopilot.list
-https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/Claude.list
+https://raw.githubusercontent.com/baipiao003/ACL4SSRR/refs/heads/main/Clash/Copilot.list
+https://raw.githubusercontent.com/baipiao003/ACL4SSRR/refs/heads/main/Clash/GithubCopilot.list
+https://raw.githubusercontent.com/baipiao003/ACL4SSRR/refs/heads/main/Clash/Claude.list
 https://raw.githubusercontent.com/moistrr/Clashruleset/refs/heads/main/config/openai.list
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
