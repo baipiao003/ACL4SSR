@@ -7,10 +7,10 @@ from typing import List, Set, Optional
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# 配置日志
+# 配置日志，不显示时间戳
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format='%(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
@@ -133,12 +133,14 @@ class ListRuleProcessor:
                 return True
         return False
     
-    def download_with_retry(self, url: str, max_retries: int = 3) -> Optional[str]:
+    def download_with_retry(self, url: str, index: int, total: int, max_retries: int = 3) -> Optional[str]:
         """
         带重试的下载函数
         
         Args:
             url: 要下载的URL
+            index: 当前下载的索引（从1开始）
+            total: 总下载数量
             max_retries: 最大重试次数
             
         Returns:
@@ -161,7 +163,6 @@ class ListRuleProcessor:
                 if 'text' not in content_type and 'application/json' not in content_type:
                     logger.warning(f"URL {url} 返回的内容类型不是文本: {content_type}")
                 
-                logger.debug(f"第 {retry_count + 1} 次尝试成功下载: {url}")
                 return response.text
                 
             except requests.exceptions.Timeout:
@@ -230,25 +231,42 @@ class ListRuleProcessor:
         
         logger.info(f"文件 {txt_file.name} 发现 {len(links)} 个链接，开始下载...")
         
+        # 将链接转换为列表以便索引
+        links_list = list(links)
+        total_links = len(links_list)
+        
         # 并发下载所有链接内容（带重试）
         all_contents = []
+        download_results = []
+        
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            future_to_url = {
-                executor.submit(self.download_with_retry, link, max_retries): link 
-                for link in links
-            }
+            future_to_url = {}
+            for idx, link in enumerate(links_list, 1):
+                future = executor.submit(self.download_with_retry, link, idx, total_links, max_retries)
+                future_to_url[future] = (link, idx, total_links)
             
             for future in as_completed(future_to_url):
-                url = future_to_url[future]
+                url, idx, total = future_to_url[future]
                 try:
                     content = future.result()
                     if content:
                         all_contents.append(content)
-                        logger.info(f"✓ 成功下载: {url}")
+                        # 显示带进度的成功信息
+                        logger.info(f"✓ 成功下载 [{idx}/{total}]: {url}")
+                        download_results.append((url, True, idx))
                     else:
-                        logger.warning(f"✗ 下载内容为空: {url}")
+                        logger.warning(f"✗ 下载内容为空 [{idx}/{total}]: {url}")
+                        download_results.append((url, False, idx))
                 except Exception as e:
-                    logger.error(f"✗ 下载失败 {url}: {e}")
+                    logger.error(f"✗ 下载失败 [{idx}/{total}]: {url}")
+                    download_results.append((url, False, idx))
+        
+        # 统计下载结果
+        success_count = len([r for r in download_results if r[1]])
+        fail_count = len([r for r in download_results if not r[1]])
+        
+        if fail_count > 0:
+            logger.warning(f"下载完成: {success_count}/{total_links} 成功, {fail_count}/{total_links} 失败")
         
         if not all_contents:
             logger.error(f"文件 {txt_file.name} 的所有链接下载失败")
@@ -320,9 +338,9 @@ class ListRuleProcessor:
         # 输出处理摘要
         logger.info("所有文件处理完成！")
         logger.info(f"成功处理: {len(success_files)}/{len(txt_files)} 个文件")
-        logger.info(f"失败处理: {len(failed_files)}/{len(txt_files)} 个文件")
         
         if failed_files:
+            logger.warning(f"失败处理: {len(failed_files)}/{len(txt_files)} 个文件")
             logger.warning("失败的文件列表:")
             for failed in failed_files:
                 logger.warning(f"  - {failed}")
