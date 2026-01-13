@@ -1,112 +1,386 @@
 import os
-import sys
+import re
 import requests
-import glob
-from urllib.parse import urlparse
+import logging
+import time
+from typing import List, Set, Optional
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-def download_list(url):
-    """下载单个规则列表并返回内容"""
-    try:
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-        return response.text.strip()
-    except Exception as e:
-        print(f"下载失败 {url}: {e}")
-        return None
+# 配置日志
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
-def process_txt_file(txt_path, clash_dir):
-    """处理单个txt文件"""
-    # 获取文件名（不含扩展名）
-    filename = os.path.splitext(os.path.basename(txt_path))[0]
-    output_path = os.path.join(clash_dir, f"{filename}.list")
-    
-    print(f"\n处理文件: {txt_path}")
-    print(f"输出文件: {output_path}")
-    
-    # 读取txt文件中的链接
-    with open(txt_path, 'r', encoding='utf-8') as f:
-        urls = [line.strip() for line in f if line.strip()]
-    
-    print(f"找到 {len(urls)} 个规则链接")
-    
-    merged_rules = []
-    seen = set()
-    
-    # 处理每个链接
-    for idx, url in enumerate(urls, 1):
-        print(f"  [{idx}/{len(urls)}] 处理: {url}")
-        content = download_list(url)
-        if content:
-            # 按行分割，去重
-            lines = content.splitlines()
-            for line in lines:
-                line = line.strip()
-                if line and not line.startswith('#') and line not in seen:
-                    seen.add(line)
-                    merged_rules.append(line)
-    
-    # 保存合并后的规则
-    with open(output_path, 'w', encoding='utf-8') as f:
-        # 写入文件头部信息
-        f.write(f"# {filename}.list - 自动生成\n")
-        f.write(f"# 来源: {os.path.basename(txt_path)}\n")
-        f.write(f"# 规则数: {len(merged_rules)}\n\n")
+class ListRuleProcessor:
+    def __init__(self, rules_dir: str = "rules", clash_dir: str = "Clash"):
+        """
+        初始化处理器
         
-        for rule in merged_rules:
-            f.write(rule + "\n")
+        Args:
+            rules_dir: 存放规则txt文件的目录
+            clash_dir: 存放生成的list文件的目录
+        """
+        self.rules_dir = Path(rules_dir)
+        self.clash_dir = Path(clash_dir)
+        
+        # 确保目录存在
+        self.rules_dir.mkdir(parents=True, exist_ok=True)
+        self.clash_dir.mkdir(parents=True, exist_ok=True)
     
-    print(f"  完成！共 {len(merged_rules)} 条规则")
-    return len(merged_rules)
-
-def main():
-    # 路径配置
-    rules_dir = "rules"
-    clash_dir = "Clash"
+    def read_file_with_retry(self, txt_file: Path, max_retries: int = 3) -> Optional[str]:
+        """
+        带重试的文件读取函数
+        
+        Args:
+            txt_file: 要读取的文件路径
+            max_retries: 最大重试次数
+            
+        Returns:
+            文件内容或None（如果读取失败）
+        """
+        retry_count = 0
+        last_exception = None
+        
+        # 尝试不同的编码格式
+        encodings = ['utf-8', 'gbk', 'gb2312', 'utf-16', 'latin-1']
+        
+        while retry_count <= max_retries:
+            try:
+                for encoding in encodings:
+                    try:
+                        with open(txt_file, 'r', encoding=encoding) as f:
+                            content = f.read()
+                        logger.info(f"使用 {encoding} 编码成功读取文件: {txt_file.name}")
+                        return content
+                    except UnicodeDecodeError:
+                        continue
+                
+                # 如果所有编码都失败，尝试二进制读取
+                with open(txt_file, 'rb') as f:
+                    content = f.read()
+                    # 尝试解码为utf-8并忽略错误
+                    return content.decode('utf-8', errors='ignore')
+                    
+            except Exception as e:
+                last_exception = e
+                retry_count += 1
+                if retry_count <= max_retries:
+                    wait_time = 2 ** retry_count  # 指数退避
+                    logger.warning(f"第 {retry_count} 次读取文件失败 {txt_file.name}, {wait_time}秒后重试: {e}")
+                    time.sleep(wait_time)
+                else:
+                    logger.error(f"读取文件失败 {txt_file.name}, 已达最大重试次数: {e}")
+        
+        return None
     
-    # 确保输出目录存在
-    os.makedirs(clash_dir, exist_ok=True)
-    
-    # 查找rules文件夹下所有的txt文件
-    txt_files = glob.glob(os.path.join(rules_dir, "*.txt"))
-    
-    if not txt_files:
-        print(f"在 {rules_dir} 文件夹下未找到任何 .txt 文件")
-        sys.exit(1)
-    
-    print(f"找到 {len(txt_files)} 个txt文件:")
-    for i, file in enumerate(txt_files, 1):
-        print(f"  {i}. {os.path.basename(file)}")
-    
-    total_files = len(txt_files)
-    successful_files = 0
-    
-    # 处理每个txt文件
-    for idx, txt_file in enumerate(txt_files, 1):
-        print(f"\n{'='*50}")
-        print(f"处理第 {idx}/{total_files} 个文件")
+    def extract_links_from_file(self, txt_file: Path, max_retries: int = 3) -> Set[str]:
+        """
+        从txt文件中提取所有链接（带重试）
+        
+        Args:
+            txt_file: txt文件路径
+            max_retries: 最大重试次数
+            
+        Returns:
+            提取到的链接集合
+        """
+        links = set()
+        url_pattern = re.compile(
+            r'https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+[/\w\.\-?=%&+#]*',
+            re.IGNORECASE
+        )
+        
+        # 带重试读取文件
+        content = self.read_file_with_retry(txt_file, max_retries)
+        if content is None:
+            logger.error(f"无法读取文件 {txt_file.name}，跳过处理")
+            return set()
         
         try:
-            rule_count = process_txt_file(txt_file, clash_dir)
-            if rule_count > 0:
-                successful_files += 1
+            found_links = url_pattern.findall(content)
+            
+            # 过滤出list规则链接（可以根据需要调整过滤条件）
+            for link in found_links:
+                if self._is_list_rule_link(link):
+                    links.add(link.strip())
+                    
+            logger.info(f"从文件 {txt_file.name} 中提取到 {len(links)} 个链接")
+            return links
         except Exception as e:
-            print(f"处理文件 {txt_file} 时出错: {e}")
+            logger.error(f"解析文件 {txt_file.name} 内容失败: {e}")
+            return set()
     
-    print(f"\n{'='*50}")
-    print("处理完成！")
-    print(f"成功处理: {successful_files}/{total_files} 个文件")
-    print(f"输出目录: {clash_dir}")
+    def _is_list_rule_link(self, link: str) -> bool:
+        """
+        判断链接是否为list规则链接
+        
+        Args:
+            link: 链接字符串
+            
+        Returns:
+            是否为list规则链接
+        """
+        # 这里可以根据需要添加更多判断条件
+        list_keywords = ['.list', '.yaml', '.yml', '.txt', 'clash', 'rule']
+        link_lower = link.lower()
+        
+        # 检查是否包含常见规则文件扩展名或关键词
+        for keyword in list_keywords:
+            if keyword in link_lower:
+                return True
+        return False
     
-    # 显示生成的list文件列表
-    list_files = glob.glob(os.path.join(clash_dir, "*.list"))
+    def download_with_retry(self, url: str, max_retries: int = 3) -> Optional[str]:
+        """
+        带重试的下载函数
+        
+        Args:
+            url: 要下载的URL
+            max_retries: 最大重试次数
+            
+        Returns:
+            下载的内容或None（如果下载失败）
+        """
+        retry_count = 0
+        last_exception = None
+        
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+        
+        while retry_count <= max_retries:
+            try:
+                response = requests.get(url, headers=headers, timeout=30)
+                response.raise_for_status()
+                
+                # 检查内容类型
+                content_type = response.headers.get('content-type', '').lower()
+                if 'text' not in content_type and 'application/json' not in content_type:
+                    logger.warning(f"URL {url} 返回的内容类型不是文本: {content_type}")
+                
+                logger.debug(f"第 {retry_count + 1} 次尝试成功下载: {url}")
+                return response.text
+                
+            except requests.exceptions.Timeout:
+                last_exception = f"请求超时"
+                retry_count += 1
+                if retry_count <= max_retries:
+                    wait_time = 2 ** retry_count  # 指数退避策略
+                    logger.warning(f"第 {retry_count} 次下载超时 {url}, {wait_time}秒后重试")
+                    time.sleep(wait_time)
+                    
+            except requests.exceptions.ConnectionError:
+                last_exception = f"连接错误"
+                retry_count += 1
+                if retry_count <= max_retries:
+                    wait_time = 2 ** retry_count
+                    logger.warning(f"第 {retry_count} 次连接错误 {url}, {wait_time}秒后重试")
+                    time.sleep(wait_time)
+                    
+            except requests.exceptions.HTTPError as e:
+                if e.response.status_code >= 500:
+                    # 服务器错误，可以重试
+                    last_exception = f"HTTP错误: {e.response.status_code}"
+                    retry_count += 1
+                    if retry_count <= max_retries:
+                        wait_time = 2 ** retry_count
+                        logger.warning(f"第 {retry_count} 次服务器错误 {url} ({e.response.status_code}), {wait_time}秒后重试")
+                        time.sleep(wait_time)
+                    else:
+                        break
+                else:
+                    # 客户端错误（4xx），不重试
+                    logger.error(f"客户端错误 {url}: {e.response.status_code}")
+                    return None
+                    
+            except Exception as e:
+                last_exception = str(e)
+                retry_count += 1
+                if retry_count <= max_retries:
+                    wait_time = 2 ** retry_count
+                    logger.warning(f"第 {retry_count} 次下载失败 {url}, {wait_time}秒后重试: {e}")
+                    time.sleep(wait_time)
+        
+        if last_exception:
+            logger.error(f"下载失败 {url} (已重试{retry_count}次): {last_exception}")
+        else:
+            logger.error(f"下载失败 {url} (已重试{retry_count}次)")
+        
+        return None
+    
+    def process_single_file(self, txt_file: Path, max_workers: int = 5, max_retries: int = 3):
+        """
+        处理单个txt文件
+        
+        Args:
+            txt_file: txt文件路径
+            max_workers: 最大并发下载数
+            max_retries: 最大重试次数
+        """
+        logger.info(f"开始处理文件: {txt_file.name}")
+        
+        # 提取链接（带重试）
+        links = self.extract_links_from_file(txt_file, max_retries)
+        if not links:
+            logger.warning(f"文件 {txt_file.name} 中没有找到有效链接")
+            return
+        
+        logger.info(f"文件 {txt_file.name} 发现 {len(links)} 个链接，开始下载...")
+        
+        # 并发下载所有链接内容（带重试）
+        all_contents = []
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            future_to_url = {
+                executor.submit(self.download_with_retry, link, max_retries): link 
+                for link in links
+            }
+            
+            for future in as_completed(future_to_url):
+                url = future_to_url[future]
+                try:
+                    content = future.result()
+                    if content:
+                        all_contents.append(content)
+                        logger.info(f"✓ 成功下载: {url}")
+                    else:
+                        logger.warning(f"✗ 下载内容为空: {url}")
+                except Exception as e:
+                    logger.error(f"✗ 下载失败 {url}: {e}")
+        
+        if not all_contents:
+            logger.error(f"文件 {txt_file.name} 的所有链接下载失败")
+            return
+        
+        # 保存到list文件
+        list_filename = txt_file.stem + '.list'
+        list_file_path = self.clash_dir / list_filename
+        
+        try:
+            # 合并所有内容，去除重复行
+            combined_content = []
+            seen_lines = set()
+            
+            for content in all_contents:
+                lines = content.split('\n')
+                for line in lines:
+                    line = line.strip()
+                    if line and line not in seen_lines:
+                        seen_lines.add(line)
+                        combined_content.append(line)
+            
+            # 生成文件头（只保留生成时间和规则数量）
+            rule_count = len(combined_content)
+            generation_time = time.strftime('%Y-%m-%d %H:%M:%S')
+            header = f"""# 生成时间: {generation_time}
+# 规则数量: {rule_count}
+
+"""
+            
+            # 写入文件
+            with open(list_file_path, 'w', encoding='utf-8') as f:
+                f.write(header + '\n'.join(combined_content))
+            
+            logger.info(f"✓ 成功保存到 {list_file_path}, 共 {rule_count} 条规则")
+            
+        except Exception as e:
+            logger.error(f"✗ 保存文件失败 {list_file_path}: {e}")
+    
+    def process_all_files(self, max_workers: int = 5, max_retries: int = 3):
+        """
+        处理rules目录下所有txt文件
+        
+        Args:
+            max_workers: 最大并发下载数
+            max_retries: 最大重试次数
+        """
+        # 获取所有txt文件
+        txt_files = list(self.rules_dir.glob("*.txt"))
+        if not txt_files:
+            logger.warning(f"在 {self.rules_dir} 目录中未找到txt文件")
+            return
+        
+        logger.info(f"找到 {len(txt_files)} 个txt文件，开始处理...")
+        
+        # 逐个处理文件
+        success_files = []
+        failed_files = []
+        
+        for txt_file in txt_files:
+            try:
+                self.process_single_file(txt_file, max_workers, max_retries)
+                success_files.append(txt_file.name)
+            except Exception as e:
+                failed_files.append(f"{txt_file.name}: {e}")
+                logger.error(f"处理文件 {txt_file.name} 时发生错误: {e}")
+                continue
+        
+        # 输出处理摘要
+        logger.info("所有文件处理完成！")
+        logger.info(f"成功处理: {len(success_files)}/{len(txt_files)} 个文件")
+        logger.info(f"失败处理: {len(failed_files)}/{len(txt_files)} 个文件")
+        
+        if failed_files:
+            logger.warning("失败的文件列表:")
+            for failed in failed_files:
+                logger.warning(f"  - {failed}")
+
+def main():
+    """
+    主函数
+    """
+    # 初始化处理器
+    processor = ListRuleProcessor(
+        rules_dir="rules",
+        clash_dir="Clash"
+    )
+    
+    # 处理所有文件（带重试）
+    processor.process_all_files(max_workers=10, max_retries=3)
+    
+    # 打印最终统计
+    print()
+    print("最终统计:")
+    print(f"规则文件目录: {processor.rules_dir.absolute()}")
+    print(f"输出目录: {processor.clash_dir.absolute()}")
+    
+    # 统计生成的list文件
+    list_files = list(processor.clash_dir.glob("*.list"))
     if list_files:
-        print(f"\n生成的list文件:")
+        print(f"生成的list文件: {len(list_files)} 个")
+        
+        # 显示每个文件的信息
+        total_rules = 0
         for file in list_files:
-            file_size = os.path.getsize(file)
-            with open(file, 'r', encoding='utf-8') as f:
-                lines = f.readlines()
-                rule_lines = [l for l in lines if l.strip() and not l.strip().startswith('#')]
-                print(f"  {os.path.basename(file)}: {len(rule_lines)} 条规则 ({file_size} 字节)")
+            try:
+                with open(file, 'r', encoding='utf-8') as f:
+                    lines = f.readlines()
+                    # 从文件头读取规则数量
+                    rule_count = 0
+                    generation_time = "未知"
+                    for line in lines[:5]:  # 只检查前5行
+                        if line.startswith('# 规则数量:'):
+                            rule_count = int(line.split(':')[1].strip())
+                        elif line.startswith('# 生成时间:'):
+                            generation_time = line.split(':')[1].strip()
+                    
+                    if rule_count == 0:  # 如果没有从头部读取到，则计算实际规则数
+                        rule_count = len([l for l in lines if l.strip() and not l.startswith('#')])
+                    
+                    total_rules += rule_count
+                    
+                    print(f"  - {file.name}")
+                    print(f"    生成时间: {generation_time}")
+                    print(f"    规则数量: {rule_count}")
+                    print()
+            except Exception as e:
+                print(f"  - {file.name} (读取失败: {e})")
+        
+        print(f"总计规则数: {total_rules}")
+    else:
+        print("未生成任何list文件")
 
 if __name__ == "__main__":
     main()
