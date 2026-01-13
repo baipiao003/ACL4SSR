@@ -1,4 +1,4 @@
-# 生成时间: 2026-01-13 15:52:00
+# 生成时间: 2026-01-13 16:26:45
 # 规则数量: 771
 
 # 内容：GoogleFCM 谷歌推送服务
@@ -38,9 +38,20 @@ IP-CIDR,172.253.122.188/32,no-resolve
 IP-CIDR,173.194.175.188/32,no-resolve
 IP-CIDR,173.194.218.188/32,no-resolve
 IP-CIDR,209.85.233.188/32,no-resolve
-# NAME: Google
+# NAME: GoogleFCM
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:18:26
+# DOMAIN: 15
+# IP-CIDR: 26
+# TOTAL: 41
+DOMAIN,android.apis.google.com
+DOMAIN,device-provisioning.googleapis.com
+DOMAIN,firebaseinstallations.googleapis.com
+DOMAIN,mtalk-dev.google.com
+DOMAIN,mtalk-staging.google.com
+DOMAIN,mtalk4.google.com
+# NAME: Google
 # UPDATED: 2025-12-08 02:06:19
 # DOMAIN: 1
 # DOMAIN-KEYWORD: 5
@@ -757,17 +768,6 @@ PROCESS-NAME,com.google.android.gms
 PROCESS-NAME,com.google.android.gsf
 PROCESS-NAME,com.google.android.play.games
 PROCESS-NAME,BackupandSync
-# NAME: GoogleFCM
-# UPDATED: 2025-06-06 09:18:26
-# DOMAIN: 15
-# IP-CIDR: 26
-# TOTAL: 41
-DOMAIN,android.apis.google.com
-DOMAIN,device-provisioning.googleapis.com
-DOMAIN,firebaseinstallations.googleapis.com
-DOMAIN,mtalk-dev.google.com
-DOMAIN,mtalk-staging.google.com
-DOMAIN,mtalk4.google.com
 DOMAIN-SUFFIX,services.googleapis.cn
 DOMAIN-SUFFIX,together.ai
 DOMAIN-SUFFIX,groq.com
