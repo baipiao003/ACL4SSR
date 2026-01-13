@@ -54,7 +54,6 @@ class ListRuleProcessor:
                     try:
                         with open(txt_file, 'r', encoding=encoding) as f:
                             content = f.read()
-                        logger.info(f"使用 {encoding} 编码成功读取文件: {txt_file.name}")
                         return content
                     except UnicodeDecodeError:
                         continue
@@ -140,8 +139,6 @@ class ListRuleProcessor:
                         seen_links.add(url)
                         links.append(url)
                     
-            logger.info(f"从文件 {txt_file.name} 中提取到 {len(links)} 个链接")
-            
             return links
         except Exception as e:
             logger.error(f"解析文件 {txt_file.name} 内容失败: {e}")
@@ -224,7 +221,7 @@ class ListRuleProcessor:
             
         return False
     
-    def download_with_retry(self, url: str, max_retries: int = 3) -> Optional[str]:
+    def download_with_retry(self, url: str, max_retries: int = 3) -> Tuple[bool, Optional[str], int]:
         """
         带重试的下载函数
         
@@ -233,7 +230,7 @@ class ListRuleProcessor:
             max_retries: 最大重试次数
             
         Returns:
-            下载的内容或None（如果下载失败）
+            (是否成功, 下载的内容, 重试次数)
         """
         retry_count = 0
         last_exception = None
@@ -262,7 +259,7 @@ class ListRuleProcessor:
                 if 'text' not in content_type and 'application/json' not in content_type:
                     logger.warning(f"URL {url} 返回的内容类型不是文本: {content_type}")
                 
-                return response.text
+                return True, response.text, retry_count
                 
             except requests.exceptions.Timeout:
                 last_exception = f"请求超时"
@@ -294,7 +291,7 @@ class ListRuleProcessor:
                 else:
                     # 客户端错误（4xx），不重试
                     logger.error(f"客户端错误 {url}: {e.response.status_code}")
-                    return None
+                    return False, None, retry_count
                     
             except Exception as e:
                 last_exception = str(e)
@@ -309,7 +306,7 @@ class ListRuleProcessor:
         else:
             logger.error(f"下载失败 {url} (已重试{retry_count}次)")
         
-        return None
+        return False, None, retry_count
     
     def process_single_file(self, txt_file: Path, max_workers: int = 5, max_retries: int = 3):
         """
@@ -329,12 +326,7 @@ class ListRuleProcessor:
             return
         
         total_links = len(links)
-        logger.info(f"文件 {txt_file.name} 发现 {total_links} 个链接，开始下载...")
-        
-        # 先显示所有链接的顺序
-        logger.info(f"链接顺序:")
-        for idx, link in enumerate(links, 1):
-            logger.info(f"  [{idx}/{total_links}] {link}")
+        logger.info(f"发现 {total_links} 个链接，开始下载...")
         
         # 创建一个字典来跟踪每个链接的进度和结果
         link_status = {}
@@ -345,7 +337,7 @@ class ListRuleProcessor:
                 'content': None,
                 'success': False,
                 'error': None,
-                'completed': False
+                'retry_count': 0
             }
         
         # 并发下载所有链接内容（带重试）
@@ -357,36 +349,40 @@ class ListRuleProcessor:
             for future in as_completed(future_to_url):
                 url = future_to_url[future]
                 try:
-                    content = future.result()
-                    if content:
+                    success, content, retry_count = future.result()
+                    link_status[url]['retry_count'] = retry_count
+                    
+                    if success and content:
                         link_status[url]['content'] = content
                         link_status[url]['success'] = True
                         all_contents.append(content)
                     else:
                         link_status[url]['success'] = False
-                        link_status[url]['error'] = "下载内容为空"
+                        link_status[url]['error'] = "下载失败" if not success else "下载内容为空"
                 except Exception as e:
                     link_status[url]['success'] = False
                     link_status[url]['error'] = str(e)
         
-        # 现在按原始顺序显示下载结果
-        logger.info("下载结果:")
+        # 按原始顺序显示下载结果
+        success_count = 0
         for link in links:
             status = link_status[link]
             if status['success']:
-                logger.info(f"✓ 成功下载 [{status['index']}/{status['total']}]: {link}")
+                retry_info = f" (重试{status['retry_count']}次)" if status['retry_count'] > 0 else ""
+                logger.info(f"✓ 成功下载 [{status['index']}/{status['total']}]{retry_info}: {link}")
+                success_count += 1
             else:
                 if status['error'] == "下载内容为空":
                     logger.warning(f"✗ 下载内容为空 [{status['index']}/{status['total']}]: {link}")
                 else:
-                    logger.error(f"✗ 下载失败 [{status['index']}/{status['total']}]: {link}")
+                    retry_info = f" (已重试{status['retry_count']}次)" if status['retry_count'] > 0 else ""
+                    logger.error(f"✗ 下载失败 [{status['index']}/{status['total']}]{retry_info}: {link}")
         
-        # 统计下载结果
-        success_count = sum(1 for status in link_status.values() if status['success'])
         fail_count = total_links - success_count
-        
         if fail_count > 0:
             logger.warning(f"下载完成: {success_count}/{total_links} 成功, {fail_count}/{total_links} 失败")
+        else:
+            logger.info(f"下载完成: {success_count}/{total_links} 全部成功")
         
         if not all_contents:
             logger.error(f"文件 {txt_file.name} 的所有链接下载失败")
