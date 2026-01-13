@@ -3,31 +3,60 @@ name: Update Clash Rules
 on:
   push:
     branches:
-      - clash
+      - clash  # 指定 clash 分支
     paths:
       - 'rules/**'
       - 'zhenghe.py'
-      - '.github/workflows/zhenghe.yml'
+      - '.github/workflows/update-rules.yml'
   
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
+    inputs:
+      target_branch:
+        description: '目标分支'
+        required: false
+        default: 'clash'
+        type: string
   
   schedule:
-    - cron: '0 0 * * *'  # 每天UTC时间0点运行（北京时间8点）
-  
-  # 当规则仓库有更新时触发（通过 repository_dispatch 事件）
-  repository_dispatch:
-    types: [update-rules]
+    - cron: '0 0 * * *'  # 每天UTC时间0点运行
 
 jobs:
   update-clash-rules:
     runs-on: ubuntu-latest
     
+    permissions:
+      contents: write
+    
     steps:
+    - name: Determine target branch
+      id: determine_branch
+      run: |
+        # 如果是手动触发，使用输入的分支名
+        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+          echo "使用手动指定的分支: ${{ github.event.inputs.target_branch }}"
+          echo "target_branch=${{ github.event.inputs.target_branch }}" >> $GITHUB_OUTPUT
+        else
+          # 否则使用触发推送的分支
+          echo "使用推送的分支: ${{ github.ref_name }}"
+          echo "target_branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+        fi
+    
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        token: ${{ secrets.GITHUB_TOKEN }}
+        ref: ${{ steps.determine_branch.outputs.target_branch }}
+    
+    - name: Debug - Show repository info
+      run: |
+        echo "当前分支:"
+        git branch -a
+        echo ""
+        echo "仓库内容:"
+        ls -la
+        echo ""
+        echo "rules 文件夹:"
+        ls -la rules/ 2>/dev/null || echo "rules 文件夹不存在，将创建"
     
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -39,112 +68,169 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
     
-    - name: Run zhenghe.py
-      id: run_script
+    - name: Create directories if not exist
       run: |
-        echo "开始合并规则文件..."
+        # 确保必要的目录存在
+        mkdir -p rules Clash
+        echo "目录结构:"
+        ls -la
+    
+    - name: Generate Clash rules
+      id: generate_rules
+      run: |
+        echo "开始生成规则文件..."
+        echo "当前目录: $(pwd)"
+        
+        # 检查 rules 文件夹
+        if [ -d "rules" ]; then
+          echo "rules 文件夹内容:"
+          ls -la rules/
+        else
+          echo "错误: rules 文件夹不存在!"
+          exit 1
+        fi
+        
+        # 运行脚本
         python zhenghe.py
         
-        # 检查是否有新的规则生成
-        echo "规则文件生成完成"
-        echo "检查生成的规则文件..."
-        ls -la Clash/
+        # 检查执行结果
+        if [ $? -eq 0 ]; then
+          echo "✅ zhenghe.py 执行成功"
+          echo "success=true" >> $GITHUB_OUTPUT
+        else
+          echo "❌ zhenghe.py 执行失败"
+          echo "success=false" >> $GITHUB_OUTPUT
+        fi
+        
+        echo ""
+        echo "生成的规则文件:"
+        ls -la Clash/ 2>/dev/null || echo "Clash 文件夹为空"
     
     - name: Check for changes
       id: check_changes
+      if: steps.generate_rules.outputs.success == 'true'
       run: |
+        echo "检查文件变更..."
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         
-        # 检查是否有文件变更
-        if git diff --quiet Clash/; then
-          echo "没有规则文件变更"
-          echo "has_changes=false" >> $GITHUB_OUTPUT
-        else
-          echo "检测到规则文件变更"
+        echo "当前 git 状态:"
+        git status --short
+        
+        echo ""
+        echo "检查 Clash 文件夹变更:"
+        if git diff --name-only Clash/ 2>/dev/null; then
+          echo "检测到变更"
+          git diff --stat Clash/
           echo "has_changes=true" >> $GITHUB_OUTPUT
-          
-          # 显示变更内容
-          echo "变更的文件:"
-          git status --porcelain Clash/
+        else
+          echo "没有检测到变更"
+          echo "has_changes=false" >> $GITHUB_OUTPUT
         fi
     
-    - name: Commit and push if changes exist
+    - name: Commit and push to clash branch
       if: steps.check_changes.outputs.has_changes == 'true'
       run: |
-        # 添加所有变更的规则文件
-        git add Clash/
+        echo "准备提交变更到 clash 分支..."
         
-        # 获取时间戳
+        # 显示变更
+        echo "变更的文件:"
+        git status --porcelain
+        
+        # 添加所有变更
+        git add -A
+        
+        # 创建提交信息
         TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+        BRANCH="${{ steps.determine_branch.outputs.target_branch }}"
         
-        # 获取提交信息
-        COMMIT_MSG="🤖 自动更新规则文件 [$TIMESTAMP]"
-        
-        # 生成详细的提交信息
-        echo "生成提交信息..."
-        echo "## 更新的规则文件" > commit_msg.txt
-        echo "" >> commit_msg.txt
-        git diff --cached --name-only | while read file; do
-          if [ -f "$file" ]; then
-            rule_count=$(grep -v '^#' "$file" | grep -v '^$' | wc -l)
-            file_size=$(stat -c%s "$file")
-            echo "- **$(basename "$file")**: $rule_count 条规则 (${file_size}B)" >> commit_msg.txt
-          fi
-        done
-        
-        # 提交变更
-        git commit -F commit_msg.txt
-        
-        # 推送到仓库
-        git push origin main
-        
-        echo "规则文件已更新并提交到仓库"
-        echo "提交信息:"
-        cat commit_msg.txt
-    
-    - name: Create summary
-      if: always()
-      run: |
-        echo "# 规则更新报告" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**运行状态:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        
-        # 获取生成的规则文件信息
+        # 获取规则文件统计
+        RULE_INFO=""
         if [ -d "Clash" ]; then
-          echo "## 生成的规则文件" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| 文件名 | 规则数量 | 文件大小 |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|----------|----------|" >> $GITHUB_STEP_SUMMARY
-          
           for file in Clash/*.list; do
             if [ -f "$file" ]; then
-              # 计算规则数量（排除注释和空行）
               rule_count=$(grep -v '^#' "$file" | grep -v '^$' | wc -l)
-              file_size=$(stat -c%s "$file")
-              file_name=$(basename "$file")
-              echo "| $file_name | $rule_count | ${file_size}B |" >> $GITHUB_STEP_SUMMARY
+              RULE_INFO="${RULE_INFO}\n- $(basename "$file"): $rule_count 条规则"
             fi
           done
         fi
         
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "## 触发信息" >> $GITHUB_STEP_SUMMARY
-        echo "- 触发事件: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
-        echo "- 触发分支: ${{ github.ref }}" >> $GITHUB_STEP_SUMMARY
-        echo "- 触发时间: $(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-        echo "- 提交哈希: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        COMMIT_MSG="🤖 自动更新规则文件 [$TIMESTAMP]"
+        COMMIT_DETAILS="分支: $BRANCH\n\n更新的规则文件:$RULE_INFO"
         
-        if [ "${{ steps.check_changes.outputs.has_changes }}" == "true" ]; then
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "✅ **规则文件已更新并提交**" >> $GITHUB_STEP_SUMMARY
-        elif [ "${{ steps.check_changes.outputs.has_changes }}" == "false" ]; then
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "⏭️ **没有检测到规则变更**" >> $GITHUB_STEP_SUMMARY
+        echo "提交信息: $COMMIT_MSG"
+        
+        # 提交变更
+        git commit -m "$COMMIT_MSG" -m "$COMMIT_DETAILS"
+        
+        # 推送到目标分支
+        echo "推送到分支: $BRANCH"
+        git push origin "HEAD:$BRANCH"
+        
+        echo "✅ 成功提交并推送到 $BRANCH 分支"
+    
+    - name: No changes detected
+      if: steps.check_changes.outputs.has_changes == 'false'
+      run: |
+        BRANCH="${{ steps.determine_branch.outputs.target_branch }}"
+        echo "⏭️ 没有检测到规则变更，跳过提交到 $BRANCH 分支"
+        
+        # 显示当前规则统计
+        if [ -d "Clash" ]; then
+          echo "当前规则文件统计:"
+          for file in Clash/*.list; do
+            if [ -f "$file" ]; then
+              rule_count=$(grep -v '^#' "$file" | grep -v '^$' | wc -l)
+              echo "  $(basename "$file"): $rule_count 条规则"
+            fi
+          done
+        fi
+    
+    - name: Create summary report
+      if: always()
+      run: |
+        echo "## 规则更新报告" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        BRANCH="${{ steps.determine_branch.outputs.target_branch }}"
+        echo "**目标分支:** $BRANCH" >> $GITHUB_STEP_SUMMARY
+        echo "**运行状态:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ steps.generate_rules.outputs.success }}" == "true" ]; then
+          echo "✅ **规则生成成功**" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ **规则生成失败**" >> $GITHUB_STEP_SUMMARY
         fi
         
-        # 添加运行链接
+        if [ "${{ steps.check_changes.outputs.has_changes }}" == "true" ]; then
+          echo "📝 **已提交变更到 $BRANCH 分支**" >> $GITHUB_STEP_SUMMARY
+        elif [ "${{ steps.check_changes.outputs.has_changes }}" == "false" ]; then
+          echo "⏭️ **无变更，跳过提交**" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 生成的规则文件" >> $GITHUB_STEP_SUMMARY
+        
+        if [ -d "Clash" ]; then
+          echo "| 文件名 | 规则数量 | 生成时间 |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|----------|----------|" >> $GITHUB_STEP_SUMMARY
+          
+          for file in Clash/*.list; do
+            if [ -f "$file" ]; then
+              rule_count=$(grep -v '^#' "$file" | grep -v '^$' | wc -l)
+              file_size=$(stat -c%s "$file")
+              file_name=$(basename "$file")
+              timestamp=$(stat -c "%y" "$file" | cut -d'.' -f1)
+              echo "| $file_name | $rule_count 条规则 | $timestamp |" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+        else
+          echo "未生成任何规则文件" >> $GITHUB_STEP_SUMMARY
+        fi
+        
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "---" >> $GITHUB_STEP_SUMMARY
-        echo "[查看运行详情](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
+        echo "**触发方式:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "**触发时间:** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+        echo "**运行ID:** ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
