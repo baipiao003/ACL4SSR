@@ -1,10 +1,7 @@
-# NAME: Steam
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:08
-# DOMAIN-KEYWORD: 3
-# DOMAIN-SUFFIX: 51
-# TOTAL: 54
+# Games.list - 自动生成
+# 来源: Games.txt
+# 规则数: 726
+
 DOMAIN-SUFFIX,cdn-ali.content.steamchina.com
 DOMAIN-SUFFIX,cdn-qc.content.steamchina.com
 DOMAIN-SUFFIX,cdn-ws.content.steamchina.com
@@ -59,13 +56,6 @@ DOMAIN-SUFFIX,wmsjsteam.com
 DOMAIN-KEYWORD,steambroadcast
 DOMAIN-KEYWORD,steamstore
 DOMAIN-KEYWORD,steamuserimages
-
-# NAME: Epic
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:09
-# DOMAIN-SUFFIX: 15
-# TOTAL: 15
 DOMAIN-SUFFIX,battlebreakers.com
 DOMAIN-SUFFIX,eac-cdn.com
 DOMAIN-SUFFIX,easy.ac
@@ -81,14 +71,6 @@ DOMAIN-SUFFIX,shadowcomplex.com
 DOMAIN-SUFFIX,spyjinx.com
 DOMAIN-SUFFIX,unrealengine.com
 DOMAIN-SUFFIX,unrealtournament.com
-
-# NAME: EA
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:09
-# DOMAIN: 2
-# DOMAIN-SUFFIX: 163
-# TOTAL: 165
 DOMAIN,eaasserts-a.akamaihd.net
 DOMAIN,originasserts.akamaized.net
 DOMAIN-SUFFIX,anthemgame.com
@@ -254,14 +236,6 @@ DOMAIN-SUFFIX,uoherald.com
 DOMAIN-SUFFIX,visceralgames.com
 DOMAIN-SUFFIX,xdsummit.com
 DOMAIN-SUFFIX,yogify.com
-
-# NAME: Blizzard
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2026-01-12 02:06:33
-# DOMAIN-SUFFIX: 39
-# IP-CIDR: 23
-# TOTAL: 62
 DOMAIN-SUFFIX,battle.net
 DOMAIN-SUFFIX,battlenet.com.cn
 DOMAIN-SUFFIX,blizzard.com
@@ -324,47 +298,12 @@ IP-CIDR,103.4.115.248/32,no-resolve
 IP-CIDR,137.221.105.2/32,no-resolve
 IP-CIDR,210.71.148.11/32,no-resolve
 IP-CIDR,211.115.104.1/32,no-resolve
-
-# NAME: Origin
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:17:50
-# DOMAIN: 5
-# DOMAIN-SUFFIX: 2
-# TOTAL: 7
 DOMAIN,cloudsync-prod.s3.amazonaws.com
-DOMAIN,eaasserts-a.akamaihd.net
 DOMAIN,origin-a.akamaihd.net
-DOMAIN,originasserts.akamaized.net
 DOMAIN,rtm.tnt-ea.com
-DOMAIN-SUFFIX,ea.com
-DOMAIN-SUFFIX,origin.com
-
-# NAME: Roblox
-# AUTHOR: ooyq
-# REPO: https://github.com/ooyq
-# UPDATED: 2025-06-06 09:19:58
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 1
-# TOTAL: 2
 DOMAIN-SUFFIX,rbxcdn.com
 DOMAIN-KEYWORD,roblox
-
-# NAME: Ubisoft
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-01-08 16:02:54
-# DOMAIN: 1
-# TOTAL: 1
 DOMAIN,uplaypc-s-ubisoft.cdn.ubi.com
-
-# NAME: Nintendo
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:09
-# DOMAIN-SUFFIX: 126
-# IP-CIDR: 1
-# TOTAL: 127
 DOMAIN-SUFFIX,100classicbooks.com
 DOMAIN-SUFFIX,ac-pocketcamp.com
 DOMAIN-SUFFIX,amiibo.com
@@ -492,48 +431,19 @@ DOMAIN-SUFFIX,xn--mts47c3w9b1qr.cn
 DOMAIN-SUFFIX,xn--mts47c3w9b1qr.net
 DOMAIN-SUFFIX,yoshisnewisland.com
 IP-CIDR,35.192.0.0/12,no-resolve
-
-# NAME: Rockstar
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:08
-# DOMAIN-SUFFIX: 5
-# TOTAL: 5
 DOMAIN-SUFFIX,gamedownloads-rockstargames-com.akamaized.net
 DOMAIN-SUFFIX,media-rockstargames-com.akamaized.net
 DOMAIN-SUFFIX,rockstargames.com
 DOMAIN-SUFFIX,rsg.sc
 DOMAIN-SUFFIX,videos-rockstargames-com.akamaized.net
-
-# NAME: PlayStation
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:09
-# DOMAIN-SUFFIX: 4
-# TOTAL: 4
 DOMAIN-SUFFIX,playstation.com
 DOMAIN-SUFFIX,playstation.net
 DOMAIN-SUFFIX,playstationnetwork.com
 DOMAIN-SUFFIX,sonyentertainmentnetwork.com
-
-# NAME: Gog
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:09
-# DOMAIN: 1
-# DOMAIN-SUFFIX: 3
-# TOTAL: 4
 DOMAIN,gog.salesmanago.com
 DOMAIN-SUFFIX,gog-statics.com
 DOMAIN-SUFFIX,gog.com
 DOMAIN-SUFFIX,gog.qtlglb.com
-
-# NAME: Riot
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:09
-# DOMAIN-SUFFIX: 55
-# TOTAL: 55
 DOMAIN-SUFFIX,championshipseriesleague.com
 DOMAIN-SUFFIX,convrgencegame.com
 DOMAIN-SUFFIX,historyofdota.com
@@ -589,14 +499,6 @@ DOMAIN-SUFFIX,ruinedking.com
 DOMAIN-SUFFIX,supremacy.com
 DOMAIN-SUFFIX,supremacy.net
 DOMAIN-SUFFIX,ulol.com
-
-# NAME: Sony
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:16:56
-# DOMAIN: 1
-# DOMAIN-SUFFIX: 115
-# TOTAL: 116
 DOMAIN,sonyliveevents-nonssai.akamaized.net
 DOMAIN-SUFFIX,cn-playnow.com.cn
 DOMAIN-SUFFIX,ginzasonypark.jp
@@ -604,9 +506,6 @@ DOMAIN-SUFFIX,imageworks.com
 DOMAIN-SUFFIX,motionpictureser.com
 DOMAIN-SUFFIX,playshow.io
 DOMAIN-SUFFIX,playshowtv.com
-DOMAIN-SUFFIX,playstation.com
-DOMAIN-SUFFIX,playstation.net
-DOMAIN-SUFFIX,playstationnetwork.com
 DOMAIN-SUFFIX,sony-africa.com
 DOMAIN-SUFFIX,sony-asia.com
 DOMAIN-SUFFIX,sony-europe.com
@@ -691,7 +590,6 @@ DOMAIN-SUFFIX,sonybuilding.jp
 DOMAIN-SUFFIX,sonyclassics.com
 DOMAIN-SUFFIX,sonydesign.com
 DOMAIN-SUFFIX,sonydna.com
-DOMAIN-SUFFIX,sonyentertainmentnetwork.com
 DOMAIN-SUFFIX,sonyged.com.cn
 DOMAIN-SUFFIX,sonyglobalsolutions.jp
 DOMAIN-SUFFIX,sonykigyo.jp
@@ -713,75 +611,18 @@ DOMAIN-SUFFIX,sovec.net
 DOMAIN-SUFFIX,wheelpop.com
 DOMAIN-SUFFIX,wwtbam.com
 DOMAIN-SUFFIX,yourfantasybeginsnow.com
-
-# NAME: Battle
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:17:49
-# DOMAIN: 5
-# DOMAIN-SUFFIX: 3
-# TOTAL: 8
 DOMAIN,blizzard.nefficient.co.kr
 DOMAIN,blzddist1-a.akamaihd.net
 DOMAIN,blzddistkr1-a.akamaihd.net
 DOMAIN,bnetproduct-a.akamaihd.net
 DOMAIN,cdn.blz-contentstack.com
-DOMAIN-SUFFIX,battle.net
-DOMAIN-SUFFIX,battlenet.com.cn
-DOMAIN-SUFFIX,blizzard.com
-
-# NAME: Overwatch
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:17:49
-# IP-CIDR: 7
-# TOTAL: 7
-IP-CIDR,185.60.112.157/32,no-resolve
-IP-CIDR,185.60.114.159/32,no-resolve
-IP-CIDR,203.66.81.98/32,no-resolve
-IP-CIDR,211.234.110.1/32,no-resolve
-IP-CIDR,24.105.30.129/32,no-resolve
-IP-CIDR,24.105.62.129/32,no-resolve
-IP-CIDR,54.207.107.12/32,no-resolve
-
-# NAME: WorldofWarcraft
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:17:49
-# IP-CIDR: 8
-# TOTAL: 8
-IP-CIDR,103.4.115.248/32,no-resolve
-IP-CIDR,137.221.105.2/32,no-resolve
-IP-CIDR,185.60.112.157/32,no-resolve
-IP-CIDR,185.60.112.158/32,no-resolve
-IP-CIDR,185.60.114.159/32,no-resolve
-IP-CIDR,210.71.148.11/32,no-resolve
-IP-CIDR,211.115.104.1/32,no-resolve
-IP-CIDR,24.105.62.129/32,no-resolve
-
-# NAME: NGA
-# AUTHOR: ameyukisora
-# REPO: https://github.com/ameyukisora/Clash-Rule
-# UPDATED: 2024-01-08 16:02:03
-# DOMAIN-SUFFIX: 4
-# TOTAL: 4
 DOMAIN-SUFFIX,178.com
 DOMAIN-SUFFIX,nga.cn
 DOMAIN-SUFFIX,ngabbs.com
 DOMAIN-SUFFIX,ngacn.cc
-
-# NAME: GameDownload
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:18:53
-# DOMAIN: 36
-# DOMAIN-SUFFIX: 3
-# TOTAL: 39
 DOMAIN,assets1.xboxlive.com
 DOMAIN,assets2.xboxlive.com
 DOMAIN,blizzard.gcdn.cloudn.co.kr
-DOMAIN,blzddist1-a.akamaihd.net
-DOMAIN,blzddistkr1-a.akamaihd.net
 DOMAIN,client.hikarifield.co.jp
 DOMAIN,content.cdp.bethesda.net
 DOMAIN,download.cdp.bethesda.net
@@ -799,7 +640,6 @@ DOMAIN,gamedownloads-rockstargames-com.akamaized.net
 DOMAIN,gog-cdn-lumen.secure2.footprint.net
 DOMAIN,kr.cdn.blizzard.com
 DOMAIN,level3.blizzard.com
-DOMAIN,origin-a.akamaihd.net
 DOMAIN,packagespc.xboxlive.com
 DOMAIN,ssl-lvlt.cdn.ea.com
 DOMAIN,steam.eca.qtlglb.com
@@ -816,14 +656,6 @@ DOMAIN,xvcf2.xboxlive.com
 DOMAIN-SUFFIX,cdn.ubi.com
 DOMAIN-SUFFIX,dyn.riotcdn.net
 DOMAIN-SUFFIX,steamcontent.com
-
-# NAME: Supercell
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:09
-# DOMAIN-SUFFIX: 2
-# IP-CIDR: 22
-# TOTAL: 24
 DOMAIN-SUFFIX,brawlstars.com
 DOMAIN-SUFFIX,brawlstarsgame.com
 IP-CIDR,13.210.25.233/32,no-resolve
@@ -848,55 +680,17 @@ IP-CIDR,52.13.42.120/32,no-resolve
 IP-CIDR,52.50.131.212/32,no-resolve
 IP-CIDR,54.207.168.84/32,no-resolve
 IP-CIDR,54.248.64.192/32,no-resolve
-
-# NAME: WildRift
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:09
-# DOMAIN-SUFFIX: 3
-# TOTAL: 3
-DOMAIN-SUFFIX,pvp.net
-DOMAIN-SUFFIX,riotcdn.net
-DOMAIN-SUFFIX,riotgames.com
-
-# NAME: OP
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:09
-# DOMAIN-SUFFIX: 2
-# TOTAL: 2
 DOMAIN-SUFFIX,op.gg
 DOMAIN-SUFFIX,opgg-static.akamaized.net
-
-# NAME: 2KGames
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-01-08 16:02:56
-# DOMAIN-SUFFIX: 4
-# TOTAL: 4
 DOMAIN-SUFFIX,2k.com
 DOMAIN-SUFFIX,2kcoretech.online
 DOMAIN-SUFFIX,2kgames.com
 DOMAIN-SUFFIX,take2games.com
-
-# NAME: UBI
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:15:09
-# DOMAIN-SUFFIX: 5
-# TOTAL: 5
 DOMAIN-SUFFIX,ubi.com
 DOMAIN-SUFFIX,ubisoft-orbit-savegames.s3.amazonaws.com
 DOMAIN-SUFFIX,ubisoft-uplay-savegames.s3.amazonaws.com
 DOMAIN-SUFFIX,ubisoft.com
 DOMAIN-SUFFIX,uplay.com
-
-# NAME: Assassin'sCreed-Odyssey
-# AUTHOR: FQrabbit
-# REPO: https://github.com/FQrabbit/SSTap-Rule
-# UPDATED: 2025-06-06 09:18:26
-# IP-CIDR: 15
-# TOTAL: 15
 IP-CIDR,104.75.245.0/24,no-resolve
 IP-CIDR,104.95.207.169/32,no-resolve
 IP-CIDR,18.204.105.0/24,no-resolve
@@ -912,18 +706,9 @@ IP-CIDR,65.200.22.184/32,no-resolve
 IP-CIDR,65.200.22.202/32,no-resolve
 IP-CIDR,65.200.22.234/32,no-resolve
 IP-CIDR,67.15.100.252/32,no-resolve
-
-# NAME: Assassin'sCreed-Origins
-# AUTHOR: FQrabbit
-# REPO: https://github.com/FQrabbit/SSTap-Rule
-# UPDATED: 2025-06-06 09:18:26
-# IP-CIDR: 16
-# TOTAL: 16
 IP-CIDR,104.92.145.0/24,no-resolve
 IP-CIDR,216.98.48.0/24,no-resolve
 IP-CIDR,216.98.54.0/24,no-resolve
-IP-CIDR,216.98.62.0/24,no-resolve
-IP-CIDR,23.2.16.0/24,no-resolve
 IP-CIDR,23.46.222.0/24,no-resolve
 IP-CIDR,34.224.248.0/24,no-resolve
 IP-CIDR,34.236.89.0/24,no-resolve
@@ -932,17 +717,7 @@ IP-CIDR,52.2.79.0/24,no-resolve
 IP-CIDR,52.216.16.0/24,no-resolve
 IP-CIDR,52.229.171.0/24,no-resolve
 IP-CIDR,52.5.27.0/24,no-resolve
-IP-CIDR,65.200.22.202/32,no-resolve
-IP-CIDR,65.200.22.234/32,no-resolve
 IP-CIDR,67.228.235.91/32,no-resolve
-
-# NAME: Unity
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:17:50
-# DOMAIN-SUFFIX: 9
-# PROCESS-NAME: 1
-# TOTAL: 10
 DOMAIN-SUFFIX,multiplay.cn
 DOMAIN-SUFFIX,unity.cn
 DOMAIN-SUFFIX,unity.com
