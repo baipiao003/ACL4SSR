@@ -72,12 +72,4 @@ jobs:
         
         # 提交信息包含时间戳
         git commit -m "🤖 自动更新Clash规则 [$TIMESTAMP]"
-        
         git push origin ${{ github.event.inputs.branch || 'clash' }}
-    
-    - name: Upload rules as artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: clash-rules
-        path: Clash/*.list
-        retention-days: 7
