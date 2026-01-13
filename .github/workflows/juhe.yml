@@ -32,23 +32,16 @@ jobs:
       uses: actions/checkout@v4
       with:
         ref: ${{ github.event.inputs.branch || 'clash' }}
-        fetch-depth: 0  # 获取所有历史记录
     
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
-        cache: 'pip'
     
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install requests
-    
-    - name: Create necessary directories
-      run: |
-        mkdir -p rules
-        mkdir -p Clash
     
     - name: Run juhe.py script
       run: |
@@ -59,7 +52,6 @@ jobs:
     - name: Check for changes
       id: git-check
       run: |
-        git status
         if git diff --quiet; then
           echo "没有检测到更改"
           echo "changes=false" >> $GITHUB_OUTPUT
@@ -74,7 +66,7 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add Clash/*.list
-        git commit -m "🤖 自动更新Clash规则 [skip ci]"
+        git commit -m "🤖 自动更新Clash规则"
         git push origin ${{ github.event.inputs.branch || 'clash' }}
     
     - name: Upload rules as artifact
@@ -83,45 +75,3 @@ jobs:
         name: clash-rules
         path: Clash/*.list
         retention-days: 7
-    
-    - name: Create summary
-      if: always()
-      run: |
-        echo "# Clash规则更新报告" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**生成时间:** $(date)" >> $GITHUB_STEP_SUMMARY
-        echo "**目标分支:** ${{ github.event.inputs.branch || 'clash' }}" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        
-        if [ -d "Clash" ]; then
-          echo "## 生成的规则文件" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          for file in Clash/*.list; do
-            if [ -f "$file" ]; then
-              echo "### $(basename "$file")" >> $GITHUB_STEP_SUMMARY
-              # 读取文件头信息
-              head -10 "$file" | grep -E "^(# 生成时间|# 规则数量)" | while read line; do
-                echo "- $line" >> $GITHUB_STEP_SUMMARY
-              done
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
-          done
-          
-          total_files=$(ls -1 Clash/*.list 2>/dev/null | wc -l)
-          echo "**总计文件数:** $total_files" >> $GITHUB_STEP_SUMMARY
-        else
-          echo "## ⚠️ 警告" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Clash文件夹不存在或为空" >> $GITHUB_STEP_SUMMARY
-        fi
-        
-        if [[ "${{ steps.git-check.outputs.changes }}" == "true" ]]; then
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "## ✅ 更改已提交" >> $GITHUB_STEP_SUMMARY
-          echo "规则文件已更新并推送到 ${{ github.event.inputs.branch || 'clash' }} 分支" >> $GITHUB_STEP_SUMMARY
-        else
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "## ℹ️ 无更改" >> $GITHUB_STEP_SUMMARY
-          echo "规则文件未发生变化" >> $GITHUB_STEP_SUMMARY
-        fi
