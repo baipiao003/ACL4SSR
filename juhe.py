@@ -142,12 +142,6 @@ class ListRuleProcessor:
                     
             logger.info(f"从文件 {txt_file.name} 中提取到 {len(links)} 个链接")
             
-            # 调试：显示提取到的链接
-            if len(links) > 0:
-                logger.debug(f"提取到的链接:")
-                for i, link in enumerate(links, 1):
-                    logger.debug(f"  {i}. {link}")
-            
             return links
         except Exception as e:
             logger.error(f"解析文件 {txt_file.name} 内容失败: {e}")
@@ -337,6 +331,11 @@ class ListRuleProcessor:
         total_links = len(links)
         logger.info(f"文件 {txt_file.name} 发现 {total_links} 个链接，开始下载...")
         
+        # 先显示所有链接的顺序
+        logger.info(f"链接顺序:")
+        for idx, link in enumerate(links, 1):
+            logger.info(f"  [{idx}/{total_links}] {link}")
+        
         # 创建一个字典来跟踪每个链接的进度和结果
         link_status = {}
         for idx, link in enumerate(links, 1):
@@ -345,34 +344,42 @@ class ListRuleProcessor:
                 'total': total_links,
                 'content': None,
                 'success': False,
-                'error': None
+                'error': None,
+                'completed': False
             }
         
         # 并发下载所有链接内容（带重试）
+        all_contents = []
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             future_to_url = {executor.submit(self.download_with_retry, link, max_retries): link for link in links}
             
+            # 等待所有下载完成
             for future in as_completed(future_to_url):
                 url = future_to_url[future]
-                
                 try:
                     content = future.result()
                     if content:
                         link_status[url]['content'] = content
                         link_status[url]['success'] = True
-                        # 按顺序显示成功信息
-                        status = link_status[url]
-                        logger.info(f"✓ 成功下载 [{status['index']}/{status['total']}]: {url}")
+                        all_contents.append(content)
                     else:
                         link_status[url]['success'] = False
                         link_status[url]['error'] = "下载内容为空"
-                        status = link_status[url]
-                        logger.warning(f"✗ 下载内容为空 [{status['index']}/{status['total']}]: {url}")
                 except Exception as e:
                     link_status[url]['success'] = False
                     link_status[url]['error'] = str(e)
-                    status = link_status[url]
-                    logger.error(f"✗ 下载失败 [{status['index']}/{status['total']}]: {url}")
+        
+        # 现在按原始顺序显示下载结果
+        logger.info("下载结果:")
+        for link in links:
+            status = link_status[link]
+            if status['success']:
+                logger.info(f"✓ 成功下载 [{status['index']}/{status['total']}]: {link}")
+            else:
+                if status['error'] == "下载内容为空":
+                    logger.warning(f"✗ 下载内容为空 [{status['index']}/{status['total']}]: {link}")
+                else:
+                    logger.error(f"✗ 下载失败 [{status['index']}/{status['total']}]: {link}")
         
         # 统计下载结果
         success_count = sum(1 for status in link_status.values() if status['success'])
@@ -380,12 +387,6 @@ class ListRuleProcessor:
         
         if fail_count > 0:
             logger.warning(f"下载完成: {success_count}/{total_links} 成功, {fail_count}/{total_links} 失败")
-        
-        # 按原始顺序收集成功下载的内容
-        all_contents = []
-        for link in links:
-            if link_status[link]['success'] and link_status[link]['content']:
-                all_contents.append(link_status[link]['content'])
         
         if not all_contents:
             logger.error(f"文件 {txt_file.name} 的所有链接下载失败")
