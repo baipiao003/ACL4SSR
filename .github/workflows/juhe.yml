@@ -66,7 +66,13 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add Clash/*.list
-        git commit -m "🤖 自动更新Clash规则"
+        
+        # 获取当前时间戳
+        TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
+        
+        # 提交信息包含时间戳
+        git commit -m "🤖 自动更新Clash规则 [$TIMESTAMP]"
+        
         git push origin ${{ github.event.inputs.branch || 'clash' }}
     
     - name: Upload rules as artifact
