@@ -3,7 +3,7 @@ name: Update Clash Rules
 on:
   push:
     branches:
-      - main
+      - clash
     paths:
       - 'rules/**'
       - 'zhenghe.py'
