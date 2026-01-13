@@ -6,6 +6,7 @@ import time
 from typing import List, Set, Optional, Tuple, Dict
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import urllib.parse
 
 # 配置日志，不显示时间戳
 logging.basicConfig(
@@ -89,8 +90,10 @@ class ListRuleProcessor:
         """
         links = []
         seen_links = set()  # 用于去重
+        
+        # 改进的正则表达式，支持更多字符
         url_pattern = re.compile(
-            r'https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+[/\w\.\-?=%&+#]*',
+            r'https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+(?:[/\w\.\-?=%&+#\'\(\)~]*)?',
             re.IGNORECASE
         )
         
@@ -101,20 +104,103 @@ class ListRuleProcessor:
             return []
         
         try:
-            found_links = url_pattern.findall(content)
+            # 首先尝试按行处理，每行可能包含一个URL
+            lines = content.split('\n')
             
-            # 过滤出list规则链接（保持原始顺序）
-            for link in found_links:
-                link = link.strip()
-                if link and link not in seen_links and self._is_list_rule_link(link):
-                    seen_links.add(link)
-                    links.append(link)
+            for line in lines:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                
+                # 尝试查找行中的URL
+                found_urls = url_pattern.findall(line)
+                if found_urls:
+                    for url in found_urls:
+                        url = url.strip()
+                        # 清理URL结尾的标点符号
+                        url = self._clean_url(url)
+                        if url and url not in seen_links and self._is_list_rule_link(url):
+                            seen_links.add(url)
+                            links.append(url)
+                
+                # 如果没有找到匹配的URL，但整行看起来像是一个URL，直接尝试
+                elif self._looks_like_url(line):
+                    cleaned_line = self._clean_url(line)
+                    if cleaned_line and cleaned_line not in seen_links and self._is_list_rule_link(cleaned_line):
+                        seen_links.add(cleaned_line)
+                        links.append(cleaned_line)
+            
+            # 如果按行处理没找到足够的链接，再尝试在整个内容中查找
+            if len(links) == 0:
+                found_urls = url_pattern.findall(content)
+                for url in found_urls:
+                    url = url.strip()
+                    url = self._clean_url(url)
+                    if url and url not in seen_links and self._is_list_rule_link(url):
+                        seen_links.add(url)
+                        links.append(url)
                     
             logger.info(f"从文件 {txt_file.name} 中提取到 {len(links)} 个链接")
+            
+            # 调试：显示提取到的链接
+            if len(links) > 0:
+                logger.debug(f"提取到的链接:")
+                for i, link in enumerate(links, 1):
+                    logger.debug(f"  {i}. {link}")
+            
             return links
         except Exception as e:
             logger.error(f"解析文件 {txt_file.name} 内容失败: {e}")
             return []
+    
+    def _clean_url(self, url: str) -> str:
+        """
+        清理URL字符串，移除末尾的标点符号
+        
+        Args:
+            url: 原始URL字符串
+            
+        Returns:
+            清理后的URL
+        """
+        if not url:
+            return url
+        
+        # 移除URL末尾的常见标点符号
+        url = url.rstrip('.,;:!?\'"')
+        
+        # 确保URL以http或https开头
+        if not url.startswith(('http://', 'https://')):
+            # 尝试在前面添加https://
+            if url.startswith('//'):
+                url = 'https:' + url
+            elif '://' not in url and '.' in url:
+                # 可能是不带协议的URL，尝试添加https://
+                url = 'https://' + url
+        
+        return url
+    
+    def _looks_like_url(self, text: str) -> bool:
+        """
+        判断文本是否看起来像URL
+        
+        Args:
+            text: 文本字符串
+            
+        Returns:
+            是否像URL
+        """
+        if not text:
+            return False
+        
+        # 检查是否包含常见的URL模式
+        url_indicators = ['http://', 'https://', 'www.', '.com', '.net', '.org', '.io', '.list', '.yaml']
+        
+        for indicator in url_indicators:
+            if indicator in text.lower():
+                return True
+        
+        return False
     
     def _is_list_rule_link(self, link: str) -> bool:
         """
@@ -126,14 +212,22 @@ class ListRuleProcessor:
         Returns:
             是否为list规则链接
         """
+        if not link:
+            return False
+        
         # 这里可以根据需要添加更多判断条件
-        list_keywords = ['.list', '.yaml', '.yml', '.txt', 'clash', 'rule']
+        list_keywords = ['.list', '.yaml', '.yml', '.txt', 'clash', 'rule', 'ruleset']
         link_lower = link.lower()
         
         # 检查是否包含常见规则文件扩展名或关键词
         for keyword in list_keywords:
             if keyword in link_lower:
                 return True
+        
+        # 额外检查：如果是github raw链接，很可能就是规则文件
+        if 'raw.githubusercontent.com' in link_lower:
+            return True
+            
         return False
     
     def download_with_retry(self, url: str, max_retries: int = 3) -> Optional[str]:
@@ -156,6 +250,16 @@ class ListRuleProcessor:
         
         while retry_count <= max_retries:
             try:
+                # 确保URL是编码正确的
+                try:
+                    # 尝试解析URL以确保格式正确
+                    parsed_url = urllib.parse.urlparse(url)
+                    if not parsed_url.scheme:
+                        url = 'https://' + url
+                        parsed_url = urllib.parse.urlparse(url)
+                except:
+                    pass
+                
                 response = requests.get(url, headers=headers, timeout=30)
                 response.raise_for_status()
                 
@@ -244,16 +348,12 @@ class ListRuleProcessor:
                 'error': None
             }
         
-        # 用于跟踪已完成的数量（用于进度条）
-        completed_count = 0
-        
         # 并发下载所有链接内容（带重试）
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             future_to_url = {executor.submit(self.download_with_retry, link, max_retries): link for link in links}
             
             for future in as_completed(future_to_url):
                 url = future_to_url[future]
-                completed_count += 1
                 
                 try:
                     content = future.result()
