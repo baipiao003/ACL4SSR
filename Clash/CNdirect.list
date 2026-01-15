@@ -1,4 +1,4 @@
-# 生成时间: 2026-01-14 03:27:45
+# 生成时间: 2026-01-15 03:22:22
 # 规则数量: 7945
 
 # NAME: Download
@@ -43,6 +43,64 @@ PROCESS-NAME,qbittorrent
 PROCESS-NAME,qbittorrent.exe
 PROCESS-NAME,uTorrent
 PROCESS-NAME,uTorrent.exe
+DOMAIN-SUFFIX,7777777.buzz
+IP-CIDR,193.122.114.13/32
+IP-CIDR,47.110.135.104/32
+PROCESS-NAME,v2ray
+PROCESS-NAME,xray
+PROCESS-NAME,naive
+PROCESS-NAME,trojan
+PROCESS-NAME,trojan-go
+PROCESS-NAME,ss-local
+PROCESS-NAME,privoxy
+PROCESS-NAME,leaf
+PROCESS-NAME,v2ray.exe
+PROCESS-NAME,xray.exe
+PROCESS-NAME,naive.exe
+PROCESS-NAME,trojan.exe
+PROCESS-NAME,trojan-go.exe
+PROCESS-NAME,ss-local.exe
+PROCESS-NAME,privoxy.exe
+PROCESS-NAME,leaf.exe
+PROCESS-NAME,Surge
+PROCESS-NAME,Surge 2
+PROCESS-NAME,Surge 3
+PROCESS-NAME,Surge 4
+PROCESS-NAME,Surge%202
+PROCESS-NAME,Surge%203
+PROCESS-NAME,Surge%204
+PROCESS-NAME,qBittorrent
+PROCESS-NAME,ThunderVIP.exe
+PROCESS-NAME,transmission-daemon.exe
+PROCESS-NAME,transmission-qt.exe
+DOMAIN,clash.razord.top
+DOMAIN,yacd.haishan.me
+DOMAIN-SUFFIX,oaifree.com
+DOMAIN-SUFFIX,afun.la
+DOMAIN-SUFFIX,cinema.makima.online
+DOMAIN-SUFFIX,theater.makima.online
+DOMAIN-SUFFIX,anime.makima.online
+DOMAIN-SUFFIX,celluloid.makima.online
+DOMAIN-SUFFIX,restrict.makima.online
+DOMAIN-SUFFIX,demo.fuclaude.com
+DOMAIN-SUFFIX,athfree.killerbest.com
+DOMAIN-SUFFIX,tantantan.paoluma.de
+# Mac Download
+PROCESS-NAME,WebTorrent Helper.exe
+# bt
+DOMAIN-SUFFIX,smtp
+URL-REGEX,(Subject|HELO|SMTP)
+URL-REGEX,(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com
+URL-REGEX,(.+.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan).(cn|com)
+URL-REGEX,(.+.)?(torrent|announce.php?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei)(..+)?
+# XunLei
+URL-REGEX,(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)
+# 360
+URL-REGEX,(.+\.|^)(360|so)\.(cn|com)
+# Tencent Weiyun
+#Baidu disk
+# Xbox
+URL-REGEX,assets\d+\.xboxlive\.(com|cn)
 # 中国云服务商ip端
 # 阿里
 IP-CIDR,8.128.0.0/10,no-resolve
@@ -250,7 +308,6 @@ IP-CIDR,115.236.112.0/20,no-resolve
 IP-CIDR,115.238.76.0/22,no-resolve
 IP-CIDR,123.58.160.0/19,no-resolve
 IP-CIDR,223.252.192.0/19,no-resolve
-# 360
 IP-CIDR,101.198.128.0/18,no-resolve
 IP-CIDR,101.198.192.0/24,no-resolve
 IP-CIDR,101.198.194.0/23,no-resolve
@@ -258,6 +315,46 @@ IP-CIDR,101.198.196.0/22,no-resolve
 IP-CIDR,101.198.200.0/21,no-resolve
 IP-CIDR,101.198.208.0/20,no-resolve
 IP-CIDR,101.199.196.0/22,no-resolve
+# NAME: LanZouYun
+# UPDATED: 2025-06-06 09:17:36
+# DOMAIN-SUFFIX: 36
+# TOTAL: 36
+DOMAIN-SUFFIX,baidupan.com
+DOMAIN-SUFFIX,bakstotre.com
+DOMAIN-SUFFIX,ilanzou.com
+DOMAIN-SUFFIX,lanosso.com
+DOMAIN-SUFFIX,lanpv.com
+DOMAIN-SUFFIX,lanpw.com
+DOMAIN-SUFFIX,lanrar.com
+DOMAIN-SUFFIX,lanzn.com
+DOMAIN-SUFFIX,lanzou.com
+DOMAIN-SUFFIX,lanzoub.com
+DOMAIN-SUFFIX,lanzouc.com
+DOMAIN-SUFFIX,lanzoue.com
+DOMAIN-SUFFIX,lanzouf.com
+DOMAIN-SUFFIX,lanzoug.com
+DOMAIN-SUFFIX,lanzouh.com
+DOMAIN-SUFFIX,lanzoui.com
+DOMAIN-SUFFIX,lanzouj.com
+DOMAIN-SUFFIX,lanzouk.com
+DOMAIN-SUFFIX,lanzoul.com
+DOMAIN-SUFFIX,lanzoum.com
+DOMAIN-SUFFIX,lanzouo.com
+DOMAIN-SUFFIX,lanzoup.com
+DOMAIN-SUFFIX,lanzouq.com
+DOMAIN-SUFFIX,lanzous.com
+DOMAIN-SUFFIX,lanzout.com
+DOMAIN-SUFFIX,lanzouu.com
+DOMAIN-SUFFIX,lanzouv.com
+DOMAIN-SUFFIX,lanzouw.com
+DOMAIN-SUFFIX,lanzoux.com
+DOMAIN-SUFFIX,lanzouy.com
+DOMAIN-SUFFIX,lanzov.com
+DOMAIN-SUFFIX,lanzv.com
+DOMAIN-SUFFIX,ulanzou.com
+DOMAIN-SUFFIX,webgetstore.com
+DOMAIN-SUFFIX,woozooo.com
+DOMAIN-SUFFIX,wwentua.com
 # NAME: NetEase
 # UPDATED: 2025-12-10 02:08:50
 # DOMAIN: 1
@@ -410,6 +507,29 @@ IP-CIDR,59.111.181.60/32,no-resolve
 IP-CIDR,59.111.19.33/32,no-resolve
 IP-CIDR,59.111.21.14/31,no-resolve
 IP-CIDR,59.111.238.29/32,no-resolve
+# NAME: 4399
+# DOMAIN-SUFFIX: 13
+# TOTAL: 13
+DOMAIN-SUFFIX,4399.cn
+DOMAIN-SUFFIX,4399.com
+DOMAIN-SUFFIX,4399.net
+DOMAIN-SUFFIX,4399api.com
+DOMAIN-SUFFIX,4399dmw.com
+DOMAIN-SUFFIX,4399pk.com
+DOMAIN-SUFFIX,4399sj.com
+DOMAIN-SUFFIX,5054399.com
+DOMAIN-SUFFIX,edu4399.com
+DOMAIN-SUFFIX,funnycore.com
+DOMAIN-SUFFIX,img4399.com
+DOMAIN-SUFFIX,qq163.com
+DOMAIN-SUFFIX,qq163.net
+# NAME: zhilian
+# AUTHOR: baipiao003
+# REPO: https://github.com/baipiao003/ACL4SSR/clash/Clash
+# UPDATED: 2025-10-31 19:00:01
+# DOMAIN: 0
+# TOTAL: 1
+DOMAIN-SUFFIX,bsbsb.top
 # 内容：中国IP地址段ipv4
 # 来源：https://github.com/17mon/china_ip_list/
 # 更新：2025-04-12 14:50:12
@@ -7818,110 +7938,6 @@ IP-CIDR,223.252.128.0/19,no-resolve
 IP-CIDR,223.255.0.0/17,no-resolve
 IP-CIDR,223.255.236.0/22,no-resolve
 IP-CIDR,223.255.252.0/23,no-resolve
-# Mac Download
-PROCESS-NAME,WebTorrent Helper.exe
-# bt
-DOMAIN-SUFFIX,smtp
-URL-REGEX,(Subject|HELO|SMTP)
-URL-REGEX,(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com
-URL-REGEX,(.+.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan).(cn|com)
-URL-REGEX,(.+.)?(torrent|announce.php?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei)(..+)?
-# XunLei
-URL-REGEX,(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)
-URL-REGEX,(.+\.|^)(360|so)\.(cn|com)
-# Tencent Weiyun
-#Baidu disk
-# Xbox
-URL-REGEX,assets\d+\.xboxlive\.(com|cn)
-# NAME: LanZouYun
-# UPDATED: 2025-06-06 09:17:36
-# DOMAIN-SUFFIX: 36
-# TOTAL: 36
-DOMAIN-SUFFIX,baidupan.com
-DOMAIN-SUFFIX,bakstotre.com
-DOMAIN-SUFFIX,ilanzou.com
-DOMAIN-SUFFIX,lanosso.com
-DOMAIN-SUFFIX,lanpv.com
-DOMAIN-SUFFIX,lanpw.com
-DOMAIN-SUFFIX,lanrar.com
-DOMAIN-SUFFIX,lanzn.com
-DOMAIN-SUFFIX,lanzou.com
-DOMAIN-SUFFIX,lanzoub.com
-DOMAIN-SUFFIX,lanzouc.com
-DOMAIN-SUFFIX,lanzoue.com
-DOMAIN-SUFFIX,lanzouf.com
-DOMAIN-SUFFIX,lanzoug.com
-DOMAIN-SUFFIX,lanzouh.com
-DOMAIN-SUFFIX,lanzoui.com
-DOMAIN-SUFFIX,lanzouj.com
-DOMAIN-SUFFIX,lanzouk.com
-DOMAIN-SUFFIX,lanzoul.com
-DOMAIN-SUFFIX,lanzoum.com
-DOMAIN-SUFFIX,lanzouo.com
-DOMAIN-SUFFIX,lanzoup.com
-DOMAIN-SUFFIX,lanzouq.com
-DOMAIN-SUFFIX,lanzous.com
-DOMAIN-SUFFIX,lanzout.com
-DOMAIN-SUFFIX,lanzouu.com
-DOMAIN-SUFFIX,lanzouv.com
-DOMAIN-SUFFIX,lanzouw.com
-DOMAIN-SUFFIX,lanzoux.com
-DOMAIN-SUFFIX,lanzouy.com
-DOMAIN-SUFFIX,lanzov.com
-DOMAIN-SUFFIX,lanzv.com
-DOMAIN-SUFFIX,ulanzou.com
-DOMAIN-SUFFIX,webgetstore.com
-DOMAIN-SUFFIX,woozooo.com
-DOMAIN-SUFFIX,wwentua.com
-DOMAIN-SUFFIX,7777777.buzz
-IP-CIDR,193.122.114.13/32
-IP-CIDR,47.110.135.104/32
-PROCESS-NAME,v2ray
-PROCESS-NAME,xray
-PROCESS-NAME,naive
-PROCESS-NAME,trojan
-PROCESS-NAME,trojan-go
-PROCESS-NAME,ss-local
-PROCESS-NAME,privoxy
-PROCESS-NAME,leaf
-PROCESS-NAME,v2ray.exe
-PROCESS-NAME,xray.exe
-PROCESS-NAME,naive.exe
-PROCESS-NAME,trojan.exe
-PROCESS-NAME,trojan-go.exe
-PROCESS-NAME,ss-local.exe
-PROCESS-NAME,privoxy.exe
-PROCESS-NAME,leaf.exe
-PROCESS-NAME,Surge
-PROCESS-NAME,Surge 2
-PROCESS-NAME,Surge 3
-PROCESS-NAME,Surge 4
-PROCESS-NAME,Surge%202
-PROCESS-NAME,Surge%203
-PROCESS-NAME,Surge%204
-PROCESS-NAME,qBittorrent
-PROCESS-NAME,ThunderVIP.exe
-PROCESS-NAME,transmission-daemon.exe
-PROCESS-NAME,transmission-qt.exe
-DOMAIN,clash.razord.top
-DOMAIN,yacd.haishan.me
-DOMAIN-SUFFIX,oaifree.com
-DOMAIN-SUFFIX,afun.la
-DOMAIN-SUFFIX,cinema.makima.online
-DOMAIN-SUFFIX,theater.makima.online
-DOMAIN-SUFFIX,anime.makima.online
-DOMAIN-SUFFIX,celluloid.makima.online
-DOMAIN-SUFFIX,restrict.makima.online
-DOMAIN-SUFFIX,demo.fuclaude.com
-DOMAIN-SUFFIX,athfree.killerbest.com
-DOMAIN-SUFFIX,tantantan.paoluma.de
-# NAME: zhilian
-# AUTHOR: baipiao003
-# REPO: https://github.com/baipiao003/ACL4SSR/clash/Clash
-# UPDATED: 2025-10-31 19:00:01
-# DOMAIN: 0
-# TOTAL: 1
-DOMAIN-SUFFIX,bsbsb.top
 # NAME: 123pan
 # UPDATED: 2025-08-26 19:33:01
 # DOMAIN-SUFFIX: 3
@@ -7930,19 +7946,3 @@ DOMAIN-SUFFIX,123pan.com
 DOMAIN-SUFFIX,123pan.cn
 DOMAIN-SUFFIX,123865.com
 DOMAIN-KEYWORD,123pan
-# NAME: 4399
-# DOMAIN-SUFFIX: 13
-# TOTAL: 13
-DOMAIN-SUFFIX,4399.cn
-DOMAIN-SUFFIX,4399.com
-DOMAIN-SUFFIX,4399.net
-DOMAIN-SUFFIX,4399api.com
-DOMAIN-SUFFIX,4399dmw.com
-DOMAIN-SUFFIX,4399pk.com
-DOMAIN-SUFFIX,4399sj.com
-DOMAIN-SUFFIX,5054399.com
-DOMAIN-SUFFIX,edu4399.com
-DOMAIN-SUFFIX,funnycore.com
-DOMAIN-SUFFIX,img4399.com
-DOMAIN-SUFFIX,qq163.com
-DOMAIN-SUFFIX,qq163.net
