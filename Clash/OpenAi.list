@@ -1,30 +1,45 @@
-# 生成时间: 2026-01-15 13:27:37
+# 生成时间: 2026-01-15 13:33:00
 # 规则数量: 140
 
-# NAME: OpenAI
+# NAME: Copilot
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:20:00
-# DOMAIN: 7
+# UPDATED: 2025-06-06 09:20:02
+# DOMAIN: 20
 # DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 24
-# IP-ASN: 1
+# DOMAIN-SUFFIX: 26
+# IP-ASN: 2
 # IP-CIDR: 2
-# TOTAL: 35
+# TOTAL: 51
+DOMAIN,api.msn.com
+DOMAIN,api.statsig.com
+DOMAIN,assets.msn.com
 DOMAIN,browser-intake-datadoghq.com
 DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,copilot.microsoft.com
+DOMAIN,gateway.bingviz.microsoft.net
+DOMAIN,gateway.bingviz.microsoftapp.net
+DOMAIN,in.appcenter.ms
+DOMAIN,location.microsoft.com
+DOMAIN,odc.officeapps.live.com
 DOMAIN,openai-api.arkoselabs.com
-DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN,openaicomproductionae4b.blob.core.windows.net
 DOMAIN,production-openaicom-storage.azureedge.net
+DOMAIN,r.bing.com
+DOMAIN,self.events.data.microsoft.com
+DOMAIN,services.bingapis.com
 DOMAIN,static.cloudflareinsights.com
-DOMAIN-SUFFIX,ai.com
+DOMAIN,sydney.bing.com
+DOMAIN,www.bing.com
 DOMAIN-SUFFIX,algolia.net
-DOMAIN-SUFFIX,api.statsig.com
+DOMAIN-SUFFIX,api.microsoftapp.net
 DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
+DOMAIN-SUFFIX,challenges.cloudflare.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,edgeservices.bing.com
 DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,host.livekit.cloud
@@ -42,12 +57,12 @@ DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,turn.livekit.cloud
-DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,openaicom-api
+IP-ASN,14061,no-resolve
+IP-ASN,20473,no-resolve
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
-IP-ASN,20473,no-resolve
 # NAME: Gemini
-# UPDATED: 2025-06-06 09:20:02
 # DOMAIN: 3
 # DOMAIN-KEYWORD: 3
 # DOMAIN-SUFFIX: 7
@@ -73,38 +88,16 @@ DOMAIN-KEYWORD,generativelanguage
 DOMAIN,cdn.usefathom.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
-# NAME: Copilot
-# DOMAIN: 20
-# DOMAIN-SUFFIX: 26
-# IP-ASN: 2
-# TOTAL: 51
-DOMAIN,api.msn.com
-DOMAIN,api.statsig.com
-DOMAIN,assets.msn.com
-DOMAIN,copilot.microsoft.com
-DOMAIN,gateway.bingviz.microsoft.net
-DOMAIN,gateway.bingviz.microsoftapp.net
-DOMAIN,in.appcenter.ms
-DOMAIN,location.microsoft.com
-DOMAIN,odc.officeapps.live.com
-DOMAIN,r.bing.com
-DOMAIN,self.events.data.microsoft.com
-DOMAIN,services.bingapis.com
-DOMAIN,sydney.bing.com
-DOMAIN,www.bing.com
-DOMAIN-SUFFIX,api.microsoftapp.net
-DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
-DOMAIN-SUFFIX,challenges.cloudflare.com
-DOMAIN-SUFFIX,edgeservices.bing.com
-DOMAIN-KEYWORD,openaicom-api
-IP-ASN,14061,no-resolve
-# 内容：Github Copilot
-# 数量：5条
-DOMAIN-KEYWORD,cocopilot
-DOMAIN,api.github.com
-DOMAIN,copilot-proxy.githubusercontent.com
-DOMAIN,api.githubcopilot.com
-DOMAIN,api.individual.githubcopilot.com
+# NAME: OpenAI
+# UPDATED: 2025-06-06 09:20:00
+# DOMAIN: 7
+# DOMAIN-SUFFIX: 24
+# IP-ASN: 1
+# TOTAL: 35
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,api.statsig.com
+DOMAIN-KEYWORD,openai
 DOMAIN-SUFFIX,AI.com
 DOMAIN-SUFFIX,cdn.auth0.com
 DOMAIN-SUFFIX,opendns.com
@@ -141,3 +134,10 @@ DOMAIN-SUFFIX,replicate.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,you.com
 DOMAIN-SUFFIX,huggingface.co
+# 内容：Github Copilot
+# 数量：5条
+DOMAIN-KEYWORD,cocopilot
+DOMAIN,api.github.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,api.githubcopilot.com
+DOMAIN,api.individual.githubcopilot.com

@@ -1,4 +1,4 @@
-# 生成时间: 2026-01-15 13:27:37
+# 生成时间: 2026-01-15 13:32:59
 # 规则数量: 7255
 
 # 代理列表
@@ -6918,6 +6918,9 @@ DOMAIN-SUFFIX,ocnttv.com
 # VikACG
 DOMAIN-SUFFIX,vikacg.com
 DOMAIN-SUFFIX,picjs.xyz
+# 代理规则
+DOMAIN-SUFFIX,revanced.net
+DOMAIN-SUFFIX,deepl.com
 # NAME: ProxyLite
 # AUTHOR: blackmatrix7
 # REPO: https://gitlab.com/blackmatrix7/ios_rule_script
@@ -7243,9 +7246,6 @@ IP-CIDR,75.126.0.0/16,no-resolve
 IP-CIDR,91.105.192.0/23,no-resolve
 IP-CIDR6,2001:b28:f23c::/47,no-resolve
 IP-CIDR6,2a0a:f280::/32,no-resolve
-# 代理规则
-DOMAIN-SUFFIX,revanced.net
-DOMAIN-SUFFIX,deepl.com
 DOMAIN,blog.090227.xyz
 DOMAIN,blog.cmliussss.com
 DOMAIN,chinaip.090227.xyz
