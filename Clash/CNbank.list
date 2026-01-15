@@ -1,19 +1,10 @@
-# 生成时间: 2026-01-15 14:02:15
+# 生成时间: 2026-01-15 16:24:50
 # 规则数量: 245
 
-# NAME: BOCOM
+# NAME: AliPay
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-06-06 09:17:31
-# DOMAIN-SUFFIX: 6
-# TOTAL: 6
-DOMAIN-SUFFIX,95559.com.cn
-DOMAIN-SUFFIX,95559.sh.cn
-DOMAIN-SUFFIX,bankcomm.com
-DOMAIN-SUFFIX,bankcomm.com.au
-DOMAIN-SUFFIX,bankcomm.com.mo
-DOMAIN-SUFFIX,bankcomm.com.tw
-# NAME: AliPay
 # DOMAIN-SUFFIX: 21
 # TOTAL: 21
 DOMAIN-SUFFIX,alipay
@@ -37,6 +28,15 @@ DOMAIN-SUFFIX,alipayplus.com
 DOMAIN-SUFFIX,ifaa.org.cn
 DOMAIN-SUFFIX,luohanacademy.com
 DOMAIN-SUFFIX,sinopayment.com.cn
+# NAME: BOCOM
+# DOMAIN-SUFFIX: 6
+# TOTAL: 6
+DOMAIN-SUFFIX,95559.com.cn
+DOMAIN-SUFFIX,95559.sh.cn
+DOMAIN-SUFFIX,bankcomm.com
+DOMAIN-SUFFIX,bankcomm.com.au
+DOMAIN-SUFFIX,bankcomm.com.mo
+DOMAIN-SUFFIX,bankcomm.com.tw
 # NAME: BOC
 # DOMAIN-SUFFIX: 22
 # TOTAL: 22
@@ -62,6 +62,13 @@ DOMAIN-SUFFIX,bocigroup.com
 DOMAIN-SUFFIX,bocim.com
 DOMAIN-SUFFIX,bocservices.com.cn
 DOMAIN-SUFFIX,ftcwifi.com
+# NAME: CGB
+# DOMAIN-SUFFIX: 4
+# TOTAL: 4
+DOMAIN-SUFFIX,95508.com
+DOMAIN-SUFFIX,cgbchina.cn
+DOMAIN-SUFFIX,cgbchina.com.cn
+DOMAIN-SUFFIX,gdb.com.cn
 # NAME: CCB
 # DOMAIN-SUFFIX: 18
 # TOTAL: 18
@@ -83,6 +90,24 @@ DOMAIN-SUFFIX,ccblife-test.com.cn
 DOMAIN-SUFFIX,ccbseoul.com
 DOMAIN-SUFFIX,ccbtrust.com.cn
 DOMAIN-SUFFIX,ccbxt.com
+# NAME: CEB
+# DOMAIN-SUFFIX: 15
+# TOTAL: 15
+DOMAIN-SUFFIX,cebbank.com
+DOMAIN-SUFFIX,ceblease.com
+DOMAIN-SUFFIX,eb-ind.com
+DOMAIN-SUFFIX,ebasset.com
+DOMAIN-SUFFIX,ebchina.com
+DOMAIN-SUFFIX,ebchinaintl.com
+DOMAIN-SUFFIX,ebf.com.cn
+DOMAIN-SUFFIX,ebfcn.com
+DOMAIN-SUFFIX,ebfortune.com
+DOMAIN-SUFFIX,ebscn-am.com
+DOMAIN-SUFFIX,ebscn.com
+DOMAIN-SUFFIX,ebtrust.com
+DOMAIN-SUFFIX,everbright.com
+DOMAIN-SUFFIX,secec.com
+DOMAIN-SUFFIX,sunlife-everbright.com
 # NAME: ICBC
 # UPDATED: 2025-06-06 09:17:35
 # DOMAIN-SUFFIX: 58
@@ -145,38 +170,6 @@ DOMAIN-SUFFIX,icbcswiss.com
 DOMAIN-SUFFIX,icbcthai.com
 DOMAIN-SUFFIX,icbkfs.com
 DOMAIN-SUFFIX,icbkus.com
-# NAME: CGB
-# DOMAIN-SUFFIX: 4
-# TOTAL: 4
-DOMAIN-SUFFIX,95508.com
-DOMAIN-SUFFIX,cgbchina.cn
-DOMAIN-SUFFIX,cgbchina.com.cn
-DOMAIN-SUFFIX,gdb.com.cn
-# NAME: CEB
-# DOMAIN-SUFFIX: 15
-# TOTAL: 15
-DOMAIN-SUFFIX,cebbank.com
-DOMAIN-SUFFIX,ceblease.com
-DOMAIN-SUFFIX,eb-ind.com
-DOMAIN-SUFFIX,ebasset.com
-DOMAIN-SUFFIX,ebchina.com
-DOMAIN-SUFFIX,ebchinaintl.com
-DOMAIN-SUFFIX,ebf.com.cn
-DOMAIN-SUFFIX,ebfcn.com
-DOMAIN-SUFFIX,ebfortune.com
-DOMAIN-SUFFIX,ebscn-am.com
-DOMAIN-SUFFIX,ebscn.com
-DOMAIN-SUFFIX,ebtrust.com
-DOMAIN-SUFFIX,everbright.com
-DOMAIN-SUFFIX,secec.com
-DOMAIN-SUFFIX,sunlife-everbright.com
-# NAME: ABC
-DOMAIN-SUFFIX,95599.cn
-DOMAIN-SUFFIX,abchina.com
-DOMAIN-SUFFIX,bscabank.com
-DOMAIN-SUFFIX,openaboc.cn
-DOMAIN-SUFFIX,openaboc.com
-DOMAIN-SUFFIX,openaboc.com.cn
 # NAME: PSBC
 # UPDATED: 2025-06-06 09:17:37
 # DOMAIN-SUFFIX: 3
@@ -184,6 +177,13 @@ DOMAIN-SUFFIX,openaboc.com.cn
 DOMAIN-SUFFIX,95580.net
 DOMAIN-SUFFIX,psbc.com
 DOMAIN-SUFFIX,psbcoa.com.cn
+# NAME: ABC
+DOMAIN-SUFFIX,95599.cn
+DOMAIN-SUFFIX,abchina.com
+DOMAIN-SUFFIX,bscabank.com
+DOMAIN-SUFFIX,openaboc.cn
+DOMAIN-SUFFIX,openaboc.com
+DOMAIN-SUFFIX,openaboc.com.cn
 # NAME: CMB
 # UPDATED: 2025-06-06 09:17:32
 # DOMAIN-SUFFIX: 38
