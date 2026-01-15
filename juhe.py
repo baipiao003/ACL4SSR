@@ -76,16 +76,15 @@ class ListRuleProcessor:
         
         return None
     
-    def extract_links_from_file(self, txt_file: Path, max_retries: int = 3) -> List[str]:
+    def extract_and_deduplicate_links(self, content: str) -> List[str]:
         """
-        从txt文件中提取所有链接（带重试）
+        从内容中提取所有链接并去重（保持顺序）
         
         Args:
-            txt_file: txt文件路径
-            max_retries: 最大重试次数
+            content: 文件内容
             
         Returns:
-            提取到的链接列表（保持顺序）
+            去重后的链接列表（保持顺序）
         """
         links = []
         seen_links = set()  # 用于去重
@@ -96,19 +95,20 @@ class ListRuleProcessor:
             re.IGNORECASE
         )
         
-        # 带重试读取文件
-        content = self.read_file_with_retry(txt_file, max_retries)
-        if content is None:
-            logger.error(f"无法读取文件 {txt_file.name}，跳过处理")
-            return []
-        
         try:
             # 首先尝试按行处理，每行可能包含一个URL
             lines = content.split('\n')
             
             for line in lines:
                 line = line.strip()
-                if not line or line.startswith('#'):
+                if not line:
+                    # 保留空行
+                    links.append('')
+                    continue
+                
+                # 保留注释行
+                if line.startswith('#'):
+                    links.append(line)
                     continue
                 
                 # 尝试查找行中的URL
@@ -128,9 +128,12 @@ class ListRuleProcessor:
                     if cleaned_line and cleaned_line not in seen_links and self._is_list_rule_link(cleaned_line):
                         seen_links.add(cleaned_line)
                         links.append(cleaned_line)
+                else:
+                    # 保留非URL行（可能是注释或其他内容）
+                    links.append(line)
             
             # 如果按行处理没找到足够的链接，再尝试在整个内容中查找
-            if len(links) == 0:
+            if len(seen_links) == 0:
                 found_urls = url_pattern.findall(content)
                 for url in found_urls:
                     url = url.strip()
@@ -141,7 +144,7 @@ class ListRuleProcessor:
                     
             return links
         except Exception as e:
-            logger.error(f"解析文件 {txt_file.name} 内容失败: {e}")
+            logger.error(f"解析内容失败: {e}")
             return []
     
     def _clean_url(self, url: str) -> str:
@@ -220,6 +223,140 @@ class ListRuleProcessor:
             return True
             
         return False
+    
+    def deduplicate_links_in_files(self):
+        """
+        第一部分：检查并删除rules文件夹中txt文件的重复链接
+        """
+        logger.info("检查并删除重复链接...")
+        
+        # 获取所有txt文件
+        txt_files = list(self.rules_dir.glob("*.txt"))
+        if not txt_files:
+            logger.warning(f"在 {self.rules_dir} 目录中未找到txt文件")
+            return
+        
+        logger.info(f"找到 {len(txt_files)} 个txt文件，开始检查重复链接...")
+        
+        for txt_file in txt_files:
+            try:
+                logger.info(f"处理文件: {txt_file.name}")
+                
+                # 读取文件内容
+                content = self.read_file_with_retry(txt_file)
+                if content is None:
+                    logger.error(f"无法读取文件 {txt_file.name}，跳过处理")
+                    continue
+                
+                # 提取并去重链接
+                original_lines = content.split('\n')
+                deduplicated_links = self.extract_and_deduplicate_links(content)
+                
+                # 统计原始链接数
+                original_urls = []
+                for line in original_lines:
+                    line = line.strip()
+                    if line and not line.startswith('#') and self._looks_like_url(line):
+                        original_urls.append(line)
+                
+                original_count = len(original_urls)
+                deduplicated_count = len([link for link in deduplicated_links if link and not link.startswith('#') and self._looks_like_url(link)])
+                
+                duplicates_removed = original_count - deduplicated_count
+                
+                # 保存文件
+                try:
+                    with open(txt_file, 'w', encoding='utf-8') as f:
+                        f.write('\n'.join(deduplicated_links))
+                    
+                    if duplicates_removed > 0:
+                        logger.info(f"  ✓ 已删除 {duplicates_removed} 个重复链接")
+                        logger.info(f"    原始: {original_count} 个链接，去重后: {deduplicated_count} 个链接")
+                        logger.info(f"    ✓ 已保存到 {txt_file.name}")
+                    else:
+                        logger.info(f"  ✓ 无重复链接")
+                        logger.info(f"    总共: {original_count} 个链接")
+                        logger.info(f"    ✓ 已保存到 {txt_file.name}")
+                    
+                except Exception as save_error:
+                    logger.error(f"    ✗ 保存文件失败: {save_error}")
+                    continue
+                
+            except Exception as e:
+                logger.error(f"处理文件 {txt_file.name} 时发生错误: {e}")
+                continue
+        
+        # 输出去重统计
+        logger.info("去重完成！")
+        logger.info("=" * 60)
+    
+    def extract_links_from_file(self, txt_file: Path, max_retries: int = 3) -> List[str]:
+        """
+        从txt文件中提取所有链接（带重试）
+        
+        Args:
+            txt_file: txt文件路径
+            max_retries: 最大重试次数
+            
+        Returns:
+            提取到的链接列表（保持顺序）
+        """
+        links = []
+        seen_links = set()  # 用于去重
+        
+        # 改进的正则表达式，支持更多字符
+        url_pattern = re.compile(
+            r'https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+(?:[/\w\.\-?=%&+#\'\(\)~]*)?',
+            re.IGNORECASE
+        )
+        
+        # 带重试读取文件
+        content = self.read_file_with_retry(txt_file, max_retries)
+        if content is None:
+            logger.error(f"无法读取文件 {txt_file.name}，跳过处理")
+            return []
+        
+        try:
+            # 首先尝试按行处理，每行可能包含一个URL
+            lines = content.split('\n')
+            
+            for line in lines:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                
+                # 尝试查找行中的URL
+                found_urls = url_pattern.findall(line)
+                if found_urls:
+                    for url in found_urls:
+                        url = url.strip()
+                        # 清理URL结尾的标点符号
+                        url = self._clean_url(url)
+                        if url and url not in seen_links and self._is_list_rule_link(url):
+                            seen_links.add(url)
+                            links.append(url)
+                
+                # 如果没有找到匹配的URL，但整行看起来像是一个URL，直接尝试
+                elif self._looks_like_url(line):
+                    cleaned_line = self._clean_url(line)
+                    if cleaned_line and cleaned_line not in seen_links and self._is_list_rule_link(cleaned_line):
+                        seen_links.add(cleaned_line)
+                        links.append(cleaned_line)
+            
+            # 如果按行处理没找到足够的链接，再尝试在整个内容中查找
+            if len(links) == 0:
+                found_urls = url_pattern.findall(content)
+                for url in found_urls:
+                    url = url.strip()
+                    url = self._clean_url(url)
+                    if url and url not in seen_links and self._is_list_rule_link(url):
+                        seen_links.add(url)
+                        links.append(url)
+                    
+            return links
+        except Exception as e:
+            logger.error(f"解析文件 {txt_file.name} 内容失败: {e}")
+            return []
     
     def download_with_retry(self, url: str, max_retries: int = 3) -> Tuple[bool, Optional[str], int]:
         """
@@ -310,7 +447,7 @@ class ListRuleProcessor:
     
     def process_single_file(self, txt_file: Path, max_workers: int = 5, max_retries: int = 3):
         """
-        处理单个txt文件
+        第二部分：处理单个txt文件（下载并生成list文件）
         
         Args:
             txt_file: txt文件路径
@@ -424,12 +561,10 @@ class ListRuleProcessor:
     
     def process_all_files(self, max_workers: int = 5, max_retries: int = 3):
         """
-        处理rules目录下所有txt文件
-        
-        Args:
-            max_workers: 最大并发下载数
-            max_retries: 最大重试次数
+        第二部分：处理rules目录下所有txt文件
         """
+        logger.info("下载链接并生成list文件...")
+        
         # 获取所有txt文件
         txt_files = list(self.rules_dir.glob("*.txt"))
         if not txt_files:
@@ -471,7 +606,10 @@ def main():
         clash_dir="Clash"
     )
     
-    # 处理所有文件（带重试）
+    # 第一部分：去重链接
+    processor.deduplicate_links_in_files()
+    
+    # 第二部分：下载并生成list文件
     processor.process_all_files(max_workers=10, max_retries=3)
     
     # 打印最终统计
