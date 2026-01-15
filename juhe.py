@@ -588,10 +588,8 @@ class ListRuleProcessor:
         
         # 输出处理摘要
         logger.info("所有文件处理完成！")
-        logger.info(f"成功处理: {len(success_files)}/{len(txt_files)} 个文件")
         
         if failed_files:
-            logger.warning(f"失败处理: {len(failed_files)}/{len(txt_files)} 个文件")
             logger.warning("失败的文件列表:")
             for failed in failed_files:
                 logger.warning(f"  - {failed}")
