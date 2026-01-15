@@ -1,10 +1,50 @@
-# 生成时间: 2026-01-15 12:59:43
+# 生成时间: 2026-01-15 13:12:28
 # 规则数量: 1139
 
-# NAME: Youku
+# NAME: CCTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-06-06 09:17:29
+# DOMAIN-SUFFIX: 37
+# TOTAL: 37
+DOMAIN-SUFFIX,cctv.cn
+DOMAIN-SUFFIX,cctv.com
+DOMAIN-SUFFIX,cctvlib.cn
+DOMAIN-SUFFIX,cctvlib.com.cn
+DOMAIN-SUFFIX,cctvlibrary.cn
+DOMAIN-SUFFIX,cctvlibrary.com.cn
+DOMAIN-SUFFIX,cctvpic.com
+DOMAIN-SUFFIX,cctvpro.cn
+DOMAIN-SUFFIX,cctvpro.com.cn
+DOMAIN-SUFFIX,chinaepg.cn
+DOMAIN-SUFFIX,chinalive.com
+DOMAIN-SUFFIX,citv.net.cn
+DOMAIN-SUFFIX,cnms.net.cn
+DOMAIN-SUFFIX,cntv.cn
+DOMAIN-SUFFIX,cntv.com.cn
+DOMAIN-SUFFIX,cntvwb.cn
+DOMAIN-SUFFIX,gjgbdszt.cn
+DOMAIN-SUFFIX,gjgbdszt.com.cn
+DOMAIN-SUFFIX,gjgbdszt.net.cn
+DOMAIN-SUFFIX,ipanda.cn
+DOMAIN-SUFFIX,ipanda.com
+DOMAIN-SUFFIX,ipanda.com.cn
+DOMAIN-SUFFIX,ipanda.net
+DOMAIN-SUFFIX,livechina.cn
+DOMAIN-SUFFIX,livechina.com
+DOMAIN-SUFFIX,olympicchannelchina.cn
+DOMAIN-SUFFIX,tvcc.cn
+DOMAIN-SUFFIX,tvcc.com.cn
+DOMAIN-SUFFIX,xn--fiq53l6wcx3kp9bc7joo6apn8a.cn
+DOMAIN-SUFFIX,xn--fiq53l6wcx3kp9bc7joo6apn8a.xn--fiqs8s
+DOMAIN-SUFFIX,xn--fiq53l90et9fpncc7joo6apn8a.cn
+DOMAIN-SUFFIX,xn--kprv4ewxfr9cpxcc7joo6apn8a.cn
+DOMAIN-SUFFIX,xn--kprv4ewxfr9cpxcc7joo6apn8a.xn--fiqs8s
+DOMAIN-SUFFIX,zggbdszt.cn
+DOMAIN-SUFFIX,zggbdszt.com.cn
+DOMAIN-SUFFIX,zggbdszt.net.cn
+DOMAIN-SUFFIX,zygbdszt.net.cn
+# NAME: Youku
 # DOMAIN-SUFFIX: 34
 # IP-CIDR: 1
 # TOTAL: 35
@@ -100,8 +140,32 @@ IP-CIDR6,::ffff:58.58.0.90/128,no-resolve
 IP-CIDR6,::ffff:60.171.183.161/128,no-resolve
 IP-CIDR6,::ffff:60.171.183.186/128,no-resolve
 IP-CIDR6,::ffff:60.171.183.98/128,no-resolve
-# NAME: iQIYI
+# NAME: Douyu
 # UPDATED: 2025-06-06 09:17:30
+# DOMAIN-SUFFIX: 13
+# TOTAL: 13
+DOMAIN-SUFFIX,bytefcdnrd.com
+DOMAIN-SUFFIX,douyu.com
+DOMAIN-SUFFIX,douyu.tv
+DOMAIN-SUFFIX,douyuba.cn
+DOMAIN-SUFFIX,douyucdn.cn
+DOMAIN-SUFFIX,douyucdn2.cn
+DOMAIN-SUFFIX,douyupcdn.cn
+DOMAIN-SUFFIX,douyuscdn.com
+DOMAIN-SUFFIX,douyutv.com
+DOMAIN-SUFFIX,doyonoc.com
+DOMAIN-SUFFIX,edgesrv.com
+DOMAIN-SUFFIX,guguyuyin.com
+DOMAIN-SUFFIX,oywtv.com
+# NAME: HuYa
+# UPDATED: 2025-06-06 09:17:34
+# DOMAIN-SUFFIX: 4
+# TOTAL: 4
+DOMAIN-SUFFIX,huya.com
+DOMAIN-SUFFIX,huyagame.cn
+DOMAIN-SUFFIX,peiwanlu.com
+DOMAIN-SUFFIX,snapplay.com
+# NAME: iQIYI
 # DOMAIN-KEYWORD: 1
 # IP-CIDR: 21
 # PROCESS-NAME: 1
@@ -163,71 +227,6 @@ IP-CIDR,23.40.241.251/32,no-resolve
 IP-CIDR,23.40.242.10/32,no-resolve
 IP-CIDR,23.53.32.88/32,no-resolve
 PROCESS-NAME,com.qiyi.video
-# NAME: CCTV
-# DOMAIN-SUFFIX: 37
-# TOTAL: 37
-DOMAIN-SUFFIX,cctv.cn
-DOMAIN-SUFFIX,cctv.com
-DOMAIN-SUFFIX,cctvlib.cn
-DOMAIN-SUFFIX,cctvlib.com.cn
-DOMAIN-SUFFIX,cctvlibrary.cn
-DOMAIN-SUFFIX,cctvlibrary.com.cn
-DOMAIN-SUFFIX,cctvpic.com
-DOMAIN-SUFFIX,cctvpro.cn
-DOMAIN-SUFFIX,cctvpro.com.cn
-DOMAIN-SUFFIX,chinaepg.cn
-DOMAIN-SUFFIX,chinalive.com
-DOMAIN-SUFFIX,citv.net.cn
-DOMAIN-SUFFIX,cnms.net.cn
-DOMAIN-SUFFIX,cntv.cn
-DOMAIN-SUFFIX,cntv.com.cn
-DOMAIN-SUFFIX,cntvwb.cn
-DOMAIN-SUFFIX,gjgbdszt.cn
-DOMAIN-SUFFIX,gjgbdszt.com.cn
-DOMAIN-SUFFIX,gjgbdszt.net.cn
-DOMAIN-SUFFIX,ipanda.cn
-DOMAIN-SUFFIX,ipanda.com
-DOMAIN-SUFFIX,ipanda.com.cn
-DOMAIN-SUFFIX,ipanda.net
-DOMAIN-SUFFIX,livechina.cn
-DOMAIN-SUFFIX,livechina.com
-DOMAIN-SUFFIX,olympicchannelchina.cn
-DOMAIN-SUFFIX,tvcc.cn
-DOMAIN-SUFFIX,tvcc.com.cn
-DOMAIN-SUFFIX,xn--fiq53l6wcx3kp9bc7joo6apn8a.cn
-DOMAIN-SUFFIX,xn--fiq53l6wcx3kp9bc7joo6apn8a.xn--fiqs8s
-DOMAIN-SUFFIX,xn--fiq53l90et9fpncc7joo6apn8a.cn
-DOMAIN-SUFFIX,xn--kprv4ewxfr9cpxcc7joo6apn8a.cn
-DOMAIN-SUFFIX,xn--kprv4ewxfr9cpxcc7joo6apn8a.xn--fiqs8s
-DOMAIN-SUFFIX,zggbdszt.cn
-DOMAIN-SUFFIX,zggbdszt.com.cn
-DOMAIN-SUFFIX,zggbdszt.net.cn
-DOMAIN-SUFFIX,zygbdszt.net.cn
-# NAME: DouBan
-# UPDATED: 2025-06-06 09:17:33
-# DOMAIN-SUFFIX: 3
-# TOTAL: 3
-DOMAIN-SUFFIX,douban.com
-DOMAIN-SUFFIX,douban.fm
-DOMAIN-SUFFIX,doubanio.com
-# NAME: DouYin
-# UPDATED: 2025-06-06 09:18:50
-# DOMAIN: 2
-# DOMAIN-SUFFIX: 11
-# TOTAL: 13
-DOMAIN,lf3-static.bytednsdoc.com
-DOMAIN,v5-dy-o-abtest.zjcdn.com
-DOMAIN-SUFFIX,amemv.com
-DOMAIN-SUFFIX,douyincdn.com
-DOMAIN-SUFFIX,douyinpic.com
-DOMAIN-SUFFIX,douyinstatic.com
-DOMAIN-SUFFIX,douyinvod.com
-DOMAIN-SUFFIX,idouyinvod.com
-DOMAIN-SUFFIX,ixigua.com
-DOMAIN-SUFFIX,ixiguavideo.com
-DOMAIN-SUFFIX,pstatp.com
-DOMAIN-SUFFIX,snssdk.com
-DOMAIN-SUFFIX,toutiao.com
 # NAME: Hupu
 # UPDATED: 2025-06-06 09:17:35
 # DOMAIN-SUFFIX: 12
@@ -244,34 +243,35 @@ DOMAIN-SUFFIX,hupucdn.com
 DOMAIN-SUFFIX,hupujrs.com
 DOMAIN-SUFFIX,shihuo.cn
 DOMAIN-SUFFIX,vwanjia.com
+# NAME: DouBan
+# UPDATED: 2025-06-06 09:17:33
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+DOMAIN-SUFFIX,douban.com
+DOMAIN-SUFFIX,douban.fm
+DOMAIN-SUFFIX,doubanio.com
 # NAME: zhanqi
 # UPDATED: 2024-01-08 16:02:58
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
 DOMAIN-SUFFIX,zhanqi.tv
-# NAME: HuYa
-# UPDATED: 2025-06-06 09:17:34
-# DOMAIN-SUFFIX: 4
-# TOTAL: 4
-DOMAIN-SUFFIX,huya.com
-DOMAIN-SUFFIX,huyagame.cn
-DOMAIN-SUFFIX,peiwanlu.com
-DOMAIN-SUFFIX,snapplay.com
-# NAME: Douyu
-# DOMAIN-SUFFIX: 13
-DOMAIN-SUFFIX,bytefcdnrd.com
-DOMAIN-SUFFIX,douyu.com
-DOMAIN-SUFFIX,douyu.tv
-DOMAIN-SUFFIX,douyuba.cn
-DOMAIN-SUFFIX,douyucdn.cn
-DOMAIN-SUFFIX,douyucdn2.cn
-DOMAIN-SUFFIX,douyupcdn.cn
-DOMAIN-SUFFIX,douyuscdn.com
-DOMAIN-SUFFIX,douyutv.com
-DOMAIN-SUFFIX,doyonoc.com
-DOMAIN-SUFFIX,edgesrv.com
-DOMAIN-SUFFIX,guguyuyin.com
-DOMAIN-SUFFIX,oywtv.com
+# NAME: DouYin
+# UPDATED: 2025-06-06 09:18:50
+# DOMAIN: 2
+# DOMAIN-SUFFIX: 11
+DOMAIN,lf3-static.bytednsdoc.com
+DOMAIN,v5-dy-o-abtest.zjcdn.com
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,douyincdn.com
+DOMAIN-SUFFIX,douyinpic.com
+DOMAIN-SUFFIX,douyinstatic.com
+DOMAIN-SUFFIX,douyinvod.com
+DOMAIN-SUFFIX,idouyinvod.com
+DOMAIN-SUFFIX,ixigua.com
+DOMAIN-SUFFIX,ixiguavideo.com
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,toutiao.com
 # NAME: HuaShuTV
 # DOMAIN-SUFFIX: 6
 # TOTAL: 6
@@ -281,16 +281,6 @@ DOMAIN-SUFFIX,hzman.net
 DOMAIN-SUFFIX,wasu.cn
 DOMAIN-SUFFIX,wasu.tv
 DOMAIN-SUFFIX,wasumedia.cn
-# NAME: HunanTV
-# DOMAIN-SUFFIX: 7
-# TOTAL: 7
-DOMAIN-SUFFIX,hifuntv.com
-DOMAIN-SUFFIX,hitv.com
-DOMAIN-SUFFIX,hunaniptv.com
-DOMAIN-SUFFIX,hunantv.com
-DOMAIN-SUFFIX,imgo.tv
-DOMAIN-SUFFIX,mgtv.com
-DOMAIN-SUFFIX,tazai.com
 # NAME: LeTV
 # UPDATED: 2025-06-06 09:17:36
 DOMAIN-SUFFIX,le.com
@@ -306,11 +296,6 @@ DOMAIN-SUFFIX,letvlive.com
 DOMAIN-SUFFIX,letvstore.com
 DOMAIN-SUFFIX,sanguowudi.com
 DOMAIN-SUFFIX,videougc.com
-# NAME: CETV
-# UPDATED: 2025-06-06 09:20:01
-DOMAIN-SUFFIX,centv.cn
-DOMAIN-SUFFIX,centv.net.cn
-DOMAIN-SUFFIX,cetv.cn
 # NAME: KuaiShou
 # UPDATED: 2025-09-26 02:09:25
 # DOMAIN-SUFFIX: 678
@@ -993,14 +978,6 @@ DOMAIN-SUFFIX,zswyprkq.com
 DOMAIN-SUFFIX,zvryuq7xg31x5g.com
 DOMAIN-SUFFIX,zwaztizp.com
 DOMAIN-SUFFIX,zygvqivs.com
-# NAME: Hpplay
-# UPDATED: 2025-06-06 09:17:41
-# TOTAL: 5
-DOMAIN-SUFFIX,hpplay.cn
-DOMAIN-SUFFIX,hpplay.com.cn
-DOMAIN-SUFFIX,mirrorcast.cn
-DOMAIN-SUFFIX,mirrorcast.com.cn
-DOMAIN-SUFFIX,mirrorcast.tv
 # NAME: PPTV
 # UPDATED: 2025-06-06 09:17:37
 # DOMAIN-SUFFIX: 19
@@ -1024,6 +1001,29 @@ DOMAIN-SUFFIX,pptvnet.com
 DOMAIN-SUFFIX,pptvyun.com
 DOMAIN-SUFFIX,snrent.cn
 DOMAIN-SUFFIX,synacast.com
+# NAME: HunanTV
+# DOMAIN-SUFFIX: 7
+# TOTAL: 7
+DOMAIN-SUFFIX,hifuntv.com
+DOMAIN-SUFFIX,hitv.com
+DOMAIN-SUFFIX,hunaniptv.com
+DOMAIN-SUFFIX,hunantv.com
+DOMAIN-SUFFIX,imgo.tv
+DOMAIN-SUFFIX,mgtv.com
+DOMAIN-SUFFIX,tazai.com
+# NAME: CETV
+# UPDATED: 2025-06-06 09:20:01
+DOMAIN-SUFFIX,centv.cn
+DOMAIN-SUFFIX,centv.net.cn
+DOMAIN-SUFFIX,cetv.cn
+# NAME: Hpplay
+# UPDATED: 2025-06-06 09:17:41
+# TOTAL: 5
+DOMAIN-SUFFIX,hpplay.cn
+DOMAIN-SUFFIX,hpplay.com.cn
+DOMAIN-SUFFIX,mirrorcast.cn
+DOMAIN-SUFFIX,mirrorcast.com.cn
+DOMAIN-SUFFIX,mirrorcast.tv
 # NAME: CIBN
 # UPDATED: 2025-06-06 09:17:32
 # DOMAIN-SUFFIX: 71
@@ -1103,6 +1103,18 @@ DOMAIN-SUFFIX,vdnplus.net
 DOMAIN-SUFFIX,cmvideo.cn
 DOMAIN-SUFFIX,migu.cn
 DOMAIN-SUFFIX,miguvideo.com
+# NAME: BaoFengYingYin
+# UPDATED: 2025-06-06 09:17:31
+# DOMAIN-SUFFIX: 8
+# TOTAL: 8
+DOMAIN-SUFFIX,baofeng.com
+DOMAIN-SUFFIX,baofeng.mobi
+DOMAIN-SUFFIX,baofeng.net
+DOMAIN-SUFFIX,baofengtv.com
+DOMAIN-SUFFIX,bfimg.com
+DOMAIN-SUFFIX,bfshow.cn
+DOMAIN-SUFFIX,bjtndao.org
+DOMAIN-SUFFIX,stormshow.cn
 # NAME: YYeTs
 # UPDATED: 2025-06-06 09:17:40
 # DOMAIN-SUFFIX: 21
@@ -1128,15 +1140,3 @@ DOMAIN-SUFFIX,zmz2019.com
 DOMAIN-SUFFIX,zmzapi.com
 DOMAIN-SUFFIX,zmzapi.net
 DOMAIN-SUFFIX,zmzfile.com
-# NAME: BaoFengYingYin
-# UPDATED: 2025-06-06 09:17:31
-# DOMAIN-SUFFIX: 8
-# TOTAL: 8
-DOMAIN-SUFFIX,baofeng.com
-DOMAIN-SUFFIX,baofeng.mobi
-DOMAIN-SUFFIX,baofeng.net
-DOMAIN-SUFFIX,baofengtv.com
-DOMAIN-SUFFIX,bfimg.com
-DOMAIN-SUFFIX,bfshow.cn
-DOMAIN-SUFFIX,bjtndao.org
-DOMAIN-SUFFIX,stormshow.cn

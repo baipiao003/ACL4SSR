@@ -1,9 +1,17 @@
-# 生成时间: 2026-01-15 12:59:42
+# 生成时间: 2026-01-15 13:12:27
 # 规则数量: 140
 
-# NAME: Copilot
+# NAME: Claude
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:20:01
+# DOMAIN: 1
+# DOMAIN-SUFFIX: 2
+# TOTAL: 3
+DOMAIN,cdn.usefathom.com
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+# NAME: Copilot
 # UPDATED: 2025-06-06 09:20:02
 # DOMAIN: 20
 # DOMAIN-KEYWORD: 1
@@ -62,19 +70,16 @@ IP-ASN,14061,no-resolve
 IP-ASN,20473,no-resolve
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
-# NAME: Claude
-# UPDATED: 2025-06-06 09:20:01
-# DOMAIN: 1
-# DOMAIN-SUFFIX: 2
-# TOTAL: 3
-DOMAIN,cdn.usefathom.com
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
-# NAME: Gemini
-# DOMAIN: 3
-# DOMAIN-KEYWORD: 3
-# DOMAIN-SUFFIX: 7
-# TOTAL: 13
+# NAME: OpenAI
+# UPDATED: 2025-06-06 09:20:00
+# DOMAIN: 7
+# DOMAIN-SUFFIX: 24
+# IP-ASN: 1
+# TOTAL: 35
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,api.statsig.com
+DOMAIN-KEYWORD,openai
 DOMAIN,ai.google.dev
 DOMAIN,alkalimakersuite-pa.clients6.google.com
 DOMAIN,makersuite.google.com
@@ -85,10 +90,10 @@ DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,generativeai.google
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 DOMAIN-SUFFIX,apis.google.com
+DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-KEYWORD,colab
 DOMAIN-KEYWORD,developerprofiles
 DOMAIN-KEYWORD,generativelanguage
-DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,pplx.ai
 DOMAIN-SUFFIX,poe.com
@@ -111,16 +116,18 @@ DOMAIN-SUFFIX,replicate.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,you.com
 DOMAIN-SUFFIX,huggingface.co
-# NAME: OpenAI
-# UPDATED: 2025-06-06 09:20:00
-# DOMAIN: 7
-# DOMAIN-SUFFIX: 24
-# IP-ASN: 1
-# TOTAL: 35
-DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
-DOMAIN-SUFFIX,ai.com
-DOMAIN-SUFFIX,api.statsig.com
-DOMAIN-KEYWORD,openai
+# NAME: Gemini
+# DOMAIN: 3
+# DOMAIN-KEYWORD: 3
+# DOMAIN-SUFFIX: 7
+# TOTAL: 13
+# 内容：Github Copilot
+# 数量：5条
+DOMAIN-KEYWORD,cocopilot
+DOMAIN,api.github.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,api.githubcopilot.com
+DOMAIN,api.individual.githubcopilot.com
 DOMAIN-SUFFIX,AI.com
 DOMAIN-SUFFIX,cdn.auth0.com
 DOMAIN-SUFFIX,opendns.com
@@ -134,10 +141,3 @@ DOMAIN-SUFFIX,Anthropic.com
 DOMAIN-SUFFIX,opera-api.com
 DOMAIN-SUFFIX,ciciai.com
 DOMAIN-KEYWORD,chatgpt
-# 内容：Github Copilot
-# 数量：5条
-DOMAIN-KEYWORD,cocopilot
-DOMAIN,api.github.com
-DOMAIN,copilot-proxy.githubusercontent.com
-DOMAIN,api.githubcopilot.com
-DOMAIN,api.individual.githubcopilot.com
