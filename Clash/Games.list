@@ -1,10 +1,17 @@
-# 生成时间: 2026-01-18 03:27:00
+# 生成时间: 2026-01-19 03:29:00
 # 规则数量: 817
 
-# NAME: Epic
+# NAME: PlayStation
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-06-06 09:15:09
+# DOMAIN-SUFFIX: 4
+# TOTAL: 4
+DOMAIN-SUFFIX,playstation.com
+DOMAIN-SUFFIX,playstation.net
+DOMAIN-SUFFIX,playstationnetwork.com
+DOMAIN-SUFFIX,sonyentertainmentnetwork.com
+# NAME: Epic
 # DOMAIN-SUFFIX: 15
 # TOTAL: 15
 DOMAIN-SUFFIX,battlebreakers.com
@@ -22,11 +29,6 @@ DOMAIN-SUFFIX,shadowcomplex.com
 DOMAIN-SUFFIX,spyjinx.com
 DOMAIN-SUFFIX,unrealengine.com
 DOMAIN-SUFFIX,unrealtournament.com
-# NAME: Ubisoft
-# UPDATED: 2024-01-08 16:02:54
-# DOMAIN: 1
-# TOTAL: 1
-DOMAIN,uplaypc-s-ubisoft.cdn.ubi.com
 # NAME: Steam
 # UPDATED: 2025-06-06 09:15:08
 # DOMAIN-KEYWORD: 3
@@ -86,12 +88,22 @@ DOMAIN-SUFFIX,wmsjsteam.com
 DOMAIN-KEYWORD,steambroadcast
 DOMAIN-KEYWORD,steamstore
 DOMAIN-KEYWORD,steamuserimages
+# NAME: Origin
+# UPDATED: 2025-06-06 09:17:50
+# DOMAIN: 5
+# DOMAIN-SUFFIX: 2
+# TOTAL: 7
+DOMAIN,cloudsync-prod.s3.amazonaws.com
+DOMAIN,eaasserts-a.akamaihd.net
+DOMAIN,origin-a.akamaihd.net
+DOMAIN,originasserts.akamaized.net
+DOMAIN,rtm.tnt-ea.com
+DOMAIN-SUFFIX,ea.com
+DOMAIN-SUFFIX,origin.com
 # NAME: EA
 # DOMAIN: 2
 # DOMAIN-SUFFIX: 163
 # TOTAL: 165
-DOMAIN,eaasserts-a.akamaihd.net
-DOMAIN,originasserts.akamaized.net
 DOMAIN-SUFFIX,anthemgame.com
 DOMAIN-SUFFIX,anthemthegame.com
 DOMAIN-SUFFIX,apexlegends.com
@@ -138,7 +150,6 @@ DOMAIN-SUFFIX,dungeonkeeper.cn
 DOMAIN-SUFFIX,dungeonkeeper.com
 DOMAIN-SUFFIX,dungeonkeeper.com.cn
 DOMAIN-SUFFIX,ea-anz-press.com
-DOMAIN-SUFFIX,ea.com
 DOMAIN-SUFFIX,ea.tt.omtrdc.net
 DOMAIN-SUFFIX,eaaccess.com
 DOMAIN-SUFFIX,eaassets-a.akamaihd.net
@@ -208,7 +219,6 @@ DOMAIN-SUFFIX,needforspeedtimeattack.com
 DOMAIN-SUFFIX,needforspeedundergroundeast.com
 DOMAIN-SUFFIX,nfsworld.com
 DOMAIN-SUFFIX,origin-a.akamaihd.net
-DOMAIN-SUFFIX,origin.com
 DOMAIN-SUFFIX,origin.tv
 DOMAIN-SUFFIX,plantsvszombies2.com
 DOMAIN-SUFFIX,play4free.com
@@ -386,38 +396,6 @@ DOMAIN-SUFFIX,xn--mts47c3w9b1qr.cn
 DOMAIN-SUFFIX,xn--mts47c3w9b1qr.net
 DOMAIN-SUFFIX,yoshisnewisland.com
 IP-CIDR,35.192.0.0/12,no-resolve
-# NAME: Origin
-# UPDATED: 2025-06-06 09:17:50
-# DOMAIN: 5
-# DOMAIN-SUFFIX: 2
-# TOTAL: 7
-DOMAIN,cloudsync-prod.s3.amazonaws.com
-DOMAIN,origin-a.akamaihd.net
-DOMAIN,rtm.tnt-ea.com
-# NAME: PlayStation
-# DOMAIN-SUFFIX: 4
-# TOTAL: 4
-DOMAIN-SUFFIX,playstation.com
-DOMAIN-SUFFIX,playstation.net
-DOMAIN-SUFFIX,playstationnetwork.com
-DOMAIN-SUFFIX,sonyentertainmentnetwork.com
-# NAME: Rockstar
-# DOMAIN-SUFFIX: 5
-# TOTAL: 5
-DOMAIN-SUFFIX,gamedownloads-rockstargames-com.akamaized.net
-DOMAIN-SUFFIX,media-rockstargames-com.akamaized.net
-DOMAIN-SUFFIX,rockstargames.com
-DOMAIN-SUFFIX,rsg.sc
-DOMAIN-SUFFIX,videos-rockstargames-com.akamaized.net
-# NAME: Roblox
-# AUTHOR: ooyq
-# REPO: https://github.com/ooyq
-# UPDATED: 2025-06-06 09:19:58
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 1
-# TOTAL: 2
-DOMAIN-SUFFIX,rbxcdn.com
-DOMAIN-KEYWORD,roblox
 # NAME: Blizzard
 # UPDATED: 2026-01-18 02:06:13
 # DOMAIN-SUFFIX: 39
@@ -485,6 +463,95 @@ IP-CIDR,24.105.62.129/32,no-resolve
 IP-CIDR,137.221.105.2/32,no-resolve
 IP-CIDR,210.71.148.11/32,no-resolve
 IP-CIDR,211.115.104.1/32,no-resolve
+# NAME: Ubisoft
+# UPDATED: 2024-01-08 16:02:54
+# DOMAIN: 1
+# TOTAL: 1
+DOMAIN,uplaypc-s-ubisoft.cdn.ubi.com
+# NAME: Roblox
+# AUTHOR: ooyq
+# REPO: https://github.com/ooyq
+# UPDATED: 2025-06-06 09:19:58
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 1
+# TOTAL: 2
+DOMAIN-SUFFIX,rbxcdn.com
+DOMAIN-KEYWORD,roblox
+# NAME: Rockstar
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
+DOMAIN-SUFFIX,gamedownloads-rockstargames-com.akamaized.net
+DOMAIN-SUFFIX,media-rockstargames-com.akamaized.net
+DOMAIN-SUFFIX,rockstargames.com
+DOMAIN-SUFFIX,rsg.sc
+DOMAIN-SUFFIX,videos-rockstargames-com.akamaized.net
+# NAME: Gog
+# DOMAIN-SUFFIX: 3
+DOMAIN,gog.salesmanago.com
+DOMAIN-SUFFIX,gog-statics.com
+DOMAIN-SUFFIX,gog.com
+DOMAIN-SUFFIX,gog.qtlglb.com
+# NAME: Riot
+# DOMAIN-SUFFIX: 55
+# TOTAL: 55
+DOMAIN-SUFFIX,championshipseriesleague.com
+DOMAIN-SUFFIX,convrgencegame.com
+DOMAIN-SUFFIX,historyofdota.com
+DOMAIN-SUFFIX,historyofdota.net
+DOMAIN-SUFFIX,historyofdota.org
+DOMAIN-SUFFIX,instituteofwar.org
+DOMAIN-SUFFIX,lcsmerch.com
+DOMAIN-SUFFIX,leaguehighschool.com
+DOMAIN-SUFFIX,leagueoflegends.ca
+DOMAIN-SUFFIX,leagueoflegends.cn
+DOMAIN-SUFFIX,leagueoflegends.co.kr
+DOMAIN-SUFFIX,leagueoflegends.com
+DOMAIN-SUFFIX,leagueoflegends.info
+DOMAIN-SUFFIX,leagueoflegends.kr
+DOMAIN-SUFFIX,leagueoflegends.net
+DOMAIN-SUFFIX,leagueoflegends.org
+DOMAIN-SUFFIX,leagueoflegendsscripts.com
+DOMAIN-SUFFIX,leaguesharp.info
+DOMAIN-SUFFIX,leaguoflegends.com
+DOMAIN-SUFFIX,learnwithleague.com
+DOMAIN-SUFFIX,lol-europe.com
+DOMAIN-SUFFIX,lolclub.org
+DOMAIN-SUFFIX,lolespor.com
+DOMAIN-SUFFIX,lolesports.com
+DOMAIN-SUFFIX,lolfanart.net
+DOMAIN-SUFFIX,lolpcs.com
+DOMAIN-SUFFIX,lolshop.co.kr
+DOMAIN-SUFFIX,lolstatic-a.akamaihd.net
+DOMAIN-SUFFIX,lolstatic.com
+DOMAIN-SUFFIX,lolusercontent.com
+DOMAIN-SUFFIX,lpl.com.cn
+DOMAIN-SUFFIX,molesports.com
+DOMAIN-SUFFIX,playvalorant.com
+DOMAIN-SUFFIX,pvp.net
+DOMAIN-SUFFIX,pvp.tv
+DOMAIN-SUFFIX,rgpub.io
+DOMAIN-SUFFIX,riot-games.com
+DOMAIN-SUFFIX,riot.com
+DOMAIN-SUFFIX,riot.net
+DOMAIN-SUFFIX,riotcdn.net
+DOMAIN-SUFFIX,riotforgegames.com
+DOMAIN-SUFFIX,riotgames.co.kr
+DOMAIN-SUFFIX,riotgames.com
+DOMAIN-SUFFIX,riotgames.info
+DOMAIN-SUFFIX,riotgames.jp
+DOMAIN-SUFFIX,riotgames.net
+DOMAIN-SUFFIX,riotgames.tv
+DOMAIN-SUFFIX,riotgames.zendesk.com
+DOMAIN-SUFFIX,riotpin.com
+DOMAIN-SUFFIX,riotpoints.com
+DOMAIN-SUFFIX,rstatic.net
+DOMAIN-SUFFIX,ruinedking.com
+DOMAIN-SUFFIX,supremacy.com
+DOMAIN-SUFFIX,supremacy.net
+DOMAIN-SUFFIX,ulol.com
+# NAME: Overwatch
+# UPDATED: 2025-06-06 09:17:49
+# IP-CIDR: 7
 # NAME: Sony
 # UPDATED: 2025-06-06 09:16:56
 # DOMAIN-SUFFIX: 115
@@ -601,88 +668,15 @@ DOMAIN-SUFFIX,sovec.net
 DOMAIN-SUFFIX,wheelpop.com
 DOMAIN-SUFFIX,wwtbam.com
 DOMAIN-SUFFIX,yourfantasybeginsnow.com
-# NAME: Gog
-# DOMAIN-SUFFIX: 3
-DOMAIN,gog.salesmanago.com
-DOMAIN-SUFFIX,gog-statics.com
-DOMAIN-SUFFIX,gog.com
-DOMAIN-SUFFIX,gog.qtlglb.com
-# NAME: Riot
-# DOMAIN-SUFFIX: 55
-# TOTAL: 55
-DOMAIN-SUFFIX,championshipseriesleague.com
-DOMAIN-SUFFIX,convrgencegame.com
-DOMAIN-SUFFIX,historyofdota.com
-DOMAIN-SUFFIX,historyofdota.net
-DOMAIN-SUFFIX,historyofdota.org
-DOMAIN-SUFFIX,instituteofwar.org
-DOMAIN-SUFFIX,lcsmerch.com
-DOMAIN-SUFFIX,leaguehighschool.com
-DOMAIN-SUFFIX,leagueoflegends.ca
-DOMAIN-SUFFIX,leagueoflegends.cn
-DOMAIN-SUFFIX,leagueoflegends.co.kr
-DOMAIN-SUFFIX,leagueoflegends.com
-DOMAIN-SUFFIX,leagueoflegends.info
-DOMAIN-SUFFIX,leagueoflegends.kr
-DOMAIN-SUFFIX,leagueoflegends.net
-DOMAIN-SUFFIX,leagueoflegends.org
-DOMAIN-SUFFIX,leagueoflegendsscripts.com
-DOMAIN-SUFFIX,leaguesharp.info
-DOMAIN-SUFFIX,leaguoflegends.com
-DOMAIN-SUFFIX,learnwithleague.com
-DOMAIN-SUFFIX,lol-europe.com
-DOMAIN-SUFFIX,lolclub.org
-DOMAIN-SUFFIX,lolespor.com
-DOMAIN-SUFFIX,lolesports.com
-DOMAIN-SUFFIX,lolfanart.net
-DOMAIN-SUFFIX,lolpcs.com
-DOMAIN-SUFFIX,lolshop.co.kr
-DOMAIN-SUFFIX,lolstatic-a.akamaihd.net
-DOMAIN-SUFFIX,lolstatic.com
-DOMAIN-SUFFIX,lolusercontent.com
-DOMAIN-SUFFIX,lpl.com.cn
-DOMAIN-SUFFIX,molesports.com
-DOMAIN-SUFFIX,playvalorant.com
-DOMAIN-SUFFIX,pvp.net
-DOMAIN-SUFFIX,pvp.tv
-DOMAIN-SUFFIX,rgpub.io
-DOMAIN-SUFFIX,riot-games.com
-DOMAIN-SUFFIX,riot.com
-DOMAIN-SUFFIX,riot.net
-DOMAIN-SUFFIX,riotcdn.net
-DOMAIN-SUFFIX,riotforgegames.com
-DOMAIN-SUFFIX,riotgames.co.kr
-DOMAIN-SUFFIX,riotgames.com
-DOMAIN-SUFFIX,riotgames.info
-DOMAIN-SUFFIX,riotgames.jp
-DOMAIN-SUFFIX,riotgames.net
-DOMAIN-SUFFIX,riotgames.tv
-DOMAIN-SUFFIX,riotgames.zendesk.com
-DOMAIN-SUFFIX,riotpin.com
-DOMAIN-SUFFIX,riotpoints.com
-DOMAIN-SUFFIX,rstatic.net
-DOMAIN-SUFFIX,ruinedking.com
-DOMAIN-SUFFIX,supremacy.com
-DOMAIN-SUFFIX,supremacy.net
-DOMAIN-SUFFIX,ulol.com
-# NAME: Battle
-# UPDATED: 2025-06-06 09:17:49
+# NAME: WorldofWarcraft
+# IP-CIDR: 8
 # TOTAL: 8
+# NAME: Battle
 DOMAIN,blizzard.nefficient.co.kr
 DOMAIN,blzddist1-a.akamaihd.net
 DOMAIN,blzddistkr1-a.akamaihd.net
 DOMAIN,bnetproduct-a.akamaihd.net
 DOMAIN,cdn.blz-contentstack.com
-# NAME: NGA
-# AUTHOR: ameyukisora
-# REPO: https://github.com/ameyukisora/Clash-Rule
-# UPDATED: 2024-01-08 16:02:03
-DOMAIN-SUFFIX,178.com
-DOMAIN-SUFFIX,nga.cn
-DOMAIN-SUFFIX,ngabbs.com
-DOMAIN-SUFFIX,ngacn.cc
-# NAME: Overwatch
-# IP-CIDR: 7
 # NAME: GameDownload
 # UPDATED: 2025-06-06 09:18:53
 # DOMAIN: 36
@@ -750,45 +744,31 @@ IP-CIDR,52.13.42.120/32,no-resolve
 IP-CIDR,52.50.131.212/32,no-resolve
 IP-CIDR,54.207.168.84/32,no-resolve
 IP-CIDR,54.248.64.192/32,no-resolve
-# NAME: WorldofWarcraft
-# IP-CIDR: 8
+# NAME: NGA
+# AUTHOR: ameyukisora
+# REPO: https://github.com/ameyukisora/Clash-Rule
+# UPDATED: 2024-01-08 16:02:03
+DOMAIN-SUFFIX,178.com
+DOMAIN-SUFFIX,nga.cn
+DOMAIN-SUFFIX,ngabbs.com
+DOMAIN-SUFFIX,ngacn.cc
 # NAME: WildRift
 # TOTAL: 3
-# NAME: UBI
-DOMAIN-SUFFIX,ubi.com
-DOMAIN-SUFFIX,ubisoft-orbit-savegames.s3.amazonaws.com
-DOMAIN-SUFFIX,ubisoft-uplay-savegames.s3.amazonaws.com
-DOMAIN-SUFFIX,ubisoft.com
-DOMAIN-SUFFIX,uplay.com
+# NAME: OP
+DOMAIN-SUFFIX,op.gg
+DOMAIN-SUFFIX,opgg-static.akamaized.net
 # NAME: 2KGames
 # UPDATED: 2024-01-08 16:02:56
 DOMAIN-SUFFIX,2k.com
 DOMAIN-SUFFIX,2kcoretech.online
 DOMAIN-SUFFIX,2kgames.com
 DOMAIN-SUFFIX,take2games.com
-# NAME: OP
-DOMAIN-SUFFIX,op.gg
-DOMAIN-SUFFIX,opgg-static.akamaized.net
-# NAME: Assassin'sCreed-Odyssey
-# AUTHOR: FQrabbit
-# REPO: https://github.com/FQrabbit/SSTap-Rule
-# UPDATED: 2025-06-06 09:18:26
-# IP-CIDR: 15
-IP-CIDR,104.75.245.0/24,no-resolve
-IP-CIDR,104.95.207.169/32,no-resolve
-IP-CIDR,18.204.105.0/24,no-resolve
-IP-CIDR,18.204.111.232/32,no-resolve
-IP-CIDR,18.204.253.0/24,no-resolve
-IP-CIDR,216.98.54.23/32,no-resolve
-IP-CIDR,216.98.55.0/24,no-resolve
-IP-CIDR,216.98.62.0/24,no-resolve
-IP-CIDR,23.2.16.0/24,no-resolve
-IP-CIDR,34.237.57.180/32,no-resolve
-IP-CIDR,54.81.239.0/24,no-resolve
-IP-CIDR,65.200.22.184/32,no-resolve
-IP-CIDR,65.200.22.202/32,no-resolve
-IP-CIDR,65.200.22.234/32,no-resolve
-IP-CIDR,67.15.100.252/32,no-resolve
+# NAME: UBI
+DOMAIN-SUFFIX,ubi.com
+DOMAIN-SUFFIX,ubisoft-orbit-savegames.s3.amazonaws.com
+DOMAIN-SUFFIX,ubisoft-uplay-savegames.s3.amazonaws.com
+DOMAIN-SUFFIX,ubisoft.com
+DOMAIN-SUFFIX,uplay.com
 # NAME: Unity
 # DOMAIN-SUFFIX: 9
 # PROCESS-NAME: 1
@@ -804,11 +784,16 @@ DOMAIN-SUFFIX,unityedu.com
 DOMAIN-SUFFIX,unityedu.com.cn
 PROCESS-NAME,UnityHub.exe
 # NAME: Assassin'sCreed-Origins
+# AUTHOR: FQrabbit
+# REPO: https://github.com/FQrabbit/SSTap-Rule
+# UPDATED: 2025-06-06 09:18:26
 # IP-CIDR: 16
 # TOTAL: 16
 IP-CIDR,104.92.145.0/24,no-resolve
 IP-CIDR,216.98.48.0/24,no-resolve
 IP-CIDR,216.98.54.0/24,no-resolve
+IP-CIDR,216.98.62.0/24,no-resolve
+IP-CIDR,23.2.16.0/24,no-resolve
 IP-CIDR,23.46.222.0/24,no-resolve
 IP-CIDR,34.224.248.0/24,no-resolve
 IP-CIDR,34.236.89.0/24,no-resolve
@@ -817,4 +802,19 @@ IP-CIDR,52.2.79.0/24,no-resolve
 IP-CIDR,52.216.16.0/24,no-resolve
 IP-CIDR,52.229.171.0/24,no-resolve
 IP-CIDR,52.5.27.0/24,no-resolve
+IP-CIDR,65.200.22.202/32,no-resolve
+IP-CIDR,65.200.22.234/32,no-resolve
 IP-CIDR,67.228.235.91/32,no-resolve
+# NAME: Assassin'sCreed-Odyssey
+# IP-CIDR: 15
+IP-CIDR,104.75.245.0/24,no-resolve
+IP-CIDR,104.95.207.169/32,no-resolve
+IP-CIDR,18.204.105.0/24,no-resolve
+IP-CIDR,18.204.111.232/32,no-resolve
+IP-CIDR,18.204.253.0/24,no-resolve
+IP-CIDR,216.98.54.23/32,no-resolve
+IP-CIDR,216.98.55.0/24,no-resolve
+IP-CIDR,34.237.57.180/32,no-resolve
+IP-CIDR,54.81.239.0/24,no-resolve
+IP-CIDR,65.200.22.184/32,no-resolve
+IP-CIDR,67.15.100.252/32,no-resolve
