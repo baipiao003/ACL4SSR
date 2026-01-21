@@ -1,10 +1,16 @@
-# 生成时间: 2026-01-21 15:55:08
+# 生成时间: 2026-01-21 16:27:38
 # 规则数量: 7255
 
-DOMAIN,hax.co.id
-DOMAIN,woiden.id
-DOMAIN,gdav.com
-DOMAIN,laowang.vip
+DOMAIN,blog.090227.xyz
+DOMAIN,blog.cmliussss.com
+DOMAIN,chinaip.090227.xyz
+IP-CIDR,8.8.8.0/24,no-resolve
+IP-CIDR,8.8.4.0/24,no-resolve
+IP-CIDR,101.101.101.0/24,no-resolve
+# 代理规则
+DOMAIN-SUFFIX,revanced.net
+DOMAIN-SUFFIX,deepl.com
+DOMAIN-SUFFIX,poe.com
 # NAME: ProxyLite
 # AUTHOR: blackmatrix7
 # REPO: https://gitlab.com/blackmatrix7/ios_rule_script
@@ -991,10 +997,6 @@ IP-CIDR6,2001:67c:4e8::/48,no-resolve
 IP-CIDR6,2001:b28:f23c::/47,no-resolve
 IP-CIDR6,2001:b28:f23f::/48,no-resolve
 IP-CIDR6,2a0a:f280::/32,no-resolve
-# 代理规则
-DOMAIN-SUFFIX,revanced.net
-DOMAIN-SUFFIX,deepl.com
-DOMAIN-SUFFIX,poe.com
 # 代理列表
 # MyList && Other
 DOMAIN-SUFFIX,cccat.io
@@ -7250,9 +7252,7 @@ IP-CIDR,69.171.235.0/16,no-resolve
 #飞流直播
 #华文电视
 # VikACG
-DOMAIN,blog.090227.xyz
-DOMAIN,blog.cmliussss.com
-DOMAIN,chinaip.090227.xyz
-IP-CIDR,8.8.8.0/24,no-resolve
-IP-CIDR,8.8.4.0/24,no-resolve
-IP-CIDR,101.101.101.0/24,no-resolve
+DOMAIN,hax.co.id
+DOMAIN,woiden.id
+DOMAIN,gdav.com
+DOMAIN,laowang.vip
