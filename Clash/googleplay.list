@@ -3,14 +3,11 @@ DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,together.ai
 DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,appstorrent.ru
-# Google Play关键域名
-DOMAIN,android.clients.google.com
-DOMAIN-SUFFIX,play-fe.googleapis.com
-DOMAIN-SUFFIX,play.googleapis.com
-# Google基础域名
-DOMAIN-SUFFIX,google.com
-DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,googleusercontent.com
-DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,ggpht.com
-DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,android.clients.google.com,PROXY
+DOMAIN-SUFFIX,play.googleapis.com,PROXY
+DOMAIN-SUFFIX,dl.google.com,PROXY
+DOMAIN-SUFFIX,play.google.com,PROXY
+DOMAIN-KEYWORD,google,PROXY
+DOMAIN-KEYWORD,android,PROXY
+IP-CIDR,173.194.0.0/16,PROXY,no-resolve
+IP-CIDR,74.125.0.0/16,PROXY,no-resolve
