@@ -12,9 +12,9 @@ on:
           - clash
           - main
           - master
-  schedule:
+  #schedule:
     # 每天凌晨2点自动运行（UTC时间）
-    - cron: '0 2 * * *'
+    #- cron: '0 2 * * *'
   push:
     paths:
       - 'rules/**'  # 当rules文件夹内容变化时触发
@@ -73,3 +73,11 @@ jobs:
         # 提交信息包含时间戳
         git commit -m "🤖 自动更新Clash规则 [$TIMESTAMP]"
         git push origin ${{ github.event.inputs.branch || 'clash' }}
+    
+    - name: 🎉 Delete old workflow run
+      uses: yxdz2020/delete-workflow-runs@v20260116
+      with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 10
