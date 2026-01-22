@@ -1,7 +1,185 @@
-# 生成时间: 2026-01-22 12:44:39
+# 生成时间: 2026-01-22 13:12:14
 # 规则数量: 1286
 # 来源文件: ProxyMedia.txt
 # 成功链接: 41/41
+# 失败链接: 0/41
+
+# NAME: KKTV
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:17:50
+# DOMAIN: 2
+# DOMAIN-SUFFIX: 2
+# TOTAL: 4
+# 内容：国外媒体列表
+# 更新：2025-12-06 10:28:17
+# 数量：414条
+# ABC
+# AI
+# AbemaTV
+# All4
+# Amazon
+# AppleNews
+# AppleTV
+# BBCiPlayer
+# Bahamut
+# DAZN
+# Deezer
+# DiscoveryPlus
+# DisneyPlus
+# EncoreTVB
+# FoxNow
+# HBO
+# HBO_GO_HKG
+# HWTV
+# Hulu
+# HuluJapan
+# ITV
+# Iwara
+# JOOX
+# Japonx
+# KKBOX
+# KKTV
+# LiTV
+# LineTV
+# My5
+# MyTVSuper
+# Netflix
+# Niconico
+# NivodTV
+# Olevod
+# OpenAi
+# PBS
+# Pandora
+# Pornhub
+# Qobuz
+# SoundCloud
+# Spotify
+# TIDAL
+# TaiWanGood 台湾好
+# TikTok
+# Twitch
+# ViuTV
+# YouTube
+# YouTubeMusic
+# NAME: DiscoveryPlus
+# UPDATED: 2025-06-06 09:17:52
+# DOMAIN: 3
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 11
+# TOTAL: 15
+# NAME: FOXNOW
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+# NAME: FOXPlus
+# UPDATED: 2024-01-08 16:01:08
+# DOMAIN: 6
+# DOMAIN-SUFFIX: 1
+# TOTAL: 7
+# NAME: Spotify
+# UPDATED: 2025-06-06 09:16:55
+# DOMAIN-SUFFIX: 20
+# IP-CIDR: 2
+# PROCESS-NAME: 1
+# TOTAL: 30
+# NAME: UKMedia
+# UPDATED: 2025-06-06 09:20:02
+# DOMAIN-KEYWORD: 2
+# DOMAIN-SUFFIX: 22
+# NAME: PrimeVideo
+# DOMAIN: 9
+# DOMAIN-SUFFIX: 6
+# TOTAL: 16
+# NAME: USMedia
+# DOMAIN: 4
+# DOMAIN-SUFFIX: 93
+# PROCESS-NAME: 3
+# TOTAL: 100
+# NAME: PandoraTV
+# UPDATED: 2025-06-06 09:16:59
+# TOTAL: 2
+# NAME: BBC
+# UPDATED: 2025-06-06 09:16:56
+# DOMAIN: 11
+# DOMAIN-SUFFIX: 15
+# TOTAL: 28
+# NAME: HBOHK
+# UPDATED: 2025-06-06 09:17:41
+# DOMAIN: 1
+# DOMAIN-SUFFIX: 23
+# TOTAL: 24
+# NAME: HBOUSA
+# DOMAIN-SUFFIX: 9
+# TOTAL: 11
+# NAME: HuluUSA
+# DOMAIN-SUFFIX: 52
+# TOTAL: 53
+# NAME: Disney
+# UPDATED: 2025-07-30 02:08:18
+# DOMAIN-SUFFIX: 172
+# PROCESS-NAME: 2
+# TOTAL: 174
+# NAME: TVB
+# UPDATED: 2025-06-06 09:17:00
+# DOMAIN-SUFFIX: 18
+# TOTAL: 21
+# NAME: Hulu
+# UPDATED: 2025-06-06 09:16:58
+# DOMAIN-SUFFIX: 57
+# TOTAL: 59
+# NAME: HuluJP
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
+# NAME: NaverTV
+# NAME: NowE
+# NAME: ParamountPlus
+# TOTAL: 9
+# NAME: TVer
+# UPDATED: 2025-06-06 09:17:51
+# TOTAL: 6
+# NAME: Cake
+# UPDATED: 2025-06-06 09:18:50
+# NAME: myTVSUPER
+# NAME: BritboxUK
+# UPDATED: 2025-06-06 09:18:54
+# TOTAL: 8
+# NAME: Abema
+# UPDATED: 2024-01-08 16:02:56
+# DOMAIN: 5
+# TOTAL: 20
+# NAME: HKOpenTV
+# UPDATED: 2024-01-08 16:02:54
+# NAME: Overcast
+# TOTAL: 1
+# NAME: Acplay
+# UPDATED: 2024-01-08 16:02:57
+# NAME: Peacock
+# UPDATED: 2025-06-06 09:17:53
+# NAME: Niconico
+# NAME: Twitch
+# UPDATED: 2025-06-06 09:17:48
+# DOMAIN-SUFFIX: 8
+# IP-CIDR: 11
+# IP-CIDR6: 1
+# TOTAL: 22
+# NAME: Pixiv
+# UPDATED: 2025-06-06 09:17:46
+# NAME: HBO
+# DOMAIN-SUFFIX: 47
+# TOTAL: 48
+# NAME: Tumblr
+# NAME: Fox
+# DOMAIN-SUFFIX: 256
+# TOTAL: 256
+# NAME: Patreon
+# UPDATED: 2024-01-08 16:02:55
+# NAME: Civitai
+# UPDATED: 2025-06-06 09:20:01
+# NAME: AbemaTV
+# UPDATED: 2025-06-06 09:16:57
+# TOTAL: 23
+# NAME: CableTV
+# NAME: ATTWatchTV
 
 # DOMAIN规则
 DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com
@@ -1038,183 +1216,20 @@ IP-CIDR,69.53.224.0/19,no-resolve
 IP-CIDR,8.41.4.0/24,no-resolve
 IP-CIDR,99.181.64.0/18,no-resolve
 
+# PROCESS-NAME规则
+PROCESS-NAME,com.cbs.app
+PROCESS-NAME,com.disney.datg.videoplatforms.android.abc
+PROCESS-NAME,com.disney.disneyplus
+PROCESS-NAME,com.hbo.hbonow
+PROCESS-NAME,com.hulu.plus
+PROCESS-NAME,com.showtime.standalone
+PROCESS-NAME,com.spotify.music
+PROCESS-NAME,com.viu.pad
+PROCESS-NAME,com.viu.phone
+PROCESS-NAME,com.vuclip.viu
+PROCESS-NAME,tv.twitch.android.app
+
 # 其他规则
-# ABC
-# AI
-# AUTHOR: blackmatrix7
-# AbemaTV
-# All4
-# Amazon
-# AppleNews
-# AppleTV
-# BBCiPlayer
-# Bahamut
-# DAZN
-# DOMAIN-KEYWORD: 1
-# DOMAIN-KEYWORD: 2
-# DOMAIN-SUFFIX: 1
-# DOMAIN-SUFFIX: 11
-# DOMAIN-SUFFIX: 15
-# DOMAIN-SUFFIX: 172
-# DOMAIN-SUFFIX: 18
-# DOMAIN-SUFFIX: 2
-# DOMAIN-SUFFIX: 20
-# DOMAIN-SUFFIX: 22
-# DOMAIN-SUFFIX: 23
-# DOMAIN-SUFFIX: 256
-# DOMAIN-SUFFIX: 3
-# DOMAIN-SUFFIX: 47
-# DOMAIN-SUFFIX: 5
-# DOMAIN-SUFFIX: 52
-# DOMAIN-SUFFIX: 57
-# DOMAIN-SUFFIX: 6
-# DOMAIN-SUFFIX: 8
-# DOMAIN-SUFFIX: 9
-# DOMAIN-SUFFIX: 93
-# DOMAIN: 1
-# DOMAIN: 11
-# DOMAIN: 2
-# DOMAIN: 3
-# DOMAIN: 4
-# DOMAIN: 5
-# DOMAIN: 6
-# DOMAIN: 9
-# Deezer
-# DiscoveryPlus
-# DisneyPlus
-# EncoreTVB
-# FoxNow
-# HBO
-# HBO_GO_HKG
-# HWTV
-# Hulu
-# HuluJapan
-# IP-CIDR6: 1
-# IP-CIDR: 11
-# IP-CIDR: 2
-# ITV
-# Iwara
-# JOOX
-# Japonx
-# KKBOX
-# KKTV
-# LiTV
-# LineTV
-# My5
-# MyTVSuper
-# NAME: ATTWatchTV
-# NAME: Abema
-# NAME: AbemaTV
-# NAME: Acplay
-# NAME: BBC
-# NAME: BritboxUK
-# NAME: CableTV
-# NAME: Cake
-# NAME: Civitai
-# NAME: DiscoveryPlus
-# NAME: Disney
-# NAME: FOXNOW
-# NAME: FOXPlus
-# NAME: Fox
-# NAME: HBO
-# NAME: HBOHK
-# NAME: HBOUSA
-# NAME: HKOpenTV
-# NAME: Hulu
-# NAME: HuluJP
-# NAME: HuluUSA
-# NAME: KKTV
-# NAME: NaverTV
-# NAME: Niconico
-# NAME: NowE
-# NAME: Overcast
-# NAME: PandoraTV
-# NAME: ParamountPlus
-# NAME: Patreon
-# NAME: Peacock
-# NAME: Pixiv
-# NAME: PrimeVideo
-# NAME: Spotify
-# NAME: TVB
-# NAME: TVer
-# NAME: Tumblr
-# NAME: Twitch
-# NAME: UKMedia
-# NAME: USMedia
-# NAME: myTVSUPER
-# Netflix
-# Niconico
-# NivodTV
-# Olevod
-# OpenAi
-# PBS
-# PROCESS-NAME: 1
-# PROCESS-NAME: 2
-# PROCESS-NAME: 3
-# Pandora
-# Pornhub
-# Qobuz
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# SoundCloud
-# Spotify
-# TIDAL
-# TOTAL: 1
-# TOTAL: 100
-# TOTAL: 11
-# TOTAL: 15
-# TOTAL: 16
-# TOTAL: 174
-# TOTAL: 2
-# TOTAL: 20
-# TOTAL: 21
-# TOTAL: 22
-# TOTAL: 23
-# TOTAL: 24
-# TOTAL: 256
-# TOTAL: 28
-# TOTAL: 3
-# TOTAL: 30
-# TOTAL: 4
-# TOTAL: 48
-# TOTAL: 5
-# TOTAL: 53
-# TOTAL: 59
-# TOTAL: 6
-# TOTAL: 7
-# TOTAL: 8
-# TOTAL: 9
-# TaiWanGood 台湾好
-# TikTok
-# Twitch
-# UPDATED: 2024-01-08 16:01:08
-# UPDATED: 2024-01-08 16:02:54
-# UPDATED: 2024-01-08 16:02:55
-# UPDATED: 2024-01-08 16:02:56
-# UPDATED: 2024-01-08 16:02:57
-# UPDATED: 2025-06-06 09:16:55
-# UPDATED: 2025-06-06 09:16:56
-# UPDATED: 2025-06-06 09:16:57
-# UPDATED: 2025-06-06 09:16:58
-# UPDATED: 2025-06-06 09:16:59
-# UPDATED: 2025-06-06 09:17:00
-# UPDATED: 2025-06-06 09:17:41
-# UPDATED: 2025-06-06 09:17:46
-# UPDATED: 2025-06-06 09:17:48
-# UPDATED: 2025-06-06 09:17:50
-# UPDATED: 2025-06-06 09:17:51
-# UPDATED: 2025-06-06 09:17:52
-# UPDATED: 2025-06-06 09:17:53
-# UPDATED: 2025-06-06 09:18:50
-# UPDATED: 2025-06-06 09:18:54
-# UPDATED: 2025-06-06 09:20:01
-# UPDATED: 2025-06-06 09:20:02
-# UPDATED: 2025-07-30 02:08:18
-# ViuTV
-# YouTube
-# YouTubeMusic
-# 内容：国外媒体列表
-# 数量：414条
-# 更新：2025-12-06 10:28:17
 DOMAIN-KEYWORD,-spotify-
 DOMAIN-KEYWORD,abematv.akamaized.net
 DOMAIN-KEYWORD,anthropic
@@ -1242,17 +1257,6 @@ DOMAIN-KEYWORD,uk-live
 DOMAIN-KEYWORD,voddazn
 DOMAIN-KEYWORD,youtube
 IP-CIDR6,2402:2a80::/32,no-resolve
-PROCESS-NAME,com.cbs.app
-PROCESS-NAME,com.disney.datg.videoplatforms.android.abc
-PROCESS-NAME,com.disney.disneyplus
-PROCESS-NAME,com.hbo.hbonow
-PROCESS-NAME,com.hulu.plus
-PROCESS-NAME,com.showtime.standalone
-PROCESS-NAME,com.spotify.music
-PROCESS-NAME,com.viu.pad
-PROCESS-NAME,com.viu.phone
-PROCESS-NAME,com.vuclip.viu
-PROCESS-NAME,tv.twitch.android.app
 URL-REGEX,^https?:\/\/www\.amazon\.com\/(Amazon-Video|gp\/video)\/
 USER-AGENT,*YouTubeMusic*
 USER-AGENT,*com.google.ios.youtubemusic*

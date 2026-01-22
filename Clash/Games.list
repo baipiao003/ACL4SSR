@@ -1,7 +1,100 @@
-# 生成时间: 2026-01-22 12:44:41
+# 生成时间: 2026-01-22 13:12:15
 # 规则数量: 817
 # 来源文件: Games.txt
 # 成功链接: 26/26
+# 失败链接: 0/26
+
+# NAME: EA
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:15:09
+# DOMAIN: 2
+# DOMAIN-SUFFIX: 163
+# TOTAL: 165
+# NAME: PlayStation
+# DOMAIN-SUFFIX: 4
+# TOTAL: 4
+# NAME: Epic
+# DOMAIN-SUFFIX: 15
+# TOTAL: 15
+# NAME: Origin
+# UPDATED: 2025-06-06 09:17:50
+# DOMAIN: 5
+# DOMAIN-SUFFIX: 2
+# TOTAL: 7
+# NAME: Blizzard
+# UPDATED: 2026-01-22 02:15:44
+# DOMAIN-SUFFIX: 39
+# IP-CIDR: 23
+# TOTAL: 62
+# NAME: Roblox
+# AUTHOR: ooyq
+# REPO: https://github.com/ooyq
+# UPDATED: 2025-06-06 09:19:58
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 1
+# TOTAL: 2
+# NAME: Ubisoft
+# UPDATED: 2024-01-08 16:02:54
+# DOMAIN: 1
+# TOTAL: 1
+# NAME: Steam
+# UPDATED: 2025-06-06 09:15:08
+# DOMAIN-KEYWORD: 3
+# DOMAIN-SUFFIX: 51
+# TOTAL: 54
+# NAME: Nintendo
+# DOMAIN-SUFFIX: 126
+# IP-CIDR: 1
+# TOTAL: 127
+# NAME: Rockstar
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
+# NAME: Gog
+# DOMAIN-SUFFIX: 3
+# NAME: Riot
+# DOMAIN-SUFFIX: 55
+# TOTAL: 55
+# NAME: Sony
+# UPDATED: 2025-06-06 09:16:56
+# DOMAIN-SUFFIX: 115
+# TOTAL: 116
+# NAME: Battle
+# UPDATED: 2025-06-06 09:17:49
+# TOTAL: 8
+# NAME: Supercell
+# IP-CIDR: 22
+# TOTAL: 24
+# NAME: NGA
+# AUTHOR: ameyukisora
+# REPO: https://github.com/ameyukisora/Clash-Rule
+# UPDATED: 2024-01-08 16:02:03
+# NAME: WorldofWarcraft
+# IP-CIDR: 8
+# NAME: GameDownload
+# UPDATED: 2025-06-06 09:18:53
+# DOMAIN: 36
+# TOTAL: 39
+# NAME: Overwatch
+# IP-CIDR: 7
+# NAME: WildRift
+# TOTAL: 3
+# NAME: UBI
+# NAME: OP
+# NAME: 2KGames
+# UPDATED: 2024-01-08 16:02:56
+# NAME: Assassin'sCreed-Odyssey
+# AUTHOR: FQrabbit
+# REPO: https://github.com/FQrabbit/SSTap-Rule
+# UPDATED: 2025-06-06 09:18:26
+# IP-CIDR: 15
+# NAME: Assassin'sCreed-Origins
+# IP-CIDR: 16
+# TOTAL: 16
+# NAME: Unity
+# DOMAIN-SUFFIX: 9
+# PROCESS-NAME: 1
+# TOTAL: 10
 
 # DOMAIN规则
 DOMAIN,assets1.xboxlive.com
@@ -730,100 +823,11 @@ IP-CIDR,65.200.22.234/32,no-resolve
 IP-CIDR,67.15.100.252/32,no-resolve
 IP-CIDR,67.228.235.91/32,no-resolve
 
+# PROCESS-NAME规则
+PROCESS-NAME,UnityHub.exe
+
 # 其他规则
-# AUTHOR: FQrabbit
-# AUTHOR: ameyukisora
-# AUTHOR: blackmatrix7
-# AUTHOR: ooyq
-# DOMAIN-KEYWORD: 1
-# DOMAIN-KEYWORD: 3
-# DOMAIN-SUFFIX: 1
-# DOMAIN-SUFFIX: 115
-# DOMAIN-SUFFIX: 126
-# DOMAIN-SUFFIX: 15
-# DOMAIN-SUFFIX: 163
-# DOMAIN-SUFFIX: 2
-# DOMAIN-SUFFIX: 3
-# DOMAIN-SUFFIX: 39
-# DOMAIN-SUFFIX: 4
-# DOMAIN-SUFFIX: 5
-# DOMAIN-SUFFIX: 51
-# DOMAIN-SUFFIX: 55
-# DOMAIN-SUFFIX: 9
-# DOMAIN: 1
-# DOMAIN: 2
-# DOMAIN: 36
-# DOMAIN: 5
-# IP-CIDR: 1
-# IP-CIDR: 15
-# IP-CIDR: 16
-# IP-CIDR: 22
-# IP-CIDR: 23
-# IP-CIDR: 7
-# IP-CIDR: 8
-# NAME: 2KGames
-# NAME: Assassin'sCreed-Odyssey
-# NAME: Assassin'sCreed-Origins
-# NAME: Battle
-# NAME: Blizzard
-# NAME: EA
-# NAME: Epic
-# NAME: GameDownload
-# NAME: Gog
-# NAME: NGA
-# NAME: Nintendo
-# NAME: OP
-# NAME: Origin
-# NAME: Overwatch
-# NAME: PlayStation
-# NAME: Riot
-# NAME: Roblox
-# NAME: Rockstar
-# NAME: Sony
-# NAME: Steam
-# NAME: Supercell
-# NAME: UBI
-# NAME: Ubisoft
-# NAME: Unity
-# NAME: WildRift
-# NAME: WorldofWarcraft
-# PROCESS-NAME: 1
-# REPO: https://github.com/FQrabbit/SSTap-Rule
-# REPO: https://github.com/ameyukisora/Clash-Rule
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# REPO: https://github.com/ooyq
-# TOTAL: 1
-# TOTAL: 10
-# TOTAL: 116
-# TOTAL: 127
-# TOTAL: 15
-# TOTAL: 16
-# TOTAL: 165
-# TOTAL: 2
-# TOTAL: 24
-# TOTAL: 3
-# TOTAL: 39
-# TOTAL: 4
-# TOTAL: 5
-# TOTAL: 54
-# TOTAL: 55
-# TOTAL: 62
-# TOTAL: 7
-# TOTAL: 8
-# UPDATED: 2024-01-08 16:02:03
-# UPDATED: 2024-01-08 16:02:54
-# UPDATED: 2024-01-08 16:02:56
-# UPDATED: 2025-06-06 09:15:08
-# UPDATED: 2025-06-06 09:15:09
-# UPDATED: 2025-06-06 09:16:56
-# UPDATED: 2025-06-06 09:17:49
-# UPDATED: 2025-06-06 09:17:50
-# UPDATED: 2025-06-06 09:18:26
-# UPDATED: 2025-06-06 09:18:53
-# UPDATED: 2025-06-06 09:19:58
-# UPDATED: 2026-01-22 02:15:44
 DOMAIN-KEYWORD,roblox
 DOMAIN-KEYWORD,steambroadcast
 DOMAIN-KEYWORD,steamstore
 DOMAIN-KEYWORD,steamuserimages
-PROCESS-NAME,UnityHub.exe

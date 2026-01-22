@@ -1,7 +1,54 @@
-# 生成时间: 2026-01-22 12:44:35
+# 生成时间: 2026-01-22 13:12:12
 # 规则数量: 7255
 # 来源文件: ProxyGFWlist.txt
 # 成功链接: 5/5
+# 失败链接: 0/5
+
+# 代理列表
+# MyList && Other
+# 国外域名
+# 国外域名关键字
+# GFW list
+# Amazon
+# BBC
+# Developer 开发者常用国外网站、镜像和论坛
+# Discord
+# Facebook
+# Github
+# Google
+# GoogleCNProxyIP 谷歌中国服务 services.googleapis.cn
+# Instagram
+# Iwara
+# Kakao Talk
+# Line
+# Oracle Cloud
+# OneDrive
+#DOMAIN-SUFFIX,aria.microsoft.com
+# Porn
+# Pixiv
+# Spark
+# Steam
+# TapTap
+# Twitch
+# Twitter
+# Telegram
+# TeraBox
+# Whatsapp
+# Wikipedia 维基相关域名
+#飞流直播
+#华文电视
+# VikACG
+# 代理规则
+# NAME: ProxyLite
+# AUTHOR: blackmatrix7
+# REPO: https://gitlab.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-11-22 02:09:29
+# DOMAIN: 23
+# DOMAIN-KEYWORD: 20
+# DOMAIN-SUFFIX: 843
+# IP-CIDR: 86
+# IP-CIDR6: 4
+# TOTAL: 976
 
 # DOMAIN规则
 DOMAIN,addons.mozilla.org
@@ -7187,51 +7234,6 @@ IP-CIDR,91.105.192.0/23,no-resolve
 IP-CIDR,91.108.0.0/16,no-resolve
 
 # 其他规则
-# AUTHOR: blackmatrix7
-# Amazon
-# BBC
-# DOMAIN-KEYWORD: 20
-# DOMAIN-SUFFIX: 843
-# DOMAIN: 23
-# Developer 开发者常用国外网站、镜像和论坛
-# Discord
-# Facebook
-# GFW list
-# Github
-# Google
-# GoogleCNProxyIP 谷歌中国服务 services.googleapis.cn
-# IP-CIDR6: 4
-# IP-CIDR: 86
-# Instagram
-# Iwara
-# Kakao Talk
-# Line
-# MyList && Other
-# NAME: ProxyLite
-# OneDrive
-# Oracle Cloud
-# Pixiv
-# Porn
-# REPO: https://gitlab.com/blackmatrix7/ios_rule_script
-# Spark
-# Steam
-# TOTAL: 976
-# TapTap
-# Telegram
-# TeraBox
-# Twitch
-# Twitter
-# UPDATED: 2025-11-22 02:09:29
-# VikACG
-# Whatsapp
-# Wikipedia 维基相关域名
-# 代理列表
-# 代理规则
-# 国外域名
-# 国外域名关键字
-#DOMAIN-SUFFIX,aria.microsoft.com
-#华文电视
-#飞流直播
 DOMAIN-KEYWORD,.pinterest.
 DOMAIN-KEYWORD,1drv
 DOMAIN-KEYWORD,1e100

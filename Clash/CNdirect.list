@@ -1,7 +1,108 @@
-# 生成时间: 2026-01-22 12:44:40
+# 生成时间: 2026-01-22 13:12:15
 # 规则数量: 3693
 # 来源文件: CNdirect.txt
 # 成功链接: 12/12
+# 失败链接: 0/12
+
+# 中国云服务商ip端
+# 阿里
+# 腾讯 qq
+# 百度 Baidu
+# 华为 huwei
+# 网易 NetEase
+# 360
+# Mac Download
+# bt
+# XunLei
+# Tencent Weiyun
+#Baidu disk
+# Xbox
+# NAME: 4399
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:17:01
+# DOMAIN-SUFFIX: 13
+# TOTAL: 13
+# NAME: LanZouYun
+# UPDATED: 2025-06-06 09:17:36
+# DOMAIN-SUFFIX: 36
+# TOTAL: 36
+# NAME: Download
+# DOMAIN-KEYWORD: 5
+# DOMAIN-SUFFIX: 1
+# PROCESS-NAME: 28
+# TOTAL: 34
+# 直连列表
+# MyList
+# CN域名直连(中国|公司|网络)
+# 中国国内常见域名关键词直连
+# 4399
+# 58
+# Alibaba
+# Baidu
+# Bilibili
+# ByteDance
+# CCTV
+# ChinaOneKeyLogin 运营商一键登录
+# ChinaNet
+# DiDi
+# Douyu 斗鱼
+# Epic
+# HuaWei
+# Heytap
+# Iflytek 科大讯飞
+# Iqiyi
+# JD
+# Kingsoft
+# Kuaishou 快手
+# Meitu
+# LeTV 乐视
+# MGTV 芒果TV
+# MI
+# NetEase
+# PPTV、PPLive
+# PDD 拼多多
+# Sina
+# Sohu Sogo
+# Sony
+# SteamCN
+# Tencent
+# Vip 唯品会
+# Ximalaya 喜马拉雅
+# Xunlei 迅雷
+# YYeTs 人人影视
+# TeamViewer
+# Public Direct CDN 公共直连
+#DOMAIN-SUFFIX,ajax.aspnetcdn.com
+#DOMAIN-SUFFIX,ajax.cloudflare.com
+#DOMAIN-SUFFIX,cdnjs.cloudflare.com
+#DOMAIN-SUFFIX,code.jquery.com
+# China DNS
+# AccelerateDirectSites
+# NAME: 123pan
+# AUTHOR: baipiao003
+# REPO: https://github.com/baipiao003/ACL4SSR/clash/Clash
+# UPDATED: 2025-08-26 19:33:01
+# DOMAIN-SUFFIX: 3
+# TOTAL: 4
+# NAME: Coolapk
+# UPDATED: 2024-01-08 16:02:55
+# TOTAL: 3
+# NAME: Tencent
+# UPDATED: 2025-10-20 02:09:09
+# DOMAIN-SUFFIX: 2498
+# IP-CIDR: 20
+# TOTAL: 2518
+# NAME: zhilian
+# UPDATED: 2025-10-31 19:00:01
+# DOMAIN: 0
+# TOTAL: 1
+# NAME: NetEase
+# UPDATED: 2025-12-10 02:08:50
+# DOMAIN: 1
+# DOMAIN-SUFFIX: 117
+# IP-CIDR: 28
+# TOTAL: 146
 
 # DOMAIN规则
 DOMAIN,auth.wosms.cn
@@ -3514,132 +3615,7 @@ IP-CIDR,8.212.0.0/14,no-resolve
 IP-CIDR,8.216.0.0/13,no-resolve
 IP-CIDR,94.191.0.0/17,no-resolve
 
-# 其他规则
-# 360
-# 4399
-# 58
-# AUTHOR: baipiao003
-# AUTHOR: blackmatrix7
-# AccelerateDirectSites
-# Alibaba
-# Baidu
-# Bilibili
-# ByteDance
-# CCTV
-# CN域名直连(中国|公司|网络)
-# China DNS
-# ChinaNet
-# ChinaOneKeyLogin 运营商一键登录
-# DOMAIN-KEYWORD: 5
-# DOMAIN-SUFFIX: 1
-# DOMAIN-SUFFIX: 117
-# DOMAIN-SUFFIX: 13
-# DOMAIN-SUFFIX: 2498
-# DOMAIN-SUFFIX: 3
-# DOMAIN-SUFFIX: 36
-# DOMAIN: 0
-# DOMAIN: 1
-# DiDi
-# Douyu 斗鱼
-# Epic
-# Heytap
-# HuaWei
-# IP-CIDR: 20
-# IP-CIDR: 28
-# Iflytek 科大讯飞
-# Iqiyi
-# JD
-# Kingsoft
-# Kuaishou 快手
-# LeTV 乐视
-# MGTV 芒果TV
-# MI
-# Mac Download
-# Meitu
-# MyList
-# NAME: 123pan
-# NAME: 4399
-# NAME: Coolapk
-# NAME: Download
-# NAME: LanZouYun
-# NAME: NetEase
-# NAME: Tencent
-# NAME: zhilian
-# NetEase
-# PDD 拼多多
-# PPTV、PPLive
-# PROCESS-NAME: 28
-# Public Direct CDN 公共直连
-# REPO: https://github.com/baipiao003/ACL4SSR/clash/Clash
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# Sina
-# Sohu Sogo
-# Sony
-# SteamCN
-# TOTAL: 1
-# TOTAL: 13
-# TOTAL: 146
-# TOTAL: 2518
-# TOTAL: 3
-# TOTAL: 34
-# TOTAL: 36
-# TOTAL: 4
-# TeamViewer
-# Tencent
-# Tencent Weiyun
-# UPDATED: 2024-01-08 16:02:55
-# UPDATED: 2025-06-06 09:17:01
-# UPDATED: 2025-06-06 09:17:36
-# UPDATED: 2025-08-26 19:33:01
-# UPDATED: 2025-10-20 02:09:09
-# UPDATED: 2025-10-31 19:00:01
-# UPDATED: 2025-12-10 02:08:50
-# Vip 唯品会
-# Xbox
-# Ximalaya 喜马拉雅
-# XunLei
-# Xunlei 迅雷
-# YYeTs 人人影视
-# bt
-# 中国云服务商ip端
-# 中国国内常见域名关键词直连
-# 华为 huwei
-# 百度 Baidu
-# 直连列表
-# 网易 NetEase
-# 腾讯 qq
-# 阿里
-#Baidu disk
-#DOMAIN-SUFFIX,ajax.aspnetcdn.com
-#DOMAIN-SUFFIX,ajax.cloudflare.com
-#DOMAIN-SUFFIX,cdnjs.cloudflare.com
-#DOMAIN-SUFFIX,code.jquery.com
-DOMAIN-KEYWORD,123pan
-DOMAIN-KEYWORD,360buy
-DOMAIN-KEYWORD,alicdn
-DOMAIN-KEYWORD,alimama
-DOMAIN-KEYWORD,alipay
-DOMAIN-KEYWORD,appzapp
-DOMAIN-KEYWORD,aria2
-DOMAIN-KEYWORD,baidupcs
-DOMAIN-KEYWORD,bilibili
-DOMAIN-KEYWORD,ccgslb
-DOMAIN-KEYWORD,chinacache
-DOMAIN-KEYWORD,duobao
-DOMAIN-KEYWORD,jdpay
-DOMAIN-KEYWORD,moke
-DOMAIN-KEYWORD,qhimg
-DOMAIN-KEYWORD,thunder
-DOMAIN-KEYWORD,vpimg
-DOMAIN-KEYWORD,xiami
-DOMAIN-KEYWORD,xiaomi
-DOMAIN-KEYWORD,xlliveud
-DOMAIN-KEYWORD,xunlei
-DOMAIN-KEYWORD,yunpan
-IP-CIDR6,2a0b:b580::/48,no-resolve
-IP-CIDR6,2a0b:b581::/48,no-resolve
-IP-CIDR6,2a0b:b582::/48,no-resolve
-IP-CIDR6,2a0b:b583::/48,no-resolve
+# PROCESS-NAME规则
 PROCESS-NAME,BitComet
 PROCESS-NAME,BitComet.exe
 PROCESS-NAME,BitComet_x64.exe
@@ -3696,6 +3672,34 @@ PROCESS-NAME,v2ray
 PROCESS-NAME,v2ray.exe
 PROCESS-NAME,xray
 PROCESS-NAME,xray.exe
+
+# 其他规则
+DOMAIN-KEYWORD,123pan
+DOMAIN-KEYWORD,360buy
+DOMAIN-KEYWORD,alicdn
+DOMAIN-KEYWORD,alimama
+DOMAIN-KEYWORD,alipay
+DOMAIN-KEYWORD,appzapp
+DOMAIN-KEYWORD,aria2
+DOMAIN-KEYWORD,baidupcs
+DOMAIN-KEYWORD,bilibili
+DOMAIN-KEYWORD,ccgslb
+DOMAIN-KEYWORD,chinacache
+DOMAIN-KEYWORD,duobao
+DOMAIN-KEYWORD,jdpay
+DOMAIN-KEYWORD,moke
+DOMAIN-KEYWORD,qhimg
+DOMAIN-KEYWORD,thunder
+DOMAIN-KEYWORD,vpimg
+DOMAIN-KEYWORD,xiami
+DOMAIN-KEYWORD,xiaomi
+DOMAIN-KEYWORD,xlliveud
+DOMAIN-KEYWORD,xunlei
+DOMAIN-KEYWORD,yunpan
+IP-CIDR6,2a0b:b580::/48,no-resolve
+IP-CIDR6,2a0b:b581::/48,no-resolve
+IP-CIDR6,2a0b:b582::/48,no-resolve
+IP-CIDR6,2a0b:b583::/48,no-resolve
 URL-REGEX,(.+.)?(torrent|announce.php?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei)(..+)?
 URL-REGEX,(.+.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan).(cn|com)
 URL-REGEX,(.+\.|^)(360|so)\.(cn|com)

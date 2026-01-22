@@ -1,7 +1,32 @@
-# 生成时间: 2026-01-22 12:44:40
+# 生成时间: 2026-01-22 13:12:14
 # 规则数量: 135
 # 来源文件: OpenAi.txt
 # 成功链接: 6/6
+# 失败链接: 0/6
+
+# NAME: OpenAI
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:20:00
+# DOMAIN: 7
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 24
+# IP-ASN: 1
+# IP-CIDR: 2
+# TOTAL: 35
+# NAME: Claude
+# UPDATED: 2025-06-06 09:20:01
+# DOMAIN: 1
+# DOMAIN-SUFFIX: 2
+# TOTAL: 3
+# NAME: Copilot
+# UPDATED: 2025-06-06 09:20:02
+# DOMAIN: 20
+# DOMAIN-SUFFIX: 26
+# IP-ASN: 2
+# TOTAL: 51
+# 内容：Github Copilot
+# 数量：5条
 
 # DOMAIN规则
 DOMAIN,ai.google.dev
@@ -113,29 +138,6 @@ IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
 
 # 其他规则
-# AUTHOR: blackmatrix7
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 2
-# DOMAIN-SUFFIX: 24
-# DOMAIN-SUFFIX: 26
-# DOMAIN: 1
-# DOMAIN: 20
-# DOMAIN: 7
-# IP-ASN: 1
-# IP-ASN: 2
-# IP-CIDR: 2
-# NAME: Claude
-# NAME: Copilot
-# NAME: OpenAI
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# TOTAL: 3
-# TOTAL: 35
-# TOTAL: 51
-# UPDATED: 2025-06-06 09:20:00
-# UPDATED: 2025-06-06 09:20:01
-# UPDATED: 2025-06-06 09:20:02
-# 内容：Github Copilot
-# 数量：5条
 DOMAIN-KEYWORD,chatgpt
 DOMAIN-KEYWORD,cocopilot
 DOMAIN-KEYWORD,colab
