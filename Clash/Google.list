@@ -1,4 +1,4 @@
-# 生成时间: 2026-01-22 05:10:01
+# 生成时间: 2026-01-22 05:18:27
 # 规则数量: 82
 
 # 内容：GoogleFCM 谷歌推送服务
@@ -38,20 +38,9 @@ IP-CIDR,172.253.122.188/32,no-resolve
 IP-CIDR,173.194.175.188/32,no-resolve
 IP-CIDR,173.194.218.188/32,no-resolve
 IP-CIDR,209.85.233.188/32,no-resolve
-# NAME: GoogleFCM
+# NAME: Gemini
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:18:26
-# DOMAIN: 15
-# IP-CIDR: 26
-# TOTAL: 41
-DOMAIN,android.apis.google.com
-DOMAIN,device-provisioning.googleapis.com
-DOMAIN,firebaseinstallations.googleapis.com
-DOMAIN,mtalk-dev.google.com
-DOMAIN,mtalk-staging.google.com
-DOMAIN,mtalk4.google.com
-# NAME: Gemini
 # UPDATED: 2025-06-06 09:20:02
 # DOMAIN: 3
 # DOMAIN-KEYWORD: 3
@@ -70,6 +59,17 @@ DOMAIN-SUFFIX,apis.google.com
 DOMAIN-KEYWORD,colab
 DOMAIN-KEYWORD,developerprofiles
 DOMAIN-KEYWORD,generativelanguage
+# NAME: GoogleFCM
+# UPDATED: 2025-06-06 09:18:26
+# DOMAIN: 15
+# IP-CIDR: 26
+# TOTAL: 41
+DOMAIN,android.apis.google.com
+DOMAIN,device-provisioning.googleapis.com
+DOMAIN,firebaseinstallations.googleapis.com
+DOMAIN,mtalk-dev.google.com
+DOMAIN,mtalk-staging.google.com
+DOMAIN,mtalk4.google.com
 DOMAIN-SUFFIX,services.googleapis.cn
 DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,together.ai

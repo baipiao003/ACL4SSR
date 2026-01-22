@@ -1,5 +1,5 @@
-# 生成时间: 2026-01-22 05:10:02
-# 规则数量: 1201
+# 生成时间: 2026-01-22 05:18:30
+# 规则数量: 1239
 
 # 直连列表
 # MyList
@@ -683,6 +683,101 @@ DOMAIN-SUFFIX,zhongsou.com
 DOMAIN-SUFFIX,zhuihd.com
 DOMAIN-SUFFIX,cmbchina.com
 DOMAIN-SUFFIX,95516.com
+# NAME: LanZouYun
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:17:36
+# DOMAIN-SUFFIX: 36
+# TOTAL: 36
+DOMAIN-SUFFIX,bakstotre.com
+DOMAIN-SUFFIX,ilanzou.com
+DOMAIN-SUFFIX,lanosso.com
+DOMAIN-SUFFIX,lanpv.com
+DOMAIN-SUFFIX,lanpw.com
+DOMAIN-SUFFIX,lanrar.com
+DOMAIN-SUFFIX,lanzn.com
+DOMAIN-SUFFIX,lanzoub.com
+DOMAIN-SUFFIX,lanzouc.com
+DOMAIN-SUFFIX,lanzoue.com
+DOMAIN-SUFFIX,lanzouf.com
+DOMAIN-SUFFIX,lanzoug.com
+DOMAIN-SUFFIX,lanzouh.com
+DOMAIN-SUFFIX,lanzouj.com
+DOMAIN-SUFFIX,lanzouk.com
+DOMAIN-SUFFIX,lanzoul.com
+DOMAIN-SUFFIX,lanzoum.com
+DOMAIN-SUFFIX,lanzouo.com
+DOMAIN-SUFFIX,lanzoup.com
+DOMAIN-SUFFIX,lanzouq.com
+DOMAIN-SUFFIX,lanzous.com
+DOMAIN-SUFFIX,lanzout.com
+DOMAIN-SUFFIX,lanzouu.com
+DOMAIN-SUFFIX,lanzouv.com
+DOMAIN-SUFFIX,lanzouw.com
+DOMAIN-SUFFIX,lanzouy.com
+DOMAIN-SUFFIX,lanzov.com
+DOMAIN-SUFFIX,lanzv.com
+DOMAIN-SUFFIX,ulanzou.com
+DOMAIN-SUFFIX,webgetstore.com
+DOMAIN-SUFFIX,woozooo.com
+DOMAIN-SUFFIX,wwentua.com
+# NAME: 4399
+# UPDATED: 2025-06-06 09:17:01
+# DOMAIN-SUFFIX: 13
+# TOTAL: 13
+DOMAIN-SUFFIX,4399.cn
+DOMAIN-SUFFIX,4399.net
+DOMAIN-SUFFIX,4399api.com
+DOMAIN-SUFFIX,4399dmw.com
+DOMAIN-SUFFIX,4399sj.com
+DOMAIN-SUFFIX,edu4399.com
+DOMAIN-SUFFIX,funnycore.com
+DOMAIN-SUFFIX,qq163.com
+DOMAIN-SUFFIX,qq163.net
+# NAME: Download
+# DOMAIN-KEYWORD: 5
+# DOMAIN-SUFFIX: 1
+# PROCESS-NAME: 28
+# TOTAL: 34
+DOMAIN-SUFFIX,qbittorrent.org
+DOMAIN-KEYWORD,aria2
+DOMAIN-KEYWORD,thunder
+DOMAIN-KEYWORD,xlliveud
+DOMAIN-KEYWORD,xunlei
+DOMAIN-KEYWORD,yunpan
+PROCESS-NAME,BitComet
+PROCESS-NAME,BitComet.exe
+PROCESS-NAME,BitComet_x64.exe
+PROCESS-NAME,DownloadService
+PROCESS-NAME,DownloadService.exe
+PROCESS-NAME,Folx
+PROCESS-NAME,Folx.exe
+PROCESS-NAME,NetTransport
+PROCESS-NAME,NetTransport.exe
+PROCESS-NAME,Thunder
+PROCESS-NAME,Thunder.exe
+PROCESS-NAME,Transmission
+PROCESS-NAME,Transmission.exe
+PROCESS-NAME,WebTorrent
+PROCESS-NAME,WebTorrent.exe
+PROCESS-NAME,WebTorrentHelper
+PROCESS-NAME,WebTorrentHelper.exe
+PROCESS-NAME,Weiyun
+PROCESS-NAME,Weiyun.exe
+PROCESS-NAME,aria2c
+PROCESS-NAME,aria2c.exe
+PROCESS-NAME,baidunetdisk.exe
+PROCESS-NAME,fdm
+PROCESS-NAME,fdm.exe
+PROCESS-NAME,qbittorrent
+PROCESS-NAME,qbittorrent.exe
+PROCESS-NAME,uTorrent
+PROCESS-NAME,uTorrent.exe
+# NAME: Coolapk
+# UPDATED: 2024-01-08 16:02:55
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+DOMAIN-SUFFIX,coolapkmarket.net
 # 中国云服务商ip端
 # 阿里
 IP-CIDR,8.128.0.0/10,no-resolve
@@ -897,49 +992,6 @@ IP-CIDR,101.198.196.0/22,no-resolve
 IP-CIDR,101.198.200.0/21,no-resolve
 IP-CIDR,101.198.208.0/20,no-resolve
 IP-CIDR,101.199.196.0/22,no-resolve
-# Mac Download
-PROCESS-NAME,aria2c.exe
-PROCESS-NAME,fdm.exe
-PROCESS-NAME,Folx.exe
-PROCESS-NAME,NetTransport.exe
-PROCESS-NAME,Thunder.exe
-PROCESS-NAME,Transmission.exe
-PROCESS-NAME,uTorrent.exe
-PROCESS-NAME,WebTorrent.exe
-PROCESS-NAME,WebTorrent Helper.exe
-PROCESS-NAME,qbittorrent.exe
-# bt
-DOMAIN-SUFFIX,smtp
-DOMAIN-KEYWORD,aria2
-URL-REGEX,(Subject|HELO|SMTP)
-URL-REGEX,(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com
-URL-REGEX,(.+.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan).(cn|com)
-URL-REGEX,(.+.)?(torrent|announce.php?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei)(..+)?
-# XunLei
-URL-REGEX,(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)
-PROCESS-NAME,DownloadService.exe
-URL-REGEX,(.+\.|^)(360|so)\.(cn|com)
-# Tencent Weiyun
-PROCESS-NAME,Weiyun.exe
-#Baidu disk
-PROCESS-NAME,baidunetdisk.exe
-# Xbox
-URL-REGEX,assets\d+\.xboxlive\.(com|cn)
-# NAME: 4399
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:17:01
-# DOMAIN-SUFFIX: 13
-# TOTAL: 13
-DOMAIN-SUFFIX,4399.cn
-DOMAIN-SUFFIX,4399.net
-DOMAIN-SUFFIX,4399api.com
-DOMAIN-SUFFIX,4399dmw.com
-DOMAIN-SUFFIX,4399sj.com
-DOMAIN-SUFFIX,edu4399.com
-DOMAIN-SUFFIX,funnycore.com
-DOMAIN-SUFFIX,qq163.com
-DOMAIN-SUFFIX,qq163.net
 # NAME: NetEase
 # UPDATED: 2025-12-10 02:08:50
 # DOMAIN: 1
@@ -1083,42 +1135,35 @@ IP-CIDR,59.111.181.60/32,no-resolve
 IP-CIDR,59.111.19.33/32,no-resolve
 IP-CIDR,59.111.21.14/31,no-resolve
 IP-CIDR,59.111.238.29/32,no-resolve
-# NAME: LanZouYun
-# UPDATED: 2025-06-06 09:17:36
-# DOMAIN-SUFFIX: 36
-# TOTAL: 36
-DOMAIN-SUFFIX,bakstotre.com
-DOMAIN-SUFFIX,ilanzou.com
-DOMAIN-SUFFIX,lanosso.com
-DOMAIN-SUFFIX,lanpv.com
-DOMAIN-SUFFIX,lanpw.com
-DOMAIN-SUFFIX,lanrar.com
-DOMAIN-SUFFIX,lanzn.com
-DOMAIN-SUFFIX,lanzoub.com
-DOMAIN-SUFFIX,lanzouc.com
-DOMAIN-SUFFIX,lanzoue.com
-DOMAIN-SUFFIX,lanzouf.com
-DOMAIN-SUFFIX,lanzoug.com
-DOMAIN-SUFFIX,lanzouh.com
-DOMAIN-SUFFIX,lanzouj.com
-DOMAIN-SUFFIX,lanzouk.com
-DOMAIN-SUFFIX,lanzoul.com
-DOMAIN-SUFFIX,lanzoum.com
-DOMAIN-SUFFIX,lanzouo.com
-DOMAIN-SUFFIX,lanzoup.com
-DOMAIN-SUFFIX,lanzouq.com
-DOMAIN-SUFFIX,lanzous.com
-DOMAIN-SUFFIX,lanzout.com
-DOMAIN-SUFFIX,lanzouu.com
-DOMAIN-SUFFIX,lanzouv.com
-DOMAIN-SUFFIX,lanzouw.com
-DOMAIN-SUFFIX,lanzouy.com
-DOMAIN-SUFFIX,lanzov.com
-DOMAIN-SUFFIX,lanzv.com
-DOMAIN-SUFFIX,ulanzou.com
-DOMAIN-SUFFIX,webgetstore.com
-DOMAIN-SUFFIX,woozooo.com
-DOMAIN-SUFFIX,wwentua.com
+# NAME: 123pan
+# AUTHOR: baipiao003
+# REPO: https://github.com/baipiao003/ACL4SSR/clash/Clash
+# UPDATED: 2025-08-26 19:33:01
+# TOTAL: 4
+DOMAIN-SUFFIX,123pan.com
+DOMAIN-SUFFIX,123pan.cn
+DOMAIN-SUFFIX,123865.com
+DOMAIN-KEYWORD,123pan
+# NAME: zhilian
+# UPDATED: 2025-10-31 19:00:01
+# DOMAIN: 0
+# TOTAL: 1
+DOMAIN-SUFFIX,bsbsb.top
+# Mac Download
+PROCESS-NAME,WebTorrent Helper.exe
+# bt
+DOMAIN-SUFFIX,smtp
+URL-REGEX,(Subject|HELO|SMTP)
+URL-REGEX,(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com
+URL-REGEX,(.+.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan).(cn|com)
+URL-REGEX,(.+.)?(torrent|announce.php?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei)(..+)?
+# XunLei
+URL-REGEX,(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)
+URL-REGEX,(.+\.|^)(360|so)\.(cn|com)
+# Tencent Weiyun
+#Baidu disk
+# Xbox
+URL-REGEX,assets\d+\.xboxlive\.(com|cn)
 DOMAIN-SUFFIX,7777777.buzz
 IP-CIDR,193.122.114.13/32
 IP-CIDR,47.110.135.104/32
@@ -1145,17 +1190,7 @@ PROCESS-NAME,Surge 4
 PROCESS-NAME,Surge%202
 PROCESS-NAME,Surge%203
 PROCESS-NAME,Surge%204
-PROCESS-NAME,Thunder
-PROCESS-NAME,DownloadService
 PROCESS-NAME,qBittorrent
-PROCESS-NAME,Transmission
-PROCESS-NAME,fdm
-PROCESS-NAME,aria2c
-PROCESS-NAME,Folx
-PROCESS-NAME,NetTransport
-PROCESS-NAME,uTorrent
-PROCESS-NAME,WebTorrent
-PROCESS-NAME,BitComet.exe
 PROCESS-NAME,ThunderVIP.exe
 PROCESS-NAME,transmission-daemon.exe
 PROCESS-NAME,transmission-qt.exe
@@ -1171,34 +1206,37 @@ DOMAIN-SUFFIX,restrict.makima.online
 DOMAIN-SUFFIX,demo.fuclaude.com
 DOMAIN-SUFFIX,athfree.killerbest.com
 DOMAIN-SUFFIX,tantantan.paoluma.de
-# NAME: zhilian
-# AUTHOR: baipiao003
-# REPO: https://github.com/baipiao003/ACL4SSR/clash/Clash
-# UPDATED: 2025-10-31 19:00:01
-# DOMAIN-SUFFIX: 1
-# DOMAIN: 0
-# TOTAL: 1
-DOMAIN-SUFFIX,bsbsb.top
-# NAME: 123pan
-# UPDATED: 2025-08-26 19:33:01
-# DOMAIN-SUFFIX: 3
-# TOTAL: 4
-DOMAIN-SUFFIX,123pan.com
-DOMAIN-SUFFIX,123pan.cn
-DOMAIN-SUFFIX,123865.com
-DOMAIN-KEYWORD,123pan
-# NAME: Download
-# DOMAIN-KEYWORD: 5
-# PROCESS-NAME: 28
-# TOTAL: 34
-DOMAIN-SUFFIX,qbittorrent.org
-DOMAIN-KEYWORD,thunder
-DOMAIN-KEYWORD,xlliveud
-DOMAIN-KEYWORD,xunlei
-DOMAIN-KEYWORD,yunpan
-PROCESS-NAME,BitComet
-PROCESS-NAME,BitComet_x64.exe
-PROCESS-NAME,WebTorrentHelper
-PROCESS-NAME,WebTorrentHelper.exe
-PROCESS-NAME,Weiyun
-PROCESS-NAME,qbittorrent
+# NAME: WeChat
+# UPDATED: 2025-06-06 09:18:25
+# DOMAIN: 8
+# DOMAIN-SUFFIX: 22
+# IP-ASN: 1
+# TOTAL: 31
+DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
+DOMAIN,btrace.qq.com
+DOMAIN,dldir1.qq.com
+DOMAIN,slife.xy-asia.com
+DOMAIN,soup.v.qq.com
+DOMAIN,vweixinf.tc.qq.com
+DOMAIN,weixin110.qq.com
+DOMAIN,wup.imtt.qq.com
+DOMAIN-SUFFIX,iot-tencent.com
+DOMAIN-SUFFIX,lbs.gtimg.com
+DOMAIN-SUFFIX,map.qq.com
+DOMAIN-SUFFIX,qlogo.cn
+DOMAIN-SUFFIX,qpic.cn
+DOMAIN-SUFFIX,servicewechat.com
+DOMAIN-SUFFIX,up-hl.3g.qq.com
+DOMAIN-SUFFIX,vweixinthumb.tc.qq.com
+DOMAIN-SUFFIX,wechatlegal.net
+DOMAIN-SUFFIX,wechatos.net
+DOMAIN-SUFFIX,wechatpay.com
+DOMAIN-SUFFIX,weixin.qq.com
+DOMAIN-SUFFIX,weixinbridge.com
+DOMAIN-SUFFIX,weixinsxy.com
+DOMAIN-SUFFIX,wx.gtimg.com
+DOMAIN-SUFFIX,wx.qq.com
+DOMAIN-SUFFIX,wxapp.tc.qq.com
+DOMAIN-SUFFIX,wxs.qq.com
+DOMAIN-SUFFIX,yun-hl.3g.qq.com
+IP-ASN,132203,no-resolve
