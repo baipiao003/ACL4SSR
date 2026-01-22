@@ -1,82 +1,9 @@
-# 生成时间: 2026-01-22 05:38:09
+# 生成时间: 2026-01-22 05:58:18
 # 规则数量: 135
 
-# NAME: Claude
+# NAME: Copilot
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:20:01
-# DOMAIN: 1
-# DOMAIN-SUFFIX: 2
-# TOTAL: 3
-DOMAIN,cdn.usefathom.com
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
-DOMAIN,ai.google.dev
-DOMAIN,alkalimakersuite-pa.clients6.google.com
-DOMAIN,makersuite.google.com
-DOMAIN-SUFFIX,bard.google.com
-DOMAIN-SUFFIX,deepmind.com
-DOMAIN-SUFFIX,deepmind.google
-DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,generativeai.google
-DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-DOMAIN-SUFFIX,apis.google.com
-DOMAIN-SUFFIX,aistudio.google.com
-DOMAIN-KEYWORD,colab
-DOMAIN-KEYWORD,developerprofiles
-DOMAIN-KEYWORD,generativelanguage
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,oaiusercontent.com
-DOMAIN-SUFFIX,perplexity.ai
-DOMAIN-SUFFIX,pplx.ai
-DOMAIN-SUFFIX,poe.com
-DOMAIN-SUFFIX,cohere.com
-DOMAIN-SUFFIX,mistral.ai
-DOMAIN-SUFFIX,midjourney.com
-DOMAIN-SUFFIX,discord.com
-DOMAIN-SUFFIX,stability.ai
-DOMAIN-SUFFIX,runwayml.com
-DOMAIN-SUFFIX,pika.art
-DOMAIN-SUFFIX,firefly.adobe.com
-DOMAIN-SUFFIX,leonardo.ai
-DOMAIN-SUFFIX,elevenlabs.io
-DOMAIN-SUFFIX,suno.ai
-DOMAIN-SUFFIX,udio.com
-DOMAIN-SUFFIX,githubcopilot.com
-DOMAIN-SUFFIX,copilot.microsoft.com
-DOMAIN-SUFFIX,notion.so
-DOMAIN-SUFFIX,replicate.com
-DOMAIN-SUFFIX,x.ai
-DOMAIN-SUFFIX,you.com
-DOMAIN-SUFFIX,huggingface.co
-DOMAIN-KEYWORD,openai
-DOMAIN-SUFFIX,AI.com
-DOMAIN-SUFFIX,cdn.auth0.com
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,opendns.com
-DOMAIN-SUFFIX,bing.com
-DOMAIN-SUFFIX,civitai.com
-DOMAIN,bard.google.com
-DOMAIN,gemini.google.com
-DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,sentry.io
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,featuregates.org
-DOMAIN-SUFFIX,statsigapi.net
-DOMAIN-SUFFIX,Anthropic.com
-DOMAIN-SUFFIX,opera-api.com
-DOMAIN-SUFFIX,ciciai.com
-DOMAIN-KEYWORD,chatgpt
-# 内容：Github Copilot
-# 数量：5条
-DOMAIN-KEYWORD,cocopilot
-DOMAIN,api.github.com
-DOMAIN,copilot-proxy.githubusercontent.com
-DOMAIN,api.githubcopilot.com
-DOMAIN,api.individual.githubcopilot.com
-# NAME: Copilot
 # UPDATED: 2025-06-06 09:20:02
 # DOMAIN: 20
 # DOMAIN-KEYWORD: 1
@@ -109,17 +36,25 @@ DOMAIN-SUFFIX,api.microsoftapp.net
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
 DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,edgeservices.bing.com
 DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,observeit.net
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,openaicom.imgix.net
 DOMAIN-SUFFIX,segment.io
+DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-KEYWORD,openaicom-api
@@ -127,6 +62,64 @@ IP-ASN,14061,no-resolve
 IP-ASN,20473,no-resolve
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
+DOMAIN-KEYWORD,openai
+DOMAIN-SUFFIX,AI.com
+DOMAIN-SUFFIX,cdn.auth0.com
+DOMAIN-SUFFIX,opendns.com
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,civitai.com
+DOMAIN,bard.google.com
+DOMAIN,ai.google.dev
+DOMAIN,gemini.google.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,Anthropic.com
+DOMAIN-SUFFIX,opera-api.com
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,ciciai.com
+DOMAIN-KEYWORD,chatgpt
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN,makersuite.google.com
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,apis.google.com
+DOMAIN-KEYWORD,colab
+DOMAIN-KEYWORD,developerprofiles
+DOMAIN-KEYWORD,generativelanguage
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,pplx.ai
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,cohere.com
+DOMAIN-SUFFIX,mistral.ai
+DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,discord.com
+DOMAIN-SUFFIX,stability.ai
+DOMAIN-SUFFIX,runwayml.com
+DOMAIN-SUFFIX,pika.art
+DOMAIN-SUFFIX,firefly.adobe.com
+DOMAIN-SUFFIX,leonardo.ai
+DOMAIN-SUFFIX,elevenlabs.io
+DOMAIN-SUFFIX,suno.ai
+DOMAIN-SUFFIX,udio.com
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN-SUFFIX,copilot.microsoft.com
+DOMAIN-SUFFIX,notion.so
+DOMAIN-SUFFIX,replicate.com
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,you.com
+DOMAIN-SUFFIX,huggingface.co
+# NAME: Claude
+# UPDATED: 2025-06-06 09:20:01
+# DOMAIN: 1
+# DOMAIN-SUFFIX: 2
+# TOTAL: 3
+DOMAIN,cdn.usefathom.com
 # NAME: OpenAI
 # UPDATED: 2025-06-06 09:20:00
 # DOMAIN: 7
@@ -136,3 +129,10 @@ IP-CIDR,64.23.132.171/32,no-resolve
 DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,api.statsig.com
+# 内容：Github Copilot
+# 数量：5条
+DOMAIN-KEYWORD,cocopilot
+DOMAIN,api.github.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,api.githubcopilot.com
+DOMAIN,api.individual.githubcopilot.com
