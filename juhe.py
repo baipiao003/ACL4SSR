@@ -209,19 +209,29 @@ class ListRuleProcessor:
         if not link:
             return False
         
-        # 这里可以根据需要添加更多判断条件
-        list_keywords = ['.list', '.yaml', '.yml', '.txt', 'clash', 'rule', 'ruleset']
+        # 转换为小写方便比较
         link_lower = link.lower()
         
+        # 检查是否包含常见规则文件扩展名
+        list_extensions = ['.list', '.yaml', '.yml', '.txt', '.conf', '.rule', '.ruleset']
+        
+        # 检查是否是 GitHub raw 链接
+        if 'raw.githubusercontent.com' in link_lower:
+            # GitHub raw 链接可能是规则文件，检查文件扩展名
+            for ext in list_extensions:
+                if ext in link_lower:
+                    return True
+            # 如果没有明确扩展名，但看起来像规则文件
+            if '/master/rule/' in link_lower or '/master/' in link_lower:
+                return True
+            return False
+        
         # 检查是否包含常见规则文件扩展名或关键词
+        list_keywords = ['.list', '.yaml', '.yml', '.txt', 'clash', 'rule', 'ruleset']
         for keyword in list_keywords:
             if keyword in link_lower:
                 return True
         
-        # 额外检查：如果是github raw链接，很可能就是规则文件
-        if 'raw.githubusercontent.com' in link_lower:
-            return True
-            
         return False
     
     def deduplicate_links_in_files(self):
@@ -373,14 +383,14 @@ class ListRuleProcessor:
         last_exception = None
         
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Accept': 'text/plain, text/*, application/x-yaml, application/yaml, application/xml'
         }
         
         while retry_count <= max_retries:
             try:
                 # 确保URL是编码正确的
                 try:
-                    # 尝试解析URL以确保格式正确
                     parsed_url = urllib.parse.urlparse(url)
                     if not parsed_url.scheme:
                         url = 'https://' + url
@@ -391,12 +401,40 @@ class ListRuleProcessor:
                 response = requests.get(url, headers=headers, timeout=30)
                 response.raise_for_status()
                 
-                # 检查内容类型
-                content_type = response.headers.get('content-type', '').lower()
-                if 'text' not in content_type and 'application/json' not in content_type:
-                    logger.warning(f"URL {url} 返回的内容类型不是文本: {content_type}")
+                content = response.text
                 
-                return True, response.text, retry_count
+                # 检查内容是否为 HTML 页面
+                if content.startswith('<!DOCTYPE html') or content.startswith('<html'):
+                    logger.warning(f"URL {url} 返回的是HTML页面，不是规则文件")
+                    return False, None, retry_count
+                
+                # 检查是否包含明显的 HTML 标签
+                html_tags = ['<html', '<head>', '<body>', '<div class=', '<!DOCTYPE']
+                for tag in html_tags:
+                    if tag.lower() in content[:1000].lower():
+                        logger.warning(f"URL {url} 包含HTML标签，不是规则文件")
+                        return False, None, retry_count
+                
+                # 检查是否看起来像规则文件（包含常见规则前缀）
+                rule_prefixes = ['DOMAIN-', 'DOMAIN,', 'DOMAIN-SUFFIX,', 'IP-CIDR,', 'PROCESS-NAME,', 
+                                '# NAME:', '# AUTHOR:', '# REPO:', '# UPDATED:', '# TOTAL:']
+                is_rule_file = False
+                lines = content.split('\n')[:20]  # 检查前20行
+                for line in lines:
+                    line_upper = line.upper()
+                    for prefix in rule_prefixes:
+                        if line_upper.startswith(prefix.upper()):
+                            is_rule_file = True
+                            break
+                    if is_rule_file:
+                        break
+                
+                if not is_rule_file and len(content) > 1000:
+                    # 如果没有找到规则前缀，且内容较长，可能是网页
+                    logger.warning(f"URL {url} 没有检测到规则格式，可能是网页")
+                    return False, None, retry_count
+                
+                return True, content, retry_count
                 
             except requests.exceptions.Timeout:
                 last_exception = f"请求超时"
@@ -477,6 +515,9 @@ class ListRuleProcessor:
                 'retry_count': 0
             }
         
+        # 记录失败的链接
+        failed_links = []
+        
         # 并发下载所有链接内容（带重试）
         all_contents = []
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -495,10 +536,12 @@ class ListRuleProcessor:
                         all_contents.append(content)
                     else:
                         link_status[url]['success'] = False
-                        link_status[url]['error'] = "下载失败" if not success else "下载内容为空"
+                        link_status[url]['error'] = "下载失败或内容无效"
+                        failed_links.append(url)
                 except Exception as e:
                     link_status[url]['success'] = False
                     link_status[url]['error'] = str(e)
+                    failed_links.append(url)
         
         # 按原始顺序显示下载结果
         success_count = 0
@@ -509,17 +552,31 @@ class ListRuleProcessor:
                 logger.info(f"✓ 成功下载 [{status['index']}/{status['total']}]{retry_info}: {link}")
                 success_count += 1
             else:
-                if status['error'] == "下载内容为空":
-                    logger.warning(f"✗ 下载内容为空 [{status['index']}/{status['total']}]: {link}")
+                if status['error'] == "下载失败或内容无效":
+                    logger.warning(f"✗ 下载失败或内容无效 [{status['index']}/{status['total']}]: {link}")
                 else:
                     retry_info = f" (已重试{status['retry_count']}次)" if status['retry_count'] > 0 else ""
-                    logger.error(f"✗ 下载失败 [{status['index']}/{status['total']}]{retry_info}: {link}")
+                    logger.error(f"✗ 下载失败 [{status['index']}/{status['total']}]{retry_info}: {link} - {status['error']}")
         
         fail_count = total_links - success_count
         if fail_count > 0:
             logger.warning(f"下载完成: {success_count}/{total_links} 成功, {fail_count}/{total_links} 失败")
         else:
             logger.info(f"下载完成: {success_count}/{total_links} 全部成功")
+        
+        # 如果有失败的链接，记录到文件
+        if failed_links:
+            failed_file = txt_file.stem + '_failed.txt'
+            failed_file_path = self.clash_dir / failed_file
+            try:
+                with open(failed_file_path, 'w', encoding='utf-8') as f:
+                    f.write('# 失败的链接列表\n')
+                    f.write('# 生成时间: ' + time.strftime('%Y-%m-%d %H:%M:%S') + '\n\n')
+                    for link in failed_links:
+                        f.write(link + '\n')
+                logger.warning(f"✓ 已保存失败的链接到 {failed_file}")
+            except Exception as e:
+                logger.error(f"✗ 保存失败链接文件失败: {e}")
         
         if not all_contents:
             logger.error(f"文件 {txt_file.name} 的所有链接下载失败")
@@ -538,21 +595,62 @@ class ListRuleProcessor:
                 lines = content.split('\n')
                 for line in lines:
                     line = line.strip()
-                    if line and line not in seen_lines:
-                        seen_lines.add(line)
-                        combined_content.append(line)
+                    # 跳过空行和特定注释
+                    if line and not line.startswith('# 生成时间:') and not line.startswith('# 规则数量:'):
+                        if line not in seen_lines:
+                            seen_lines.add(line)
+                            combined_content.append(line)
             
-            # 生成文件头（只保留生成时间和规则数量）
+            # 按规则类型排序（可选）
+            domain_rules = []
+            domain_suffix_rules = []
+            ip_cidr_rules = []
+            other_rules = []
+            
+            for rule in combined_content:
+                if rule.startswith('DOMAIN,'):
+                    domain_rules.append(rule)
+                elif rule.startswith('DOMAIN-SUFFIX,'):
+                    domain_suffix_rules.append(rule)
+                elif rule.startswith('IP-CIDR,'):
+                    ip_cidr_rules.append(rule)
+                else:
+                    other_rules.append(rule)
+            
+            # 重新组合排序后的规则
+            sorted_content = []
+            if domain_rules:
+                sorted_content.append('# DOMAIN规则')
+                sorted_content.extend(sorted(domain_rules))
+                sorted_content.append('')
+            
+            if domain_suffix_rules:
+                sorted_content.append('# DOMAIN-SUFFIX规则')
+                sorted_content.extend(sorted(domain_suffix_rules))
+                sorted_content.append('')
+            
+            if ip_cidr_rules:
+                sorted_content.append('# IP-CIDR规则')
+                sorted_content.extend(sorted(ip_cidr_rules))
+                sorted_content.append('')
+            
+            if other_rules:
+                sorted_content.append('# 其他规则')
+                sorted_content.extend(sorted(other_rules))
+            
+            # 生成文件头
             rule_count = len(combined_content)
             generation_time = time.strftime('%Y-%m-%d %H:%M:%S')
             header = f"""# 生成时间: {generation_time}
 # 规则数量: {rule_count}
+# 来源文件: {txt_file.name}
+# 成功链接: {success_count}/{total_links}
 
 """
             
             # 写入文件
             with open(list_file_path, 'w', encoding='utf-8') as f:
-                f.write(header + '\n'.join(combined_content))
+                f.write(header + '\n'.join(sorted_content))
             
             logger.info(f"✓ 成功保存到 {list_file_path}, 共 {rule_count} 条规则")
             
@@ -588,6 +686,7 @@ class ListRuleProcessor:
         
         # 输出处理摘要
         logger.info("所有文件处理完成！")
+        logger.info(f"成功处理: {len(success_files)} 个文件")
         
         if failed_files:
             logger.warning("失败的文件列表:")
@@ -604,6 +703,10 @@ def main():
         clash_dir="Clash"
     )
     
+    print("=" * 60)
+    print("Clash规则聚合器 v2.0")
+    print("=" * 60)
+    
     # 第一部分：去重链接
     processor.deduplicate_links_in_files()
     
@@ -618,6 +721,8 @@ def main():
     
     # 统计生成的list文件
     list_files = list(processor.clash_dir.glob("*.list"))
+    failed_files = list(processor.clash_dir.glob("*_failed.txt"))
+    
     if list_files:
         print(f"生成的list文件: {len(list_files)} 个")
         
@@ -630,7 +735,7 @@ def main():
                     # 从文件头读取规则数量
                     rule_count = 0
                     generation_time = "未知"
-                    for line in lines[:5]:  # 只检查前5行
+                    for line in lines[:10]:  # 只检查前10行
                         if line.startswith('# 规则数量:'):
                             rule_count = int(line.split(':')[1].strip())
                         elif line.startswith('# 生成时间:'):
@@ -651,6 +756,11 @@ def main():
         print(f"总计规则数: {total_rules}")
     else:
         print("未生成任何list文件")
+    
+    if failed_files:
+        print(f"失败的链接记录: {len(failed_files)} 个")
+        for file in failed_files:
+            print(f"  - {file.name}")
 
 if __name__ == "__main__":
     main()
