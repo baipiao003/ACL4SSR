@@ -734,9 +734,6 @@ class ListRuleProcessor:
             generation_time = time.strftime('%Y-%m-%d %H:%M:%S')
             header = f"""# 生成时间: {generation_time}
 # 规则数量: {rule_count}
-# 来源文件: {txt_file.name}
-# 成功链接: {success_count}/{total_links}
-# 失败链接: {fail_count}/{total_links}
 
 """
             
@@ -778,7 +775,6 @@ class ListRuleProcessor:
         
         # 输出处理摘要
         logger.info("所有文件处理完成！")
-        logger.info(f"成功处理: {len(success_files)} 个文件")
         
         if failed_files:
             logger.warning("失败的文件列表:")
@@ -796,9 +792,6 @@ def main():
     )
     
     print("=" * 60)
-    print("Clash规则聚合器 v2.1")
-    print("GitHub URL自动转换版")
-    print("=" * 60)
     
     # 第一部分：去重链接
     processor.deduplicate_links_in_files()
@@ -807,7 +800,6 @@ def main():
     processor.process_all_files(max_workers=10, max_retries=3)
     
     # 打印最终统计
-    print()
     print("最终统计:")
     print(f"规则文件目录: {processor.rules_dir.absolute()}")
     print(f"输出目录: {processor.clash_dir.absolute()}")
@@ -855,7 +847,6 @@ def main():
         for file in failed_files:
             print(f"  - {file.name}")
     
-    print()
     print("=" * 60)
     print("注意: GitHub blob 链接已自动转换为 raw 链接")
     print("例如: https://github.com/user/repo/blob/master/path/file")
