@@ -8,7 +8,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import urllib.parse
 
-# 配置日志，不显示时间戳
+# 配置日志
 logging.basicConfig(
     level=logging.INFO,
     format='%(levelname)s - %(message)s'
@@ -30,6 +30,32 @@ class ListRuleProcessor:
         # 确保目录存在
         self.rules_dir.mkdir(parents=True, exist_ok=True)
         self.clash_dir.mkdir(parents=True, exist_ok=True)
+    
+    def _normalize_github_url(self, url: str) -> str:
+        """
+        标准化 GitHub URL，将普通链接转换为 raw 链接
+        
+        Args:
+            url: 原始 URL
+            
+        Returns:
+            标准化后的 URL
+        """
+        if not url:
+            return url
+        
+        url_lower = url.lower()
+        
+        # 检查是否是 GitHub blob 链接
+        if 'github.com' in url_lower and '/blob/' in url_lower:
+            # 转换为 raw.githubusercontent.com 链接
+            # 从: https://github.com/user/repo/blob/branch/path/file
+            # 到: https://raw.githubusercontent.com/user/repo/branch/path/file
+            url = url.replace('github.com', 'raw.githubusercontent.com')
+            url = url.replace('/blob/', '/')
+            logger.debug(f"转换 GitHub URL: {url}")
+        
+        return url
     
     def read_file_with_retry(self, txt_file: Path, max_retries: int = 3) -> Optional[str]:
         """
@@ -119,6 +145,8 @@ class ListRuleProcessor:
                         # 清理URL结尾的标点符号
                         url = self._clean_url(url)
                         if url and url not in seen_links and self._is_list_rule_link(url):
+                            # 标准化 GitHub URL
+                            url = self._normalize_github_url(url)
                             seen_links.add(url)
                             links.append(url)
                 
@@ -126,6 +154,8 @@ class ListRuleProcessor:
                 elif self._looks_like_url(line):
                     cleaned_line = self._clean_url(line)
                     if cleaned_line and cleaned_line not in seen_links and self._is_list_rule_link(cleaned_line):
+                        # 标准化 GitHub URL
+                        cleaned_line = self._normalize_github_url(cleaned_line)
                         seen_links.add(cleaned_line)
                         links.append(cleaned_line)
                 else:
@@ -139,6 +169,8 @@ class ListRuleProcessor:
                     url = url.strip()
                     url = self._clean_url(url)
                     if url and url not in seen_links and self._is_list_rule_link(url):
+                        # 标准化 GitHub URL
+                        url = self._normalize_github_url(url)
                         seen_links.add(url)
                         links.append(url)
                     
@@ -188,7 +220,7 @@ class ListRuleProcessor:
             return False
         
         # 检查是否包含常见的URL模式
-        url_indicators = ['http://', 'https://', 'www.', '.com', '.net', '.org', '.io', '.list', '.yaml']
+        url_indicators = ['http://', 'https://', 'www.', '.com', '.net', '.org', '.io', '.list', '.yaml', 'github.com']
         
         for indicator in url_indicators:
             if indicator in text.lower():
@@ -215,16 +247,18 @@ class ListRuleProcessor:
         # 检查是否包含常见规则文件扩展名
         list_extensions = ['.list', '.yaml', '.yml', '.txt', '.conf', '.rule', '.ruleset']
         
-        # 检查是否是 GitHub raw 链接
-        if 'raw.githubusercontent.com' in link_lower:
-            # GitHub raw 链接可能是规则文件，检查文件扩展名
+        # 检查是否是 GitHub raw 链接或 blob 链接
+        if 'github.com' in link_lower or 'raw.githubusercontent.com' in link_lower:
+            # GitHub 链接可能是规则文件，检查文件扩展名
             for ext in list_extensions:
                 if ext in link_lower:
                     return True
             # 如果没有明确扩展名，但看起来像规则文件
-            if '/master/rule/' in link_lower or '/master/' in link_lower:
+            if '/master/rule/' in link_lower or '/master/' in link_lower or '/blob/master/' in link_lower:
                 return True
-            return False
+            # 如果是特定的规则目录
+            if '/rule/' in link_lower or '/rules/' in link_lower:
+                return True
         
         # 检查是否包含常见规则文件扩展名或关键词
         list_keywords = ['.list', '.yaml', '.yml', '.txt', 'clash', 'rule', 'ruleset']
@@ -343,6 +377,8 @@ class ListRuleProcessor:
                         # 清理URL结尾的标点符号
                         url = self._clean_url(url)
                         if url and url not in seen_links and self._is_list_rule_link(url):
+                            # 标准化 GitHub URL
+                            url = self._normalize_github_url(url)
                             seen_links.add(url)
                             links.append(url)
                 
@@ -350,6 +386,8 @@ class ListRuleProcessor:
                 elif self._looks_like_url(line):
                     cleaned_line = self._clean_url(line)
                     if cleaned_line and cleaned_line not in seen_links and self._is_list_rule_link(cleaned_line):
+                        # 标准化 GitHub URL
+                        cleaned_line = self._normalize_github_url(cleaned_line)
                         seen_links.add(cleaned_line)
                         links.append(cleaned_line)
             
@@ -360,6 +398,8 @@ class ListRuleProcessor:
                     url = url.strip()
                     url = self._clean_url(url)
                     if url and url not in seen_links and self._is_list_rule_link(url):
+                        # 标准化 GitHub URL
+                        url = self._normalize_github_url(url)
                         seen_links.add(url)
                         links.append(url)
                     
@@ -379,6 +419,9 @@ class ListRuleProcessor:
         Returns:
             (是否成功, 下载的内容, 重试次数)
         """
+        # 标准化 GitHub URL
+        url = self._normalize_github_url(url)
+        
         retry_count = 0
         last_exception = None
         
@@ -398,9 +441,12 @@ class ListRuleProcessor:
                 except:
                     pass
                 
+                logger.debug(f"尝试下载: {url}")
                 response = requests.get(url, headers=headers, timeout=30)
                 response.raise_for_status()
                 
+                # 检查内容类型
+                content_type = response.headers.get('content-type', '').lower()
                 content = response.text
                 
                 # 检查内容是否为 HTML 页面
@@ -409,19 +455,23 @@ class ListRuleProcessor:
                     return False, None, retry_count
                 
                 # 检查是否包含明显的 HTML 标签
-                html_tags = ['<html', '<head>', '<body>', '<div class=', '<!DOCTYPE']
+                html_tags = ['<html', '<head>', '<body>', '<div class=', '<!DOCTYPE', '<script', '<style']
                 for tag in html_tags:
-                    if tag.lower() in content[:1000].lower():
+                    if tag.lower() in content[:2000].lower():
                         logger.warning(f"URL {url} 包含HTML标签，不是规则文件")
                         return False, None, retry_count
                 
                 # 检查是否看起来像规则文件（包含常见规则前缀）
                 rule_prefixes = ['DOMAIN-', 'DOMAIN,', 'DOMAIN-SUFFIX,', 'IP-CIDR,', 'PROCESS-NAME,', 
-                                '# NAME:', '# AUTHOR:', '# REPO:', '# UPDATED:', '# TOTAL:']
+                                '# NAME:', '# AUTHOR:', '# REPO:', '# UPDATED:', '# TOTAL:',
+                                'HOST-', 'HOST,', 'HOST-SUFFIX,']
                 is_rule_file = False
-                lines = content.split('\n')[:20]  # 检查前20行
+                lines = content.split('\n')[:50]  # 检查前50行
                 for line in lines:
-                    line_upper = line.upper()
+                    line_strip = line.strip()
+                    if not line_strip:
+                        continue
+                    line_upper = line_strip.upper()
                     for prefix in rule_prefixes:
                         if line_upper.startswith(prefix.upper()):
                             is_rule_file = True
@@ -429,18 +479,30 @@ class ListRuleProcessor:
                     if is_rule_file:
                         break
                 
-                if not is_rule_file and len(content) > 1000:
+                # 额外检查：如果是 raw.githubusercontent.com 链接，即使没有明显规则前缀也接受
+                if not is_rule_file and 'raw.githubusercontent.com' in url.lower():
+                    # 检查是否有实际内容
+                    if len(content.strip()) > 100:
+                        logger.info(f"GitHub raw 链接 {url} 可能包含规则内容，尝试处理")
+                        is_rule_file = True
+                
+                if not is_rule_file and len(content) > 5000:
                     # 如果没有找到规则前缀，且内容较长，可能是网页
                     logger.warning(f"URL {url} 没有检测到规则格式，可能是网页")
                     return False, None, retry_count
                 
-                return True, content, retry_count
-                
+                # 如果内容较短但看起来像规则，也接受
+                if is_rule_file and len(content.strip()) > 0:
+                    return True, content, retry_count
+                else:
+                    logger.warning(f"URL {url} 返回内容不符合规则格式")
+                    return False, None, retry_count
+                    
             except requests.exceptions.Timeout:
                 last_exception = f"请求超时"
                 retry_count += 1
                 if retry_count <= max_retries:
-                    wait_time = 2 ** retry_count  # 指数退避策略
+                    wait_time = 2 ** retry_count
                     logger.warning(f"第 {retry_count} 次下载超时 {url}, {wait_time}秒后重试")
                     time.sleep(wait_time)
                     
@@ -464,7 +526,6 @@ class ListRuleProcessor:
                     else:
                         break
                 else:
-                    # 客户端错误（4xx），不重试
                     logger.error(f"客户端错误 {url}: {e.response.status_code}")
                     return False, None, retry_count
                     
@@ -571,7 +632,9 @@ class ListRuleProcessor:
             try:
                 with open(failed_file_path, 'w', encoding='utf-8') as f:
                     f.write('# 失败的链接列表\n')
-                    f.write('# 生成时间: ' + time.strftime('%Y-%m-%d %H:%M:%S') + '\n\n')
+                    f.write('# 生成时间: ' + time.strftime('%Y-%m-%d %H:%M:%S') + '\n')
+                    f.write(f'# 原始文件: {txt_file.name}\n')
+                    f.write(f'# 总链接数: {total_links}, 成功: {success_count}, 失败: {fail_count}\n\n')
                     for link in failed_links:
                         f.write(link + '\n')
                 logger.warning(f"✓ 已保存失败的链接到 {failed_file}")
@@ -605,20 +668,38 @@ class ListRuleProcessor:
             domain_rules = []
             domain_suffix_rules = []
             ip_cidr_rules = []
+            process_name_rules = []
+            host_rules = []
             other_rules = []
+            comment_lines = []
             
             for rule in combined_content:
-                if rule.startswith('DOMAIN,'):
+                if rule.startswith('#'):
+                    comment_lines.append(rule)
+                elif rule.startswith('DOMAIN,'):
                     domain_rules.append(rule)
                 elif rule.startswith('DOMAIN-SUFFIX,'):
                     domain_suffix_rules.append(rule)
                 elif rule.startswith('IP-CIDR,'):
                     ip_cidr_rules.append(rule)
+                elif rule.startswith('PROCESS-NAME,'):
+                    process_name_rules.append(rule)
+                elif rule.startswith('HOST,'):
+                    host_rules.append(rule)
+                elif rule.startswith('HOST-SUFFIX,'):
+                    host_rules.append(rule)
                 else:
                     other_rules.append(rule)
             
             # 重新组合排序后的规则
             sorted_content = []
+            
+            # 添加注释
+            if comment_lines:
+                sorted_content.extend(comment_lines)
+                sorted_content.append('')
+            
+            # 添加规则
             if domain_rules:
                 sorted_content.append('# DOMAIN规则')
                 sorted_content.extend(sorted(domain_rules))
@@ -634,6 +715,16 @@ class ListRuleProcessor:
                 sorted_content.extend(sorted(ip_cidr_rules))
                 sorted_content.append('')
             
+            if process_name_rules:
+                sorted_content.append('# PROCESS-NAME规则')
+                sorted_content.extend(sorted(process_name_rules))
+                sorted_content.append('')
+            
+            if host_rules:
+                sorted_content.append('# HOST规则')
+                sorted_content.extend(sorted(host_rules))
+                sorted_content.append('')
+            
             if other_rules:
                 sorted_content.append('# 其他规则')
                 sorted_content.extend(sorted(other_rules))
@@ -645,6 +736,7 @@ class ListRuleProcessor:
 # 规则数量: {rule_count}
 # 来源文件: {txt_file.name}
 # 成功链接: {success_count}/{total_links}
+# 失败链接: {fail_count}/{total_links}
 
 """
             
@@ -704,7 +796,8 @@ def main():
     )
     
     print("=" * 60)
-    print("Clash规则聚合器 v2.0")
+    print("Clash规则聚合器 v2.1")
+    print("GitHub URL自动转换版")
     print("=" * 60)
     
     # 第一部分：去重链接
@@ -735,13 +828,13 @@ def main():
                     # 从文件头读取规则数量
                     rule_count = 0
                     generation_time = "未知"
-                    for line in lines[:10]:  # 只检查前10行
+                    for line in lines[:10]:
                         if line.startswith('# 规则数量:'):
                             rule_count = int(line.split(':')[1].strip())
                         elif line.startswith('# 生成时间:'):
                             generation_time = line.split(':')[1].strip()
                     
-                    if rule_count == 0:  # 如果没有从头部读取到，则计算实际规则数
+                    if rule_count == 0:
                         rule_count = len([l for l in lines if l.strip() and not l.startswith('#')])
                     
                     total_rules += rule_count
@@ -761,6 +854,13 @@ def main():
         print(f"失败的链接记录: {len(failed_files)} 个")
         for file in failed_files:
             print(f"  - {file.name}")
+    
+    print()
+    print("=" * 60)
+    print("注意: GitHub blob 链接已自动转换为 raw 链接")
+    print("例如: https://github.com/user/repo/blob/master/path/file")
+    print("转换为: https://raw.githubusercontent.com/user/repo/master/path/file")
+    print("=" * 60)
 
 if __name__ == "__main__":
     main()
