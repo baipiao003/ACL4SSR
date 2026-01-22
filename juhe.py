@@ -46,6 +46,14 @@ class ListRuleProcessor:
         
         url_lower = url.lower()
         
+        # 如果是 raw.githubusercontent.com 链接，先统一格式
+        if 'raw.githubusercontent.com' in url_lower:
+            # 处理 refs/heads/master 格式
+            if '/refs/heads/master' in url_lower:
+                # 将 /refs/heads/master 替换为 /master
+                url = url.replace('/refs/heads/master', '/master')
+            return url
+        
         # 检查是否是 GitHub blob 链接
         if 'github.com' in url_lower and '/blob/' in url_lower:
             # 转换为 raw.githubusercontent.com 链接
@@ -113,7 +121,7 @@ class ListRuleProcessor:
             去重后的链接列表（保持顺序）
         """
         links = []
-        seen_links = set()  # 用于去重
+        seen_normalized_links = set()  # 用于去重（使用标准化后的URL）
         
         # 改进的正则表达式，支持更多字符
         url_pattern = re.compile(
@@ -144,36 +152,39 @@ class ListRuleProcessor:
                         url = url.strip()
                         # 清理URL结尾的标点符号
                         url = self._clean_url(url)
-                        if url and url not in seen_links and self._is_list_rule_link(url):
+                        if url and self._is_list_rule_link(url):
                             # 标准化 GitHub URL
-                            url = self._normalize_github_url(url)
-                            seen_links.add(url)
-                            links.append(url)
+                            normalized_url = self._normalize_github_url(url)
+                            if normalized_url not in seen_normalized_links:
+                                seen_normalized_links.add(normalized_url)
+                                links.append(url)  # 保存原始URL，但去重基于标准化URL
                 
                 # 如果没有找到匹配的URL，但整行看起来像是一个URL，直接尝试
                 elif self._looks_like_url(line):
                     cleaned_line = self._clean_url(line)
-                    if cleaned_line and cleaned_line not in seen_links and self._is_list_rule_link(cleaned_line):
+                    if cleaned_line and self._is_list_rule_link(cleaned_line):
                         # 标准化 GitHub URL
-                        cleaned_line = self._normalize_github_url(cleaned_line)
-                        seen_links.add(cleaned_line)
-                        links.append(cleaned_line)
+                        normalized_line = self._normalize_github_url(cleaned_line)
+                        if normalized_line not in seen_normalized_links:
+                            seen_normalized_links.add(normalized_line)
+                            links.append(cleaned_line)
                 else:
                     # 保留非URL行（可能是注释或其他内容）
                     links.append(line)
             
             # 如果按行处理没找到足够的链接，再尝试在整个内容中查找
-            if len(seen_links) == 0:
+            if len(seen_normalized_links) == 0:
                 found_urls = url_pattern.findall(content)
                 for url in found_urls:
                     url = url.strip()
                     url = self._clean_url(url)
-                    if url and url not in seen_links and self._is_list_rule_link(url):
+                    if url and self._is_list_rule_link(url):
                         # 标准化 GitHub URL
-                        url = self._normalize_github_url(url)
-                        seen_links.add(url)
-                        links.append(url)
-                    
+                        normalized_url = self._normalize_github_url(url)
+                        if normalized_url not in seen_normalized_links:
+                            seen_normalized_links.add(normalized_url)
+                            links.append(url)
+                
             return links
         except Exception as e:
             logger.error(f"解析内容失败: {e}")
@@ -346,7 +357,7 @@ class ListRuleProcessor:
             提取到的链接列表（保持顺序）
         """
         links = []
-        seen_links = set()  # 用于去重
+        seen_normalized_links = set()  # 用于去重（使用标准化后的URL）
         
         # 改进的正则表达式，支持更多字符
         url_pattern = re.compile(
@@ -376,20 +387,22 @@ class ListRuleProcessor:
                         url = url.strip()
                         # 清理URL结尾的标点符号
                         url = self._clean_url(url)
-                        if url and url not in seen_links and self._is_list_rule_link(url):
+                        if url and self._is_list_rule_link(url):
                             # 标准化 GitHub URL
-                            url = self._normalize_github_url(url)
-                            seen_links.add(url)
-                            links.append(url)
+                            normalized_url = self._normalize_github_url(url)
+                            if normalized_url not in seen_normalized_links:
+                                seen_normalized_links.add(normalized_url)
+                                links.append(url)  # 保存原始URL，但去重基于标准化URL
                 
                 # 如果没有找到匹配的URL，但整行看起来像是一个URL，直接尝试
                 elif self._looks_like_url(line):
                     cleaned_line = self._clean_url(line)
-                    if cleaned_line and cleaned_line not in seen_links and self._is_list_rule_link(cleaned_line):
+                    if cleaned_line and self._is_list_rule_link(cleaned_line):
                         # 标准化 GitHub URL
-                        cleaned_line = self._normalize_github_url(cleaned_line)
-                        seen_links.add(cleaned_line)
-                        links.append(cleaned_line)
+                        normalized_line = self._normalize_github_url(cleaned_line)
+                        if normalized_line not in seen_normalized_links:
+                            seen_normalized_links.add(normalized_line)
+                            links.append(cleaned_line)
             
             # 如果按行处理没找到足够的链接，再尝试在整个内容中查找
             if len(links) == 0:
@@ -397,12 +410,13 @@ class ListRuleProcessor:
                 for url in found_urls:
                     url = url.strip()
                     url = self._clean_url(url)
-                    if url and url not in seen_links and self._is_list_rule_link(url):
+                    if url and self._is_list_rule_link(url):
                         # 标准化 GitHub URL
-                        url = self._normalize_github_url(url)
-                        seen_links.add(url)
-                        links.append(url)
-                    
+                        normalized_url = self._normalize_github_url(url)
+                        if normalized_url not in seen_normalized_links:
+                            seen_normalized_links.add(normalized_url)
+                            links.append(url)
+                
             return links
         except Exception as e:
             logger.error(f"解析文件 {txt_file.name} 内容失败: {e}")
@@ -680,8 +694,6 @@ class ListRuleProcessor:
             generation_time = time.strftime('%Y-%m-%d %H:%M:%S')
             header = f"""# 生成时间: {generation_time}
 # 规则数量: {rule_count}
-# 原始文件: {txt_file.name}
-# 成功链接: {success_count}/{total_links}
 
 """
             
