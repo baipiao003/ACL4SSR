@@ -1,9 +1,45 @@
-# 生成时间: 2026-01-22 13:12:12
-# 规则数量: 786
-# 来源文件: Google.txt
+# 生成时间: 2026-01-22 15:19:06
+# 规则数量: 764
+# 原始文件: Google.txt
 # 成功链接: 4/4
-# 失败链接: 0/4
 
+# 内容：GoogleFCM 谷歌推送服务
+# 数量：35条
+DOMAIN,alt1-mtalk.google.com
+DOMAIN,alt2-mtalk.google.com
+DOMAIN,alt3-mtalk.google.com
+DOMAIN,alt4-mtalk.google.com
+DOMAIN,alt5-mtalk.google.com
+DOMAIN,alt6-mtalk.google.com
+DOMAIN,alt7-mtalk.google.com
+DOMAIN,alt8-mtalk.google.com
+DOMAIN,mtalk.google.com
+IP-CIDR,64.233.177.188/32,no-resolve
+IP-CIDR,64.233.186.188/32,no-resolve
+IP-CIDR,64.233.187.188/32,no-resolve
+IP-CIDR,64.233.188.188/32,no-resolve
+IP-CIDR,64.233.189.188/32,no-resolve
+IP-CIDR,74.125.23.188/32,no-resolve
+IP-CIDR,74.125.24.188/32,no-resolve
+IP-CIDR,74.125.28.188/32,no-resolve
+IP-CIDR,74.125.127.188/32,no-resolve
+IP-CIDR,74.125.137.188/32,no-resolve
+IP-CIDR,74.125.203.188/32,no-resolve
+IP-CIDR,74.125.204.188/32,no-resolve
+IP-CIDR,74.125.206.188/32,no-resolve
+IP-CIDR,108.177.125.188/32,no-resolve
+IP-CIDR,142.250.4.188/32,no-resolve
+IP-CIDR,142.250.10.188/32,no-resolve
+IP-CIDR,142.250.31.188/32,no-resolve
+IP-CIDR,142.250.96.188/32,no-resolve
+IP-CIDR,172.217.194.188/32,no-resolve
+IP-CIDR,172.217.218.188/32,no-resolve
+IP-CIDR,172.217.219.188/32,no-resolve
+IP-CIDR,172.253.63.188/32,no-resolve
+IP-CIDR,172.253.122.188/32,no-resolve
+IP-CIDR,173.194.175.188/32,no-resolve
+IP-CIDR,173.194.218.188/32,no-resolve
+IP-CIDR,209.85.233.188/32,no-resolve
 # NAME: Gemini
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -12,6 +48,19 @@
 # DOMAIN-KEYWORD: 3
 # DOMAIN-SUFFIX: 7
 # TOTAL: 13
+DOMAIN,ai.google.dev
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN,makersuite.google.com
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,apis.google.com
+DOMAIN-KEYWORD,colab
+DOMAIN-KEYWORD,developerprofiles
+DOMAIN-KEYWORD,generativelanguage
 # NAME: Google
 # UPDATED: 2025-12-08 02:06:19
 # DOMAIN: 1
@@ -21,28 +70,7 @@
 # IP-CIDR6: 1
 # PROCESS-NAME: 6
 # TOTAL: 708
-# 内容：GoogleFCM 谷歌推送服务
-# 数量：35条
-# 核心规则（必须代理）
-# 通配规则（覆盖大部分服务）
-# IP段规则（兜底）
-
-# DOMAIN规则
-DOMAIN,ai.google.dev
-DOMAIN,alkalimakersuite-pa.clients6.google.com
-DOMAIN,alt1-mtalk.google.com
-DOMAIN,alt2-mtalk.google.com
-DOMAIN,alt3-mtalk.google.com
-DOMAIN,alt4-mtalk.google.com
-DOMAIN,alt5-mtalk.google.com
-DOMAIN,alt6-mtalk.google.com
-DOMAIN,alt7-mtalk.google.com
-DOMAIN,alt8-mtalk.google.com
-DOMAIN,makersuite.google.com
-DOMAIN,mtalk.google.com
 DOMAIN,voice.telephony.goog
-
-# DOMAIN-SUFFIX规则
 DOMAIN-SUFFIX,0emm.com
 DOMAIN-SUFFIX,1e100.net
 DOMAIN-SUFFIX,1ucrs.com
@@ -67,14 +95,12 @@ DOMAIN-SUFFIX,amp.dev
 DOMAIN-SUFFIX,ampproject.com
 DOMAIN-SUFFIX,ampproject.net
 DOMAIN-SUFFIX,ampproject.org
-DOMAIN-SUFFIX,android.clients.google.com
 DOMAIN-SUFFIX,android.com
 DOMAIN-SUFFIX,androidify.com
 DOMAIN-SUFFIX,androidtv.com
 DOMAIN-SUFFIX,angulardart.org
 DOMAIN-SUFFIX,api.ai
 DOMAIN-SUFFIX,apigee.com
-DOMAIN-SUFFIX,apis.google.com
 DOMAIN-SUFFIX,app-analytics-services.com
 DOMAIN-SUFFIX,app-measurement-cn.com
 DOMAIN-SUFFIX,app-measurement.com
@@ -84,14 +110,12 @@ DOMAIN-SUFFIX,appbridge.io
 DOMAIN-SUFFIX,appbridge.it
 DOMAIN-SUFFIX,apps5.oingo.com
 DOMAIN-SUFFIX,appspot.com
-DOMAIN-SUFFIX,appstorrent.ru
 DOMAIN-SUFFIX,apture.com
 DOMAIN-SUFFIX,area120.com
 DOMAIN-SUFFIX,asp-cc.com
 DOMAIN-SUFFIX,autodraw.com
 DOMAIN-SUFFIX,avail.googleflights.net
 DOMAIN-SUFFIX,bandpage.com
-DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,baselinestudy.com
 DOMAIN-SUFFIX,baselinestudy.org
 DOMAIN-SUFFIX,bazel.build
@@ -232,8 +256,6 @@ DOMAIN-SUFFIX,data-vocabulary.org
 DOMAIN-SUFFIX,dataliberation.org
 DOMAIN-SUFFIX,debug.com
 DOMAIN-SUFFIX,debugproject.com
-DOMAIN-SUFFIX,deepmind.com
-DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,deja.com
 DOMAIN-SUFFIX,deps.dev
 DOMAIN-SUFFIX,deps.info
@@ -242,7 +264,6 @@ DOMAIN-SUFFIX,dialogflow.com
 DOMAIN-SUFFIX,digisfera.com
 DOMAIN-SUFFIX,digitalassetlinks.org
 DOMAIN-SUFFIX,digitalattackmap.com
-DOMAIN-SUFFIX,dl.google.com
 DOMAIN-SUFFIX,doubleclick-cn.net
 DOMAIN-SUFFIX,doubleclick.com
 DOMAIN-SUFFIX,doubleclick.net
@@ -268,8 +289,6 @@ DOMAIN-SUFFIX,g.page
 DOMAIN-SUFFIX,gateway.dev
 DOMAIN-SUFFIX,gcp.gvt2.com
 DOMAIN-SUFFIX,gcr.io
-DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,generativeai.google
 DOMAIN-SUFFIX,gerritcodereview.com
 DOMAIN-SUFFIX,get.app
 DOMAIN-SUFFIX,get.dev
@@ -519,7 +538,6 @@ DOMAIN-SUFFIX,googlecommerce.com
 DOMAIN-SUFFIX,googlecompare.co.uk
 DOMAIN-SUFFIX,googledanmark.com
 DOMAIN-SUFFIX,googledomains.com
-DOMAIN-SUFFIX,googledrive.com
 DOMAIN-SUFFIX,googlee.com
 DOMAIN-SUFFIX,googleearth.com
 DOMAIN-SUFFIX,googlefiber.com
@@ -547,14 +565,12 @@ DOMAIN-SUFFIX,googletagservices-cn.com
 DOMAIN-SUFFIX,googletagservices.com
 DOMAIN-SUFFIX,googletraveladservices-cn.com
 DOMAIN-SUFFIX,googletraveladservices.com
-DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,googlevads-cn.com
 DOMAIN-SUFFIX,googleventures.com
 DOMAIN-SUFFIX,googlr.com
 DOMAIN-SUFFIX,goolge.com
 DOMAIN-SUFFIX,gooogle.com
 DOMAIN-SUFFIX,gridaware.app
-DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,gsrc.io
 DOMAIN-SUFFIX,gstatic-cn.com
 DOMAIN-SUFFIX,gstatic.cn
@@ -631,14 +647,11 @@ DOMAIN-SUFFIX,picnik.com
 DOMAIN-SUFFIX,pittpatt.com
 DOMAIN-SUFFIX,pixate.com
 DOMAIN-SUFFIX,pki.goog
-DOMAIN-SUFFIX,play.google.com
-DOMAIN-SUFFIX,play.googleapis.com
 DOMAIN-SUFFIX,plus.codes
 DOMAIN-SUFFIX,polymer-project.org
 DOMAIN-SUFFIX,polymerproject.org
 DOMAIN-SUFFIX,postini.com
 DOMAIN-SUFFIX,privacysandbox.com
-DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 DOMAIN-SUFFIX,prod-controlbe.floonet.goog
 DOMAIN-SUFFIX,prod-databe.floonet.goog
 DOMAIN-SUFFIX,prod.databe.floonet.goog
@@ -672,7 +685,6 @@ DOMAIN-SUFFIX,schema.org
 DOMAIN-SUFFIX,schemer.com
 DOMAIN-SUFFIX,screenwisetrends.com
 DOMAIN-SUFFIX,screenwisetrendspanel.com
-DOMAIN-SUFFIX,services.googleapis.cn
 DOMAIN-SUFFIX,shattered.io
 DOMAIN-SUFFIX,snapseed.com
 DOMAIN-SUFFIX,solveforx.com
@@ -698,7 +710,6 @@ DOMAIN-SUFFIX,thinkquarterly.co.uk
 DOMAIN-SUFFIX,thinkquarterly.com
 DOMAIN-SUFFIX,thinkwithgoogle.com
 DOMAIN-SUFFIX,tiltbrush.com
-DOMAIN-SUFFIX,together.ai
 DOMAIN-SUFFIX,txcloud.net
 DOMAIN-SUFFIX,txvia.com
 DOMAIN-SUFFIX,unfiltered.news
@@ -748,55 +759,33 @@ DOMAIN-SUFFIX,xn--p8j9a0d9c9a.xn--q9jyb4c
 DOMAIN-SUFFIX,xplr.co
 DOMAIN-SUFFIX,zukunftswerkstatt.de
 DOMAIN-SUFFIX,zynamics.com
-
-# IP-CIDR规则
-IP-CIDR,108.177.125.188/32,no-resolve
-IP-CIDR,142.250.10.188/32,no-resolve
-IP-CIDR,142.250.31.188/32,no-resolve
-IP-CIDR,142.250.4.188/32,no-resolve
-IP-CIDR,142.250.96.188/32,no-resolve
+DOMAIN-SUFFIX,googledrive.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-KEYWORD,appspot
+DOMAIN-KEYWORD,blogspot
+DOMAIN-KEYWORD,gmail
+DOMAIN-KEYWORD,google
+DOMAIN-KEYWORD,recaptcha
 IP-CIDR,172.110.32.0/21,no-resolve
-IP-CIDR,172.217.194.188/32,no-resolve
-IP-CIDR,172.217.218.188/32,no-resolve
-IP-CIDR,172.217.219.188/32,no-resolve
-IP-CIDR,172.253.122.188/32,no-resolve
-IP-CIDR,172.253.63.188/32,no-resolve
 IP-CIDR,173.194.0.0/16,no-resolve
-IP-CIDR,173.194.175.188/32,no-resolve
-IP-CIDR,173.194.218.188/32,no-resolve
-IP-CIDR,209.85.233.188/32,no-resolve
 IP-CIDR,216.73.80.0/20,no-resolve
-IP-CIDR,64.233.177.188/32,no-resolve
-IP-CIDR,64.233.186.188/32,no-resolve
-IP-CIDR,64.233.187.188/32,no-resolve
-IP-CIDR,64.233.188.188/32,no-resolve
-IP-CIDR,64.233.189.188/32,no-resolve
 IP-CIDR,74.125.0.0/16,no-resolve
-IP-CIDR,74.125.127.188/32,no-resolve
-IP-CIDR,74.125.137.188/32,no-resolve
-IP-CIDR,74.125.203.188/32,no-resolve
-IP-CIDR,74.125.204.188/32,no-resolve
-IP-CIDR,74.125.206.188/32,no-resolve
-IP-CIDR,74.125.23.188/32,no-resolve
-IP-CIDR,74.125.24.188/32,no-resolve
-IP-CIDR,74.125.28.188/32,no-resolve
-
-# PROCESS-NAME规则
-PROCESS-NAME,BackupandSync
+IP-CIDR6,2620:120:e000::/40,no-resolve
 PROCESS-NAME,GoogleDriveFS.exe
 PROCESS-NAME,com.android.vending
 PROCESS-NAME,com.google.android.gms
 PROCESS-NAME,com.google.android.gsf
 PROCESS-NAME,com.google.android.play.games
-
-# 其他规则
+PROCESS-NAME,BackupandSync
+DOMAIN-SUFFIX,services.googleapis.cn
+DOMAIN-SUFFIX,together.ai
+DOMAIN-SUFFIX,groq.com
+DOMAIN-SUFFIX,appstorrent.ru
+# 核心规则（必须代理）
+DOMAIN-SUFFIX,android.clients.google.com
+DOMAIN-SUFFIX,play.googleapis.com
+DOMAIN-SUFFIX,play.google.com
+DOMAIN-SUFFIX,dl.google.com
+# 通配规则（覆盖大部分服务）
 DOMAIN-KEYWORD,android
-DOMAIN-KEYWORD,appspot
-DOMAIN-KEYWORD,blogspot
-DOMAIN-KEYWORD,colab
-DOMAIN-KEYWORD,developerprofiles
-DOMAIN-KEYWORD,generativelanguage
-DOMAIN-KEYWORD,gmail
-DOMAIN-KEYWORD,google
-DOMAIN-KEYWORD,recaptcha
-IP-CIDR6,2620:120:e000::/40,no-resolve
+# IP段规则（兜底）

@@ -1,8 +1,7 @@
-# 生成时间: 2026-01-22 13:12:13
-# 规则数量: 245
-# 来源文件: CNbank.txt
+# 生成时间: 2026-01-22 15:19:06
+# 规则数量: 207
+# 原始文件: CNbank.txt
 # 成功链接: 11/11
-# 失败链接: 0/11
 
 # NAME: AliPay
 # AUTHOR: blackmatrix7
@@ -10,53 +9,6 @@
 # UPDATED: 2025-06-06 09:17:31
 # DOMAIN-SUFFIX: 21
 # TOTAL: 21
-# NAME: ABC
-# DOMAIN-SUFFIX: 6
-# TOTAL: 6
-# NAME: CEB
-# DOMAIN-SUFFIX: 15
-# TOTAL: 15
-# NAME: BOCOM
-# NAME: BOC
-# DOMAIN-SUFFIX: 22
-# TOTAL: 22
-# NAME: PSBC
-# UPDATED: 2025-06-06 09:17:37
-# DOMAIN-SUFFIX: 3
-# TOTAL: 3
-# NAME: CMB
-# UPDATED: 2025-06-06 09:17:32
-# DOMAIN-SUFFIX: 38
-# TOTAL: 38
-# NAME: CGB
-# DOMAIN-SUFFIX: 4
-# TOTAL: 4
-# NAME: ICBC
-# UPDATED: 2025-06-06 09:17:35
-# DOMAIN-SUFFIX: 58
-# TOTAL: 58
-# NAME: CCB
-# DOMAIN-SUFFIX: 18
-# TOTAL: 18
-# NAME: UnionPay
-# UPDATED: 2025-06-06 09:17:39
-# DOMAIN-SUFFIX: 16
-# TOTAL: 16
-
-# DOMAIN-SUFFIX规则
-DOMAIN-SUFFIX,8008205555.cn
-DOMAIN-SUFFIX,8008205555.com
-DOMAIN-SUFFIX,95508.com
-DOMAIN-SUFFIX,95516.com
-DOMAIN-SUFFIX,95516.net
-DOMAIN-SUFFIX,95559.com.cn
-DOMAIN-SUFFIX,95559.sh.cn
-DOMAIN-SUFFIX,95580.net
-DOMAIN-SUFFIX,95588.com
-DOMAIN-SUFFIX,95588.com.cn
-DOMAIN-SUFFIX,95599.cn
-DOMAIN-SUFFIX,abchina.com
-DOMAIN-SUFFIX,airepay.net
 DOMAIN-SUFFIX,alipay
 DOMAIN-SUFFIX,alipay-corp.com
 DOMAIN-SUFFIX,alipay-eco.com
@@ -75,34 +27,28 @@ DOMAIN-SUFFIX,alipaylog.com
 DOMAIN-SUFFIX,alipaymo.com
 DOMAIN-SUFFIX,alipayobjects.com
 DOMAIN-SUFFIX,alipayplus.com
-DOMAIN-SUFFIX,bank-of-china.com
-DOMAIN-SUFFIX,bankcomm.com
-DOMAIN-SUFFIX,bankcomm.com.au
-DOMAIN-SUFFIX,bankcomm.com.mo
-DOMAIN-SUFFIX,bankcomm.com.tw
-DOMAIN-SUFFIX,bankofchina.com
-DOMAIN-SUFFIX,bbf.org.cn
-DOMAIN-SUFFIX,bjsbnet.com
-DOMAIN-SUFFIX,boc.cn
-DOMAIN-SUFFIX,bocamchina.com
-DOMAIN-SUFFIX,bocaviation.com
-DOMAIN-SUFFIX,boccfc.cc
-DOMAIN-SUFFIX,boccfc.cn
-DOMAIN-SUFFIX,bocfullertonbank.com
-DOMAIN-SUFFIX,bocgi.com
-DOMAIN-SUFFIX,bocgins.com
-DOMAIN-SUFFIX,bochk.com
-DOMAIN-SUFFIX,bochkonline.com
-DOMAIN-SUFFIX,bocichina.cn
-DOMAIN-SUFFIX,bocichina.com
-DOMAIN-SUFFIX,bocichina.com.cn
-DOMAIN-SUFFIX,bocifunds.cn
-DOMAIN-SUFFIX,bocifunds.com
-DOMAIN-SUFFIX,bocifunds.com.cn
-DOMAIN-SUFFIX,bocigroup.com
-DOMAIN-SUFFIX,bocim.com
-DOMAIN-SUFFIX,bocservices.com.cn
+DOMAIN-SUFFIX,ifaa.org.cn
+DOMAIN-SUFFIX,luohanacademy.com
+DOMAIN-SUFFIX,sinopayment.com.cn
+# NAME: ABC
+# DOMAIN-SUFFIX: 6
+# TOTAL: 6
+DOMAIN-SUFFIX,95599.cn
+DOMAIN-SUFFIX,abchina.com
 DOMAIN-SUFFIX,bscabank.com
+DOMAIN-SUFFIX,openaboc.cn
+DOMAIN-SUFFIX,openaboc.com
+DOMAIN-SUFFIX,openaboc.com.cn
+# NAME: PSBC
+# UPDATED: 2025-06-06 09:17:37
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+DOMAIN-SUFFIX,95580.net
+DOMAIN-SUFFIX,psbc.com
+DOMAIN-SUFFIX,psbcoa.com.cn
+# NAME: CCB
+# DOMAIN-SUFFIX: 18
+# TOTAL: 18
 DOMAIN-SUFFIX,ccb-life.com.cn
 DOMAIN-SUFFIX,ccb.cn
 DOMAIN-SUFFIX,ccb.com
@@ -121,47 +67,11 @@ DOMAIN-SUFFIX,ccblife-test.com.cn
 DOMAIN-SUFFIX,ccbseoul.com
 DOMAIN-SUFFIX,ccbtrust.com.cn
 DOMAIN-SUFFIX,ccbxt.com
+# NAME: CEB
+# DOMAIN-SUFFIX: 15
+# TOTAL: 15
 DOMAIN-SUFFIX,cebbank.com
 DOMAIN-SUFFIX,ceblease.com
-DOMAIN-SUFFIX,cgbchina.cn
-DOMAIN-SUFFIX,cgbchina.com.cn
-DOMAIN-SUFFIX,chinapay.cn
-DOMAIN-SUFFIX,chinapay.com
-DOMAIN-SUFFIX,chinapayhongkong.com
-DOMAIN-SUFFIX,chinaunionpay.com
-DOMAIN-SUFFIX,chinaunionpay.com.cn
-DOMAIN-SUFFIX,chinaunionpay.net
-DOMAIN-SUFFIX,chndoi.cn
-DOMAIN-SUFFIX,chndoi.com
-DOMAIN-SUFFIX,chndoi.com.cn
-DOMAIN-SUFFIX,chndoi.net
-DOMAIN-SUFFIX,chndoi.org
-DOMAIN-SUFFIX,cignacmb-ipmi.com
-DOMAIN-SUFFIX,cignacmb.com
-DOMAIN-SUFFIX,cignacmbamc.com
-DOMAIN-SUFFIX,cmb-leasing.com
-DOMAIN-SUFFIX,cmbchina.biz
-DOMAIN-SUFFIX,cmbchina.cn
-DOMAIN-SUFFIX,cmbchina.com
-DOMAIN-SUFFIX,cmbi.com.hk
-DOMAIN-SUFFIX,cmbimg.cn
-DOMAIN-SUFFIX,cmbimg.com
-DOMAIN-SUFFIX,cmbt.cn
-DOMAIN-SUFFIX,cmbuat.com
-DOMAIN-SUFFIX,cmburl.cn
-DOMAIN-SUFFIX,cmbwinglungbank.com
-DOMAIN-SUFFIX,cmf.biz
-DOMAIN-SUFFIX,cmf.ltd
-DOMAIN-SUFFIX,cmfchina.com
-DOMAIN-SUFFIX,cmfunds.cn
-DOMAIN-SUFFIX,cnki.net
-DOMAIN-SUFFIX,cnkidoi.cn
-DOMAIN-SUFFIX,cnkidoi.com
-DOMAIN-SUFFIX,cnkidoi.net
-DOMAIN-SUFFIX,cnkidoi.org
-DOMAIN-SUFFIX,cup.com.cn
-DOMAIN-SUFFIX,cup62.cn
-DOMAIN-SUFFIX,dccnet.com.cn
 DOMAIN-SUFFIX,eb-ind.com
 DOMAIN-SUFFIX,ebasset.com
 DOMAIN-SUFFIX,ebchina.com
@@ -173,8 +83,15 @@ DOMAIN-SUFFIX,ebscn-am.com
 DOMAIN-SUFFIX,ebscn.com
 DOMAIN-SUFFIX,ebtrust.com
 DOMAIN-SUFFIX,everbright.com
-DOMAIN-SUFFIX,ftcwifi.com
-DOMAIN-SUFFIX,gdb.com.cn
+DOMAIN-SUFFIX,secec.com
+DOMAIN-SUFFIX,sunlife-everbright.com
+# NAME: ICBC
+# UPDATED: 2025-06-06 09:17:35
+# DOMAIN-SUFFIX: 58
+# TOTAL: 58
+DOMAIN-SUFFIX,95588.com
+DOMAIN-SUFFIX,95588.com.cn
+DOMAIN-SUFFIX,dccnet.com.cn
 DOMAIN-SUFFIX,icbc
 DOMAIN-SUFFIX,icbc-at.com
 DOMAIN-SUFFIX,icbc-cz.com
@@ -230,24 +147,104 @@ DOMAIN-SUFFIX,icbcswiss.com
 DOMAIN-SUFFIX,icbcthai.com
 DOMAIN-SUFFIX,icbkfs.com
 DOMAIN-SUFFIX,icbkus.com
-DOMAIN-SUFFIX,ifaa.org.cn
-DOMAIN-SUFFIX,luohanacademy.com
-DOMAIN-SUFFIX,openaboc.cn
-DOMAIN-SUFFIX,openaboc.com
-DOMAIN-SUFFIX,openaboc.com.cn
-DOMAIN-SUFFIX,psbc.com
-DOMAIN-SUFFIX,psbcoa.com.cn
-DOMAIN-SUFFIX,secec.com
-DOMAIN-SUFFIX,sinopayment.com.cn
-DOMAIN-SUFFIX,sunlife-everbright.com
+# NAME: CGB
+# DOMAIN-SUFFIX: 4
+# TOTAL: 4
+DOMAIN-SUFFIX,95508.com
+DOMAIN-SUFFIX,cgbchina.cn
+DOMAIN-SUFFIX,cgbchina.com.cn
+DOMAIN-SUFFIX,gdb.com.cn
+# NAME: BOCOM
+DOMAIN-SUFFIX,95559.com.cn
+DOMAIN-SUFFIX,95559.sh.cn
+DOMAIN-SUFFIX,bankcomm.com
+DOMAIN-SUFFIX,bankcomm.com.au
+DOMAIN-SUFFIX,bankcomm.com.mo
+DOMAIN-SUFFIX,bankcomm.com.tw
+# NAME: CMB
+# UPDATED: 2025-06-06 09:17:32
+# DOMAIN-SUFFIX: 38
+# TOTAL: 38
+DOMAIN-SUFFIX,8008205555.cn
+DOMAIN-SUFFIX,8008205555.com
+DOMAIN-SUFFIX,bbf.org.cn
+DOMAIN-SUFFIX,bjsbnet.com
+DOMAIN-SUFFIX,chndoi.cn
+DOMAIN-SUFFIX,chndoi.com
+DOMAIN-SUFFIX,chndoi.com.cn
+DOMAIN-SUFFIX,chndoi.net
+DOMAIN-SUFFIX,chndoi.org
+DOMAIN-SUFFIX,cignacmb-ipmi.com
+DOMAIN-SUFFIX,cignacmb.com
+DOMAIN-SUFFIX,cignacmbamc.com
+DOMAIN-SUFFIX,cmb-leasing.com
+DOMAIN-SUFFIX,cmbchina.biz
+DOMAIN-SUFFIX,cmbchina.cn
+DOMAIN-SUFFIX,cmbchina.com
+DOMAIN-SUFFIX,cmbi.com.hk
+DOMAIN-SUFFIX,cmbimg.cn
+DOMAIN-SUFFIX,cmbimg.com
+DOMAIN-SUFFIX,cmbt.cn
+DOMAIN-SUFFIX,cmbuat.com
+DOMAIN-SUFFIX,cmburl.cn
+DOMAIN-SUFFIX,cmbwinglungbank.com
+DOMAIN-SUFFIX,cmf.biz
+DOMAIN-SUFFIX,cmf.ltd
+DOMAIN-SUFFIX,cmfchina.com
+DOMAIN-SUFFIX,cmfunds.cn
+DOMAIN-SUFFIX,cnki.net
+DOMAIN-SUFFIX,cnkidoi.cn
+DOMAIN-SUFFIX,cnkidoi.com
+DOMAIN-SUFFIX,cnkidoi.net
+DOMAIN-SUFFIX,cnkidoi.org
 DOMAIN-SUFFIX,test-cignacmb.com
-DOMAIN-SUFFIX,unionpay.com
-DOMAIN-SUFFIX,unionpay.net
-DOMAIN-SUFFIX,unionpayintl.cn
-DOMAIN-SUFFIX,unionpayintl.com
-DOMAIN-SUFFIX,unionpaysecure.com
 DOMAIN-SUFFIX,wuxizazhi.cn
 DOMAIN-SUFFIX,wuxizazhi.com
 DOMAIN-SUFFIX,wuxizazhi.com.cn
 DOMAIN-SUFFIX,wuxizazhi.net
 DOMAIN-SUFFIX,wuxizazhi.net.cn
+# NAME: BOC
+# DOMAIN-SUFFIX: 22
+# TOTAL: 22
+DOMAIN-SUFFIX,bank-of-china.com
+DOMAIN-SUFFIX,bankofchina.com
+DOMAIN-SUFFIX,boc.cn
+DOMAIN-SUFFIX,bocamchina.com
+DOMAIN-SUFFIX,bocaviation.com
+DOMAIN-SUFFIX,boccfc.cc
+DOMAIN-SUFFIX,boccfc.cn
+DOMAIN-SUFFIX,bocfullertonbank.com
+DOMAIN-SUFFIX,bocgi.com
+DOMAIN-SUFFIX,bocgins.com
+DOMAIN-SUFFIX,bochk.com
+DOMAIN-SUFFIX,bochkonline.com
+DOMAIN-SUFFIX,bocichina.cn
+DOMAIN-SUFFIX,bocichina.com
+DOMAIN-SUFFIX,bocichina.com.cn
+DOMAIN-SUFFIX,bocifunds.cn
+DOMAIN-SUFFIX,bocifunds.com
+DOMAIN-SUFFIX,bocifunds.com.cn
+DOMAIN-SUFFIX,bocigroup.com
+DOMAIN-SUFFIX,bocim.com
+DOMAIN-SUFFIX,bocservices.com.cn
+DOMAIN-SUFFIX,ftcwifi.com
+# NAME: UnionPay
+# UPDATED: 2025-06-06 09:17:39
+# DOMAIN-SUFFIX: 16
+# TOTAL: 16
+DOMAIN-SUFFIX,95516.com
+DOMAIN-SUFFIX,95516.net
+DOMAIN-SUFFIX,airepay.net
+DOMAIN-SUFFIX,chinapay.cn
+DOMAIN-SUFFIX,chinapay.com
+DOMAIN-SUFFIX,chinapayhongkong.com
+DOMAIN-SUFFIX,chinaunionpay.com
+DOMAIN-SUFFIX,chinaunionpay.com.cn
+DOMAIN-SUFFIX,chinaunionpay.net
+DOMAIN-SUFFIX,cup.com.cn
+DOMAIN-SUFFIX,cup62.cn
+DOMAIN-SUFFIX,unionpay.com
+DOMAIN-SUFFIX,unionpay.net
+DOMAIN-SUFFIX,unionpayintl.cn
+DOMAIN-SUFFIX,unionpayintl.com
+DOMAIN-SUFFIX,unionpaysecure.com
