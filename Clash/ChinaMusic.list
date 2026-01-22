@@ -1,60 +1,9 @@
-# 生成时间: 2026-01-22 05:18:31
+# 生成时间: 2026-01-22 05:18:53
 # 规则数量: 206
 
-# NAME: Himalaya
+# NAME: NetEaseMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:17:30
-# DOMAIN-SUFFIX: 17
-# TOTAL: 17
-DOMAIN-SUFFIX,9nali.com
-DOMAIN-SUFFIX,conchdate.com
-DOMAIN-SUFFIX,himalaya.com
-DOMAIN-SUFFIX,himalaya.cool
-DOMAIN-SUFFIX,qingxuetang.com
-DOMAIN-SUFFIX,soundconch.com
-DOMAIN-SUFFIX,tableauxmly.com
-DOMAIN-SUFFIX,xima.tv
-DOMAIN-SUFFIX,ximalaya.com
-DOMAIN-SUFFIX,ximalaya.fm
-DOMAIN-SUFFIX,ximalaya.tv
-DOMAIN-SUFFIX,ximalayadata.com
-DOMAIN-SUFFIX,xmcdn.com
-DOMAIN-SUFFIX,zhishif.com
-DOMAIN-SUFFIX,zhishinn.com
-DOMAIN-SUFFIX,zhishiu.com
-DOMAIN-SUFFIX,zhishiv.com
-# NAME: XiamiMusic
-# UPDATED: 2025-06-06 09:17:39
-# DOMAIN-SUFFIX: 3
-# TOTAL: 3
-DOMAIN-SUFFIX,xiami.com
-DOMAIN-SUFFIX,xiami.fm
-DOMAIN-SUFFIX,xiami.net
-# NAME: HibyMusic
-# UPDATED: 2025-06-06 09:17:34
-DOMAIN-SUFFIX,hiby.cd
-DOMAIN-SUFFIX,hiby.com
-DOMAIN-SUFFIX,hibymusic.com
-# NAME: MOOMusic
-# UPDATED: 2025-06-06 09:18:53
-# USER-AGENT: 2
-# TOTAL: 2
-USER-AGENT,MOO*
-USER-AGENT,TencentMidasConnect*
-# NAME: TaiheMusic
-# UPDATED: 2025-06-06 09:17:38
-# DOMAIN-SUFFIX: 8
-# TOTAL: 8
-DOMAIN-SUFFIX,91q.com
-DOMAIN-SUFFIX,dmhmusic.com
-DOMAIN-SUFFIX,qianqian.com
-DOMAIN-SUFFIX,submusic.cn
-DOMAIN-SUFFIX,taihe.com
-DOMAIN-SUFFIX,ttplayer.com
-DOMAIN-SUFFIX,youyou.com
-DOMAIN-SUFFIX,youyou001.com
-# NAME: NetEaseMusic
 # UPDATED: 2025-06-06 09:17:29
 # DOMAIN: 1
 # DOMAIN-SUFFIX: 9
@@ -88,6 +37,39 @@ IP-CIDR,47.100.127.239/32,no-resolve
 IP-CIDR,59.111.128.0/17,no-resolve
 IP-CIDR,59.111.19.33/32,no-resolve
 IP-CIDR,59.111.21.14/31,no-resolve
+# NAME: HibyMusic
+# UPDATED: 2025-06-06 09:17:34
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+DOMAIN-SUFFIX,hiby.cd
+DOMAIN-SUFFIX,hiby.com
+DOMAIN-SUFFIX,hibymusic.com
+# NAME: Himalaya
+# UPDATED: 2025-06-06 09:17:30
+# DOMAIN-SUFFIX: 17
+# TOTAL: 17
+DOMAIN-SUFFIX,9nali.com
+DOMAIN-SUFFIX,conchdate.com
+DOMAIN-SUFFIX,himalaya.com
+DOMAIN-SUFFIX,himalaya.cool
+DOMAIN-SUFFIX,qingxuetang.com
+DOMAIN-SUFFIX,soundconch.com
+DOMAIN-SUFFIX,tableauxmly.com
+DOMAIN-SUFFIX,xima.tv
+DOMAIN-SUFFIX,ximalaya.com
+DOMAIN-SUFFIX,ximalaya.fm
+DOMAIN-SUFFIX,ximalaya.tv
+DOMAIN-SUFFIX,ximalayadata.com
+DOMAIN-SUFFIX,xmcdn.com
+DOMAIN-SUFFIX,zhishif.com
+DOMAIN-SUFFIX,zhishinn.com
+DOMAIN-SUFFIX,zhishiu.com
+DOMAIN-SUFFIX,zhishiv.com
+# NAME: KuKeMusic
+# UPDATED: 2025-06-06 09:17:35
+DOMAIN-SUFFIX,kuke.com
+DOMAIN-SUFFIX,kukey.com.cn
+DOMAIN-SUFFIX,naxos.cn
 # NAME: KugouKuwo
 # UPDATED: 2025-06-06 09:17:36
 # DOMAIN-SUFFIX: 19
@@ -202,8 +184,26 @@ IP-CIDR,61.243.144.0/24,no-resolve
 IP-CIDR,61.48.115.0/24,no-resolve
 IP-CIDR,61.54.121.0/24,no-resolve
 IP-CIDR,61.54.7.0/24,no-resolve
-# NAME: KuKeMusic
-# UPDATED: 2025-06-06 09:17:35
-DOMAIN-SUFFIX,kuke.com
-DOMAIN-SUFFIX,kukey.com.cn
-DOMAIN-SUFFIX,naxos.cn
+# NAME: MOOMusic
+# UPDATED: 2025-06-06 09:18:53
+# USER-AGENT: 2
+# TOTAL: 2
+USER-AGENT,MOO*
+USER-AGENT,TencentMidasConnect*
+# NAME: XiamiMusic
+# UPDATED: 2025-06-06 09:17:39
+DOMAIN-SUFFIX,xiami.com
+DOMAIN-SUFFIX,xiami.fm
+DOMAIN-SUFFIX,xiami.net
+# NAME: TaiheMusic
+# UPDATED: 2025-06-06 09:17:38
+# DOMAIN-SUFFIX: 8
+# TOTAL: 8
+DOMAIN-SUFFIX,91q.com
+DOMAIN-SUFFIX,dmhmusic.com
+DOMAIN-SUFFIX,qianqian.com
+DOMAIN-SUFFIX,submusic.cn
+DOMAIN-SUFFIX,taihe.com
+DOMAIN-SUFFIX,ttplayer.com
+DOMAIN-SUFFIX,youyou.com
+DOMAIN-SUFFIX,youyou001.com
