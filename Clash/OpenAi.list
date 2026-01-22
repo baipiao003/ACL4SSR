@@ -1,7 +1,5 @@
-# 生成时间: 2026-01-22 15:19:07
+# 生成时间: 2026-01-22 15:52:02
 # 规则数量: 112
-# 原始文件: OpenAi.txt
-# 成功链接: 6/6
 
 # NAME: OpenAI
 # AUTHOR: blackmatrix7
@@ -48,22 +46,6 @@ DOMAIN-KEYWORD,openai
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
 IP-ASN,20473,no-resolve
-DOMAIN-SUFFIX,AI.com
-DOMAIN-SUFFIX,cdn.auth0.com
-DOMAIN-SUFFIX,opendns.com
-DOMAIN-SUFFIX,bing.com
-DOMAIN-SUFFIX,civitai.com
-DOMAIN,bard.google.com
-DOMAIN,ai.google.dev
-DOMAIN,gemini.google.com
-DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,statsigapi.net
-DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,Anthropic.com
-DOMAIN-SUFFIX,opera-api.com
-DOMAIN-SUFFIX,aistudio.google.com
-DOMAIN-SUFFIX,ciciai.com
-DOMAIN-KEYWORD,chatgpt
 # NAME: Copilot
 # UPDATED: 2025-06-06 09:20:02
 # DOMAIN: 20
@@ -90,6 +72,22 @@ DOMAIN-SUFFIX,challenges.cloudflare.com
 DOMAIN-SUFFIX,edgeservices.bing.com
 DOMAIN-KEYWORD,openaicom-api
 IP-ASN,14061,no-resolve
+DOMAIN-SUFFIX,AI.com
+DOMAIN-SUFFIX,cdn.auth0.com
+DOMAIN-SUFFIX,opendns.com
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,civitai.com
+DOMAIN,bard.google.com
+DOMAIN,ai.google.dev
+DOMAIN,gemini.google.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,Anthropic.com
+DOMAIN-SUFFIX,opera-api.com
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,ciciai.com
+DOMAIN-KEYWORD,chatgpt
 # NAME: Claude
 # UPDATED: 2025-06-06 09:20:01
 # DOMAIN: 1
