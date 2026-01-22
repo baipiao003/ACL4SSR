@@ -1,4 +1,4 @@
-# 生成时间: 2026-01-22 05:01:08
+# 生成时间: 2026-01-22 05:10:01
 # 规则数量: 7255
 
 # 代理列表
@@ -6921,6 +6921,12 @@ DOMAIN-SUFFIX,picjs.xyz
 # 代理规则
 DOMAIN-SUFFIX,revanced.net
 DOMAIN-SUFFIX,deepl.com
+DOMAIN,blog.090227.xyz
+DOMAIN,blog.cmliussss.com
+DOMAIN,chinaip.090227.xyz
+IP-CIDR,8.8.8.0/24,no-resolve
+IP-CIDR,8.8.4.0/24,no-resolve
+IP-CIDR,101.101.101.0/24,no-resolve
 # NAME: ProxyLite
 # AUTHOR: blackmatrix7
 # REPO: https://gitlab.com/blackmatrix7/ios_rule_script
@@ -7250,9 +7256,3 @@ DOMAIN,hax.co.id
 DOMAIN,woiden.id
 DOMAIN,gdav.com
 DOMAIN,laowang.vip
-DOMAIN,blog.090227.xyz
-DOMAIN,blog.cmliussss.com
-DOMAIN,chinaip.090227.xyz
-IP-CIDR,8.8.8.0/24,no-resolve
-IP-CIDR,8.8.4.0/24,no-resolve
-IP-CIDR,101.101.101.0/24,no-resolve

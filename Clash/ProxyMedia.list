@@ -1,4 +1,4 @@
-# 生成时间: 2026-01-22 05:01:09
+# 生成时间: 2026-01-22 05:10:02
 # 规则数量: 1286
 
 # 内容：国外媒体列表
@@ -451,9 +451,15 @@ USER-AGENT,*com.google.ios.youtubemusic*
 USER-AGENT,YouTubeMusic*
 USER-AGENT,com.google.ios.youtubemusic*
 DOMAIN,music.youtube.com
-# NAME: Spotify
+# NAME: PandoraTV
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:16:59
+# DOMAIN-SUFFIX: 2
+# TOTAL: 2
+DOMAIN-SUFFIX,kmplayer.com
+DOMAIN-SUFFIX,pandora.tv
+# NAME: Spotify
 # UPDATED: 2025-06-06 09:16:55
 # DOMAIN: 6
 # DOMAIN-KEYWORD: 1
@@ -485,43 +491,10 @@ DOMAIN-KEYWORD,spotify
 IP-CIDR,104.154.127.126/32,no-resolve
 IP-CIDR,35.186.224.47/32,no-resolve
 PROCESS-NAME,com.spotify.music
-# NAME: FOXNOW
-# UPDATED: 2025-06-06 09:17:50
-# DOMAIN-SUFFIX: 3
-# TOTAL: 3
 # NAME: KKTV
+# UPDATED: 2025-06-06 09:17:50
 # DOMAIN: 2
-# DOMAIN-SUFFIX: 2
 # TOTAL: 4
-# NAME: DiscoveryPlus
-# UPDATED: 2025-06-06 09:17:52
-# DOMAIN: 3
-# DOMAIN-SUFFIX: 11
-# TOTAL: 15
-DOMAIN,discovery-us.conax.cloud
-DOMAIN,dplus-northamerica-cloudfront-gcs.prod-vod.h264.io
-DOMAIN,dplus-northamerica.media-edge.prod-vod.h264.io
-DOMAIN-SUFFIX,discoveryplus.co.uk
-DOMAIN-SUFFIX,discoveryplus.com
-DOMAIN-SUFFIX,discoveryplus.in
-DOMAIN-SUFFIX,dnitv.com
-DOMAIN-SUFFIX,fwmrm.net
-DOMAIN-SUFFIX,getblueshift.com
-DOMAIN-SUFFIX,litix.io
-DOMAIN-SUFFIX,mobile-collector.newrelic.com
-DOMAIN-KEYWORD,discovery.uplynk.com
-# NAME: PrimeVideo
-# DOMAIN: 9
-# DOMAIN-SUFFIX: 6
-# TOTAL: 16
-DOMAIN,fls-na.amazon.com
-DOMAIN,www.amazon.com
-DOMAIN-SUFFIX,primevideo.com
-# NAME: PandoraTV
-# UPDATED: 2025-06-06 09:16:59
-# TOTAL: 2
-DOMAIN-SUFFIX,kmplayer.com
-DOMAIN-SUFFIX,pandora.tv
 # NAME: FOXPlus
 # UPDATED: 2024-01-08 16:01:08
 # DOMAIN-SUFFIX: 1
@@ -533,26 +506,13 @@ DOMAIN,foxsports02-i.akamaihd.net
 DOMAIN,foxsports03-i.akamaihd.net
 DOMAIN,staticasiafox.akamaized.net
 DOMAIN-SUFFIX,foxplus.com
-# NAME: BBC
-# UPDATED: 2025-06-06 09:16:56
-# DOMAIN: 11
-# DOMAIN-KEYWORD: 2
-# DOMAIN-SUFFIX: 15
-# TOTAL: 28
-DOMAIN,as-dash-uk-live.akamaized.net
-DOMAIN,as-hls-uk-live.akamaized.net
-DOMAIN,vod-dash-ww-live.akamaized.net
-DOMAIN,vod-hls-uk-live.akamaized.net
-DOMAIN,vod-sub-uk-live.akamaized.net
-DOMAIN,vod-thumb-ww-live.akamaized.net
-DOMAIN,vs-cmaf-push-uk-live.akamaized.net
-DOMAIN-SUFFIX,bbc
-DOMAIN-SUFFIX,bbc.in
-DOMAIN-SUFFIX,bbcchinese.com
-DOMAIN-SUFFIX,bbcfmt.s.llnwi.net
-DOMAIN-SUFFIX,bbcmedia.co.uk
-DOMAIN-SUFFIX,bbcpersian.com
-DOMAIN-SUFFIX,bbcverticals.com
+# NAME: PrimeVideo
+# DOMAIN: 9
+# DOMAIN-SUFFIX: 6
+# TOTAL: 16
+DOMAIN,fls-na.amazon.com
+DOMAIN,www.amazon.com
+DOMAIN-SUFFIX,primevideo.com
 # NAME: USMedia
 # UPDATED: 2025-06-06 09:20:02
 # DOMAIN: 4
@@ -651,6 +611,46 @@ DOMAIN-SUFFIX,wwwhuluplus.com
 PROCESS-NAME,com.cbs.app
 PROCESS-NAME,com.hulu.plus
 PROCESS-NAME,com.showtime.standalone
+# NAME: DiscoveryPlus
+# UPDATED: 2025-06-06 09:17:52
+# DOMAIN: 3
+# DOMAIN-SUFFIX: 11
+# TOTAL: 15
+DOMAIN,discovery-us.conax.cloud
+DOMAIN,dplus-northamerica-cloudfront-gcs.prod-vod.h264.io
+DOMAIN,dplus-northamerica.media-edge.prod-vod.h264.io
+DOMAIN-SUFFIX,discoveryplus.co.uk
+DOMAIN-SUFFIX,discoveryplus.com
+DOMAIN-SUFFIX,discoveryplus.in
+DOMAIN-SUFFIX,dnitv.com
+DOMAIN-SUFFIX,fwmrm.net
+DOMAIN-SUFFIX,getblueshift.com
+DOMAIN-SUFFIX,litix.io
+DOMAIN-SUFFIX,mobile-collector.newrelic.com
+DOMAIN-KEYWORD,discovery.uplynk.com
+# NAME: BBC
+# UPDATED: 2025-06-06 09:16:56
+# DOMAIN: 11
+# DOMAIN-KEYWORD: 2
+# DOMAIN-SUFFIX: 15
+# TOTAL: 28
+DOMAIN,as-dash-uk-live.akamaized.net
+DOMAIN,as-hls-uk-live.akamaized.net
+DOMAIN,vod-dash-ww-live.akamaized.net
+DOMAIN,vod-hls-uk-live.akamaized.net
+DOMAIN,vod-sub-uk-live.akamaized.net
+DOMAIN,vod-thumb-ww-live.akamaized.net
+DOMAIN,vs-cmaf-push-uk-live.akamaized.net
+DOMAIN-SUFFIX,bbc
+DOMAIN-SUFFIX,bbc.in
+DOMAIN-SUFFIX,bbcchinese.com
+DOMAIN-SUFFIX,bbcfmt.s.llnwi.net
+DOMAIN-SUFFIX,bbcmedia.co.uk
+DOMAIN-SUFFIX,bbcpersian.com
+DOMAIN-SUFFIX,bbcverticals.com
+# NAME: FOXNOW
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
 # NAME: TVB
 # UPDATED: 2025-06-06 09:17:00
 # DOMAIN-SUFFIX: 18
@@ -671,16 +671,6 @@ DOMAIN-SUFFIX,tvbweekly.com
 DOMAIN-SUFFIX,tvmedia.net.au
 DOMAIN-SUFFIX,videos-f.jwpsrv.com
 DOMAIN-SUFFIX,youboranqs01.com
-# NAME: UKMedia
-# DOMAIN-SUFFIX: 22
-DOMAIN,itvpnp.live.ott.irdeto.com
-DOMAIN,itvpnp.stage.ott.irdeto.com
-DOMAIN,vs-cmaf-pushb-ww-live.akamaized.net
-DOMAIN-SUFFIX,bb-static.com
-DOMAIN-SUFFIX,bbc-reporting-api.app
-DOMAIN-SUFFIX,britbox.co.uk
-DOMAIN-SUFFIX,britbox.com
-DOMAIN-SUFFIX,massive-itv.com
 # NAME: HBOHK
 # UPDATED: 2025-06-06 09:17:41
 # DOMAIN: 1
@@ -705,16 +695,16 @@ DOMAIN-SUFFIX,now-tv.com
 DOMAIN-SUFFIX,now.com.hk
 DOMAIN-SUFFIX,nowe.com
 DOMAIN-SUFFIX,nowe.hk
-# NAME: HBOUSA
-# DOMAIN-SUFFIX: 9
-# TOTAL: 11
-DOMAIN-SUFFIX,cinemax.com
-DOMAIN-SUFFIX,discomax.com
-DOMAIN-SUFFIX,h264.io
-DOMAIN-SUFFIX,hbomaxdash.s.llnwi.net
-DOMAIN-SUFFIX,max.com
-DOMAIN-SUFFIX,maxgo.com
-PROCESS-NAME,com.hbo.hbonow
+# NAME: UKMedia
+# DOMAIN-SUFFIX: 22
+DOMAIN,itvpnp.live.ott.irdeto.com
+DOMAIN,itvpnp.stage.ott.irdeto.com
+DOMAIN,vs-cmaf-pushb-ww-live.akamaized.net
+DOMAIN-SUFFIX,bb-static.com
+DOMAIN-SUFFIX,bbc-reporting-api.app
+DOMAIN-SUFFIX,britbox.co.uk
+DOMAIN-SUFFIX,britbox.com
+DOMAIN-SUFFIX,massive-itv.com
 # NAME: Disney
 # UPDATED: 2025-07-30 02:08:18
 # DOMAIN-SUFFIX: 172
@@ -867,37 +857,37 @@ DOMAIN-SUFFIX,thisispolaris.com
 DOMAIN-SUFFIX,watchdisneyfe.com
 PROCESS-NAME,com.disney.datg.videoplatforms.android.abc
 PROCESS-NAME,com.disney.disneyplus
+# NAME: HBOUSA
+# DOMAIN-SUFFIX: 9
+# TOTAL: 11
+DOMAIN-SUFFIX,cinemax.com
+DOMAIN-SUFFIX,discomax.com
+DOMAIN-SUFFIX,h264.io
+DOMAIN-SUFFIX,hbomaxdash.s.llnwi.net
+DOMAIN-SUFFIX,max.com
+DOMAIN-SUFFIX,maxgo.com
+PROCESS-NAME,com.hbo.hbonow
+# NAME: HuluJP
+# DOMAIN-SUFFIX: 5
+# TOTAL: 5
 # NAME: HuluUSA
 # DOMAIN-SUFFIX: 52
 # TOTAL: 53
+# NAME: NowE
+DOMAIN-SUFFIX,nowestatic.com
 # NAME: Hulu
 # UPDATED: 2025-06-06 09:16:58
 # DOMAIN-SUFFIX: 57
 # TOTAL: 59
 DOMAIN,live-mediashield-ava-hulustream-com.akamaized.net
 # NAME: ParamountPlus
-# DOMAIN-SUFFIX: 5
 # TOTAL: 9
 DOMAIN,cbsi.live.ott.irdeto.com
 DOMAIN,cbsplaylistserver.aws.syncbak.com
 DOMAIN,cbsservice.aws.syncbak.com
-# NAME: NowE
-DOMAIN-SUFFIX,nowestatic.com
-# NAME: NaverTV
-DOMAIN-SUFFIX,naver.com
-DOMAIN-SUFFIX,smartmediarep.com
-# NAME: HuluJP
-# TOTAL: 5
-# NAME: TVer
+# NAME: myTVSUPER
 # UPDATED: 2025-06-06 09:17:51
 # TOTAL: 6
-DOMAIN-SUFFIX,dogatch.jp
-DOMAIN-SUFFIX,edge.api.brightcove.com
-DOMAIN-SUFFIX,gorin.jp
-DOMAIN-SUFFIX,screens-lab.jp
-DOMAIN-SUFFIX,tver.co.jp
-DOMAIN-SUFFIX,tver.jp
-# NAME: myTVSUPER
 # NAME: Cake
 # UPDATED: 2025-06-06 09:18:50
 DOMAIN,d1koerlbtsmkf8.cloudfront.net
@@ -907,27 +897,23 @@ DOMAIN,vstatic-mycake.pstatic.net
 DOMAIN-SUFFIX,cake.day
 DOMAIN-SUFFIX,cakeapp.me
 DOMAIN-SUFFIX,mycake.me
+# NAME: TVer
+DOMAIN-SUFFIX,dogatch.jp
+DOMAIN-SUFFIX,edge.api.brightcove.com
+DOMAIN-SUFFIX,gorin.jp
+DOMAIN-SUFFIX,screens-lab.jp
+DOMAIN-SUFFIX,tver.co.jp
+DOMAIN-SUFFIX,tver.jp
+# NAME: NaverTV
+DOMAIN-SUFFIX,naver.com
+DOMAIN-SUFFIX,smartmediarep.com
+# NAME: HKOpenTV
+# UPDATED: 2024-01-08 16:02:54
+DOMAIN-SUFFIX,fantv.hk
+DOMAIN-SUFFIX,hkopentv.com
 # NAME: BritboxUK
 # UPDATED: 2025-06-06 09:18:54
 # TOTAL: 8
-# NAME: HBO
-# DOMAIN-SUFFIX: 47
-# TOTAL: 48
-DOMAIN-SUFFIX,bcbolthboa-a.akamaihd.net
-DOMAIN-SUFFIX,cf-images.ap-southeast-1.prod.boltdns.net
-DOMAIN-SUFFIX,dai3fd1oh325y.cloudfront.net
-DOMAIN-SUFFIX,execute-api.ap-southeast-1.amazonaws.com
-DOMAIN-SUFFIX,forthethrone.com
-DOMAIN-SUFFIX,hbo.com.c.footprint.net
-DOMAIN-SUFFIX,hbo.com.edgesuite.net
-DOMAIN-SUFFIX,hbo.map.fastly.net
-DOMAIN-SUFFIX,hbogeo.cust.footprint.net
-DOMAIN-SUFFIX,hbolb.onwardsmg.com
-DOMAIN-SUFFIX,hbounify-prod.evergent.com
-DOMAIN-SUFFIX,manifest.prod.boltdns.net
-DOMAIN-SUFFIX,now.com
-DOMAIN-SUFFIX,players.brightcove.net
-DOMAIN-SUFFIX,warnermediacdn.com
 # NAME: Abema
 # UPDATED: 2024-01-08 16:02:56
 # DOMAIN: 5
@@ -952,23 +938,12 @@ DOMAIN-SUFFIX,winticket.jp
 # UPDATED: 2024-01-08 16:02:57
 DOMAIN-SUFFIX,acplay.net
 DOMAIN-SUFFIX,dandanplay.com
-# NAME: HKOpenTV
-# UPDATED: 2024-01-08 16:02:54
-DOMAIN-SUFFIX,fantv.hk
-DOMAIN-SUFFIX,hkopentv.com
 # NAME: Overcast
 # TOTAL: 1
 DOMAIN-SUFFIX,overcast.fm
 # NAME: Peacock
 # UPDATED: 2025-06-06 09:17:53
 DOMAIN-SUFFIX,peacocktv.com
-# NAME: Niconico
-DOMAIN-SUFFIX,nicodic.jp
-DOMAIN-SUFFIX,nicomanga.jp
-DOMAIN-SUFFIX,niconico.com
-DOMAIN-SUFFIX,nicoseiga.jp
-DOMAIN-SUFFIX,simg.jp
-DOMAIN-SUFFIX,socdm.com
 # NAME: Twitch
 # UPDATED: 2025-06-06 09:17:48
 # DOMAIN-SUFFIX: 8
@@ -990,10 +965,35 @@ IP-CIDR,52.223.224.0/19,no-resolve
 IP-CIDR,99.181.64.0/18,no-resolve
 IP-CIDR6,2402:2a80::/32,no-resolve
 PROCESS-NAME,tv.twitch.android.app
+# NAME: Niconico
+DOMAIN-SUFFIX,nicodic.jp
+DOMAIN-SUFFIX,nicomanga.jp
+DOMAIN-SUFFIX,niconico.com
+DOMAIN-SUFFIX,nicoseiga.jp
+DOMAIN-SUFFIX,simg.jp
+DOMAIN-SUFFIX,socdm.com
 # NAME: Tumblr
 DOMAIN-SUFFIX,tmblr.co
 DOMAIN-SUFFIX,tumblr.co
 DOMAIN-SUFFIX,tumblr.com
+# NAME: HBO
+# DOMAIN-SUFFIX: 47
+# TOTAL: 48
+DOMAIN-SUFFIX,bcbolthboa-a.akamaihd.net
+DOMAIN-SUFFIX,cf-images.ap-southeast-1.prod.boltdns.net
+DOMAIN-SUFFIX,dai3fd1oh325y.cloudfront.net
+DOMAIN-SUFFIX,execute-api.ap-southeast-1.amazonaws.com
+DOMAIN-SUFFIX,forthethrone.com
+DOMAIN-SUFFIX,hbo.com.c.footprint.net
+DOMAIN-SUFFIX,hbo.com.edgesuite.net
+DOMAIN-SUFFIX,hbo.map.fastly.net
+DOMAIN-SUFFIX,hbogeo.cust.footprint.net
+DOMAIN-SUFFIX,hbolb.onwardsmg.com
+DOMAIN-SUFFIX,hbounify-prod.evergent.com
+DOMAIN-SUFFIX,manifest.prod.boltdns.net
+DOMAIN-SUFFIX,now.com
+DOMAIN-SUFFIX,players.brightcove.net
+DOMAIN-SUFFIX,warnermediacdn.com
 # NAME: Pixiv
 # UPDATED: 2025-06-06 09:17:46
 DOMAIN-SUFFIX,booth.pm
@@ -1258,12 +1258,6 @@ DOMAIN-SUFFIX,whosthehost.com
 DOMAIN-SUFFIX,wofl.tv
 DOMAIN-SUFFIX,woflthenewsstation.com
 DOMAIN-SUFFIX,wogx.com
-# NAME: Patreon
-# UPDATED: 2024-01-08 16:02:55
-DOMAIN,live-patreon-marketing.pantheonsite.io
-DOMAIN-SUFFIX,patreon.com
-DOMAIN-SUFFIX,patreoncommunity.com
-DOMAIN-SUFFIX,patreonusercontent.com
 # NAME: Civitai
 # UPDATED: 2025-06-06 09:20:01
 DOMAIN-SUFFIX,civitai.com
@@ -1277,9 +1271,6 @@ DOMAIN-SUFFIX,ds-linear-abematv.akamaized.net
 DOMAIN-SUFFIX,ds-vod-abematv.akamaized.net
 DOMAIN-SUFFIX,linear-abematv.akamaized.net
 DOMAIN-SUFFIX,vod-abematv.akamaized.net
-# NAME: CableTV
-DOMAIN-SUFFIX,cabletv.com.hk
-DOMAIN-SUFFIX,i-cable.com
 # NAME: ATTWatchTV
 DOMAIN-SUFFIX,att.tv
 DOMAIN-SUFFIX,atttvnow.com
@@ -1287,3 +1278,12 @@ DOMAIN-SUFFIX,attwatchtv.com
 DOMAIN-SUFFIX,directv.com
 DOMAIN-SUFFIX,dtvce.com
 DOMAIN-SUFFIX,nettyinternet.com
+# NAME: Patreon
+# UPDATED: 2024-01-08 16:02:55
+DOMAIN,live-patreon-marketing.pantheonsite.io
+DOMAIN-SUFFIX,patreon.com
+DOMAIN-SUFFIX,patreoncommunity.com
+DOMAIN-SUFFIX,patreonusercontent.com
+# NAME: CableTV
+DOMAIN-SUFFIX,cabletv.com.hk
+DOMAIN-SUFFIX,i-cable.com

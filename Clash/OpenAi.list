@@ -1,17 +1,9 @@
-# 生成时间: 2026-01-22 05:01:09
+# 生成时间: 2026-01-22 05:10:02
 # 规则数量: 135
 
-# NAME: Claude
+# NAME: OpenAI
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:20:01
-# DOMAIN: 1
-# DOMAIN-SUFFIX: 2
-# TOTAL: 3
-DOMAIN,cdn.usefathom.com
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
-# NAME: OpenAI
 # UPDATED: 2025-06-06 09:20:00
 # DOMAIN: 7
 # DOMAIN-KEYWORD: 1
@@ -54,6 +46,13 @@ DOMAIN-KEYWORD,openai
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
 IP-ASN,20473,no-resolve
+# 内容：Github Copilot
+# 数量：5条
+DOMAIN-KEYWORD,cocopilot
+DOMAIN,api.github.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,api.githubcopilot.com
+DOMAIN,api.individual.githubcopilot.com
 DOMAIN-SUFFIX,AI.com
 DOMAIN-SUFFIX,cdn.auth0.com
 DOMAIN-SUFFIX,opendns.com
@@ -64,44 +63,19 @@ DOMAIN,ai.google.dev
 DOMAIN,gemini.google.com
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,Anthropic.com
 DOMAIN-SUFFIX,opera-api.com
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,ciciai.com
 DOMAIN-KEYWORD,chatgpt
-# NAME: Copilot
-# UPDATED: 2025-06-06 09:20:02
-# DOMAIN: 20
-# DOMAIN-SUFFIX: 26
-# IP-ASN: 2
-# TOTAL: 51
-DOMAIN,api.msn.com
-DOMAIN,api.statsig.com
-DOMAIN,assets.msn.com
-DOMAIN,copilot.microsoft.com
-DOMAIN,gateway.bingviz.microsoft.net
-DOMAIN,gateway.bingviz.microsoftapp.net
-DOMAIN,in.appcenter.ms
-DOMAIN,location.microsoft.com
-DOMAIN,odc.officeapps.live.com
-DOMAIN,r.bing.com
-DOMAIN,self.events.data.microsoft.com
-DOMAIN,services.bingapis.com
-DOMAIN,sydney.bing.com
-DOMAIN,www.bing.com
-DOMAIN-SUFFIX,api.microsoftapp.net
-DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
-DOMAIN-SUFFIX,challenges.cloudflare.com
-DOMAIN-SUFFIX,edgeservices.bing.com
-DOMAIN-KEYWORD,openaicom-api
-IP-ASN,14061,no-resolve
-# 内容：Github Copilot
-# 数量：5条
-DOMAIN-KEYWORD,cocopilot
-DOMAIN,api.github.com
-DOMAIN,copilot-proxy.githubusercontent.com
-DOMAIN,api.githubcopilot.com
-DOMAIN,api.individual.githubcopilot.com
+# NAME: Claude
+# UPDATED: 2025-06-06 09:20:01
+# DOMAIN: 1
+# DOMAIN-SUFFIX: 2
+# TOTAL: 3
+DOMAIN,cdn.usefathom.com
+DOMAIN-SUFFIX,anthropic.com
 DOMAIN,alkalimakersuite-pa.clients6.google.com
 DOMAIN,makersuite.google.com
 DOMAIN-SUFFIX,bard.google.com
@@ -136,3 +110,29 @@ DOMAIN-SUFFIX,replicate.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,you.com
 DOMAIN-SUFFIX,huggingface.co
+# NAME: Copilot
+# UPDATED: 2025-06-06 09:20:02
+# DOMAIN: 20
+# DOMAIN-SUFFIX: 26
+# IP-ASN: 2
+# TOTAL: 51
+DOMAIN,api.msn.com
+DOMAIN,api.statsig.com
+DOMAIN,assets.msn.com
+DOMAIN,copilot.microsoft.com
+DOMAIN,gateway.bingviz.microsoft.net
+DOMAIN,gateway.bingviz.microsoftapp.net
+DOMAIN,in.appcenter.ms
+DOMAIN,location.microsoft.com
+DOMAIN,odc.officeapps.live.com
+DOMAIN,r.bing.com
+DOMAIN,self.events.data.microsoft.com
+DOMAIN,services.bingapis.com
+DOMAIN,sydney.bing.com
+DOMAIN,www.bing.com
+DOMAIN-SUFFIX,api.microsoftapp.net
+DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
+DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,edgeservices.bing.com
+DOMAIN-KEYWORD,openaicom-api
+IP-ASN,14061,no-resolve
