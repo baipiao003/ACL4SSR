@@ -1,10 +1,31 @@
-# 生成时间: 2026-01-22 16:56:53
+# 生成时间: 2026-01-22 17:01:05
 # 规则数量: 656
 
-# NAME: AbemaTV
+# NAME: Acplay
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-01-08 16:02:57
+# DOMAIN-SUFFIX: 2
+# TOTAL: 2
+DOMAIN-SUFFIX,acplay.net
+DOMAIN-SUFFIX,dandanplay.com
+# NAME: ATTWatchTV
 # UPDATED: 2025-06-06 09:16:57
+# DOMAIN-SUFFIX: 6
+# TOTAL: 6
+DOMAIN-SUFFIX,att.tv
+DOMAIN-SUFFIX,atttvnow.com
+DOMAIN-SUFFIX,attwatchtv.com
+DOMAIN-SUFFIX,directv.com
+DOMAIN-SUFFIX,dtvce.com
+DOMAIN-SUFFIX,nettyinternet.com
+# NAME: CableTV
+DOMAIN-SUFFIX,cabletv.com.hk
+DOMAIN-SUFFIX,i-cable.com
+# NAME: All4
+DOMAIN-SUFFIX,c4assets.com
+DOMAIN-SUFFIX,channel4.com
+# NAME: AbemaTV
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 22
 # TOTAL: 23
@@ -34,7 +55,6 @@ DOMAIN-KEYWORD,abematv.akamaized.net
 # NAME: BritboxUK
 # UPDATED: 2025-06-06 09:18:54
 # DOMAIN: 2
-# DOMAIN-SUFFIX: 6
 # TOTAL: 8
 DOMAIN,itvpnp.live.ott.irdeto.com
 DOMAIN,itvpnp.stage.ott.irdeto.com
@@ -44,64 +64,6 @@ DOMAIN-SUFFIX,britbox.co.uk
 DOMAIN-SUFFIX,britbox.com
 DOMAIN-SUFFIX,itv.com
 DOMAIN-SUFFIX,massive-itv.com
-# NAME: ATTWatchTV
-# TOTAL: 6
-DOMAIN-SUFFIX,att.tv
-DOMAIN-SUFFIX,atttvnow.com
-DOMAIN-SUFFIX,attwatchtv.com
-DOMAIN-SUFFIX,directv.com
-DOMAIN-SUFFIX,dtvce.com
-DOMAIN-SUFFIX,nettyinternet.com
-# NAME: Acplay
-# UPDATED: 2024-01-08 16:02:57
-# DOMAIN-SUFFIX: 2
-# TOTAL: 2
-DOMAIN-SUFFIX,acplay.net
-DOMAIN-SUFFIX,dandanplay.com
-# NAME: Cake
-# UPDATED: 2025-06-06 09:18:50
-# DOMAIN: 4
-# DOMAIN-SUFFIX: 3
-# TOTAL: 7
-DOMAIN,d1koerlbtsmkf8.cloudfront.net
-DOMAIN,d31wl6mro6753i.cloudfront.net
-DOMAIN,static-mycake.pstatic.net
-DOMAIN,vstatic-mycake.pstatic.net
-DOMAIN-SUFFIX,cake.day
-DOMAIN-SUFFIX,cakeapp.me
-DOMAIN-SUFFIX,mycake.me
-# NAME: CableTV
-DOMAIN-SUFFIX,cabletv.com.hk
-DOMAIN-SUFFIX,i-cable.com
-# NAME: Civitai
-# UPDATED: 2025-06-06 09:20:01
-# DOMAIN-SUFFIX: 1
-# TOTAL: 1
-DOMAIN-SUFFIX,civitai.com
-# NAME: DAZN
-# DOMAIN-SUFFIX: 17
-# TOTAL: 18
-DOMAIN-SUFFIX,control.kochava.com
-DOMAIN-SUFFIX,d151l6v8er5bdm.cloudfront.net
-DOMAIN-SUFFIX,d1sgwhnao7452x.cloudfront.net
-DOMAIN-SUFFIX,dazn-api.com
-DOMAIN-SUFFIX,dazn.com
-DOMAIN-SUFFIX,dazndn.com
-DOMAIN-SUFFIX,dc2-vodhls-perform.secure.footprint.net
-DOMAIN-SUFFIX,dca-ll-livedazn-dznlivejp.s.llnwi.net
-DOMAIN-SUFFIX,dca-ll-voddazn-dznvodjp.s.llnwi.net
-DOMAIN-SUFFIX,dcalivedazn.akamaized.net
-DOMAIN-SUFFIX,dcblivedazn.akamaized.net
-DOMAIN-SUFFIX,indazn.com
-DOMAIN-SUFFIX,indaznlab.com
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,logx.optimizely.com
-DOMAIN-SUFFIX,s.yimg.jp
-DOMAIN-SUFFIX,sentry.io
-DOMAIN-KEYWORD,voddazn
-# NAME: All4
-DOMAIN-SUFFIX,c4assets.com
-DOMAIN-SUFFIX,channel4.com
 # NAME: BBC
 # UPDATED: 2025-06-06 09:16:56
 # DOMAIN: 11
@@ -135,9 +97,67 @@ DOMAIN-SUFFIX,bbcverticals.com
 DOMAIN-SUFFIX,bidi.net.uk
 DOMAIN-KEYWORD,bbcfmt
 DOMAIN-KEYWORD,uk-live
+# NAME: DAZN
+# DOMAIN-SUFFIX: 17
+# TOTAL: 18
+DOMAIN-SUFFIX,control.kochava.com
+DOMAIN-SUFFIX,d151l6v8er5bdm.cloudfront.net
+DOMAIN-SUFFIX,d1sgwhnao7452x.cloudfront.net
+DOMAIN-SUFFIX,dazn-api.com
+DOMAIN-SUFFIX,dazn.com
+DOMAIN-SUFFIX,dazndn.com
+DOMAIN-SUFFIX,dc2-vodhls-perform.secure.footprint.net
+DOMAIN-SUFFIX,dca-ll-livedazn-dznlivejp.s.llnwi.net
+DOMAIN-SUFFIX,dca-ll-voddazn-dznvodjp.s.llnwi.net
+DOMAIN-SUFFIX,dcalivedazn.akamaized.net
+DOMAIN-SUFFIX,dcblivedazn.akamaized.net
+DOMAIN-SUFFIX,indazn.com
+DOMAIN-SUFFIX,indaznlab.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,logx.optimizely.com
+DOMAIN-SUFFIX,s.yimg.jp
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-KEYWORD,voddazn
+# NAME: Cake
+# UPDATED: 2025-06-06 09:18:50
+# DOMAIN: 4
+# DOMAIN-SUFFIX: 3
+# TOTAL: 7
+DOMAIN,d1koerlbtsmkf8.cloudfront.net
+DOMAIN,d31wl6mro6753i.cloudfront.net
+DOMAIN,static-mycake.pstatic.net
+DOMAIN,vstatic-mycake.pstatic.net
+DOMAIN-SUFFIX,cake.day
+DOMAIN-SUFFIX,cakeapp.me
+DOMAIN-SUFFIX,mycake.me
+# NAME: Civitai
+# UPDATED: 2025-06-06 09:20:01
+# DOMAIN-SUFFIX: 1
+# TOTAL: 1
+DOMAIN-SUFFIX,civitai.com
 # NAME: Deezer
 DOMAIN-SUFFIX,deezer.com
 DOMAIN-SUFFIX,dzcdn.net
+# NAME: DiscoveryPlus
+# UPDATED: 2025-06-06 09:17:52
+# DOMAIN: 3
+# DOMAIN-SUFFIX: 11
+# TOTAL: 15
+DOMAIN,discovery-us.conax.cloud
+DOMAIN,dplus-northamerica-cloudfront-gcs.prod-vod.h264.io
+DOMAIN,dplus-northamerica.media-edge.prod-vod.h264.io
+DOMAIN-SUFFIX,disco-api.com
+DOMAIN-SUFFIX,discovery.com
+DOMAIN-SUFFIX,discoveryplus.co.uk
+DOMAIN-SUFFIX,discoveryplus.com
+DOMAIN-SUFFIX,discoveryplus.in
+DOMAIN-SUFFIX,dnitv.com
+DOMAIN-SUFFIX,fwmrm.net
+DOMAIN-SUFFIX,getblueshift.com
+DOMAIN-SUFFIX,litix.io
+DOMAIN-SUFFIX,mobile-collector.newrelic.com
+DOMAIN-SUFFIX,uplynk.com
+DOMAIN-KEYWORD,discovery.uplynk.com
 # NAME: Disney
 # UPDATED: 2025-07-30 02:08:18
 # DOMAIN-SUFFIX: 172
@@ -317,26 +337,6 @@ DOMAIN-SUFFIX,watchdisneyfe.com
 DOMAIN-SUFFIX,watchespn.com
 PROCESS-NAME,com.disney.datg.videoplatforms.android.abc
 PROCESS-NAME,com.disney.disneyplus
-# NAME: DiscoveryPlus
-# UPDATED: 2025-06-06 09:17:52
-# DOMAIN: 3
-# DOMAIN-SUFFIX: 11
-# TOTAL: 15
-DOMAIN,discovery-us.conax.cloud
-DOMAIN,dplus-northamerica-cloudfront-gcs.prod-vod.h264.io
-DOMAIN,dplus-northamerica.media-edge.prod-vod.h264.io
-DOMAIN-SUFFIX,disco-api.com
-DOMAIN-SUFFIX,discovery.com
-DOMAIN-SUFFIX,discoveryplus.co.uk
-DOMAIN-SUFFIX,discoveryplus.com
-DOMAIN-SUFFIX,discoveryplus.in
-DOMAIN-SUFFIX,dnitv.com
-DOMAIN-SUFFIX,fwmrm.net
-DOMAIN-SUFFIX,getblueshift.com
-DOMAIN-SUFFIX,litix.io
-DOMAIN-SUFFIX,mobile-collector.newrelic.com
-DOMAIN-SUFFIX,uplynk.com
-DOMAIN-KEYWORD,discovery.uplynk.com
 # NAME: EncoreTVB
 # UPDATED: 2025-06-06 09:16:58
 # TOTAL: 5
@@ -345,10 +345,11 @@ DOMAIN,content.jwplatform.com
 DOMAIN,edge.api.brightcove.com
 DOMAIN,videos-f.jwpsrv.com
 DOMAIN-SUFFIX,encoretvb.com
-# NAME: HKOpenTV
-# UPDATED: 2024-01-08 16:02:54
-DOMAIN-SUFFIX,fantv.hk
-DOMAIN-SUFFIX,hkopentv.com
+# NAME: FOXNOW
+# UPDATED: 2025-06-06 09:17:50
+# TOTAL: 3
+DOMAIN-SUFFIX,fox.com
+DOMAIN-SUFFIX,foxdcg.com
 # NAME: FOXPlus
 # UPDATED: 2024-01-08 16:01:08
 # DOMAIN: 6
@@ -410,11 +411,23 @@ DOMAIN-SUFFIX,players.brightcove.net
 DOMAIN-SUFFIX,warnermediacdn.com
 DOMAIN-SUFFIX,youboranqs01.com
 PROCESS-NAME,com.hbo.hbonow
+# NAME: HKOpenTV
+# UPDATED: 2024-01-08 16:02:54
+DOMAIN-SUFFIX,fantv.hk
+DOMAIN-SUFFIX,hkopentv.com
 # NAME: ITV
 # DOMAIN: 1
-# TOTAL: 3
 DOMAIN,itvpnpmobile-a.akamaihd.net
 DOMAIN-SUFFIX,itvstatic.com
+# NAME: JOOX
+# IP-CIDR: 2
+DOMAIN-SUFFIX,i-joox.com
+DOMAIN-SUFFIX,joox.com
+DOMAIN-SUFFIX,sanook.com
+DOMAIN-KEYWORD,jooxweb-api
+IP-CIDR,119.28.182.0/23,no-resolve
+IP-CIDR,203.205.234.0/23,no-resolve
+PROCESS-NAME,com.tencent.ibg.joox
 # NAME: Hulu
 # DOMAIN-SUFFIX: 57
 # TOTAL: 59
@@ -477,35 +490,6 @@ DOMAIN-SUFFIX,thehulubraintrust.com
 DOMAIN-SUFFIX,wwwhuluplus.com
 DOMAIN-SUFFIX,yb.uncn.jp
 PROCESS-NAME,com.hulu.plus
-# NAME: JOOX
-# IP-CIDR: 2
-DOMAIN-SUFFIX,i-joox.com
-DOMAIN-SUFFIX,joox.com
-DOMAIN-SUFFIX,sanook.com
-DOMAIN-KEYWORD,jooxweb-api
-IP-CIDR,119.28.182.0/23,no-resolve
-IP-CIDR,203.205.234.0/23,no-resolve
-PROCESS-NAME,com.tencent.ibg.joox
-# NAME: FOXNOW
-# UPDATED: 2025-06-06 09:17:50
-DOMAIN-SUFFIX,fox.com
-DOMAIN-SUFFIX,foxdcg.com
-# NAME: KKBOX
-# DOMAIN-SUFFIX: 9
-# TOTAL: 9
-DOMAIN-SUFFIX,kfs.io
-DOMAIN-SUFFIX,kk.stream
-DOMAIN-SUFFIX,kkbox-prime.com
-DOMAIN-SUFFIX,kkbox.com
-DOMAIN-SUFFIX,kkbox.com.tw
-DOMAIN-SUFFIX,kktix.com
-DOMAIN-SUFFIX,kktv.com.tw
-DOMAIN-SUFFIX,kktv.me
-DOMAIN-SUFFIX,theater-kktv.cdn.hinet.net
-# NAME: KKTV
-# TOTAL: 4
-DOMAIN,kktv-theater.kk.stream
-DOMAIN,theater-kktv.cdn.hinet.net
 # NAME: Japonx
 # DOMAIN-SUFFIX: 8
 # TOTAL: 10
@@ -519,6 +503,22 @@ DOMAIN-SUFFIX,japronx.tv
 DOMAIN-SUFFIX,japronx.vip
 DOMAIN-KEYWORD,japonx
 DOMAIN-KEYWORD,japronx
+# NAME: KKTV
+# TOTAL: 4
+DOMAIN,kktv-theater.kk.stream
+DOMAIN,theater-kktv.cdn.hinet.net
+DOMAIN-SUFFIX,kktv.com.tw
+DOMAIN-SUFFIX,kktv.me
+# NAME: KKBOX
+# DOMAIN-SUFFIX: 9
+# TOTAL: 9
+DOMAIN-SUFFIX,kfs.io
+DOMAIN-SUFFIX,kk.stream
+DOMAIN-SUFFIX,kkbox-prime.com
+DOMAIN-SUFFIX,kkbox.com
+DOMAIN-SUFFIX,kkbox.com.tw
+DOMAIN-SUFFIX,kktix.com
+DOMAIN-SUFFIX,theater-kktv.cdn.hinet.net
 # NAME: LiTV
 # UPDATED: 2025-06-06 09:16:59
 DOMAIN,litvfreemobile-hichannel.cdn.hinet.net
@@ -534,28 +534,10 @@ DOMAIN-SUFFIX,line-cdn.net
 DOMAIN-SUFFIX,line-scdn.net
 DOMAIN-SUFFIX,linetv.tw
 PROCESS-NAME,com.linecorp.linetv
-# NAME: myTVSUPER
-# UPDATED: 2025-06-06 09:17:51
-DOMAIN,mytvsuperlimited.hb.omtrdc.net
-DOMAIN,mytvsuperlimited.sc.omtrdc.net
-DOMAIN-SUFFIX,mytvsuper.com
-DOMAIN-SUFFIX,tvb.com
-DOMAIN-KEYWORD,nowtv100
-DOMAIN-KEYWORD,rthklive
 # NAME: My5
 DOMAIN,d349g9zuie06uo.cloudfront.net
 DOMAIN-SUFFIX,channel5.com
 DOMAIN-SUFFIX,my5.tv
-# NAME: Niconico
-DOMAIN-SUFFIX,dmc.nico
-DOMAIN-SUFFIX,nicodic.jp
-DOMAIN-SUFFIX,nicomanga.jp
-DOMAIN-SUFFIX,niconico.com
-DOMAIN-SUFFIX,nicoseiga.jp
-DOMAIN-SUFFIX,nicovideo.jp
-DOMAIN-SUFFIX,nimg.jp
-DOMAIN-SUFFIX,simg.jp
-DOMAIN-SUFFIX,socdm.com
 # NAME: NaverTV
 DOMAIN-SUFFIX,naver.com
 DOMAIN-SUFFIX,smartmediarep.com
@@ -569,8 +551,16 @@ DOMAIN-SUFFIX,nbyy.tv
 DOMAIN-SUFFIX,newpppp.com
 DOMAIN-SUFFIX,vod360.net
 DOMAIN-KEYWORD,nivod
-# NAME: Overcast
-DOMAIN-SUFFIX,overcast.fm
+# NAME: myTVSUPER
+# UPDATED: 2025-06-06 09:17:51
+DOMAIN,mytvsuperlimited.hb.omtrdc.net
+DOMAIN,mytvsuperlimited.sc.omtrdc.net
+DOMAIN-SUFFIX,mytvsuper.com
+DOMAIN-SUFFIX,tvb.com
+DOMAIN-KEYWORD,nowtv100
+DOMAIN-KEYWORD,rthklive
+# NAME: NowE
+DOMAIN-SUFFIX,nowestatic.com
 # NAME: Olevod
 # DOMAIN-SUFFIX: 4
 DOMAIN-SUFFIX,haiwaikan.com
@@ -578,19 +568,23 @@ DOMAIN-SUFFIX,iole.tv
 DOMAIN-SUFFIX,olehd.com
 DOMAIN-SUFFIX,olelive.com
 DOMAIN-KEYWORD,olevod
-# NAME: NowE
-DOMAIN-SUFFIX,nowestatic.com
+# NAME: Overcast
+DOMAIN-SUFFIX,overcast.fm
+# NAME: Niconico
+DOMAIN-SUFFIX,dmc.nico
+DOMAIN-SUFFIX,nicodic.jp
+DOMAIN-SUFFIX,nicomanga.jp
+DOMAIN-SUFFIX,niconico.com
+DOMAIN-SUFFIX,nicoseiga.jp
+DOMAIN-SUFFIX,nicovideo.jp
+DOMAIN-SUFFIX,nimg.jp
+DOMAIN-SUFFIX,simg.jp
+DOMAIN-SUFFIX,socdm.com
 # NAME: PBS
 DOMAIN-SUFFIX,pbs.org
 # NAME: Pandora
 DOMAIN-SUFFIX,p-cdn.us
 DOMAIN-SUFFIX,pandora.com
-# NAME: Patreon
-# UPDATED: 2024-01-08 16:02:55
-DOMAIN,live-patreon-marketing.pantheonsite.io
-DOMAIN-SUFFIX,patreon.com
-DOMAIN-SUFFIX,patreoncommunity.com
-DOMAIN-SUFFIX,patreonusercontent.com
 # NAME: PandoraTV
 DOMAIN-SUFFIX,kmplayer.com
 DOMAIN-SUFFIX,pandora.tv
@@ -607,6 +601,22 @@ DOMAIN-SUFFIX,cbsi.com
 DOMAIN-SUFFIX,cbsivideo.com
 DOMAIN-SUFFIX,paramountplus.com
 DOMAIN-SUFFIX,pplusstatic.com
+# NAME: Pixiv
+# UPDATED: 2025-06-06 09:17:46
+DOMAIN-SUFFIX,booth.pm
+DOMAIN-SUFFIX,fanbox.cc
+DOMAIN-SUFFIX,pixiv.cat
+DOMAIN-SUFFIX,pixiv.co.jp
+DOMAIN-SUFFIX,pixiv.me
+DOMAIN-SUFFIX,pixiv.net
+DOMAIN-SUFFIX,pixiv.org
+DOMAIN-SUFFIX,pximg.net
+# NAME: Patreon
+# UPDATED: 2024-01-08 16:02:55
+DOMAIN,live-patreon-marketing.pantheonsite.io
+DOMAIN-SUFFIX,patreon.com
+DOMAIN-SUFFIX,patreoncommunity.com
+DOMAIN-SUFFIX,patreonusercontent.com
 # NAME: PrimeVideo
 # DOMAIN: 9
 # TOTAL: 16
@@ -626,52 +636,6 @@ DOMAIN-SUFFIX,media-amazon.com
 DOMAIN-SUFFIX,primevideo.com
 DOMAIN-SUFFIX,pv-cdn.net
 DOMAIN-KEYWORD,avoddashs
-# NAME: Pixiv
-# UPDATED: 2025-06-06 09:17:46
-DOMAIN-SUFFIX,booth.pm
-DOMAIN-SUFFIX,fanbox.cc
-DOMAIN-SUFFIX,pixiv.cat
-DOMAIN-SUFFIX,pixiv.co.jp
-DOMAIN-SUFFIX,pixiv.me
-DOMAIN-SUFFIX,pixiv.net
-DOMAIN-SUFFIX,pixiv.org
-DOMAIN-SUFFIX,pximg.net
-# NAME: Qobuz
-# DOMAIN-SUFFIX: 31
-# TOTAL: 33
-DOMAIN-SUFFIX,cobeuz.fr
-DOMAIN-SUFFIX,cobuz.fr
-DOMAIN-SUFFIX,cobuzz.fr
-DOMAIN-SUFFIX,kobuz.fr
-DOMAIN-SUFFIX,qobuz.at
-DOMAIN-SUFFIX,qobuz.be
-DOMAIN-SUFFIX,qobuz.biz
-DOMAIN-SUFFIX,qobuz.ca
-DOMAIN-SUFFIX,qobuz.ch
-DOMAIN-SUFFIX,qobuz.co.uk
-DOMAIN-SUFFIX,qobuz.com
-DOMAIN-SUFFIX,qobuz.de
-DOMAIN-SUFFIX,qobuz.eu
-DOMAIN-SUFFIX,qobuz.fi
-DOMAIN-SUFFIX,qobuz.fr
-DOMAIN-SUFFIX,qobuz.gr
-DOMAIN-SUFFIX,qobuz.hk
-DOMAIN-SUFFIX,qobuz.info
-DOMAIN-SUFFIX,qobuz.it
-DOMAIN-SUFFIX,qobuz.lt
-DOMAIN-SUFFIX,qobuz.lu
-DOMAIN-SUFFIX,qobuz.net
-DOMAIN-SUFFIX,qobuz.org
-DOMAIN-SUFFIX,qobuz.pl
-DOMAIN-SUFFIX,qobuz.ro
-DOMAIN-SUFFIX,qobuz.se
-DOMAIN-SUFFIX,qobuz.tv
-DOMAIN-SUFFIX,qobuz.us
-DOMAIN-SUFFIX,quobuz.com
-DOMAIN-SUFFIX,quobuz.fr
-DOMAIN-SUFFIX,static-qobuz.com
-IP-CIDR,52.211.1.180/32,no-resolve
-IP-CIDR,99.81.97.56/32,no-resolve
 # NAME: SoundCloud
 # UPDATED: 2025-06-06 09:17:00
 DOMAIN-SUFFIX,sndcdn.com
@@ -710,6 +674,42 @@ DOMAIN-KEYWORD,spotify
 IP-CIDR,104.154.127.126/32,no-resolve
 IP-CIDR,35.186.224.47/32,no-resolve
 PROCESS-NAME,com.spotify.music
+# NAME: Qobuz
+# DOMAIN-SUFFIX: 31
+# TOTAL: 33
+DOMAIN-SUFFIX,cobeuz.fr
+DOMAIN-SUFFIX,cobuz.fr
+DOMAIN-SUFFIX,cobuzz.fr
+DOMAIN-SUFFIX,kobuz.fr
+DOMAIN-SUFFIX,qobuz.at
+DOMAIN-SUFFIX,qobuz.be
+DOMAIN-SUFFIX,qobuz.biz
+DOMAIN-SUFFIX,qobuz.ca
+DOMAIN-SUFFIX,qobuz.ch
+DOMAIN-SUFFIX,qobuz.co.uk
+DOMAIN-SUFFIX,qobuz.com
+DOMAIN-SUFFIX,qobuz.de
+DOMAIN-SUFFIX,qobuz.eu
+DOMAIN-SUFFIX,qobuz.fi
+DOMAIN-SUFFIX,qobuz.fr
+DOMAIN-SUFFIX,qobuz.gr
+DOMAIN-SUFFIX,qobuz.hk
+DOMAIN-SUFFIX,qobuz.info
+DOMAIN-SUFFIX,qobuz.it
+DOMAIN-SUFFIX,qobuz.lt
+DOMAIN-SUFFIX,qobuz.lu
+DOMAIN-SUFFIX,qobuz.net
+DOMAIN-SUFFIX,qobuz.org
+DOMAIN-SUFFIX,qobuz.pl
+DOMAIN-SUFFIX,qobuz.ro
+DOMAIN-SUFFIX,qobuz.se
+DOMAIN-SUFFIX,qobuz.tv
+DOMAIN-SUFFIX,qobuz.us
+DOMAIN-SUFFIX,quobuz.com
+DOMAIN-SUFFIX,quobuz.fr
+DOMAIN-SUFFIX,static-qobuz.com
+IP-CIDR,52.211.1.180/32,no-resolve
+IP-CIDR,99.81.97.56/32,no-resolve
 # NAME: TIDAL
 DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com
 DOMAIN-SUFFIX,tidal.com
@@ -718,36 +718,25 @@ DOMAIN-SUFFIX,wimpmusic.com
 # NAME: TaiWanGood
 DOMAIN,hamifans.emome.net
 DOMAIN-SUFFIX,skyking.com.tw
-# NAME: TVB
-# DOMAIN-SUFFIX: 18
-# TOTAL: 21
-DOMAIN,tvbtracking.azurewebsites.net
-DOMAIN-SUFFIX,bigbigchannel.com.hk
-DOMAIN-SUFFIX,bigbigshop.com
-DOMAIN-SUFFIX,content.jwplatform.com
-DOMAIN-SUFFIX,mytvsuperlimited.hb.omtrdc.net
-DOMAIN-SUFFIX,mytvsuperlimited.sc.omtrdc.net
-DOMAIN-SUFFIX,tvb.com.au
-DOMAIN-SUFFIX,tvbanywhere.com
-DOMAIN-SUFFIX,tvbanywhere.com.sg
-DOMAIN-SUFFIX,tvbc.com.cn
-DOMAIN-SUFFIX,tvbeventpower.com.hk
-DOMAIN-SUFFIX,tvbusa.com
-DOMAIN-SUFFIX,tvbweekly.com
-DOMAIN-SUFFIX,tvmedia.net.au
-DOMAIN-SUFFIX,videos-f.jwpsrv.com
 # NAME: Tumblr
 # UPDATED: 2025-06-06 09:17:48
 DOMAIN-SUFFIX,tmblr.co
 DOMAIN-SUFFIX,tumblr.co
 DOMAIN-SUFFIX,tumblr.com
-# NAME: TVer
-DOMAIN-SUFFIX,dogatch.jp
-DOMAIN-SUFFIX,edge.api.brightcove.com
-DOMAIN-SUFFIX,gorin.jp
-DOMAIN-SUFFIX,screens-lab.jp
-DOMAIN-SUFFIX,tver.co.jp
-DOMAIN-SUFFIX,tver.jp
+# NAME: ViuTV
+# PROCESS-NAME: 3
+# TOTAL: 11
+DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com
+DOMAIN-SUFFIX,d1k2us671qcoau.cloudfront.net
+DOMAIN-SUFFIX,d2anahhhmp1ffz.cloudfront.net
+DOMAIN-SUFFIX,dfp6rglgjqszk.cloudfront.net
+DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com
+DOMAIN-SUFFIX,viu.com
+DOMAIN-SUFFIX,viu.now.com
+DOMAIN-SUFFIX,viu.tv
+PROCESS-NAME,com.viu.pad
+PROCESS-NAME,com.viu.phone
+PROCESS-NAME,com.vuclip.viu
 # NAME: Twitch
 # IP-CIDR: 11
 # IP-CIDR6: 1
@@ -774,17 +763,28 @@ IP-CIDR,52.223.224.0/19,no-resolve
 IP-CIDR,99.181.64.0/18,no-resolve
 IP-CIDR6,2402:2a80::/32,no-resolve
 PROCESS-NAME,tv.twitch.android.app
-# NAME: ViuTV
-# PROCESS-NAME: 3
-# TOTAL: 11
-DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com
-DOMAIN-SUFFIX,d1k2us671qcoau.cloudfront.net
-DOMAIN-SUFFIX,d2anahhhmp1ffz.cloudfront.net
-DOMAIN-SUFFIX,dfp6rglgjqszk.cloudfront.net
-DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com
-DOMAIN-SUFFIX,viu.com
-DOMAIN-SUFFIX,viu.now.com
-DOMAIN-SUFFIX,viu.tv
-PROCESS-NAME,com.viu.pad
-PROCESS-NAME,com.viu.phone
-PROCESS-NAME,com.vuclip.viu
+# NAME: TVer
+DOMAIN-SUFFIX,dogatch.jp
+DOMAIN-SUFFIX,edge.api.brightcove.com
+DOMAIN-SUFFIX,gorin.jp
+DOMAIN-SUFFIX,screens-lab.jp
+DOMAIN-SUFFIX,tver.co.jp
+DOMAIN-SUFFIX,tver.jp
+# NAME: TVB
+# DOMAIN-SUFFIX: 18
+# TOTAL: 21
+DOMAIN,tvbtracking.azurewebsites.net
+DOMAIN-SUFFIX,bigbigchannel.com.hk
+DOMAIN-SUFFIX,bigbigshop.com
+DOMAIN-SUFFIX,content.jwplatform.com
+DOMAIN-SUFFIX,mytvsuperlimited.hb.omtrdc.net
+DOMAIN-SUFFIX,mytvsuperlimited.sc.omtrdc.net
+DOMAIN-SUFFIX,tvb.com.au
+DOMAIN-SUFFIX,tvbanywhere.com
+DOMAIN-SUFFIX,tvbanywhere.com.sg
+DOMAIN-SUFFIX,tvbc.com.cn
+DOMAIN-SUFFIX,tvbeventpower.com.hk
+DOMAIN-SUFFIX,tvbusa.com
+DOMAIN-SUFFIX,tvbweekly.com
+DOMAIN-SUFFIX,tvmedia.net.au
+DOMAIN-SUFFIX,videos-f.jwpsrv.com
