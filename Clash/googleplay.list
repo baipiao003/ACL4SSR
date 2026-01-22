@@ -3,11 +3,14 @@ DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,together.ai
 DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,appstorrent.ru
-DOMAIN-SUFFIX,android.clients.google.com,PROXY
-DOMAIN-SUFFIX,play.googleapis.com,PROXY
-DOMAIN-SUFFIX,dl.google.com,PROXY
-DOMAIN-SUFFIX,play.google.com,PROXY
-DOMAIN-KEYWORD,google,PROXY
-DOMAIN-KEYWORD,android,PROXY
-IP-CIDR,173.194.0.0/16,PROXY,no-resolve
-IP-CIDR,74.125.0.0/16,PROXY,no-resolve
+# 核心规则（必须代理）
+DOMAIN-SUFFIX,android.clients.google.com
+DOMAIN-SUFFIX,play.googleapis.com
+DOMAIN-SUFFIX,play.google.com
+DOMAIN-SUFFIX,dl.google.com
+# 通配规则（覆盖大部分服务）
+DOMAIN-KEYWORD,google
+DOMAIN-KEYWORD,android
+# IP段规则（兜底）
+IP-CIDR,173.194.0.0/16,no-resolve
+IP-CIDR,74.125.0.0/16,no-resolve
