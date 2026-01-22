@@ -654,92 +654,42 @@ class ListRuleProcessor:
             combined_content = []
             seen_lines = set()
             
+            # 保持原始顺序：按下载链接的顺序处理每个内容
             for content in all_contents:
                 lines = content.split('\n')
                 for line in lines:
-                    line = line.strip()
-                    # 跳过空行和特定注释
-                    if line and not line.startswith('# 生成时间:') and not line.startswith('# 规则数量:'):
-                        if line not in seen_lines:
-                            seen_lines.add(line)
-                            combined_content.append(line)
+                    line = line.rstrip('\n\r')  # 只移除行尾的换行符
+                    # 跳过特定注释
+                    if line.startswith('# 生成时间:') or line.startswith('# 规则数量:'):
+                        continue
+                    
+                    if line not in seen_lines:
+                        seen_lines.add(line)
+                        combined_content.append(line)
             
-            # 按规则类型排序（可选）
-            domain_rules = []
-            domain_suffix_rules = []
-            ip_cidr_rules = []
-            process_name_rules = []
-            host_rules = []
-            other_rules = []
-            comment_lines = []
-            
-            for rule in combined_content:
-                if rule.startswith('#'):
-                    comment_lines.append(rule)
-                elif rule.startswith('DOMAIN,'):
-                    domain_rules.append(rule)
-                elif rule.startswith('DOMAIN-SUFFIX,'):
-                    domain_suffix_rules.append(rule)
-                elif rule.startswith('IP-CIDR,'):
-                    ip_cidr_rules.append(rule)
-                elif rule.startswith('PROCESS-NAME,'):
-                    process_name_rules.append(rule)
-                elif rule.startswith('HOST,'):
-                    host_rules.append(rule)
-                elif rule.startswith('HOST-SUFFIX,'):
-                    host_rules.append(rule)
-                else:
-                    other_rules.append(rule)
-            
-            # 重新组合排序后的规则
-            sorted_content = []
-            
-            # 添加注释
-            if comment_lines:
-                sorted_content.extend(comment_lines)
-                sorted_content.append('')
-            
-            # 添加规则
-            if domain_rules:
-                sorted_content.append('# DOMAIN规则')
-                sorted_content.extend(sorted(domain_rules))
-                sorted_content.append('')
-            
-            if domain_suffix_rules:
-                sorted_content.append('# DOMAIN-SUFFIX规则')
-                sorted_content.extend(sorted(domain_suffix_rules))
-                sorted_content.append('')
-            
-            if ip_cidr_rules:
-                sorted_content.append('# IP-CIDR规则')
-                sorted_content.extend(sorted(ip_cidr_rules))
-                sorted_content.append('')
-            
-            if process_name_rules:
-                sorted_content.append('# PROCESS-NAME规则')
-                sorted_content.extend(sorted(process_name_rules))
-                sorted_content.append('')
-            
-            if host_rules:
-                sorted_content.append('# HOST规则')
-                sorted_content.extend(sorted(host_rules))
-                sorted_content.append('')
-            
-            if other_rules:
-                sorted_content.append('# 其他规则')
-                sorted_content.extend(sorted(other_rules))
+            # 移除完全空的行（不包含任何字符），但保留只包含空格的行
+            # 因为有些规则文件可能包含缩进或格式化的空格
+            final_content = []
+            for line in combined_content:
+                if line == '':  # 完全空的行
+                    continue
+                final_content.append(line)
             
             # 生成文件头
-            rule_count = len(combined_content)
+            rule_count = len([line for line in final_content if line and not line.startswith('#')])
             generation_time = time.strftime('%Y-%m-%d %H:%M:%S')
             header = f"""# 生成时间: {generation_time}
 # 规则数量: {rule_count}
+# 原始文件: {txt_file.name}
+# 成功链接: {success_count}/{total_links}
 
 """
             
-            # 写入文件
+            # 写入文件，保持原始顺序
             with open(list_file_path, 'w', encoding='utf-8') as f:
-                f.write(header + '\n'.join(sorted_content))
+                f.write(header)
+                for line in final_content:
+                    f.write(line + '\n')
             
             logger.info(f"✓ 成功保存到 {list_file_path}, 共 {rule_count} 条规则")
             
