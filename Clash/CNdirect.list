@@ -1,48 +1,6 @@
-# 生成时间: 2026-01-23 05:29:13
+# 生成时间: 2026-01-23 12:52:28
 # 规则数量: 3594
 
-# NAME: Download
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:17:01
-# DOMAIN-KEYWORD: 5
-# DOMAIN-SUFFIX: 1
-# PROCESS-NAME: 28
-# TOTAL: 34
-DOMAIN-SUFFIX,qbittorrent.org
-DOMAIN-KEYWORD,aria2
-DOMAIN-KEYWORD,thunder
-DOMAIN-KEYWORD,xlliveud
-DOMAIN-KEYWORD,xunlei
-DOMAIN-KEYWORD,yunpan
-PROCESS-NAME,BitComet
-PROCESS-NAME,BitComet.exe
-PROCESS-NAME,BitComet_x64.exe
-PROCESS-NAME,DownloadService
-PROCESS-NAME,DownloadService.exe
-PROCESS-NAME,Folx
-PROCESS-NAME,Folx.exe
-PROCESS-NAME,NetTransport
-PROCESS-NAME,NetTransport.exe
-PROCESS-NAME,Thunder
-PROCESS-NAME,Thunder.exe
-PROCESS-NAME,Transmission
-PROCESS-NAME,Transmission.exe
-PROCESS-NAME,WebTorrent
-PROCESS-NAME,WebTorrent.exe
-PROCESS-NAME,WebTorrentHelper
-PROCESS-NAME,WebTorrentHelper.exe
-PROCESS-NAME,Weiyun
-PROCESS-NAME,Weiyun.exe
-PROCESS-NAME,aria2c
-PROCESS-NAME,aria2c.exe
-PROCESS-NAME,baidunetdisk.exe
-PROCESS-NAME,fdm
-PROCESS-NAME,fdm.exe
-PROCESS-NAME,qbittorrent
-PROCESS-NAME,qbittorrent.exe
-PROCESS-NAME,uTorrent
-PROCESS-NAME,uTorrent.exe
 # 中国云服务商ip端
 # 阿里
 IP-CIDR,8.128.0.0/10,no-resolve
@@ -939,11 +897,63 @@ DOMAIN-SUFFIX,zhongsou.com
 DOMAIN-SUFFIX,zhuihd.com
 DOMAIN-SUFFIX,cmbchina.com
 DOMAIN-SUFFIX,95516.com
-# NAME: Coolapk
-# UPDATED: 2024-01-08 16:02:55
-# DOMAIN-SUFFIX: 3
-# TOTAL: 3
-DOMAIN-SUFFIX,coolapkmarket.net
+# Mac Download
+PROCESS-NAME,aria2c.exe
+PROCESS-NAME,fdm.exe
+PROCESS-NAME,Folx.exe
+PROCESS-NAME,NetTransport.exe
+PROCESS-NAME,Thunder.exe
+PROCESS-NAME,Transmission.exe
+PROCESS-NAME,uTorrent.exe
+PROCESS-NAME,WebTorrent.exe
+PROCESS-NAME,WebTorrent Helper.exe
+PROCESS-NAME,qbittorrent.exe
+# bt
+DOMAIN-SUFFIX,smtp
+DOMAIN-KEYWORD,aria2
+URL-REGEX,(Subject|HELO|SMTP)
+URL-REGEX,(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com
+URL-REGEX,(.+.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan).(cn|com)
+URL-REGEX,(.+.)?(torrent|announce.php?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei)(..+)?
+# XunLei
+URL-REGEX,(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)
+PROCESS-NAME,DownloadService.exe
+URL-REGEX,(.+\.|^)(360|so)\.(cn|com)
+# Tencent Weiyun
+PROCESS-NAME,Weiyun.exe
+#Baidu disk
+PROCESS-NAME,baidunetdisk.exe
+# Xbox
+URL-REGEX,assets\d+\.xboxlive\.(com|cn)
+# NAME: Download
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:17:01
+# DOMAIN-KEYWORD: 5
+# DOMAIN-SUFFIX: 1
+# PROCESS-NAME: 28
+# TOTAL: 34
+DOMAIN-SUFFIX,qbittorrent.org
+DOMAIN-KEYWORD,thunder
+DOMAIN-KEYWORD,xlliveud
+DOMAIN-KEYWORD,xunlei
+DOMAIN-KEYWORD,yunpan
+PROCESS-NAME,BitComet
+PROCESS-NAME,BitComet.exe
+PROCESS-NAME,BitComet_x64.exe
+PROCESS-NAME,DownloadService
+PROCESS-NAME,Folx
+PROCESS-NAME,NetTransport
+PROCESS-NAME,Thunder
+PROCESS-NAME,Transmission
+PROCESS-NAME,WebTorrent
+PROCESS-NAME,WebTorrentHelper
+PROCESS-NAME,WebTorrentHelper.exe
+PROCESS-NAME,Weiyun
+PROCESS-NAME,aria2c
+PROCESS-NAME,fdm
+PROCESS-NAME,qbittorrent
+PROCESS-NAME,uTorrent
 # NAME: LanZouYun
 # UPDATED: 2025-06-06 09:17:36
 # DOMAIN-SUFFIX: 36
@@ -980,18 +990,6 @@ DOMAIN-SUFFIX,ulanzou.com
 DOMAIN-SUFFIX,webgetstore.com
 DOMAIN-SUFFIX,woozooo.com
 DOMAIN-SUFFIX,wwentua.com
-# NAME: 4399
-# DOMAIN-SUFFIX: 13
-# TOTAL: 13
-DOMAIN-SUFFIX,4399.cn
-DOMAIN-SUFFIX,4399.net
-DOMAIN-SUFFIX,4399api.com
-DOMAIN-SUFFIX,4399dmw.com
-DOMAIN-SUFFIX,4399sj.com
-DOMAIN-SUFFIX,edu4399.com
-DOMAIN-SUFFIX,funnycore.com
-DOMAIN-SUFFIX,qq163.com
-DOMAIN-SUFFIX,qq163.net
 # NAME: Tencent
 # UPDATED: 2025-10-20 02:09:09
 # DOMAIN-SUFFIX: 2498
@@ -3623,29 +3621,31 @@ IP-CIDR,59.111.181.60/32,no-resolve
 IP-CIDR,59.111.19.33/32,no-resolve
 IP-CIDR,59.111.21.14/31,no-resolve
 IP-CIDR,59.111.238.29/32,no-resolve
+# NAME: Coolapk
+# UPDATED: 2024-01-08 16:02:55
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+DOMAIN-SUFFIX,coolapkmarket.net
 # NAME: zhilian
 # REPO: https://github.com/baipiao003/ACL4SSR/clash/Clash
 DOMAIN-SUFFIX,bsbsb.top
-# Mac Download
-PROCESS-NAME,WebTorrent Helper.exe
-# bt
-DOMAIN-SUFFIX,smtp
-URL-REGEX,(Subject|HELO|SMTP)
-URL-REGEX,(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com
-URL-REGEX,(.+.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan).(cn|com)
-URL-REGEX,(.+.)?(torrent|announce.php?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei)(..+)?
-# XunLei
-URL-REGEX,(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)
-URL-REGEX,(.+\.|^)(360|so)\.(cn|com)
-# Tencent Weiyun
-#Baidu disk
-# Xbox
-URL-REGEX,assets\d+\.xboxlive\.(com|cn)
 # NAME: 123pan
 DOMAIN-SUFFIX,123pan.com
 DOMAIN-SUFFIX,123pan.cn
 DOMAIN-SUFFIX,123865.com
 DOMAIN-KEYWORD,123pan
+# NAME: 4399
+# DOMAIN-SUFFIX: 13
+# TOTAL: 13
+DOMAIN-SUFFIX,4399.cn
+DOMAIN-SUFFIX,4399.net
+DOMAIN-SUFFIX,4399api.com
+DOMAIN-SUFFIX,4399dmw.com
+DOMAIN-SUFFIX,4399sj.com
+DOMAIN-SUFFIX,edu4399.com
+DOMAIN-SUFFIX,funnycore.com
+DOMAIN-SUFFIX,qq163.com
+DOMAIN-SUFFIX,qq163.net
 DOMAIN-SUFFIX,7777777.buzz
 IP-CIDR,193.122.114.13/32
 IP-CIDR,47.110.135.104/32

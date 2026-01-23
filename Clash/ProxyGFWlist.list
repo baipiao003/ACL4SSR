@@ -1,10 +1,6 @@
-# 生成时间: 2026-01-23 05:29:12
+# 生成时间: 2026-01-23 12:52:25
 # 规则数量: 7210
 
-# 代理规则
-DOMAIN-SUFFIX,revanced.net
-DOMAIN-SUFFIX,deepl.com
-DOMAIN-SUFFIX,poe.com
 # 代理列表
 # MyList && Other
 DOMAIN-SUFFIX,1password.com
@@ -4481,6 +4477,7 @@ DOMAIN-SUFFIX,pobieramy.top
 DOMAIN-SUFFIX,podbean.com
 DOMAIN-SUFFIX,podcast.co
 DOMAIN-SUFFIX,podictionary.com
+DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,points-media.com
 DOMAIN-SUFFIX,pokerstars.com
 DOMAIN-SUFFIX,pokerstars.net
@@ -6921,17 +6918,9 @@ DOMAIN-SUFFIX,ocnttv.com
 # VikACG
 DOMAIN-SUFFIX,vikacg.com
 DOMAIN-SUFFIX,picjs.xyz
-DOMAIN,blog.090227.xyz
-DOMAIN,blog.cmliussss.com
-DOMAIN,chinaip.090227.xyz
-IP-CIDR,8.8.8.0/24,no-resolve
-IP-CIDR,8.8.4.0/24,no-resolve
-IP-CIDR,101.101.101.0/24,no-resolve
-DOMAIN,hax.co.id
-DOMAIN,woiden.id
-DOMAIN,gdav.com
-DOMAIN,laowang.vip
-# Pornhub
+# 代理规则
+DOMAIN-SUFFIX,revanced.net
+DOMAIN-SUFFIX,deepl.com
 # NAME: ProxyLite
 # AUTHOR: blackmatrix7
 # REPO: https://gitlab.com/blackmatrix7/ios_rule_script
@@ -7257,3 +7246,14 @@ IP-CIDR,75.126.0.0/16,no-resolve
 IP-CIDR,91.105.192.0/23,no-resolve
 IP-CIDR6,2001:b28:f23c::/47,no-resolve
 IP-CIDR6,2a0a:f280::/32,no-resolve
+DOMAIN,hax.co.id
+DOMAIN,woiden.id
+DOMAIN,gdav.com
+DOMAIN,laowang.vip
+# Pornhub
+DOMAIN,blog.090227.xyz
+DOMAIN,blog.cmliussss.com
+DOMAIN,chinaip.090227.xyz
+IP-CIDR,8.8.8.0/24,no-resolve
+IP-CIDR,8.8.4.0/24,no-resolve
+IP-CIDR,101.101.101.0/24,no-resolve
