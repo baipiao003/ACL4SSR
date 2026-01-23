@@ -19,7 +19,7 @@ asn: >-
 dns:
     enable: true
     ipv6: false
-    listen: 0.0.0.0:53
+    listen: 0.0.0.0:1053
     enhanced-mode: fake-ip
     fake-ip-range: 198.18.0.1/16
     use-hosts: true
@@ -33,8 +33,6 @@ dns:
     nameserver:
         - https://doh.pub/dns-query
         - https://dns.alidns.com/dns-query
-        - https://doh.360.cn/dns-query
-        - https://dns.twnic.tw/dns-query
     
     fallback:
         - https://1.1.1.1/dns-query
@@ -42,13 +40,8 @@ dns:
         - https://8.8.8.8/dns-query
         - https://8.8.4.4/dns-query
         - https://dns.google/dns-query
-        - https://dns11.quad9.net/dns-query
-        - https://dns10.quad9.net/dns-query
-        - https://dns.quad9.net/dns-query
         - https://dns.cloudflare.com/dns-query
-        - https://doh.opendns.com/dns-query
         - https://doh.libredns.gr/dns-query
-        - https://doh.libredns.gr/ads
     
     fallback-filter:
         geoip: true
@@ -107,6 +100,6 @@ dns:
             - "+.akamaiedge.net"
             - "+.cloudflare.com"
             - "+.fastly.net"
-
+    
     proxy-server-nameserver:
         - 223.5.5.5
