@@ -1,60 +1,18 @@
-# 生成时间: 2026-01-23 12:52:26
+# 生成时间: 2026-01-24 05:16:03
 # 规则数量: 207
 
-# NAME: BOCOM
+# NAME: ABC
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-06-06 09:17:31
 # DOMAIN-SUFFIX: 6
 # TOTAL: 6
-DOMAIN-SUFFIX,95559.com.cn
-DOMAIN-SUFFIX,95559.sh.cn
-DOMAIN-SUFFIX,bankcomm.com
-DOMAIN-SUFFIX,bankcomm.com.au
-DOMAIN-SUFFIX,bankcomm.com.mo
-DOMAIN-SUFFIX,bankcomm.com.tw
-# NAME: CMB
-# UPDATED: 2025-06-06 09:17:32
-# DOMAIN-SUFFIX: 38
-# TOTAL: 38
-DOMAIN-SUFFIX,8008205555.cn
-DOMAIN-SUFFIX,8008205555.com
-DOMAIN-SUFFIX,bbf.org.cn
-DOMAIN-SUFFIX,bjsbnet.com
-DOMAIN-SUFFIX,chndoi.cn
-DOMAIN-SUFFIX,chndoi.com
-DOMAIN-SUFFIX,chndoi.com.cn
-DOMAIN-SUFFIX,chndoi.net
-DOMAIN-SUFFIX,chndoi.org
-DOMAIN-SUFFIX,cignacmb-ipmi.com
-DOMAIN-SUFFIX,cignacmb.com
-DOMAIN-SUFFIX,cignacmbamc.com
-DOMAIN-SUFFIX,cmb-leasing.com
-DOMAIN-SUFFIX,cmbchina.biz
-DOMAIN-SUFFIX,cmbchina.cn
-DOMAIN-SUFFIX,cmbchina.com
-DOMAIN-SUFFIX,cmbi.com.hk
-DOMAIN-SUFFIX,cmbimg.cn
-DOMAIN-SUFFIX,cmbimg.com
-DOMAIN-SUFFIX,cmbt.cn
-DOMAIN-SUFFIX,cmbuat.com
-DOMAIN-SUFFIX,cmburl.cn
-DOMAIN-SUFFIX,cmbwinglungbank.com
-DOMAIN-SUFFIX,cmf.biz
-DOMAIN-SUFFIX,cmf.ltd
-DOMAIN-SUFFIX,cmfchina.com
-DOMAIN-SUFFIX,cmfunds.cn
-DOMAIN-SUFFIX,cnki.net
-DOMAIN-SUFFIX,cnkidoi.cn
-DOMAIN-SUFFIX,cnkidoi.com
-DOMAIN-SUFFIX,cnkidoi.net
-DOMAIN-SUFFIX,cnkidoi.org
-DOMAIN-SUFFIX,test-cignacmb.com
-DOMAIN-SUFFIX,wuxizazhi.cn
-DOMAIN-SUFFIX,wuxizazhi.com
-DOMAIN-SUFFIX,wuxizazhi.com.cn
-DOMAIN-SUFFIX,wuxizazhi.net
-DOMAIN-SUFFIX,wuxizazhi.net.cn
+DOMAIN-SUFFIX,95599.cn
+DOMAIN-SUFFIX,abchina.com
+DOMAIN-SUFFIX,bscabank.com
+DOMAIN-SUFFIX,openaboc.cn
+DOMAIN-SUFFIX,openaboc.com
+DOMAIN-SUFFIX,openaboc.com.cn
 # NAME: BOC
 # DOMAIN-SUFFIX: 22
 # TOTAL: 22
@@ -80,20 +38,6 @@ DOMAIN-SUFFIX,bocigroup.com
 DOMAIN-SUFFIX,bocim.com
 DOMAIN-SUFFIX,bocservices.com.cn
 DOMAIN-SUFFIX,ftcwifi.com
-# NAME: ABC
-DOMAIN-SUFFIX,95599.cn
-DOMAIN-SUFFIX,abchina.com
-DOMAIN-SUFFIX,bscabank.com
-DOMAIN-SUFFIX,openaboc.cn
-DOMAIN-SUFFIX,openaboc.com
-DOMAIN-SUFFIX,openaboc.com.cn
-# NAME: PSBC
-# UPDATED: 2025-06-06 09:17:37
-# DOMAIN-SUFFIX: 3
-# TOTAL: 3
-DOMAIN-SUFFIX,95580.net
-DOMAIN-SUFFIX,psbc.com
-DOMAIN-SUFFIX,psbcoa.com.cn
 # NAME: ICBC
 # UPDATED: 2025-06-06 09:17:35
 # DOMAIN-SUFFIX: 58
@@ -156,6 +100,20 @@ DOMAIN-SUFFIX,icbcswiss.com
 DOMAIN-SUFFIX,icbcthai.com
 DOMAIN-SUFFIX,icbkfs.com
 DOMAIN-SUFFIX,icbkus.com
+# NAME: BOCOM
+DOMAIN-SUFFIX,95559.com.cn
+DOMAIN-SUFFIX,95559.sh.cn
+DOMAIN-SUFFIX,bankcomm.com
+DOMAIN-SUFFIX,bankcomm.com.au
+DOMAIN-SUFFIX,bankcomm.com.mo
+DOMAIN-SUFFIX,bankcomm.com.tw
+# NAME: PSBC
+# UPDATED: 2025-06-06 09:17:37
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+DOMAIN-SUFFIX,95580.net
+DOMAIN-SUFFIX,psbc.com
+DOMAIN-SUFFIX,psbcoa.com.cn
 # NAME: CGB
 # DOMAIN-SUFFIX: 4
 # TOTAL: 4
@@ -208,6 +166,48 @@ DOMAIN-SUFFIX,ccblife-test.com.cn
 DOMAIN-SUFFIX,ccbseoul.com
 DOMAIN-SUFFIX,ccbtrust.com.cn
 DOMAIN-SUFFIX,ccbxt.com
+# NAME: CMB
+# UPDATED: 2025-06-06 09:17:32
+# DOMAIN-SUFFIX: 38
+# TOTAL: 38
+DOMAIN-SUFFIX,8008205555.cn
+DOMAIN-SUFFIX,8008205555.com
+DOMAIN-SUFFIX,bbf.org.cn
+DOMAIN-SUFFIX,bjsbnet.com
+DOMAIN-SUFFIX,chndoi.cn
+DOMAIN-SUFFIX,chndoi.com
+DOMAIN-SUFFIX,chndoi.com.cn
+DOMAIN-SUFFIX,chndoi.net
+DOMAIN-SUFFIX,chndoi.org
+DOMAIN-SUFFIX,cignacmb-ipmi.com
+DOMAIN-SUFFIX,cignacmb.com
+DOMAIN-SUFFIX,cignacmbamc.com
+DOMAIN-SUFFIX,cmb-leasing.com
+DOMAIN-SUFFIX,cmbchina.biz
+DOMAIN-SUFFIX,cmbchina.cn
+DOMAIN-SUFFIX,cmbchina.com
+DOMAIN-SUFFIX,cmbi.com.hk
+DOMAIN-SUFFIX,cmbimg.cn
+DOMAIN-SUFFIX,cmbimg.com
+DOMAIN-SUFFIX,cmbt.cn
+DOMAIN-SUFFIX,cmbuat.com
+DOMAIN-SUFFIX,cmburl.cn
+DOMAIN-SUFFIX,cmbwinglungbank.com
+DOMAIN-SUFFIX,cmf.biz
+DOMAIN-SUFFIX,cmf.ltd
+DOMAIN-SUFFIX,cmfchina.com
+DOMAIN-SUFFIX,cmfunds.cn
+DOMAIN-SUFFIX,cnki.net
+DOMAIN-SUFFIX,cnkidoi.cn
+DOMAIN-SUFFIX,cnkidoi.com
+DOMAIN-SUFFIX,cnkidoi.net
+DOMAIN-SUFFIX,cnkidoi.org
+DOMAIN-SUFFIX,test-cignacmb.com
+DOMAIN-SUFFIX,wuxizazhi.cn
+DOMAIN-SUFFIX,wuxizazhi.com
+DOMAIN-SUFFIX,wuxizazhi.com.cn
+DOMAIN-SUFFIX,wuxizazhi.net
+DOMAIN-SUFFIX,wuxizazhi.net.cn
 # NAME: CEB
 # DOMAIN-SUFFIX: 15
 # TOTAL: 15
