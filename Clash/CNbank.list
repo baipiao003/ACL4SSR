@@ -1,19 +1,10 @@
-# 生成时间: 2026-01-24 05:16:03
+# 生成时间: 2026-01-27 04:57:55
 # 规则数量: 207
 
-# NAME: ABC
+# NAME: BOC
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-06-06 09:17:31
-# DOMAIN-SUFFIX: 6
-# TOTAL: 6
-DOMAIN-SUFFIX,95599.cn
-DOMAIN-SUFFIX,abchina.com
-DOMAIN-SUFFIX,bscabank.com
-DOMAIN-SUFFIX,openaboc.cn
-DOMAIN-SUFFIX,openaboc.com
-DOMAIN-SUFFIX,openaboc.com.cn
-# NAME: BOC
 # DOMAIN-SUFFIX: 22
 # TOTAL: 22
 DOMAIN-SUFFIX,bank-of-china.com
@@ -38,113 +29,6 @@ DOMAIN-SUFFIX,bocigroup.com
 DOMAIN-SUFFIX,bocim.com
 DOMAIN-SUFFIX,bocservices.com.cn
 DOMAIN-SUFFIX,ftcwifi.com
-# NAME: ICBC
-# UPDATED: 2025-06-06 09:17:35
-# DOMAIN-SUFFIX: 58
-# TOTAL: 58
-DOMAIN-SUFFIX,95588.com
-DOMAIN-SUFFIX,95588.com.cn
-DOMAIN-SUFFIX,dccnet.com.cn
-DOMAIN-SUFFIX,icbc
-DOMAIN-SUFFIX,icbc-at.com
-DOMAIN-SUFFIX,icbc-cz.com
-DOMAIN-SUFFIX,icbc-ltd.com
-DOMAIN-SUFFIX,icbc-uk.com
-DOMAIN-SUFFIX,icbc-us.com
-DOMAIN-SUFFIX,icbc.ae
-DOMAIN-SUFFIX,icbc.be
-DOMAIN-SUFFIX,icbc.co.id
-DOMAIN-SUFFIX,icbc.co.jp
-DOMAIN-SUFFIX,icbc.co.kr
-DOMAIN-SUFFIX,icbc.co.nl
-DOMAIN-SUFFIX,icbc.com.au
-DOMAIN-SUFFIX,icbc.com.cn
-DOMAIN-SUFFIX,icbc.com.es
-DOMAIN-SUFFIX,icbc.com.kh
-DOMAIN-SUFFIX,icbc.com.kw
-DOMAIN-SUFFIX,icbc.com.la
-DOMAIN-SUFFIX,icbc.com.mm
-DOMAIN-SUFFIX,icbc.com.mo
-DOMAIN-SUFFIX,icbc.com.mx
-DOMAIN-SUFFIX,icbc.com.pe
-DOMAIN-SUFFIX,icbc.com.pk
-DOMAIN-SUFFIX,icbc.com.qa
-DOMAIN-SUFFIX,icbc.com.sg
-DOMAIN-SUFFIX,icbc.com.vn
-DOMAIN-SUFFIX,icbc.de
-DOMAIN-SUFFIX,icbc.eu
-DOMAIN-SUFFIX,icbc.lu
-DOMAIN-SUFFIX,icbcalmaty.kz
-DOMAIN-SUFFIX,icbcasia.com
-DOMAIN-SUFFIX,icbcbr.com.br
-DOMAIN-SUFFIX,icbccs.com.cn
-DOMAIN-SUFFIX,icbccstz.com.cn
-DOMAIN-SUFFIX,icbci.com.hk
-DOMAIN-SUFFIX,icbcina.com
-DOMAIN-SUFFIX,icbcindia.com
-DOMAIN-SUFFIX,icbcit.com
-DOMAIN-SUFFIX,icbclondon.com
-DOMAIN-SUFFIX,icbcmanila.com.cn
-DOMAIN-SUFFIX,icbcme.ae
-DOMAIN-SUFFIX,icbcmoscow.ru
-DOMAIN-SUFFIX,icbcmy.com
-DOMAIN-SUFFIX,icbcnz.com
-DOMAIN-SUFFIX,icbcpanama.com
-DOMAIN-SUFFIX,icbcparis.fr
-DOMAIN-SUFFIX,icbcpl.com
-DOMAIN-SUFFIX,icbcstandard.com
-DOMAIN-SUFFIX,icbcstandardbank.com
-DOMAIN-SUFFIX,icbcstandardresources.com
-DOMAIN-SUFFIX,icbcstandardsecurities.com
-DOMAIN-SUFFIX,icbcswiss.com
-DOMAIN-SUFFIX,icbcthai.com
-DOMAIN-SUFFIX,icbkfs.com
-DOMAIN-SUFFIX,icbkus.com
-# NAME: BOCOM
-DOMAIN-SUFFIX,95559.com.cn
-DOMAIN-SUFFIX,95559.sh.cn
-DOMAIN-SUFFIX,bankcomm.com
-DOMAIN-SUFFIX,bankcomm.com.au
-DOMAIN-SUFFIX,bankcomm.com.mo
-DOMAIN-SUFFIX,bankcomm.com.tw
-# NAME: PSBC
-# UPDATED: 2025-06-06 09:17:37
-# DOMAIN-SUFFIX: 3
-# TOTAL: 3
-DOMAIN-SUFFIX,95580.net
-DOMAIN-SUFFIX,psbc.com
-DOMAIN-SUFFIX,psbcoa.com.cn
-# NAME: CGB
-# DOMAIN-SUFFIX: 4
-# TOTAL: 4
-DOMAIN-SUFFIX,95508.com
-DOMAIN-SUFFIX,cgbchina.cn
-DOMAIN-SUFFIX,cgbchina.com.cn
-DOMAIN-SUFFIX,gdb.com.cn
-# NAME: AliPay
-# DOMAIN-SUFFIX: 21
-# TOTAL: 21
-DOMAIN-SUFFIX,alipay
-DOMAIN-SUFFIX,alipay-corp.com
-DOMAIN-SUFFIX,alipay-eco.com
-DOMAIN-SUFFIX,alipay-inc.com
-DOMAIN-SUFFIX,alipay-traffic.com
-DOMAIN-SUFFIX,alipay.cn
-DOMAIN-SUFFIX,alipay.com
-DOMAIN-SUFFIX,alipay.com.cn
-DOMAIN-SUFFIX,alipay.hk
-DOMAIN-SUFFIX,alipay.net
-DOMAIN-SUFFIX,alipaydesign.com
-DOMAIN-SUFFIX,alipaydev.com
-DOMAIN-SUFFIX,alipaydns.com
-DOMAIN-SUFFIX,alipayeshop.com
-DOMAIN-SUFFIX,alipaylog.com
-DOMAIN-SUFFIX,alipaymo.com
-DOMAIN-SUFFIX,alipayobjects.com
-DOMAIN-SUFFIX,alipayplus.com
-DOMAIN-SUFFIX,ifaa.org.cn
-DOMAIN-SUFFIX,luohanacademy.com
-DOMAIN-SUFFIX,sinopayment.com.cn
 # NAME: CCB
 # DOMAIN-SUFFIX: 18
 # TOTAL: 18
@@ -208,6 +92,15 @@ DOMAIN-SUFFIX,wuxizazhi.com
 DOMAIN-SUFFIX,wuxizazhi.com.cn
 DOMAIN-SUFFIX,wuxizazhi.net
 DOMAIN-SUFFIX,wuxizazhi.net.cn
+# NAME: BOCOM
+# DOMAIN-SUFFIX: 6
+# TOTAL: 6
+DOMAIN-SUFFIX,95559.com.cn
+DOMAIN-SUFFIX,95559.sh.cn
+DOMAIN-SUFFIX,bankcomm.com
+DOMAIN-SUFFIX,bankcomm.com.au
+DOMAIN-SUFFIX,bankcomm.com.mo
+DOMAIN-SUFFIX,bankcomm.com.tw
 # NAME: CEB
 # DOMAIN-SUFFIX: 15
 # TOTAL: 15
@@ -226,6 +119,113 @@ DOMAIN-SUFFIX,ebtrust.com
 DOMAIN-SUFFIX,everbright.com
 DOMAIN-SUFFIX,secec.com
 DOMAIN-SUFFIX,sunlife-everbright.com
+# NAME: ABC
+DOMAIN-SUFFIX,95599.cn
+DOMAIN-SUFFIX,abchina.com
+DOMAIN-SUFFIX,bscabank.com
+DOMAIN-SUFFIX,openaboc.cn
+DOMAIN-SUFFIX,openaboc.com
+DOMAIN-SUFFIX,openaboc.com.cn
+# NAME: PSBC
+# UPDATED: 2025-06-06 09:17:37
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+DOMAIN-SUFFIX,95580.net
+DOMAIN-SUFFIX,psbc.com
+DOMAIN-SUFFIX,psbcoa.com.cn
+# NAME: CGB
+# DOMAIN-SUFFIX: 4
+# TOTAL: 4
+DOMAIN-SUFFIX,95508.com
+DOMAIN-SUFFIX,cgbchina.cn
+DOMAIN-SUFFIX,cgbchina.com.cn
+DOMAIN-SUFFIX,gdb.com.cn
+# NAME: AliPay
+# DOMAIN-SUFFIX: 21
+# TOTAL: 21
+DOMAIN-SUFFIX,alipay
+DOMAIN-SUFFIX,alipay-corp.com
+DOMAIN-SUFFIX,alipay-eco.com
+DOMAIN-SUFFIX,alipay-inc.com
+DOMAIN-SUFFIX,alipay-traffic.com
+DOMAIN-SUFFIX,alipay.cn
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipay.com.cn
+DOMAIN-SUFFIX,alipay.hk
+DOMAIN-SUFFIX,alipay.net
+DOMAIN-SUFFIX,alipaydesign.com
+DOMAIN-SUFFIX,alipaydev.com
+DOMAIN-SUFFIX,alipaydns.com
+DOMAIN-SUFFIX,alipayeshop.com
+DOMAIN-SUFFIX,alipaylog.com
+DOMAIN-SUFFIX,alipaymo.com
+DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,alipayplus.com
+DOMAIN-SUFFIX,ifaa.org.cn
+DOMAIN-SUFFIX,luohanacademy.com
+DOMAIN-SUFFIX,sinopayment.com.cn
+# NAME: ICBC
+# UPDATED: 2025-06-06 09:17:35
+# DOMAIN-SUFFIX: 58
+# TOTAL: 58
+DOMAIN-SUFFIX,95588.com
+DOMAIN-SUFFIX,95588.com.cn
+DOMAIN-SUFFIX,dccnet.com.cn
+DOMAIN-SUFFIX,icbc
+DOMAIN-SUFFIX,icbc-at.com
+DOMAIN-SUFFIX,icbc-cz.com
+DOMAIN-SUFFIX,icbc-ltd.com
+DOMAIN-SUFFIX,icbc-uk.com
+DOMAIN-SUFFIX,icbc-us.com
+DOMAIN-SUFFIX,icbc.ae
+DOMAIN-SUFFIX,icbc.be
+DOMAIN-SUFFIX,icbc.co.id
+DOMAIN-SUFFIX,icbc.co.jp
+DOMAIN-SUFFIX,icbc.co.kr
+DOMAIN-SUFFIX,icbc.co.nl
+DOMAIN-SUFFIX,icbc.com.au
+DOMAIN-SUFFIX,icbc.com.cn
+DOMAIN-SUFFIX,icbc.com.es
+DOMAIN-SUFFIX,icbc.com.kh
+DOMAIN-SUFFIX,icbc.com.kw
+DOMAIN-SUFFIX,icbc.com.la
+DOMAIN-SUFFIX,icbc.com.mm
+DOMAIN-SUFFIX,icbc.com.mo
+DOMAIN-SUFFIX,icbc.com.mx
+DOMAIN-SUFFIX,icbc.com.pe
+DOMAIN-SUFFIX,icbc.com.pk
+DOMAIN-SUFFIX,icbc.com.qa
+DOMAIN-SUFFIX,icbc.com.sg
+DOMAIN-SUFFIX,icbc.com.vn
+DOMAIN-SUFFIX,icbc.de
+DOMAIN-SUFFIX,icbc.eu
+DOMAIN-SUFFIX,icbc.lu
+DOMAIN-SUFFIX,icbcalmaty.kz
+DOMAIN-SUFFIX,icbcasia.com
+DOMAIN-SUFFIX,icbcbr.com.br
+DOMAIN-SUFFIX,icbccs.com.cn
+DOMAIN-SUFFIX,icbccstz.com.cn
+DOMAIN-SUFFIX,icbci.com.hk
+DOMAIN-SUFFIX,icbcina.com
+DOMAIN-SUFFIX,icbcindia.com
+DOMAIN-SUFFIX,icbcit.com
+DOMAIN-SUFFIX,icbclondon.com
+DOMAIN-SUFFIX,icbcmanila.com.cn
+DOMAIN-SUFFIX,icbcme.ae
+DOMAIN-SUFFIX,icbcmoscow.ru
+DOMAIN-SUFFIX,icbcmy.com
+DOMAIN-SUFFIX,icbcnz.com
+DOMAIN-SUFFIX,icbcpanama.com
+DOMAIN-SUFFIX,icbcparis.fr
+DOMAIN-SUFFIX,icbcpl.com
+DOMAIN-SUFFIX,icbcstandard.com
+DOMAIN-SUFFIX,icbcstandardbank.com
+DOMAIN-SUFFIX,icbcstandardresources.com
+DOMAIN-SUFFIX,icbcstandardsecurities.com
+DOMAIN-SUFFIX,icbcswiss.com
+DOMAIN-SUFFIX,icbcthai.com
+DOMAIN-SUFFIX,icbkfs.com
+DOMAIN-SUFFIX,icbkus.com
 # NAME: UnionPay
 # UPDATED: 2025-06-06 09:17:39
 # DOMAIN-SUFFIX: 16
