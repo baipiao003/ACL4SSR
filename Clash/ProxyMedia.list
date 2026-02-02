@@ -1,15 +1,9 @@
-# 生成时间: 2026-02-02 11:15:00
+# 生成时间: 2026-02-02 12:11:42
 # 规则数量: 656
 
-# NAME: All4
+# NAME: BBC
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:16:57
-# DOMAIN-SUFFIX: 2
-# TOTAL: 2
-DOMAIN-SUFFIX,c4assets.com
-DOMAIN-SUFFIX,channel4.com
-# NAME: BBC
 # UPDATED: 2025-06-06 09:16:56
 # DOMAIN: 11
 # DOMAIN-KEYWORD: 2
@@ -43,19 +37,8 @@ DOMAIN-SUFFIX,bbcverticals.com
 DOMAIN-SUFFIX,bidi.net.uk
 DOMAIN-KEYWORD,bbcfmt
 DOMAIN-KEYWORD,uk-live
-# NAME: Cake
-# UPDATED: 2025-06-06 09:18:50
-# DOMAIN: 4
-# DOMAIN-SUFFIX: 3
-# TOTAL: 7
-DOMAIN,d1koerlbtsmkf8.cloudfront.net
-DOMAIN,d31wl6mro6753i.cloudfront.net
-DOMAIN,static-mycake.pstatic.net
-DOMAIN,vstatic-mycake.pstatic.net
-DOMAIN-SUFFIX,cake.day
-DOMAIN-SUFFIX,cakeapp.me
-DOMAIN-SUFFIX,mycake.me
 # NAME: AbemaTV
+# UPDATED: 2025-06-06 09:16:57
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 22
 # TOTAL: 23
@@ -82,10 +65,23 @@ DOMAIN-SUFFIX,linear-abematv.akamaized.net
 DOMAIN-SUFFIX,vod-abematv.akamaized.net
 DOMAIN-SUFFIX,winticket.jp
 DOMAIN-KEYWORD,abematv.akamaized.net
+# NAME: ATTWatchTV
+# DOMAIN-SUFFIX: 6
+# TOTAL: 6
+DOMAIN-SUFFIX,att.tv
+DOMAIN-SUFFIX,atttvnow.com
+DOMAIN-SUFFIX,attwatchtv.com
+DOMAIN-SUFFIX,directv.com
+DOMAIN-SUFFIX,dtvce.com
+DOMAIN-SUFFIX,nettyinternet.com
+# NAME: CableTV
+# DOMAIN-SUFFIX: 2
+# TOTAL: 2
+DOMAIN-SUFFIX,cabletv.com.hk
+DOMAIN-SUFFIX,i-cable.com
 # NAME: BritboxUK
 # UPDATED: 2025-06-06 09:18:54
 # DOMAIN: 2
-# DOMAIN-SUFFIX: 6
 # TOTAL: 8
 DOMAIN,itvpnp.live.ott.irdeto.com
 DOMAIN,itvpnp.stage.ott.irdeto.com
@@ -94,19 +90,23 @@ DOMAIN-SUFFIX,britbox.co.uk
 DOMAIN-SUFFIX,britbox.com
 DOMAIN-SUFFIX,itv.com
 DOMAIN-SUFFIX,massive-itv.com
+# NAME: Cake
+# UPDATED: 2025-06-06 09:18:50
+# DOMAIN: 4
+# DOMAIN-SUFFIX: 3
+# TOTAL: 7
+DOMAIN,d1koerlbtsmkf8.cloudfront.net
+DOMAIN,d31wl6mro6753i.cloudfront.net
+DOMAIN,static-mycake.pstatic.net
+DOMAIN,vstatic-mycake.pstatic.net
+DOMAIN-SUFFIX,cake.day
+DOMAIN-SUFFIX,cakeapp.me
+DOMAIN-SUFFIX,mycake.me
 # NAME: Civitai
 # UPDATED: 2025-06-06 09:20:01
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
 DOMAIN-SUFFIX,civitai.com
-# NAME: ATTWatchTV
-# TOTAL: 6
-DOMAIN-SUFFIX,att.tv
-DOMAIN-SUFFIX,atttvnow.com
-DOMAIN-SUFFIX,attwatchtv.com
-DOMAIN-SUFFIX,directv.com
-DOMAIN-SUFFIX,dtvce.com
-DOMAIN-SUFFIX,nettyinternet.com
 # NAME: DAZN
 # DOMAIN-SUFFIX: 17
 # TOTAL: 18
@@ -128,13 +128,13 @@ DOMAIN-SUFFIX,logx.optimizely.com
 DOMAIN-SUFFIX,s.yimg.jp
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-KEYWORD,voddazn
+# NAME: All4
+DOMAIN-SUFFIX,c4assets.com
+DOMAIN-SUFFIX,channel4.com
 # NAME: Acplay
 # UPDATED: 2024-01-08 16:02:57
 DOMAIN-SUFFIX,acplay.net
 DOMAIN-SUFFIX,dandanplay.com
-# NAME: CableTV
-DOMAIN-SUFFIX,cabletv.com.hk
-DOMAIN-SUFFIX,i-cable.com
 # NAME: Deezer
 DOMAIN-SUFFIX,deezer.com
 DOMAIN-SUFFIX,dzcdn.net
@@ -337,19 +337,58 @@ DOMAIN-SUFFIX,watchdisneyfe.com
 DOMAIN-SUFFIX,watchespn.com
 PROCESS-NAME,com.disney.datg.videoplatforms.android.abc
 PROCESS-NAME,com.disney.disneyplus
-# NAME: FOXNOW
-# UPDATED: 2025-06-06 09:17:50
-# TOTAL: 3
-DOMAIN-SUFFIX,fox.com
-DOMAIN-SUFFIX,foxdcg.com
-# NAME: EncoreTVB
+# NAME: HBO
 # UPDATED: 2025-06-06 09:16:58
-# TOTAL: 5
-DOMAIN,bcbolt446c5271-a.akamaihd.net
-DOMAIN,content.jwplatform.com
-DOMAIN,edge.api.brightcove.com
-DOMAIN,videos-f.jwpsrv.com
-DOMAIN-SUFFIX,encoretvb.com
+# DOMAIN-SUFFIX: 47
+# PROCESS-NAME: 1
+# TOTAL: 48
+DOMAIN-SUFFIX,bcbolthboa-a.akamaihd.net
+DOMAIN-SUFFIX,cf-images.ap-southeast-1.prod.boltdns.net
+DOMAIN-SUFFIX,cinemax.com
+DOMAIN-SUFFIX,dai3fd1oh325y.cloudfront.net
+DOMAIN-SUFFIX,execute-api.ap-southeast-1.amazonaws.com
+DOMAIN-SUFFIX,forthethrone.com
+DOMAIN-SUFFIX,hbo.com
+DOMAIN-SUFFIX,hbo.com.c.footprint.net
+DOMAIN-SUFFIX,hbo.com.edgesuite.net
+DOMAIN-SUFFIX,hbo.map.fastly.net
+DOMAIN-SUFFIX,hboasia.com
+DOMAIN-SUFFIX,hboasia1-i.akamaihd.net
+DOMAIN-SUFFIX,hboasia2-i.akamaihd.net
+DOMAIN-SUFFIX,hboasia3-i.akamaihd.net
+DOMAIN-SUFFIX,hboasia4-i.akamaihd.net
+DOMAIN-SUFFIX,hboasia5-i.akamaihd.net
+DOMAIN-SUFFIX,hboasialive.akamaized.net
+DOMAIN-SUFFIX,hbogeo.cust.footprint.net
+DOMAIN-SUFFIX,hbogo.co.th
+DOMAIN-SUFFIX,hbogo.com
+DOMAIN-SUFFIX,hbogo.eu
+DOMAIN-SUFFIX,hbogoasia.com
+DOMAIN-SUFFIX,hbogoasia.hk
+DOMAIN-SUFFIX,hbogoasia.id
+DOMAIN-SUFFIX,hbogoasia.ph
+DOMAIN-SUFFIX,hbogoasia.sg
+DOMAIN-SUFFIX,hbogoasia.tw
+DOMAIN-SUFFIX,hbogoprod-vod.akamaized.net
+DOMAIN-SUFFIX,hbolb.onwardsmg.com
+DOMAIN-SUFFIX,hbomax.com
+DOMAIN-SUFFIX,hbomaxcdn.com
+DOMAIN-SUFFIX,hbomaxdash.s.llnwi.net
+DOMAIN-SUFFIX,hbonow.com
+DOMAIN-SUFFIX,hbounify-prod.evergent.com
+DOMAIN-SUFFIX,manifest.prod.boltdns.net
+DOMAIN-SUFFIX,max.com
+DOMAIN-SUFFIX,maxgo.com
+DOMAIN-SUFFIX,now-ashare.com
+DOMAIN-SUFFIX,now-tv.com
+DOMAIN-SUFFIX,now.com
+DOMAIN-SUFFIX,now.com.hk
+DOMAIN-SUFFIX,nowe.com
+DOMAIN-SUFFIX,nowe.hk
+DOMAIN-SUFFIX,players.brightcove.net
+DOMAIN-SUFFIX,warnermediacdn.com
+DOMAIN-SUFFIX,youboranqs01.com
+PROCESS-NAME,com.hbo.hbonow
 # NAME: FOXPlus
 # UPDATED: 2024-01-08 16:01:08
 # DOMAIN: 6
@@ -360,6 +399,18 @@ DOMAIN,foxsports02-i.akamaihd.net
 DOMAIN,foxsports03-i.akamaihd.net
 DOMAIN,staticasiafox.akamaized.net
 DOMAIN-SUFFIX,foxplus.com
+# NAME: EncoreTVB
+# TOTAL: 5
+DOMAIN,bcbolt446c5271-a.akamaihd.net
+DOMAIN,content.jwplatform.com
+DOMAIN,edge.api.brightcove.com
+DOMAIN,videos-f.jwpsrv.com
+DOMAIN-SUFFIX,encoretvb.com
+# NAME: FOXNOW
+# UPDATED: 2025-06-06 09:17:50
+# TOTAL: 3
+DOMAIN-SUFFIX,fox.com
+DOMAIN-SUFFIX,foxdcg.com
 # NAME: HKOpenTV
 # UPDATED: 2024-01-08 16:02:54
 DOMAIN-SUFFIX,fantv.hk
@@ -368,9 +419,46 @@ DOMAIN-SUFFIX,hkopentv.com
 # DOMAIN: 1
 DOMAIN,itvpnpmobile-a.akamaihd.net
 DOMAIN-SUFFIX,itvstatic.com
+# NAME: JOOX
+# IP-CIDR: 2
+DOMAIN-SUFFIX,i-joox.com
+DOMAIN-SUFFIX,joox.com
+DOMAIN-SUFFIX,sanook.com
+DOMAIN-KEYWORD,jooxweb-api
+IP-CIDR,119.28.182.0/23,no-resolve
+IP-CIDR,203.205.234.0/23,no-resolve
+PROCESS-NAME,com.tencent.ibg.joox
+# NAME: Japonx
+# DOMAIN-SUFFIX: 8
+# TOTAL: 10
+DOMAIN-SUFFIX,japonx.com
+DOMAIN-SUFFIX,japonx.net
+DOMAIN-SUFFIX,japonx.tv
+DOMAIN-SUFFIX,japonx.vip
+DOMAIN-SUFFIX,japronx.com
+DOMAIN-SUFFIX,japronx.net
+DOMAIN-SUFFIX,japronx.tv
+DOMAIN-SUFFIX,japronx.vip
+DOMAIN-KEYWORD,japonx
+DOMAIN-KEYWORD,japronx
+# NAME: KKBOX
+# DOMAIN-SUFFIX: 9
+# TOTAL: 9
+DOMAIN-SUFFIX,kfs.io
+DOMAIN-SUFFIX,kk.stream
+DOMAIN-SUFFIX,kkbox-prime.com
+DOMAIN-SUFFIX,kkbox.com
+DOMAIN-SUFFIX,kkbox.com.tw
+DOMAIN-SUFFIX,kktix.com
+DOMAIN-SUFFIX,kktv.com.tw
+DOMAIN-SUFFIX,kktv.me
+DOMAIN-SUFFIX,theater-kktv.cdn.hinet.net
+# NAME: KKTV
+# TOTAL: 4
+DOMAIN,kktv-theater.kk.stream
+DOMAIN,theater-kktv.cdn.hinet.net
 # NAME: Hulu
 # DOMAIN-SUFFIX: 57
-# PROCESS-NAME: 1
 # TOTAL: 59
 DOMAIN,live-mediashield-ava-hulustream-com.akamaized.net
 DOMAIN-SUFFIX,112263.com
@@ -431,94 +519,6 @@ DOMAIN-SUFFIX,thehulubraintrust.com
 DOMAIN-SUFFIX,wwwhuluplus.com
 DOMAIN-SUFFIX,yb.uncn.jp
 PROCESS-NAME,com.hulu.plus
-# NAME: HBO
-# DOMAIN-SUFFIX: 47
-# TOTAL: 48
-DOMAIN-SUFFIX,bcbolthboa-a.akamaihd.net
-DOMAIN-SUFFIX,cf-images.ap-southeast-1.prod.boltdns.net
-DOMAIN-SUFFIX,cinemax.com
-DOMAIN-SUFFIX,dai3fd1oh325y.cloudfront.net
-DOMAIN-SUFFIX,execute-api.ap-southeast-1.amazonaws.com
-DOMAIN-SUFFIX,forthethrone.com
-DOMAIN-SUFFIX,hbo.com
-DOMAIN-SUFFIX,hbo.com.c.footprint.net
-DOMAIN-SUFFIX,hbo.com.edgesuite.net
-DOMAIN-SUFFIX,hbo.map.fastly.net
-DOMAIN-SUFFIX,hboasia.com
-DOMAIN-SUFFIX,hboasia1-i.akamaihd.net
-DOMAIN-SUFFIX,hboasia2-i.akamaihd.net
-DOMAIN-SUFFIX,hboasia3-i.akamaihd.net
-DOMAIN-SUFFIX,hboasia4-i.akamaihd.net
-DOMAIN-SUFFIX,hboasia5-i.akamaihd.net
-DOMAIN-SUFFIX,hboasialive.akamaized.net
-DOMAIN-SUFFIX,hbogeo.cust.footprint.net
-DOMAIN-SUFFIX,hbogo.co.th
-DOMAIN-SUFFIX,hbogo.com
-DOMAIN-SUFFIX,hbogo.eu
-DOMAIN-SUFFIX,hbogoasia.com
-DOMAIN-SUFFIX,hbogoasia.hk
-DOMAIN-SUFFIX,hbogoasia.id
-DOMAIN-SUFFIX,hbogoasia.ph
-DOMAIN-SUFFIX,hbogoasia.sg
-DOMAIN-SUFFIX,hbogoasia.tw
-DOMAIN-SUFFIX,hbogoprod-vod.akamaized.net
-DOMAIN-SUFFIX,hbolb.onwardsmg.com
-DOMAIN-SUFFIX,hbomax.com
-DOMAIN-SUFFIX,hbomaxcdn.com
-DOMAIN-SUFFIX,hbomaxdash.s.llnwi.net
-DOMAIN-SUFFIX,hbonow.com
-DOMAIN-SUFFIX,hbounify-prod.evergent.com
-DOMAIN-SUFFIX,manifest.prod.boltdns.net
-DOMAIN-SUFFIX,max.com
-DOMAIN-SUFFIX,maxgo.com
-DOMAIN-SUFFIX,now-ashare.com
-DOMAIN-SUFFIX,now-tv.com
-DOMAIN-SUFFIX,now.com
-DOMAIN-SUFFIX,now.com.hk
-DOMAIN-SUFFIX,nowe.com
-DOMAIN-SUFFIX,nowe.hk
-DOMAIN-SUFFIX,players.brightcove.net
-DOMAIN-SUFFIX,warnermediacdn.com
-DOMAIN-SUFFIX,youboranqs01.com
-PROCESS-NAME,com.hbo.hbonow
-# NAME: JOOX
-# IP-CIDR: 2
-DOMAIN-SUFFIX,i-joox.com
-DOMAIN-SUFFIX,joox.com
-DOMAIN-SUFFIX,sanook.com
-DOMAIN-KEYWORD,jooxweb-api
-IP-CIDR,119.28.182.0/23,no-resolve
-IP-CIDR,203.205.234.0/23,no-resolve
-PROCESS-NAME,com.tencent.ibg.joox
-# NAME: KKBOX
-# DOMAIN-SUFFIX: 9
-# TOTAL: 9
-DOMAIN-SUFFIX,kfs.io
-DOMAIN-SUFFIX,kk.stream
-DOMAIN-SUFFIX,kkbox-prime.com
-DOMAIN-SUFFIX,kkbox.com
-DOMAIN-SUFFIX,kkbox.com.tw
-DOMAIN-SUFFIX,kktix.com
-DOMAIN-SUFFIX,kktv.com.tw
-DOMAIN-SUFFIX,kktv.me
-DOMAIN-SUFFIX,theater-kktv.cdn.hinet.net
-# NAME: KKTV
-# TOTAL: 4
-DOMAIN,kktv-theater.kk.stream
-DOMAIN,theater-kktv.cdn.hinet.net
-# NAME: Japonx
-# DOMAIN-SUFFIX: 8
-# TOTAL: 10
-DOMAIN-SUFFIX,japonx.com
-DOMAIN-SUFFIX,japonx.net
-DOMAIN-SUFFIX,japonx.tv
-DOMAIN-SUFFIX,japonx.vip
-DOMAIN-SUFFIX,japronx.com
-DOMAIN-SUFFIX,japronx.net
-DOMAIN-SUFFIX,japronx.tv
-DOMAIN-SUFFIX,japronx.vip
-DOMAIN-KEYWORD,japonx
-DOMAIN-KEYWORD,japronx
 # NAME: LiTV
 # UPDATED: 2025-06-06 09:16:59
 DOMAIN,litvfreemobile-hichannel.cdn.hinet.net
@@ -527,17 +527,6 @@ DOMAIN-SUFFIX,litv.tv
 DOMAIN,d349g9zuie06uo.cloudfront.net
 DOMAIN-SUFFIX,channel5.com
 DOMAIN-SUFFIX,my5.tv
-# NAME: LineTV
-# DOMAIN-SUFFIX: 5
-DOMAIN,d17lx9ucc6k9fc.cloudfront.net
-DOMAIN,d3pgb93pk7bvxj.cloudfront.net
-DOMAIN,d3vm9lcxb6xcm4.cloudfront.net
-DOMAIN-SUFFIX,chocotv.com.tw
-DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net
-DOMAIN-SUFFIX,line-cdn.net
-DOMAIN-SUFFIX,line-scdn.net
-DOMAIN-SUFFIX,linetv.tw
-PROCESS-NAME,com.linecorp.linetv
 # NAME: myTVSUPER
 # UPDATED: 2025-06-06 09:17:51
 DOMAIN,mytvsuperlimited.hb.omtrdc.net
@@ -559,6 +548,29 @@ DOMAIN-SUFFIX,nbyy.tv
 DOMAIN-SUFFIX,newpppp.com
 DOMAIN-SUFFIX,vod360.net
 DOMAIN-KEYWORD,nivod
+# NAME: Olevod
+# DOMAIN-SUFFIX: 4
+DOMAIN-SUFFIX,haiwaikan.com
+DOMAIN-SUFFIX,iole.tv
+DOMAIN-SUFFIX,olehd.com
+DOMAIN-SUFFIX,olelive.com
+DOMAIN-KEYWORD,olevod
+# NAME: LineTV
+# DOMAIN-SUFFIX: 5
+DOMAIN,d17lx9ucc6k9fc.cloudfront.net
+DOMAIN,d3pgb93pk7bvxj.cloudfront.net
+DOMAIN,d3vm9lcxb6xcm4.cloudfront.net
+DOMAIN-SUFFIX,chocotv.com.tw
+DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net
+DOMAIN-SUFFIX,line-cdn.net
+DOMAIN-SUFFIX,line-scdn.net
+DOMAIN-SUFFIX,linetv.tw
+PROCESS-NAME,com.linecorp.linetv
+# NAME: PBS
+DOMAIN-SUFFIX,pbs.org
+# NAME: Pandora
+DOMAIN-SUFFIX,p-cdn.us
+DOMAIN-SUFFIX,pandora.com
 # NAME: Niconico
 DOMAIN-SUFFIX,dmc.nico
 DOMAIN-SUFFIX,nicodic.jp
@@ -569,31 +581,22 @@ DOMAIN-SUFFIX,nicovideo.jp
 DOMAIN-SUFFIX,nimg.jp
 DOMAIN-SUFFIX,simg.jp
 DOMAIN-SUFFIX,socdm.com
-# NAME: NowE
-DOMAIN-SUFFIX,nowestatic.com
-# NAME: Olevod
-# DOMAIN-SUFFIX: 4
-DOMAIN-SUFFIX,haiwaikan.com
-DOMAIN-SUFFIX,iole.tv
-DOMAIN-SUFFIX,olehd.com
-DOMAIN-SUFFIX,olelive.com
-DOMAIN-KEYWORD,olevod
-# NAME: Overcast
-DOMAIN-SUFFIX,overcast.fm
 # NAME: PandoraTV
 DOMAIN-SUFFIX,kmplayer.com
 DOMAIN-SUFFIX,pandora.tv
-# NAME: Pandora
-DOMAIN-SUFFIX,p-cdn.us
-DOMAIN-SUFFIX,pandora.com
-# NAME: PBS
-DOMAIN-SUFFIX,pbs.org
 # NAME: Patreon
 # UPDATED: 2024-01-08 16:02:55
 DOMAIN,live-patreon-marketing.pantheonsite.io
 DOMAIN-SUFFIX,patreon.com
 DOMAIN-SUFFIX,patreoncommunity.com
 DOMAIN-SUFFIX,patreonusercontent.com
+# NAME: Overcast
+DOMAIN-SUFFIX,overcast.fm
+# NAME: NowE
+DOMAIN-SUFFIX,nowestatic.com
+# NAME: Peacock
+# UPDATED: 2025-06-06 09:17:53
+DOMAIN-SUFFIX,peacocktv.com
 # NAME: ParamountPlus
 DOMAIN,cbsi.live.ott.irdeto.com
 DOMAIN,cbsplaylistserver.aws.syncbak.com
@@ -604,9 +607,6 @@ DOMAIN-SUFFIX,cbsi.com
 DOMAIN-SUFFIX,cbsivideo.com
 DOMAIN-SUFFIX,paramountplus.com
 DOMAIN-SUFFIX,pplusstatic.com
-# NAME: Peacock
-# UPDATED: 2025-06-06 09:17:53
-DOMAIN-SUFFIX,peacocktv.com
 # NAME: Pixiv
 # UPDATED: 2025-06-06 09:17:46
 DOMAIN-SUFFIX,booth.pm
@@ -617,6 +617,25 @@ DOMAIN-SUFFIX,pixiv.me
 DOMAIN-SUFFIX,pixiv.net
 DOMAIN-SUFFIX,pixiv.org
 DOMAIN-SUFFIX,pximg.net
+# NAME: PrimeVideo
+# DOMAIN: 9
+# TOTAL: 16
+DOMAIN,atv-ps.amazon.com
+DOMAIN,avodmp4s3ww-a.akamaihd.net
+DOMAIN,d1v5ir2lpwr8os.cloudfront.net
+DOMAIN,d22qjgkvxw22r6.cloudfront.net
+DOMAIN,d25xi40x97liuc.cloudfront.net
+DOMAIN,d27xxe7juh1us6.cloudfront.net
+DOMAIN,dmqdd6hw24ucf.cloudfront.net
+DOMAIN,fls-na.amazon.com
+DOMAIN,www.amazon.com
+DOMAIN-SUFFIX,aiv-cdn.net
+DOMAIN-SUFFIX,aiv-delivery.net
+DOMAIN-SUFFIX,amazonvideo.com
+DOMAIN-SUFFIX,media-amazon.com
+DOMAIN-SUFFIX,primevideo.com
+DOMAIN-SUFFIX,pv-cdn.net
+DOMAIN-KEYWORD,avoddashs
 # NAME: Qobuz
 # DOMAIN-SUFFIX: 31
 # TOTAL: 33
@@ -653,29 +672,6 @@ DOMAIN-SUFFIX,quobuz.fr
 DOMAIN-SUFFIX,static-qobuz.com
 IP-CIDR,52.211.1.180/32,no-resolve
 IP-CIDR,99.81.97.56/32,no-resolve
-# NAME: PrimeVideo
-# DOMAIN: 9
-# TOTAL: 16
-DOMAIN,atv-ps.amazon.com
-DOMAIN,avodmp4s3ww-a.akamaihd.net
-DOMAIN,d1v5ir2lpwr8os.cloudfront.net
-DOMAIN,d22qjgkvxw22r6.cloudfront.net
-DOMAIN,d25xi40x97liuc.cloudfront.net
-DOMAIN,d27xxe7juh1us6.cloudfront.net
-DOMAIN,dmqdd6hw24ucf.cloudfront.net
-DOMAIN,fls-na.amazon.com
-DOMAIN,www.amazon.com
-DOMAIN-SUFFIX,aiv-cdn.net
-DOMAIN-SUFFIX,aiv-delivery.net
-DOMAIN-SUFFIX,amazonvideo.com
-DOMAIN-SUFFIX,media-amazon.com
-DOMAIN-SUFFIX,primevideo.com
-DOMAIN-SUFFIX,pv-cdn.net
-DOMAIN-KEYWORD,avoddashs
-# NAME: SoundCloud
-# UPDATED: 2025-06-06 09:17:00
-DOMAIN-SUFFIX,sndcdn.com
-DOMAIN-SUFFIX,soundcloud.com
 # NAME: Spotify
 # UPDATED: 2025-06-06 09:16:55
 # DOMAIN-SUFFIX: 20
@@ -711,6 +707,7 @@ IP-CIDR,104.154.127.126/32,no-resolve
 IP-CIDR,35.186.224.47/32,no-resolve
 PROCESS-NAME,com.spotify.music
 # NAME: TIDAL
+# UPDATED: 2025-06-06 09:17:00
 DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com
 DOMAIN-SUFFIX,tidal.com
 DOMAIN-SUFFIX,tidalhifi.com
@@ -748,6 +745,9 @@ DOMAIN-SUFFIX,gorin.jp
 DOMAIN-SUFFIX,screens-lab.jp
 DOMAIN-SUFFIX,tver.co.jp
 DOMAIN-SUFFIX,tver.jp
+# NAME: SoundCloud
+DOMAIN-SUFFIX,sndcdn.com
+DOMAIN-SUFFIX,soundcloud.com
 # NAME: Twitch
 # IP-CIDR: 11
 # IP-CIDR6: 1
