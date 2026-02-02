@@ -1,29 +1,52 @@
-# 生成时间: 2026-01-27 04:57:57
+# 生成时间: 2026-02-02 11:15:00
 # 规则数量: 298
 
-# NAME: DouYin
+# NAME: Youku
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-06-06 09:18:50
-# DOMAIN: 2
-# DOMAIN-SUFFIX: 11
-# TOTAL: 13
-DOMAIN,lf3-static.bytednsdoc.com
-DOMAIN,v5-dy-o-abtest.zjcdn.com
-DOMAIN-SUFFIX,amemv.com
-DOMAIN-SUFFIX,douyincdn.com
-DOMAIN-SUFFIX,douyinpic.com
-DOMAIN-SUFFIX,douyinstatic.com
-DOMAIN-SUFFIX,douyinvod.com
-DOMAIN-SUFFIX,idouyinvod.com
-DOMAIN-SUFFIX,ixigua.com
-DOMAIN-SUFFIX,ixiguavideo.com
-DOMAIN-SUFFIX,pstatp.com
-DOMAIN-SUFFIX,snssdk.com
-DOMAIN-SUFFIX,toutiao.com
+# UPDATED: 2025-06-06 09:17:29
+# DOMAIN-SUFFIX: 34
+# IP-CIDR: 1
+# TOTAL: 35
+DOMAIN-SUFFIX,0co3geye.cn
+DOMAIN-SUFFIX,2isbbess.cn
+DOMAIN-SUFFIX,33lwhaoinc.cn
+DOMAIN-SUFFIX,52mtkvideo.cn
+DOMAIN-SUFFIX,9xsecndns.cn
+DOMAIN-SUFFIX,b82yxres.cn
+DOMAIN-SUFFIX,e8h2ty.tdum.alibaba.com
+DOMAIN-SUFFIX,gamenow.club
+DOMAIN-SUFFIX,kumiao.com
+DOMAIN-SUFFIX,kumiao.tv
+DOMAIN-SUFFIX,kuxiaomiao.cn
+DOMAIN-SUFFIX,kuxiaomiao.com
+DOMAIN-SUFFIX,kuxiaomiao.com.cn
+DOMAIN-SUFFIX,kuxiaomiao.net
+DOMAIN-SUFFIX,ns6mitkxo.cn
+DOMAIN-SUFFIX,sk2cdsnw.cn
+DOMAIN-SUFFIX,sogoodtech1.cn
+DOMAIN-SUFFIX,soku.com
+DOMAIN-SUFFIX,tudou.com
+DOMAIN-SUFFIX,ukoo.com.cn
+DOMAIN-SUFFIX,wenyupages.com
+DOMAIN-SUFFIX,wingsmobiletek.cn
+DOMAIN-SUFFIX,wwc.alicdn.com
+DOMAIN-SUFFIX,ykimg.com
+DOMAIN-SUFFIX,yodou.com
+DOMAIN-SUFFIX,yoku.net.cn
+DOMAIN-SUFFIX,yoqoo.com
+DOMAIN-SUFFIX,yoqoo.net
+DOMAIN-SUFFIX,yoqoo.net.cn
+DOMAIN-SUFFIX,yoqoo.tv
+DOMAIN-SUFFIX,youku.com
+DOMAIN-SUFFIX,youku.com.cn
+DOMAIN-SUFFIX,youku.org
+DOMAIN-SUFFIX,youqoo.net
+IP-CIDR,106.11.0.0/16,no-resolve
 # NAME: LeTV
 # UPDATED: 2025-06-06 09:17:36
 # DOMAIN-SUFFIX: 13
+# TOTAL: 13
 DOMAIN-SUFFIX,le.com
 DOMAIN-SUFFIX,lecloud.com
 DOMAIN-SUFFIX,lelecdn.com
@@ -38,7 +61,6 @@ DOMAIN-SUFFIX,letvstore.com
 DOMAIN-SUFFIX,sanguowudi.com
 DOMAIN-SUFFIX,videougc.com
 # NAME: CCTV
-# UPDATED: 2025-06-06 09:17:29
 # DOMAIN-SUFFIX: 37
 # TOTAL: 37
 DOMAIN-SUFFIX,cctv.cn
@@ -78,28 +100,6 @@ DOMAIN-SUFFIX,zggbdszt.cn
 DOMAIN-SUFFIX,zggbdszt.com.cn
 DOMAIN-SUFFIX,zggbdszt.net.cn
 DOMAIN-SUFFIX,zygbdszt.net.cn
-# NAME: DouBan
-# UPDATED: 2025-06-06 09:17:33
-# DOMAIN-SUFFIX: 3
-# TOTAL: 3
-DOMAIN-SUFFIX,douban.com
-DOMAIN-SUFFIX,douban.fm
-DOMAIN-SUFFIX,doubanio.com
-# NAME: Douyu
-# UPDATED: 2025-06-06 09:17:30
-DOMAIN-SUFFIX,bytefcdnrd.com
-DOMAIN-SUFFIX,douyu.com
-DOMAIN-SUFFIX,douyu.tv
-DOMAIN-SUFFIX,douyuba.cn
-DOMAIN-SUFFIX,douyucdn.cn
-DOMAIN-SUFFIX,douyucdn2.cn
-DOMAIN-SUFFIX,douyupcdn.cn
-DOMAIN-SUFFIX,douyuscdn.com
-DOMAIN-SUFFIX,douyutv.com
-DOMAIN-SUFFIX,doyonoc.com
-DOMAIN-SUFFIX,edgesrv.com
-DOMAIN-SUFFIX,guguyuyin.com
-DOMAIN-SUFFIX,oywtv.com
 # NAME: Sohu
 # UPDATED: 2025-06-06 09:17:38
 # DOMAIN-SUFFIX: 53
@@ -157,107 +157,50 @@ DOMAIN-SUFFIX,xinyan.cn
 DOMAIN-SUFFIX,yeyousg.com
 DOMAIN-SUFFIX,yidianliulan.cn
 DOMAIN-SUFFIX,yidianliulan.com
-# NAME: TencentVideo
-# DOMAIN: 14
-# DOMAIN-SUFFIX: 5
-# IP-CIDR: 3
-# IP-CIDR6: 29
-# TOTAL: 51
-DOMAIN,00713915daab0be43def5c338c02c80b.dlied1.cdntips.net
-DOMAIN,17caa75e77d31e1f5a7841e0b3374569.dlied1.cdntips.net
-DOMAIN,apd-pcdnvodstat.teg.tencent-cloud.net
-DOMAIN,dldir1.qq.com
-DOMAIN,iacc.qq.com
-DOMAIN,ins-eeww7kom.ias.tencent-cloud.net
-DOMAIN,ios.video.mpush.qq.com
-DOMAIN,rdelivery.qq.com
-DOMAIN,ts.qq.com
-DOMAIN,v.streaming.qq.com
-DOMAIN,video-public-1258344701.shiply-cdn.qq.com
-DOMAIN,video-search-1258344701.shiply-cdn.qq.com
-DOMAIN,video-vip-1258344701.shiply-cdn.qq.com
-DOMAIN,yoo.gtimg.com
-DOMAIN-SUFFIX,pgdt.gtimg.cn
-DOMAIN-SUFFIX,qqvideo.gtimg.com
-DOMAIN-SUFFIX,v.qq.com
-DOMAIN-SUFFIX,v.smtcdns.com
-DOMAIN-SUFFIX,video.qq.com
-IP-CIDR,58.49.111.117/32,no-resolve
-IP-CIDR,58.49.111.79/32,no-resolve
-IP-CIDR,58.49.111.95/32,no-resolve
-IP-CIDR6,::ffff:113.248.172.245/128,no-resolve
-IP-CIDR6,::ffff:114.235.96.186/128,no-resolve
-IP-CIDR6,::ffff:115.236.128.112/128,no-resolve
-IP-CIDR6,::ffff:115.236.128.120/128,no-resolve
-IP-CIDR6,::ffff:115.236.128.24/128,no-resolve
-IP-CIDR6,::ffff:115.236.128.80/128,no-resolve
-IP-CIDR6,::ffff:117.64.75.196/128,no-resolve
-IP-CIDR6,::ffff:117.68.200.210/128,no-resolve
-IP-CIDR6,::ffff:117.87.144.24/128,no-resolve
-IP-CIDR6,::ffff:121.56.126.255/128,no-resolve
-IP-CIDR6,::ffff:124.73.198.81/128,no-resolve
-IP-CIDR6,::ffff:124.73.200.142/128,no-resolve
-IP-CIDR6,::ffff:175.6.84.30/128,no-resolve
-IP-CIDR6,::ffff:175.6.84.96/128,no-resolve
-IP-CIDR6,::ffff:183.161.144.133/128,no-resolve
-IP-CIDR6,::ffff:183.161.144.230/128,no-resolve
-IP-CIDR6,::ffff:183.161.149.105/128,no-resolve
-IP-CIDR6,::ffff:198.18.5.138/128,no-resolve
-IP-CIDR6,::ffff:198.18.6.81/128,no-resolve
-IP-CIDR6,::ffff:198.18.6.83/128,no-resolve
-IP-CIDR6,::ffff:223.240.191.238/128,no-resolve
-IP-CIDR6,::ffff:27.157.209.46/128,no-resolve
-IP-CIDR6,::ffff:58.217.232.117/128,no-resolve
-IP-CIDR6,::ffff:58.217.232.68/128,no-resolve
-IP-CIDR6,::ffff:58.217.232.79/128,no-resolve
-IP-CIDR6,::ffff:58.58.0.90/128,no-resolve
-IP-CIDR6,::ffff:60.171.183.161/128,no-resolve
-IP-CIDR6,::ffff:60.171.183.186/128,no-resolve
-IP-CIDR6,::ffff:60.171.183.98/128,no-resolve
+# NAME: DouYin
+# UPDATED: 2025-06-06 09:18:50
+# DOMAIN: 2
+# DOMAIN-SUFFIX: 11
+DOMAIN,lf3-static.bytednsdoc.com
+DOMAIN,v5-dy-o-abtest.zjcdn.com
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,douyincdn.com
+DOMAIN-SUFFIX,douyinpic.com
+DOMAIN-SUFFIX,douyinstatic.com
+DOMAIN-SUFFIX,douyinvod.com
+DOMAIN-SUFFIX,idouyinvod.com
+DOMAIN-SUFFIX,ixigua.com
+DOMAIN-SUFFIX,ixiguavideo.com
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,toutiao.com
+# NAME: DouBan
+# UPDATED: 2025-06-06 09:17:33
+# DOMAIN-SUFFIX: 3
+# TOTAL: 3
+DOMAIN-SUFFIX,douban.com
+DOMAIN-SUFFIX,douban.fm
+DOMAIN-SUFFIX,doubanio.com
+# NAME: Douyu
+# UPDATED: 2025-06-06 09:17:30
+DOMAIN-SUFFIX,bytefcdnrd.com
+DOMAIN-SUFFIX,douyu.com
+DOMAIN-SUFFIX,douyu.tv
+DOMAIN-SUFFIX,douyuba.cn
+DOMAIN-SUFFIX,douyucdn.cn
+DOMAIN-SUFFIX,douyucdn2.cn
+DOMAIN-SUFFIX,douyupcdn.cn
+DOMAIN-SUFFIX,douyuscdn.com
+DOMAIN-SUFFIX,douyutv.com
+DOMAIN-SUFFIX,doyonoc.com
+DOMAIN-SUFFIX,edgesrv.com
+DOMAIN-SUFFIX,guguyuyin.com
+DOMAIN-SUFFIX,oywtv.com
 # NAME: zhanqi
 # UPDATED: 2024-01-08 16:02:58
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
 DOMAIN-SUFFIX,zhanqi.tv
-# NAME: Youku
-# DOMAIN-SUFFIX: 34
-# IP-CIDR: 1
-# TOTAL: 35
-DOMAIN-SUFFIX,0co3geye.cn
-DOMAIN-SUFFIX,2isbbess.cn
-DOMAIN-SUFFIX,33lwhaoinc.cn
-DOMAIN-SUFFIX,52mtkvideo.cn
-DOMAIN-SUFFIX,9xsecndns.cn
-DOMAIN-SUFFIX,b82yxres.cn
-DOMAIN-SUFFIX,e8h2ty.tdum.alibaba.com
-DOMAIN-SUFFIX,gamenow.club
-DOMAIN-SUFFIX,kumiao.com
-DOMAIN-SUFFIX,kumiao.tv
-DOMAIN-SUFFIX,kuxiaomiao.cn
-DOMAIN-SUFFIX,kuxiaomiao.com
-DOMAIN-SUFFIX,kuxiaomiao.com.cn
-DOMAIN-SUFFIX,kuxiaomiao.net
-DOMAIN-SUFFIX,ns6mitkxo.cn
-DOMAIN-SUFFIX,sk2cdsnw.cn
-DOMAIN-SUFFIX,sogoodtech1.cn
-DOMAIN-SUFFIX,soku.com
-DOMAIN-SUFFIX,tudou.com
-DOMAIN-SUFFIX,ukoo.com.cn
-DOMAIN-SUFFIX,wenyupages.com
-DOMAIN-SUFFIX,wingsmobiletek.cn
-DOMAIN-SUFFIX,wwc.alicdn.com
-DOMAIN-SUFFIX,ykimg.com
-DOMAIN-SUFFIX,yodou.com
-DOMAIN-SUFFIX,yoku.net.cn
-DOMAIN-SUFFIX,yoqoo.com
-DOMAIN-SUFFIX,yoqoo.net
-DOMAIN-SUFFIX,yoqoo.net.cn
-DOMAIN-SUFFIX,yoqoo.tv
-DOMAIN-SUFFIX,youku.com
-DOMAIN-SUFFIX,youku.com.cn
-DOMAIN-SUFFIX,youku.org
-DOMAIN-SUFFIX,youqoo.net
-IP-CIDR,106.11.0.0/16,no-resolve
 # NAME: iQIYI
 # DOMAIN-KEYWORD: 1
 # IP-CIDR: 21
@@ -320,6 +263,63 @@ IP-CIDR,23.40.241.251/32,no-resolve
 IP-CIDR,23.40.242.10/32,no-resolve
 IP-CIDR,23.53.32.88/32,no-resolve
 PROCESS-NAME,com.qiyi.video
+# NAME: TencentVideo
+# DOMAIN: 14
+# DOMAIN-SUFFIX: 5
+# IP-CIDR: 3
+# IP-CIDR6: 29
+# TOTAL: 51
+DOMAIN,00713915daab0be43def5c338c02c80b.dlied1.cdntips.net
+DOMAIN,17caa75e77d31e1f5a7841e0b3374569.dlied1.cdntips.net
+DOMAIN,apd-pcdnvodstat.teg.tencent-cloud.net
+DOMAIN,dldir1.qq.com
+DOMAIN,iacc.qq.com
+DOMAIN,ins-eeww7kom.ias.tencent-cloud.net
+DOMAIN,ios.video.mpush.qq.com
+DOMAIN,rdelivery.qq.com
+DOMAIN,ts.qq.com
+DOMAIN,v.streaming.qq.com
+DOMAIN,video-public-1258344701.shiply-cdn.qq.com
+DOMAIN,video-search-1258344701.shiply-cdn.qq.com
+DOMAIN,video-vip-1258344701.shiply-cdn.qq.com
+DOMAIN,yoo.gtimg.com
+DOMAIN-SUFFIX,pgdt.gtimg.cn
+DOMAIN-SUFFIX,qqvideo.gtimg.com
+DOMAIN-SUFFIX,v.qq.com
+DOMAIN-SUFFIX,v.smtcdns.com
+DOMAIN-SUFFIX,video.qq.com
+IP-CIDR,58.49.111.117/32,no-resolve
+IP-CIDR,58.49.111.79/32,no-resolve
+IP-CIDR,58.49.111.95/32,no-resolve
+IP-CIDR6,::ffff:113.248.172.245/128,no-resolve
+IP-CIDR6,::ffff:114.235.96.186/128,no-resolve
+IP-CIDR6,::ffff:115.236.128.112/128,no-resolve
+IP-CIDR6,::ffff:115.236.128.120/128,no-resolve
+IP-CIDR6,::ffff:115.236.128.24/128,no-resolve
+IP-CIDR6,::ffff:115.236.128.80/128,no-resolve
+IP-CIDR6,::ffff:117.64.75.196/128,no-resolve
+IP-CIDR6,::ffff:117.68.200.210/128,no-resolve
+IP-CIDR6,::ffff:117.87.144.24/128,no-resolve
+IP-CIDR6,::ffff:121.56.126.255/128,no-resolve
+IP-CIDR6,::ffff:124.73.198.81/128,no-resolve
+IP-CIDR6,::ffff:124.73.200.142/128,no-resolve
+IP-CIDR6,::ffff:175.6.84.30/128,no-resolve
+IP-CIDR6,::ffff:175.6.84.96/128,no-resolve
+IP-CIDR6,::ffff:183.161.144.133/128,no-resolve
+IP-CIDR6,::ffff:183.161.144.230/128,no-resolve
+IP-CIDR6,::ffff:183.161.149.105/128,no-resolve
+IP-CIDR6,::ffff:198.18.5.138/128,no-resolve
+IP-CIDR6,::ffff:198.18.6.81/128,no-resolve
+IP-CIDR6,::ffff:198.18.6.83/128,no-resolve
+IP-CIDR6,::ffff:223.240.191.238/128,no-resolve
+IP-CIDR6,::ffff:27.157.209.46/128,no-resolve
+IP-CIDR6,::ffff:58.217.232.117/128,no-resolve
+IP-CIDR6,::ffff:58.217.232.68/128,no-resolve
+IP-CIDR6,::ffff:58.217.232.79/128,no-resolve
+IP-CIDR6,::ffff:58.58.0.90/128,no-resolve
+IP-CIDR6,::ffff:60.171.183.161/128,no-resolve
+IP-CIDR6,::ffff:60.171.183.186/128,no-resolve
+IP-CIDR6,::ffff:60.171.183.98/128,no-resolve
 # NAME: PPTV
 # UPDATED: 2025-06-06 09:17:37
 # DOMAIN-SUFFIX: 19
