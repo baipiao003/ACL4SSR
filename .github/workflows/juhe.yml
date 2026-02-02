@@ -12,9 +12,8 @@ on:
           - clash
           - main
           - master
-  #schedule:
-    # 每天凌晨2点自动运行（UTC时间）
-    #- cron: '0 2 * * *'
+  #schedule:   
+    #- cron: '0 22 * * *' # 每天早上6点自动运行（UTC+8时间）
   push:
     paths:
       - 'rules/**'  # 当rules文件夹内容变化时触发
@@ -31,7 +30,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        ref: ${{ github.event.inputs.branch || 'clash' }}
+        ref: ${{ github.event.inputs.branch || 'main' }}
     
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -72,7 +71,7 @@ jobs:
         
         # 提交信息包含时间戳
         git commit -m "🤖 自动更新Clash规则 [$TIMESTAMP]"
-        git push origin ${{ github.event.inputs.branch || 'clash' }}
+        git push origin ${{ github.event.inputs.branch || 'main' }}
     
     - name: 🎉 Delete old workflow run
       uses: yxdz2020/delete-workflow-runs@v20260116
