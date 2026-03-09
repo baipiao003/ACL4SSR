@@ -3,11 +3,3 @@ DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,together.ai
 DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,appstorrent.ru
-DOMAIN-SUFFIX,android.clients.google.com
-DOMAIN-SUFFIX,play.googleapis.com
-DOMAIN-SUFFIX,play.google.com
-DOMAIN-SUFFIX,dl.google.com
-DOMAIN-KEYWORD,google
-DOMAIN-KEYWORD,android
-IP-CIDR,173.194.0.0/16,no-resolve
-IP-CIDR,74.125.0.0/16,no-resolve
