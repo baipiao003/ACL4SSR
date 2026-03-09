@@ -1,9 +1,5 @@
 DOMAIN,hax.co.id
 DOMAIN,woiden.id
-DOMAIN,gdav.com
-DOMAIN,laowang.vip
-# Pornhub
-DOMAIN-SUFFIX,phncdn.com
-DOMAIN-SUFFIX,phprcdn.com
-DOMAIN-SUFFIX,pornhub.com
-DOMAIN-SUFFIX,pornhubpremium.com
+DOMAIN-SUFFIX,gdav.com
+DOMAIN-SUFFIX,laowang.vip
+DOMAIN-SUFFIX,nodeseek.com
