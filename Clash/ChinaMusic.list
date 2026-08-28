@@ -1,4 +1,4 @@
-# 生成时间: 2026-02-28 12:01:05
+# 生成时间: 2026-08-28 11:59:59
 # 规则数量: 172
 
 # NAME: KuKeMusic
@@ -10,11 +10,6 @@
 DOMAIN-SUFFIX,kuke.com
 DOMAIN-SUFFIX,kukey.com.cn
 DOMAIN-SUFFIX,naxos.cn
-# NAME: HibyMusic
-# UPDATED: 2025-06-06 09:17:34
-DOMAIN-SUFFIX,hiby.cd
-DOMAIN-SUFFIX,hiby.com
-DOMAIN-SUFFIX,hibymusic.com
 # NAME: NetEaseMusic
 # UPDATED: 2025-06-06 09:17:29
 # DOMAIN: 1
@@ -49,11 +44,23 @@ IP-CIDR,47.100.127.239/32,no-resolve
 IP-CIDR,59.111.128.0/17,no-resolve
 IP-CIDR,59.111.19.33/32,no-resolve
 IP-CIDR,59.111.21.14/31,no-resolve
-# NAME: XiamiMusic
-# UPDATED: 2025-06-06 09:17:39
-DOMAIN-SUFFIX,xiami.com
-DOMAIN-SUFFIX,xiami.fm
-DOMAIN-SUFFIX,xiami.net
+# NAME: TaiheMusic
+# UPDATED: 2025-06-06 09:17:38
+# DOMAIN-SUFFIX: 8
+# TOTAL: 8
+DOMAIN-SUFFIX,91q.com
+DOMAIN-SUFFIX,dmhmusic.com
+DOMAIN-SUFFIX,qianqian.com
+DOMAIN-SUFFIX,submusic.cn
+DOMAIN-SUFFIX,taihe.com
+DOMAIN-SUFFIX,ttplayer.com
+DOMAIN-SUFFIX,youyou.com
+DOMAIN-SUFFIX,youyou001.com
+# NAME: MOOMusic
+# UPDATED: 2026-01-26 02:09:51
+# USER-AGENT: 1
+# TOTAL: 1
+USER-AGENT,TencentMidasConnect*
 # NAME: Himalaya
 # UPDATED: 2025-06-06 09:17:30
 # DOMAIN-SUFFIX: 17
@@ -75,11 +82,11 @@ DOMAIN-SUFFIX,zhishif.com
 DOMAIN-SUFFIX,zhishinn.com
 DOMAIN-SUFFIX,zhishiu.com
 DOMAIN-SUFFIX,zhishiv.com
-# NAME: MOOMusic
-# UPDATED: 2026-01-26 02:09:51
-# USER-AGENT: 1
-# TOTAL: 1
-USER-AGENT,TencentMidasConnect*
+# NAME: XiamiMusic
+# UPDATED: 2025-06-06 09:17:39
+DOMAIN-SUFFIX,xiami.com
+DOMAIN-SUFFIX,xiami.fm
+DOMAIN-SUFFIX,xiami.net
 # NAME: KugouKuwo
 # UPDATED: 2025-06-06 09:17:36
 # DOMAIN-SUFFIX: 19
@@ -194,15 +201,8 @@ IP-CIDR,61.243.144.0/24,no-resolve
 IP-CIDR,61.48.115.0/24,no-resolve
 IP-CIDR,61.54.121.0/24,no-resolve
 IP-CIDR,61.54.7.0/24,no-resolve
-# NAME: TaiheMusic
-# UPDATED: 2025-06-06 09:17:38
-# DOMAIN-SUFFIX: 8
-# TOTAL: 8
-DOMAIN-SUFFIX,91q.com
-DOMAIN-SUFFIX,dmhmusic.com
-DOMAIN-SUFFIX,qianqian.com
-DOMAIN-SUFFIX,submusic.cn
-DOMAIN-SUFFIX,taihe.com
-DOMAIN-SUFFIX,ttplayer.com
-DOMAIN-SUFFIX,youyou.com
-DOMAIN-SUFFIX,youyou001.com
+# NAME: HibyMusic
+# UPDATED: 2025-06-06 09:17:34
+DOMAIN-SUFFIX,hiby.cd
+DOMAIN-SUFFIX,hiby.com
+DOMAIN-SUFFIX,hibymusic.com
